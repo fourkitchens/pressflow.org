@@ -187,7 +187,7 @@ $databases = array(
       'host' => 'localhost',
       'prefix' => '',
     ),
-  );
+  ),
 );
 
 /**
