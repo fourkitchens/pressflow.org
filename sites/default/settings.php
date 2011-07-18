@@ -181,8 +181,8 @@ $databases = array(
   'default' => array(
     'default' => array(
       'driver' => 'mysql',
-      'database' => 'pf_d',
-      'username' => 'pf_d',
+      'database' => 'pf',
+      'username' => 'pf',
       'password' => '1HmOSsZdOI',
       'host' => 'localhost',
       'prefix' => '',
@@ -317,9 +317,12 @@ ini_set('session.cookie_lifetime', 2000000);
  * - anonymous: Defines the human-readable name of anonymous users.
  * Remove the leading hash signs to enable.
  */
-# $conf['site_name'] = 'My Drupal site';
-# $conf['theme_default'] = 'garland';
-# $conf['anonymous'] = 'Visitor';
+$conf['cache'] = 1;
+$conf['block_cache'] = 1;
+$conf['cache_lifetime'] = 300;
+$conf['page_cache_maximum_age'] = 86400;
+$conf['preprocess_css'] = 1;
+$conf['preprocess_js'] = 1;
 
 /**
  * A custom theme can be set for the offline page. This applies when the site
@@ -463,3 +466,14 @@ $conf['reverse_proxy_addresses'] = array('127.0.0.1');
  */
 # $conf['pressflow_smart_start'] = TRUE;
 
+// Staging and development settings.
+$matches = array();
+if (preg_match('/^stage.pressflow.org(:\d+)?/', $_SERVER['HTTP_HOST'])) {
+  include_once 'sites/default/settings.stage.php';
+}
+elseif (preg_match('/^(.+)\..+\.pressflow\.org(:\d+)?/', $_SERVER['HTTP_HOST'], $matches)) {
+  include_once 'sites/default/settings.dev.php';
+  if (file_exists('sites/default/' . $matches[1] . '.settings.php')) {
+    include_once 'sites/default/' . $matches[1] . '.settings.php';
+  }
+}

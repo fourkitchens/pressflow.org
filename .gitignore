@@ -1,1 +1,2 @@
 sites/default/files
+sites/*/*.settings.php
