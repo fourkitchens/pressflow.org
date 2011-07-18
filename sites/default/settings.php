@@ -177,7 +177,18 @@
  *   );
  * @endcode
  */
-$databases = array();
+$databases = array(
+  'default' => array(
+    'default' => array(
+      'driver' => 'mysql',
+      'database' => 'pf_d',
+      'username' => 'pf_d',
+      'password' => '1HmOSsZdOI',
+      'host' => 'localhost',
+      'prefix' => '',
+    ),
+  );
+);
 
 /**
  * Access control for update.php script.
@@ -334,7 +345,7 @@ ini_set('session.cookie_lifetime', 2000000);
  * about this setting, do not have a reverse proxy, or Drupal operates in
  * a shared hosting environment, this setting should remain commented out.
  */
-# $conf['reverse_proxy'] = TRUE;
+$conf['reverse_proxy'] = TRUE;
 
 /**
  * Set this value if your proxy server sends the client IP in a header other
@@ -355,7 +366,7 @@ ini_set('session.cookie_lifetime', 2000000);
  * reverse proxies. Otherwise, the client could directly connect to
  * your web server spoofing the X-Forwarded-For headers.
  */
-# $conf['reverse_proxy_addresses'] = array('a.b.c.d', ...);
+$conf['reverse_proxy_addresses'] = array('127.0.0.1');
 
 /**
  * Page caching:
