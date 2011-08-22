@@ -1,6 +1,28 @@
 <?php
 
 /**
+ * Common database settings.
+ *
+ * Environment settings files should define the remainder of the
+ * default array (or override it completely). At a bare minimum
+ * the following should be defined:
+ *
+ *   $databases['default']['default']['database']
+ *   $databases['default']['default']['username']
+ *   $databases['default']['default']['password']
+ */
+$databases = array(
+  'default' => array(
+    'default' => array(
+      'driver' => 'mysql',
+      'host' => 'localhost',
+      'prefix' => '',
+    ),
+  ),
+);
+
+
+/**
  * Access control for update.php script.
  */
 $update_free_access = FALSE;
@@ -68,7 +90,7 @@ if (preg_match('/^(www)?pressflow\.org(:\d+)?$/', $_SERVER['HTTP_HOST'])) {
   // Live.
   include_once 'sites/default/settings.live.php';
 }
-elseif (preg_match('/^(.+\.)stage.pressflow.org(:\d+)?$/', $_SERVER['HTTP_HOST'])) {
+elseif (preg_match('/^(.+\.)?stage.pressflow.org(:\d+)?$/', $_SERVER['HTTP_HOST'])) {
   // Stage.
   include_once 'sites/default/settings.stage.php';
 }
