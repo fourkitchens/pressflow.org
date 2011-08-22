@@ -1,18 +1,9 @@
 <?php
 
 /**
- * Live database connection info.
+ * Live database settings.
  */
-$databases = array(
-  'default' => array(
-    'default' => array(
-      'driver' => 'mysql',
-      'database' => 'pf',
-      'username' => 'pf',
-      'password' => '1HmOSsZdOI',
-      'host' => 'localhost',
-      'prefix' => '',
-    ),
-  ),
-);
+$databases['default']['default']['database'] = 'pf';
+$databases['default']['default']['username'] = 'pf';
+$databases['default']['default']['password'] = '1HmOSsZdOI';
 
