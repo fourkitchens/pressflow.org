@@ -75,7 +75,9 @@ elseif (preg_match('/^(.+\.)stage.pressflow.org(:\d+)?$/', $_SERVER['HTTP_HOST']
 else {
   include_once 'sites/default/settings.dev.php';
   $matches = array();
-  if (preg_match('/^(.+)\..+\.pressflow\.org(:\d+)?$/', $_SERVER['HTTP_HOST'], $matches)) {
+  if (preg_match('/^(.+)\..+\.pressflow\.org(:\d+)?$/', $_SERVER['HTTP_HOST'], $matches) &&
+    file_exists('sites/default/' . $matches[1] . '.settings.php')
+  ) {
     include_once 'sites/default/' . $matches[1] . '.settings.php';
   }
   elseif (file_exists('sites/default/' . getenv(USER) . '.settings.php')) {
