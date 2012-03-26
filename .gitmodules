@@ -1,3 +1,6 @@
 [submodule "sites/all/modules/devel"]
 	path = sites/all/modules/devel
 	url = http://git.drupal.org/project/devel.git
+[submodule "sites/all/modules/views"]
+	path = sites/all/modules/views
+	url = http://git.drupal.org/project/views.git
