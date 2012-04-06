@@ -68,8 +68,12 @@
 ?>
 
   <section id="page">
+  
+    <?php if ($main_menu): ?>
+      <nav class="page-container"><?php print theme('links__system_main_menu', array('links' => $main_menu, 'attributes' => array('id' => 'main-menu', 'class' => array('links', 'inline', 'clearfix')))); ?></nav> <!-- /nav -->
+    <?php endif; ?>
 
-    <header class="clearfix">
+    <header class="clearfix page-container">
 
       <?php if ($logo): ?>
         <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" id="logo">
@@ -93,13 +97,9 @@
 
     </header> <!-- /.section, /#header -->
 
-    <?php if ($main_menu): ?>
-      <nav><?php print theme('links__system_main_menu', array('links' => $main_menu, 'attributes' => array('id' => 'main-menu', 'class' => array('links', 'inline', 'clearfix')), 'heading' => t('Main menu'))); ?></nav> <!-- /nav -->
-    <?php endif; ?>
-
     <?php print $messages; ?>
 
-    <section id="main" class="clearfix">
+    <section id="main" class="clearfix page-container">
 
       <div id="content">
         <?php if ($page['highlighted']): ?><div id="highlighted"><?php print render($page['highlighted']); ?></div><?php endif; ?>
