@@ -4,3 +4,6 @@
 [submodule "sites/all/modules/views"]
 	path = sites/all/modules/views
 	url = http://git.drupal.org/project/views.git
+[submodule "sites/all/modules/faq"]
+	path = sites/all/modules/faq
+	url = http://git.drupal.org/project/faq.git
