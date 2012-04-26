@@ -13,3 +13,6 @@
 [submodule "sites/all/modules/pathauto"]
 	path = sites/all/modules/pathauto
 	url = http://git.drupal.org/project/pathauto.git
+[submodule "sites/all/modules/token"]
+	path = sites/all/modules/token
+	url = http://git.drupal.org/project/token.git
