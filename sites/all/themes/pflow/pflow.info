@@ -1,7 +1,8 @@
 name = Pressflow
 description = Custom fluid HTML5 theme for the official Pressflow site.
 package = Core
-version = VERSION
+engine = phptemplate
+version = 0.1-alpha
 core = 7.x
 
 stylesheets[all][] = css/normalize.css
@@ -12,6 +13,7 @@ scripts[] = js/jquery.formalize.min.js
 
 regions[header] = Header
 regions[help] = Help
+regions[highlighted] = Highlighted
 regions[content] = Content
 regions[sidebar] = Sidebar
 regions[footer] = Footer
