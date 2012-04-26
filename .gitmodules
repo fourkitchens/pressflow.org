@@ -7,3 +7,6 @@
 [submodule "sites/all/modules/faq"]
 	path = sites/all/modules/faq
 	url = http://git.drupal.org/project/faq.git
+[submodule "sites/all/modules/ctools"]
+	path = sites/all/modules/ctools
+	url = http://git.drupal.org/project/ctools.git
