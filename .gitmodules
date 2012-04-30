@@ -22,3 +22,6 @@
 [submodule "sites/all/modules/strongarm"]
   path = sites/all/modules/strongarm
   url = http://git.drupal.org/project/strongarm.git
+[submodule "sites/all/modules/date"]
+	path = sites/all/modules/date
+	url = http://git.drupal.org/project/date.git
