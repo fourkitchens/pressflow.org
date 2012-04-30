@@ -6,10 +6,6 @@ version = 0.1-alpha
 core = 7.x
 screenshot = screenshot.jpg
 
-
-
-
-
 stylesheets[all][] = css/normalize.css
 stylesheets[all][] = css/formalize.css
 stylesheets[all][] = css/style.css
