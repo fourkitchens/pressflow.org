@@ -16,3 +16,6 @@
 [submodule "sites/all/modules/token"]
 	path = sites/all/modules/token
 	url = http://git.drupal.org/project/token.git
+[submodule "sites/all/modules/features"]
+	path = sites/all/modules/features
+	url = http://git.drupal.org/project/features.git
