@@ -1,0 +1,21 @@
+name = Pressflow
+description = Drupal 7 theme for the official Pressflow site.
+engine = phptemplate
+version = 0.1
+core = 7.x
+screenshot = screenshot.jpg
+
+stylesheets[all][] = css/normalize.css
+stylesheets[all][] = css/formalize.css
+stylesheets[all][] = css/style.css
+
+scripts[] = js/jquery.formalize.min.js
+
+regions[header] = Header
+regions[help] = Help
+regions[highlighted] = Highlighted
+regions[content] = Content
+regions[sidebar] = Sidebar
+regions[footer] = Footer
+
+settings[shortcut_module_link] = 1
