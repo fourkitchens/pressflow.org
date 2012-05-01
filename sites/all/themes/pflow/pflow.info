@@ -1,4 +1,4 @@
-name = Pressflow
+name = Pressflow (old)
 description = Zach's original work - Custom fluid HTML5 theme for the official Pressflow site.
 package = Core
 engine = phptemplate
