@@ -5,9 +5,9 @@ version = 0.1
 core = 7.x
 screenshot = screenshot.jpg
 
-stylesheets[all][] = css/normalize.css
-stylesheets[all][] = css/formalize.css
-stylesheets[all][] = css/style.css
+stylesheets[all][] = css/stylesheets/normalize.css
+stylesheets[all][] = css/stylesheets/formalize.css
+stylesheets[all][] = css/stylesheets/style.css
 
 scripts[] = js/jquery.formalize.min.js
 
