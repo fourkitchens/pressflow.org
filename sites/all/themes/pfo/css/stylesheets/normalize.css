@@ -91,18 +91,17 @@ textarea {
 /*
  * Remove text-shadow in selection highlight: h5bp.com/i
  * These selection declarations have to be separate
- * Also: hot pink! (or customize the background color to match your design)
  */
-/* line 96, ../sass/normalize.scss */
+/* line 95, ../sass/normalize.scss */
 ::-moz-selection {
-  background: #fe57a1;
+  background: #66B360;
   color: #fff;
   text-shadow: none;
 }
 
-/* line 97, ../sass/normalize.scss */
+/* line 96, ../sass/normalize.scss */
 ::selection {
-  background: #fe57a1;
+  background: #66B360;
   color: #fff;
   text-shadow: none;
 }
@@ -113,7 +112,7 @@ textarea {
 /*
  * Addresses outline displayed oddly in Chrome
  */
-/* line 107, ../sass/normalize.scss */
+/* line 106, ../sass/normalize.scss */
 a:focus {
   outline: thin dotted;
 }
@@ -122,7 +121,7 @@ a:focus {
  * Improves readability when focused and also mouse hovered in all browsers
  * people.opera.com/patrickl/experiments/keyboard/test
  */
-/* line 117, ../sass/normalize.scss */
+/* line 116, ../sass/normalize.scss */
 a:hover,
 a:active {
   outline: 0;
@@ -134,7 +133,7 @@ a:active {
 /*
  * Addresses styling not present in IE7/8/9, S5, Chrome
  */
-/* line 129, ../sass/normalize.scss */
+/* line 128, ../sass/normalize.scss */
 abbr[title] {
   border-bottom: 1px dotted;
 }
@@ -142,13 +141,13 @@ abbr[title] {
 /*
  * Addresses style set to 'bolder' in FF3/4, S4/5, Chrome
 */
-/* line 138, ../sass/normalize.scss */
+/* line 137, ../sass/normalize.scss */
 b,
 strong {
   font-weight: bold;
 }
 
-/* line 142, ../sass/normalize.scss */
+/* line 141, ../sass/normalize.scss */
 blockquote {
   margin: 1em 40px;
 }
@@ -156,7 +155,7 @@ blockquote {
 /*
  * Addresses styling not present in S5, Chrome
  */
-/* line 150, ../sass/normalize.scss */
+/* line 149, ../sass/normalize.scss */
 dfn {
   font-style: italic;
 }
@@ -164,7 +163,7 @@ dfn {
 /*
  * Addresses styling not present in IE6/7/8/9
  */
-/* line 158, ../sass/normalize.scss */
+/* line 157, ../sass/normalize.scss */
 mark {
   background: #ff0;
   color: #000;
@@ -174,7 +173,7 @@ mark {
  * Corrects font family set oddly in IE6, S4/5, Chrome
  * en.wikipedia.org/wiki/User:Davidgothberg/Test59
  */
-/* line 171, ../sass/normalize.scss */
+/* line 170, ../sass/normalize.scss */
 pre,
 code,
 kbd,
@@ -187,7 +186,7 @@ samp {
 /*
  * Improves readability of pre-formatted text in all browsers
  */
-/* line 181, ../sass/normalize.scss */
+/* line 180, ../sass/normalize.scss */
 pre {
   white-space: pre;
   white-space: pre-wrap;
@@ -199,20 +198,20 @@ pre {
  * 2. Addresses quote property not supported in S4
  */
 /* 1 */
-/* line 194, ../sass/normalize.scss */
+/* line 193, ../sass/normalize.scss */
 q {
   quotes: none;
 }
 
 /* 2 */
-/* line 201, ../sass/normalize.scss */
+/* line 200, ../sass/normalize.scss */
 q:before,
 q:after {
   content: '';
   content: none;
 }
 
-/* line 206, ../sass/normalize.scss */
+/* line 205, ../sass/normalize.scss */
 small {
   font-size: 75%;
 }
@@ -221,7 +220,7 @@ small {
  * Prevents sub and sup affecting line-height in all browsers
  * gist.github.com/413930
  */
-/* line 216, ../sass/normalize.scss */
+/* line 215, ../sass/normalize.scss */
 sub,
 sup {
   font-size: 75%;
@@ -230,12 +229,12 @@ sup {
   vertical-align: baseline;
 }
 
-/* line 223, ../sass/normalize.scss */
+/* line 222, ../sass/normalize.scss */
 sup {
   top: -0.5em;
 }
 
-/* line 227, ../sass/normalize.scss */
+/* line 226, ../sass/normalize.scss */
 sub {
   bottom: -0.25em;
 }
@@ -243,19 +242,19 @@ sub {
 /*
  * Lists
  */
-/* line 236, ../sass/normalize.scss */
+/* line 235, ../sass/normalize.scss */
 ul,
 ol {
   margin: 1em 0;
   padding: 0 0 0 40px;
 }
 
-/* line 241, ../sass/normalize.scss */
+/* line 240, ../sass/normalize.scss */
 dd {
   margin: 0 0 0 40px;
 }
 
-/* line 246, ../sass/normalize.scss */
+/* line 245, ../sass/normalize.scss */
 nav ul,
 nav ol {
   list-style: none;
@@ -270,7 +269,7 @@ nav ol {
  * 2. Improves image quality when scaled in IE7
  *  code.flickr.com/blog/2008/11/12/on-ui-quality-the-little-things-client-side-image-resizing/
  */
-/* line 261, ../sass/normalize.scss */
+/* line 260, ../sass/normalize.scss */
 img {
   border: 0;
   /* 1 */
@@ -281,7 +280,7 @@ img {
 /*
  * Corrects overflow displayed oddly in IE9
  */
-/* line 270, ../sass/normalize.scss */
+/* line 269, ../sass/normalize.scss */
 svg:not(:root) {
   overflow: hidden;
 }
@@ -292,7 +291,7 @@ svg:not(:root) {
 /*
  * Addresses margin not present in IE6/7/8/9, S5, O11
  */
-/* line 282, ../sass/normalize.scss */
+/* line 281, ../sass/normalize.scss */
 figure {
   margin: 0;
 }
@@ -303,7 +302,7 @@ figure {
 /*
  * Corrects margin displayed oddly in IE6/7
  */
-/* line 294, ../sass/normalize.scss */
+/* line 293, ../sass/normalize.scss */
 form {
   margin: 0;
 }
@@ -311,7 +310,7 @@ form {
 /*
  * Define consistent border, margin, and padding
  */
-/* line 302, ../sass/normalize.scss */
+/* line 301, ../sass/normalize.scss */
 fieldset {
   border: 1px solid #c0c0c0;
   margin: 0 2px;
@@ -322,7 +321,7 @@ fieldset {
  * 1. Corrects color not being inherited in IE6/7/8/9
  * 2. Corrects alignment displayed oddly in IE6/7
  */
-/* line 313, ../sass/normalize.scss */
+/* line 312, ../sass/normalize.scss */
 legend {
   border: 0;
   /* 1 */
@@ -335,7 +334,7 @@ legend {
  * 2. Addresses margins set differently in IE6/7, FF3/4, S5, Chrome
  * 3. Improves appearance and consistency in all browsers
  */
-/* line 327, ../sass/normalize.scss */
+/* line 326, ../sass/normalize.scss */
 button,
 input,
 select,
@@ -353,7 +352,7 @@ textarea {
 /*
  * Addresses FF3/4 setting line-height on 'input' using !important in the UA stylesheet
  */
-/* line 339, ../sass/normalize.scss */
+/* line 338, ../sass/normalize.scss */
 button,
 input {
   line-height: normal;
@@ -366,7 +365,7 @@ input {
  * 3. Corrects inner spacing displayed oddly in IE7 without effecting normal text inputs
  *  Known issue: inner spacing remains in IE6
  */
-/* line 353, ../sass/normalize.scss */
+/* line 352, ../sass/normalize.scss */
 button,
 input[type="button"],
 input[type="reset"],
@@ -383,7 +382,7 @@ input[type="submit"] {
  * 1. Addresses box sizing set to content-box in IE8/9
  * 2. Addresses excess padding in IE8/9
  */
-/* line 365, ../sass/normalize.scss */
+/* line 364, ../sass/normalize.scss */
 input[type="checkbox"],
 input[type="radio"] {
   box-sizing: border-box;
@@ -396,7 +395,7 @@ input[type="radio"] {
  * 1. Addresses appearance set to searchfield in S5, Chrome
  * 2. Addresses box sizing set to border-box in S5, Chrome (include -moz to future-proof)
  */
-/* line 375, ../sass/normalize.scss */
+/* line 374, ../sass/normalize.scss */
 input[type="search"] {
   -webkit-appearance: textfield;
   /* 1 */
@@ -409,7 +408,7 @@ input[type="search"] {
 /*
  * Corrects inner padding displayed oddly in S5, Chrome on OSX
  */
-/* line 386, ../sass/normalize.scss */
+/* line 385, ../sass/normalize.scss */
 input[type="search"]::-webkit-search-decoration {
   -webkit-appearance: none;
 }
@@ -418,7 +417,7 @@ input[type="search"]::-webkit-search-decoration {
  * Corrects inner padding and border displayed oddly in FF3/4
  * www.sitepen.com/blog/2008/05/14/the-devils-in-the-details-fixing-dojos-toolbar-buttons/
  */
-/* line 396, ../sass/normalize.scss */
+/* line 395, ../sass/normalize.scss */
 button::-moz-focus-inner,
 input::-moz-focus-inner {
   border: 0;
@@ -429,7 +428,7 @@ input::-moz-focus-inner {
  * 1. Removes default vertical scrollbar in IE6/7/8/9
  * 2. Improves readability and alignment in all browsers
  */
-/* line 406, ../sass/normalize.scss */
+/* line 405, ../sass/normalize.scss */
 textarea {
   overflow: auto;
   /* 1 */
@@ -443,7 +442,7 @@ textarea {
 /*
  * Remove most spacing between table cells
  */
-/* line 419, ../sass/normalize.scss */
+/* line 418, ../sass/normalize.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
