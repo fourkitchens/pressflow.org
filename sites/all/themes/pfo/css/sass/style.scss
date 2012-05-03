@@ -1,8 +1,22 @@
-/*
-font-family: kulturista-web,serif;
-font-style: normal;
-font-weight: 600;
-*/
+/**
+ * Regular comment block.
+ *
+ * Feel free to skip lines, or otherwise format as you wish.
+ * Make sure to add the second asterisk on the first line,
+ * and try to make the comment a block for better readability.
+ */
+
+/* === Major Headings: three equal signs === */
+
+/* -- Sub-headings: two dashes -- */
+
+/* Individual comments should have no markings. Keep to one line or switch to comment block. */
+
+
+/**
+ * Resets and helper classes not supplied by normalize.css
+ */
+
 body {
   background-color: #d7d7d7;
   color: #424242;
@@ -84,29 +98,10 @@ tr.even {
   background-color: #ABCDDC;
 }
 
-/*
- * Main Container elements.
- */
 
-header {} 
 
-#main {}
-
-aside {}
-
-nav {}
-
-section {}
-
-article {}
-
-footer {
-  background: #7d7d7d;
-  color: #fff;
-}
-
-/*
- * Non-semantic helper classes. 
+/**
+ * Non-semantic helper classes.
  */
 
 /* For image replacement */

@@ -1,9 +1,16 @@
-/*
-font-family: kulturista-web,serif;
-font-style: normal;
-font-weight: 600;
-*/
-/* line 6, ../sass/style.scss */
+/**
+ * Regular comment block.
+ *
+ * Feel free to skip lines, or otherwise format as you wish.
+ * Make sure to add the second asterisk on the first line,
+ * and try to make the comment a block for better readability.
+ */
+/* === Major Headings: three equal signs === */
+/* -- Sub-headings: two dashes -- */
+/* Individual comments should have no markings. Keep to one line or switch to comment block. */
+/**
+ * Resets and helper classes not supplied by normalize.css
+ */
 body {
   background-color: #d7d7d7;
   color: #424242;
@@ -11,99 +18,74 @@ body {
   line-height: 1.231;
 }
 
-/* line 13, ../sass/style.scss */
 a {
   color: #2090b4;
 }
 
-/* line 16, ../sass/style.scss */
 a:visited {
   color: #2090b4;
 }
 
-/* line 17, ../sass/style.scss */
 a:hover {
   color: #2090b4;
   text-decoration: none;
 }
 
-/* line 21, ../sass/style.scss */
 a:focus {
   outline: thin dotted;
 }
 
-/* line 22, ../sass/style.scss */
 a:hover, a:active {
   outline: 0;
 }
 
-/* line 33, ../sass/style.scss */
 h2 {
   color: #c54b2c;
 }
 
-/* line 35, ../sass/style.scss */
 h3 {
   color: #3d1c00;
 }
 
-/* line 48, ../sass/style.scss */
 ul {
   display: block;
 }
 
-/* line 52, ../sass/style.scss */
 ul.links {
   display: inline;
 }
 
-/* line 56, ../sass/style.scss */
 nav ul {
   margin: 0;
   display: inline;
 }
 
-/* line 61, ../sass/style.scss */
 table {
   width: 100%;
   font-size: 1em;
 }
 
-/* line 68, ../sass/style.scss */
 thead th {
   border-bottom: 1px solid #fff;
 }
 
-/* line 74, ../sass/style.scss */
 tr, tr.even, tr.odd {
   border-bottom: 1px solid #fff;
   padding: 0;
 }
 
-/* line 79, ../sass/style.scss */
 tr.odd {
   background-color: #EBF6FA;
 }
 
-/* line 83, ../sass/style.scss */
 tr.even {
   background-color: #ABCDDC;
 }
 
-/*
- * Main Container elements.
- */
-/* line 103, ../sass/style.scss */
-footer {
-  background: #7d7d7d;
-  color: #fff;
-}
-
-/*
- * Non-semantic helper classes. 
+/**
+ * Non-semantic helper classes.
  */
 /* For image replacement */
-/* line 113, ../sass/style.scss */
 .ir {
   display: block;
   border: 0;
@@ -115,20 +97,17 @@ footer {
   direction: ltr;
 }
 
-/* line 124, ../sass/style.scss */
 .ir br {
   display: none;
 }
 
 /* Hide for both screenreaders and browsers: h5bp.com/m */
-/* line 129, ../sass/style.scss */
 .hidden {
   display: none !important;
   visibility: hidden;
 }
 
 /*  Hide only visually, but have it available for screenreaders: h5bp.com/v */
-/* line 135, ../sass/style.scss */
 .visuallyhidden {
   border: 0;
   clip: rect(0 0 0 0);
@@ -141,7 +120,6 @@ footer {
 }
 
 /* Extends the .visuallyhidden class to allow the element to be focusable when navigated to via the keyboard: h5bp.com/p */
-/* line 148, ../sass/style.scss */
 .visuallyhidden.focusable:active,
 .visuallyhidden.focusable:focus {
   clip: auto;
@@ -153,25 +131,21 @@ footer {
 }
 
 /* Hide visually and from screenreaders, but maintain layout */
-/* line 158, ../sass/style.scss */
 .invisible {
   visibility: hidden;
 }
 
 /* Contain floats: h5bp.com/q */
-/* line 164, ../sass/style.scss */
 .clearfix:before,
 .clearfix:after {
   content: "";
   display: table;
 }
 
-/* line 169, ../sass/style.scss */
 .clearfix:after {
   clear: both;
 }
 
-/* line 173, ../sass/style.scss */
 .clearfix {
   zoom: 1;
 }
