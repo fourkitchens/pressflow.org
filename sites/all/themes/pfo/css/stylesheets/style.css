@@ -10,6 +10,7 @@
 /* Individual comments should have no markings. Keep to one line or switch to comment block. */
 /**
  * Resets and helper classes not supplied by normalize.css
+ * You probably do not have to touch this file, just override style.scss
  */
 body {
   background-color: #d7d7d7;
@@ -82,9 +83,7 @@ tr.even {
   background-color: #ABCDDC;
 }
 
-/**
- * Non-semantic helper classes.
- */
+/* === Non-semantic helper classes. === */
 /* For image replacement */
 .ir {
   display: block;
@@ -148,4 +147,18 @@ tr.even {
 
 .clearfix {
   zoom: 1;
+}
+
+/**
+ * Custom styles for Pressflow.org
+ */
+/* -- Logo -- */
+#logo figure img {
+  max-width: 100%;
+}
+
+/* -- Footer -- */
+footer {
+  background: #7d7d7d;
+  color: #fff;
 }

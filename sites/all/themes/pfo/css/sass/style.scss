@@ -15,6 +15,7 @@
 
 /**
  * Resets and helper classes not supplied by normalize.css
+ * You probably do not have to touch this file, just override style.scss
  */
 
 body {
@@ -100,9 +101,7 @@ tr.even {
 
 
 
-/**
- * Non-semantic helper classes.
- */
+/* === Non-semantic helper classes. === */
 
 /* For image replacement */
 .ir { 
@@ -167,4 +166,23 @@ tr.even {
 
 .clearfix { 
   zoom: 1;
+}
+
+
+
+/**
+ * Custom styles for Pressflow.org
+ */
+
+/* -- Logo -- */
+
+#logo figure img {
+  max-width: 100%;
+}
+
+/* -- Footer -- */
+
+footer {
+  background: #7d7d7d;
+  color: #fff;
 }
