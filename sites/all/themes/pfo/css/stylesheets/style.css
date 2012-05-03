@@ -1,0 +1,186 @@
+/*
+ * Sprite iamge classes.
+ */
+/*
+font-family: kulturista-web,serif;
+font-style: normal;
+font-weight: 600;
+*/
+/* line 11, ../sass/style.scss */
+body {
+  background-color: #d7d7d7;
+  color: #424242;
+  font-size: 15px;
+  line-height: 1.231;
+}
+
+/* line 18, ../sass/style.scss */
+a {
+  color: #2090b4;
+}
+
+/* line 21, ../sass/style.scss */
+a:visited {
+  color: #2090b4;
+}
+
+/* line 22, ../sass/style.scss */
+a:hover {
+  color: #2090b4;
+  text-decoration: none;
+}
+
+/* line 26, ../sass/style.scss */
+a:focus {
+  outline: thin dotted;
+}
+
+/* line 27, ../sass/style.scss */
+a:hover, a:active {
+  outline: 0;
+}
+
+/* line 38, ../sass/style.scss */
+h2 {
+  color: #c54b2c;
+}
+
+/* line 40, ../sass/style.scss */
+h3 {
+  color: #3d1c00;
+}
+
+/* line 53, ../sass/style.scss */
+ul {
+  display: block;
+}
+
+/* line 57, ../sass/style.scss */
+ul.links {
+  display: inline;
+}
+
+/* line 61, ../sass/style.scss */
+nav ul {
+  margin: 0;
+  display: inline;
+}
+
+/* line 66, ../sass/style.scss */
+table {
+  width: 100%;
+  font-size: 1em;
+}
+
+/* line 73, ../sass/style.scss */
+thead th {
+  border-bottom: 1px solid #fff;
+}
+
+/* line 79, ../sass/style.scss */
+tr, tr.even, tr.odd {
+  border-bottom: 1px solid #fff;
+  padding: 0;
+}
+
+/* line 84, ../sass/style.scss */
+tr.odd {
+  background-color: #EBF6FA;
+}
+
+/* line 88, ../sass/style.scss */
+tr.even {
+  background-color: #ABCDDC;
+}
+
+/*
+ * Main Container elements.
+ */
+/* line 108, ../sass/style.scss */
+footer {
+  background: #7d7d7d;
+  color: #fff;
+}
+
+/* line 113, ../sass/style.scss */
+.page-container {
+  margin: 0 auto;
+  width: 960px;
+}
+
+/*
+ * Non-semantic helper classes. 
+ */
+/* For image replacement */
+/* line 124, ../sass/style.scss */
+.ir {
+  display: block;
+  border: 0;
+  text-indent: -999em;
+  overflow: hidden;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  text-align: left;
+  direction: ltr;
+}
+
+/* line 135, ../sass/style.scss */
+.ir br {
+  display: none;
+}
+
+/* Hide for both screenreaders and browsers: h5bp.com/m */
+/* line 140, ../sass/style.scss */
+.hidden {
+  display: none !important;
+  visibility: hidden;
+}
+
+/*  Hide only visually, but have it available for screenreaders: h5bp.com/v */
+/* line 146, ../sass/style.scss */
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+/* Extends the .visuallyhidden class to allow the element to be focusable when navigated to via the keyboard: h5bp.com/p */
+/* line 159, ../sass/style.scss */
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+}
+
+/* Hide visually and from screenreaders, but maintain layout */
+/* line 169, ../sass/style.scss */
+.invisible {
+  visibility: hidden;
+}
+
+/* Contain floats: h5bp.com/q */
+/* line 175, ../sass/style.scss */
+.clearfix:before,
+.clearfix:after {
+  content: "";
+  display: table;
+}
+
+/* line 180, ../sass/style.scss */
+.clearfix:after {
+  clear: both;
+}
+
+/* line 184, ../sass/style.scss */
+.clearfix {
+  zoom: 1;
+}
