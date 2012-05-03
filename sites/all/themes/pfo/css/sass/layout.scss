@@ -9,3 +9,13 @@
  **/
 
 @import 'base';
+
+/**
+ * Basic layout. Browsers without MQs, or small devices with MQs.
+ */
+#page {
+  @include columns(10);
+  @include pad(1,1);
+  @include alpha;
+  @include omega;
+}
