@@ -99,17 +99,11 @@ footer {
   color: #fff;
 }
 
-/* line 108, ../sass/style.scss */
-.page-container {
-  margin: 0 auto;
-  width: 960px;
-}
-
 /*
  * Non-semantic helper classes. 
  */
 /* For image replacement */
-/* line 119, ../sass/style.scss */
+/* line 113, ../sass/style.scss */
 .ir {
   display: block;
   border: 0;
@@ -121,20 +115,20 @@ footer {
   direction: ltr;
 }
 
-/* line 130, ../sass/style.scss */
+/* line 124, ../sass/style.scss */
 .ir br {
   display: none;
 }
 
 /* Hide for both screenreaders and browsers: h5bp.com/m */
-/* line 135, ../sass/style.scss */
+/* line 129, ../sass/style.scss */
 .hidden {
   display: none !important;
   visibility: hidden;
 }
 
 /*  Hide only visually, but have it available for screenreaders: h5bp.com/v */
-/* line 141, ../sass/style.scss */
+/* line 135, ../sass/style.scss */
 .visuallyhidden {
   border: 0;
   clip: rect(0 0 0 0);
@@ -147,7 +141,7 @@ footer {
 }
 
 /* Extends the .visuallyhidden class to allow the element to be focusable when navigated to via the keyboard: h5bp.com/p */
-/* line 154, ../sass/style.scss */
+/* line 148, ../sass/style.scss */
 .visuallyhidden.focusable:active,
 .visuallyhidden.focusable:focus {
   clip: auto;
@@ -159,25 +153,25 @@ footer {
 }
 
 /* Hide visually and from screenreaders, but maintain layout */
-/* line 164, ../sass/style.scss */
+/* line 158, ../sass/style.scss */
 .invisible {
   visibility: hidden;
 }
 
 /* Contain floats: h5bp.com/q */
-/* line 170, ../sass/style.scss */
+/* line 164, ../sass/style.scss */
 .clearfix:before,
 .clearfix:after {
   content: "";
   display: table;
 }
 
-/* line 175, ../sass/style.scss */
+/* line 169, ../sass/style.scss */
 .clearfix:after {
   clear: both;
 }
 
-/* line 179, ../sass/style.scss */
+/* line 173, ../sass/style.scss */
 .clearfix {
   zoom: 1;
 }
