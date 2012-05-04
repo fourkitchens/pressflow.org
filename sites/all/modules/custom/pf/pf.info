@@ -1,0 +1,6 @@
+name = Pressflow Helper Module
+description = "Has several helper functions for the Pressflow.org module."
+core = 7.x
+package = Pressflow
+
+files[] = pf.module
