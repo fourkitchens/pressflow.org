@@ -1,0 +1,16 @@
+name = Pressflownians
+description = Provides a content type and View to randomly generate logos of companies that use Pressflow.
+core = 7.x
+package = Features
+php = 5.2.4
+dependencies[] = ctools
+dependencies[] = features
+dependencies[] = field_sql_storage
+dependencies[] = image
+dependencies[] = node
+dependencies[] = views
+features[ctools][] = views:views_default:3.0
+features[features_api][] = api:1
+features[field][] = node-pressflownians-field_pressflownian_logo
+features[node][] = pressflownians
+features[views_view][] = pressflownians
