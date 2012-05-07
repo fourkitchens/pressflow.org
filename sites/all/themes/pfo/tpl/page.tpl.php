@@ -1,7 +1,9 @@
   <section id="page">
   
     <?php if ($main_menu): ?>
-      <nav class="page-container"><?php print theme('links__system_main_menu', array('links' => $main_menu, 'attributes' => array('id' => 'main-menu', 'class' => array('links', 'inline', 'clearfix')))); ?></nav> <!-- /nav -->
+      <nav class="page-container">
+        <?php print theme('links__system_main_menu', array('links' => $main_menu, 'attributes' => array('id' => 'main-menu', 'class' => array('links', 'inline', 'clearfix')))); ?>
+      </nav>
     <?php endif; ?>
 
     <header class="clearfix page-container">
@@ -21,12 +23,12 @@
           <?php if ($site_slogan): ?>
             <h2><?php print $site_slogan; ?></h2>
           <?php endif; ?>
-        </hgroup> <!-- /#name-and-slogan -->
+        </hgroup><!-- #name-and-slogan -->
       <?php endif; ?>
 
       <?php print render($page['header']); ?>
 
-    </header> <!-- /.section, /#header -->
+    </header>
 
     <?php print $messages; ?>
 
@@ -43,18 +45,18 @@
         <?php if ($action_links): ?><ul class="action-links"><?php print render($action_links); ?></ul><?php endif; ?>
         <?php print render($page['content']); ?>
         <?php print $feed_icons; ?>
-      </div> <!-- /#content -->
+      </div><!-- #content -->
 
       <?php if ($page['sidebar']): ?>
         <aside class="sidebar">
           <?php print render($page['sidebar']); ?>
-        </aside> <!-- /aside /.sidebar -->
+        </aside><!-- .sidebar -->
       <?php endif; ?>
 
-    </section> <!-- /#main -->
+    </section><!-- #main -->
 
     <footer class="section">
       <?php print render($page['footer']); ?>
-    </footer> <!-- /#footer -->
+    </footer>
 
-  </section> <!-- /#page -->
+  </section><!-- #page -->
