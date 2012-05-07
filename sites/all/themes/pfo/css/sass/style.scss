@@ -49,9 +49,16 @@ h6 {}
 
 h1 {}
 
-h2 { color: #c54b2c; }
+h2 {
+  clear: both;
+  color: #c54b2c;
+  text-transform: uppercase;
+}
 
-h3 { color: #3d1c00; }
+h3 {
+  color: #3d1c00;
+  font-family: Adelle, Georgia, serif;
+}
 
 h4 {}
 
