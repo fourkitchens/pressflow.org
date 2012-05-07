@@ -25,7 +25,9 @@
  * Medium-sized devices with MQs. Size not final!!!
  */
 @media only screen and (min-width: 40em) {
-
+  #wat section {
+    @include columns(6);
+  }
 }
 
 
@@ -33,5 +35,7 @@
  * Bigger devices with MQs. Size not final!!!
  */
 @media only screen and (min-width: 70em) {
-
+  #wat section {
+    @include columns(4);
+  }
 }

@@ -27,6 +27,22 @@
 /**
  * Medium-sized devices with MQs. Size not final!!!
  */
+@media only screen and (min-width: 40em) {
+  #wat section {
+    display: inline;
+    float: left;
+    width: 47.541%;
+    margin-right: 1.639%;
+  }
+}
 /**
  * Bigger devices with MQs. Size not final!!!
  */
+@media only screen and (min-width: 70em) {
+  #wat section {
+    display: inline;
+    float: left;
+    width: 31.148%;
+    margin-right: 1.639%;
+  }
+}
