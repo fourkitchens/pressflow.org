@@ -15,7 +15,6 @@
 
 /**
  * Resets and helper classes not supplied by normalize.css
- * You probably do not have to touch this file, just override style.scss
  */
 
 body {
@@ -28,13 +27,18 @@ body {
 a { 
   color: #2090b4; 
 }
+
 a:visited { color: #2090b4; }
+
 a:hover { 
   color: #2090b4;
   text-decoration: none;
 }
+
 a:focus { outline: thin dotted; }
-a:hover, a:active { outline: 0; }
+
+a:hover,
+a:active { outline: 0; }
 
 h1,
 h2,

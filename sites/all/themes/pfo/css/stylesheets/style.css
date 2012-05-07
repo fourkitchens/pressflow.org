@@ -10,7 +10,6 @@
 /* Individual comments should have no markings. Keep to one line or switch to comment block. */
 /**
  * Resets and helper classes not supplied by normalize.css
- * You probably do not have to touch this file, just override style.scss
  */
 body {
   background: #d7d7d7 url("../../img/bg-grid.png") left top;
@@ -36,7 +35,8 @@ a:focus {
   outline: thin dotted;
 }
 
-a:hover, a:active {
+a:hover,
+a:active {
   outline: 0;
 }
 
