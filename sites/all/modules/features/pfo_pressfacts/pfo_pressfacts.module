@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Pressfacts feature.
+ */
+
+include_once 'pfo_pressfacts.features.inc';
