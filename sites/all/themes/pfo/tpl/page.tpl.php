@@ -1,12 +1,12 @@
   <section id="page">
-  
-    <?php if ($main_menu): ?>
-      <nav class="page-container">
-        <?php print theme('links__system_main_menu', array('links' => $main_menu, 'attributes' => array('id' => 'main-menu', 'class' => array('links', 'inline', 'clearfix')))); ?>
-      </nav>
-    <?php endif; ?>
 
     <header class="clearfix page-container">
+
+      <?php if ($main_menu): ?>
+        <nav>
+          <?php print theme('links__system_main_menu', array('links' => $main_menu, 'attributes' => array('id' => 'main-menu', 'class' => array('links', 'inline', 'clearfix')))); ?>
+        </nav>
+      <?php endif; ?>
 
       <?php if ($logo): ?>
         <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" id="logo">
