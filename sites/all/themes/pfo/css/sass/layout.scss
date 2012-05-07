@@ -11,7 +11,7 @@
 @import 'base';
 
 /**
- * Basic layout. Browsers without MQs, or small devices with MQs.
+ * Basic layout. Will display on browsers without MQs, or small devices with MQs.
  */
 #page {
   @include columns(10);
@@ -25,9 +25,17 @@
  * Medium-sized devices with MQs. Size not final!!!
  */
 @media only screen and (min-width: 40em) {
+
+  /* -- What's the deal... */
   #wat section {
     @include columns(6);
   }
+
+  /* -- Who uses Pressflow? -- */
+  body.front .view-pressflownians .views-row {
+    @include columns(6);
+  }
+
 }
 
 
@@ -35,7 +43,16 @@
  * Bigger devices with MQs. Size not final!!!
  */
 @media only screen and (min-width: 70em) {
+
+  /* -- What's the deal... */
   #wat section {
     @include columns(4);
   }
+
+  /* -- Who uses Pressflow? -- */
+  body.front .view-pressflownians .views-row {
+    width: 201px;
+    @include columns(3);
+  }
+
 }
