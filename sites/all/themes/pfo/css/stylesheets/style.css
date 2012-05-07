@@ -162,3 +162,10 @@ footer {
   background: #7d7d7d;
   color: #fff;
 }
+
+/**
+ * FAQ Page theming
+ */
+.hidden-answer {
+  display: none;
+}
