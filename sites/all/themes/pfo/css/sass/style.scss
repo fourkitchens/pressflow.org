@@ -186,3 +186,20 @@ footer {
   background: #7d7d7d;
   color: #fff;
 }
+
+/**
+ * FAQ Page theming
+ */
+.hidden-answer {
+  display: none;
+}
+
+.view-id-faq_view .views-row {
+  margin: .8em 1.3em;
+  list-style-type: circle;
+  display: list-item;
+}
+
+.view-id-faq_view .views-row .hidden-answer {
+  margin: -.5em 0 2em 1em;
+}
