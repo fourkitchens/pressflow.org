@@ -23,17 +23,23 @@ a {
   color: $blue;
 }
 
-a:visited { color: $blue; }
+a:visited {
+  color: $blue;
+}
 
 a:hover { 
   color: $blue;
   text-decoration: none;
 }
 
-a:focus { outline: thin dotted; }
+a:focus {
+  outline: thin dotted;
+}
 
 a:hover,
-a:active { outline: 0; }
+a:active {
+  outline: 0;
+}
 
 h1,
 h2,
