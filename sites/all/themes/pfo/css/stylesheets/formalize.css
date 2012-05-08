@@ -1,56 +1,45 @@
-/* line 1, ../sass/formalize.scss */
 .input_tiny {
   width: 50px;
 }
 
-/* line 5, ../sass/formalize.scss */
 .input_small {
   width: 100px;
 }
 
-/* line 9, ../sass/formalize.scss */
 .input_medium {
   width: 150px;
 }
 
-/* line 13, ../sass/formalize.scss */
 .input_large {
   width: 200px;
 }
 
-/* line 17, ../sass/formalize.scss */
 .input_xlarge {
   width: 250px;
 }
 
-/* line 21, ../sass/formalize.scss */
 .input_xxlarge {
   width: 300px;
 }
 
-/* line 25, ../sass/formalize.scss */
 .input_full {
   width: 100%;
 }
 
-/* line 29, ../sass/formalize.scss */
 .input_full_wrap {
   display: block;
   padding-right: 8px;
 }
 
-/* line 34, ../sass/formalize.scss */
 ::-moz-focus-inner {
   border: 0;
   padding: 0;
 }
 
-/* line 39, ../sass/formalize.scss */
 input[type="search"]::-webkit-search-decoration {
   display: none;
 }
 
-/* line 44, ../sass/formalize.scss */
 input[type="radio"],
 input[type="checkbox"] {
   position: relative;
@@ -61,7 +50,6 @@ input[type="checkbox"] {
 }
 
 @media (-webkit-min-device-pixel-ratio: 1) and (max-device-width: 1024px) {
-  /* line 54, ../sass/formalize.scss */
   input[type="radio"],
   input[type="checkbox"] {
     vertical-align: baseline;
@@ -69,7 +57,6 @@ input[type="checkbox"] {
   }
 }
 @media (-webkit-min-device-pixel-ratio: 1) and (max-device-width: 480px) {
-  /* line 61, ../sass/formalize.scss */
   input[type="radio"],
   input[type="checkbox"] {
     vertical-align: baseline;
@@ -77,14 +64,12 @@ input[type="checkbox"] {
   }
 }
 @media (-webkit-min-device-pixel-ratio: 2) and (max-device-width: 480px) {
-  /* line 68, ../sass/formalize.scss */
   input[type="radio"],
   input[type="checkbox"] {
     vertical-align: baseline;
     top: 0;
   }
 }
-/* line 76, ../sass/formalize.scss */
 input,
 button,
 select,
@@ -93,7 +78,6 @@ textarea {
   vertical-align: middle;
 }
 
-/* line 84, ../sass/formalize.scss */
 button:focus,
 input:focus,
 select:focus,
@@ -105,7 +89,6 @@ textarea:focus {
   z-index: 1;
 }
 
-/* line 96, ../sass/formalize.scss */
 input[type="file"]:focus, input[type="file"]:active,
 input[type="radio"]:focus,
 input[type="radio"]:active,
@@ -117,7 +100,6 @@ input[type="checkbox"]:active {
   box-shadow: none;
 }
 
-/* line 106, ../sass/formalize.scss */
 button,
 input[type="reset"],
 input[type="submit"],
@@ -156,7 +138,6 @@ input[type="button"] {
   *padding-bottom: 0;
 }
 
-/* line 143, ../sass/formalize.scss */
 button:hover,
 input[type="reset"]:hover,
 input[type="submit"]:hover,
@@ -169,7 +150,6 @@ input[type="button"]:hover {
   background-image: linear-gradient(#ffffff, #eeeeee 1px, #cccccc);
 }
 
-/* line 154, ../sass/formalize.scss */
 button:active,
 input[type="reset"]:active,
 input[type="submit"]:active,
@@ -187,13 +167,11 @@ input[type="button"]:active {
   border-color: #999999 #bbbbbb #dddddd;
 }
 
-/* line 168, ../sass/formalize.scss */
 button {
   *padding-top: 1px;
   *padding-bottom: 1px;
 }
 
-/* line 187, ../sass/formalize.scss */
 textarea,
 select,
 input[type="date"],
@@ -240,7 +218,6 @@ input[type="week"] {
   *height: auto;
 }
 
-/* line 232, ../sass/formalize.scss */
 textarea[disabled],
 select[disabled],
 input[type="date"][disabled],
@@ -259,7 +236,6 @@ input[type="week"][disabled] {
   background-color: #eeeeee;
 }
 
-/* line 241, ../sass/formalize.scss */
 button[disabled],
 input[disabled],
 select[disabled],
@@ -278,24 +254,20 @@ textarea[disabled] {
   cursor: default;
 }
 
-/* line 254, ../sass/formalize.scss */
 ::-webkit-input-placeholder {
   color: #888888;
 }
 
-/* line 259, ../sass/formalize.scss */
 input:-moz-placeholder,
 textarea:-moz-placeholder {
   color: #888888;
 }
 
-/* line 264, ../sass/formalize.scss */
 input.placeholder_text,
 textarea.placeholder_text {
   color: #888888;
 }
 
-/* line 268, ../sass/formalize.scss */
 :invalid {
   -moz-box-shadow: none;
   -webkit-box-shadow: none;
@@ -303,7 +275,6 @@ textarea.placeholder_text {
   box-shadow: none;
 }
 
-/* line 277, ../sass/formalize.scss */
 textarea,
 select[size],
 select[multiple] {
@@ -311,7 +282,6 @@ select[multiple] {
 }
 
 @media (-webkit-min-device-pixel-ratio: 0) {
-  /* line 282, ../sass/formalize.scss */
   select {
     background-image: url("../images/select_arrow.gif");
     background-repeat: no-repeat;
@@ -319,14 +289,12 @@ select[multiple] {
     padding-right: 20px;
   }
 
-  /* line 290, ../sass/formalize.scss */
   select[size],
   select[multiple] {
     background-image: none;
     padding: 0;
   }
 
-  /* line 295, ../sass/formalize.scss */
   ::-webkit-validation-bubble-message {
     -webkit-box-shadow: rgba(0, 0, 0, 0.5) 0 0 5px 0;
     box-shadow: rgba(0, 0, 0, 0.5) 0 0 5px 0;
@@ -341,7 +309,6 @@ select[multiple] {
     height: 16px;
   }
 
-  /* line 311, ../sass/formalize.scss */
   ::-webkit-validation-bubble-arrow,
   ::-webkit-validation-bubble-top-outer-arrow,
   ::-webkit-validation-bubble-top-inner-arrow {
@@ -351,7 +318,6 @@ select[multiple] {
     border: 0;
   }
 }
-/* line 318, ../sass/formalize.scss */
 textarea {
   min-height: 40px;
   overflow: auto;
@@ -359,14 +325,12 @@ textarea {
   width: 100%;
 }
 
-/* line 325, ../sass/formalize.scss */
 optgroup {
   color: black;
   font-style: normal;
   font-weight: normal;
 }
 
-/* line 332, ../sass/formalize.scss */
 .ie6_button,
 * html button {
   background: #dddddd url("../images/button.png") repeat-x;
@@ -380,13 +344,11 @@ optgroup {
   width: auto;
 }
 
-/* line 344, ../sass/formalize.scss */
 * html button {
   padding-top: 1px;
   padding-bottom: 1px;
 }
 
-/* line 351, ../sass/formalize.scss */
 .ie6_input,
 * html textarea,
 * html select {
@@ -400,19 +362,16 @@ optgroup {
   vertical-align: top;
 }
 
-/* line 362, ../sass/formalize.scss */
 * html select {
   margin-top: 1px;
 }
 
-/* line 368, ../sass/formalize.scss */
 .placeholder_text,
 .ie6_input_disabled,
 .ie6_button_disabled {
   color: #888888;
 }
 
-/* line 372, ../sass/formalize.scss */
 .ie6_input_disabled {
   background: #eeeeee;
 }
