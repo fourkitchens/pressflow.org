@@ -1,3 +1,4 @@
+@import url(http://fonts.googleapis.com/css?family=Arvo:400,700);
 /**
  * Regular comment block.
  *
@@ -10,6 +11,9 @@
 /* Individual comments should have no markings. Keep to one line or switch to comment block. */
 /**
  * Colors
+ */
+/**
+ * Fonts
  */
 /**
  * Resets and helper classes not supplied by normalize.css
@@ -40,11 +44,14 @@ h2 {
   clear: both;
   color: #c54b2c;
   text-transform: uppercase;
+  font-family: "League Gothic", sans-serif;
+  font-size: 2.4em;
+  font-weight: 400;
 }
 
 h3 {
   color: #3d1c00;
-  font-family: Adelle, Georgia, serif;
+  font-family: Arvo, Georgia, serif;
 }
 
 p {
@@ -193,8 +200,66 @@ footer {
 /* === Front page === */
 .front header {
   width: 100%;
-  background: url("../../img/bg-mountain.png") no-repeat 50% 50%;
+  background: url("../../img/bg-mountain.png") no-repeat 50% top;
   background-size: cover;
+}
+
+.front .stripe {
+  width: 103.47%;
+  padding: 1em 0;
+  background: rgba(255, 255, 255, 0.6);
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+/* -- Intro -- */
+.intro {
+  padding-left: 3em;
+}
+
+.intro h2 {
+  text-transform: none;
+  color: #473430;
+  font-family: "League Gothic", sans-serif;
+  font-size: 3em;
+  line-height: 0;
+  white-space: nowrap;
+}
+
+/* -- Download section -- */
+.download h2 {
+  width: 60%;
+  margin: 0 auto .6em 3em;
+  padding-bottom: .2em;
+  overflow: visible;
+  font-size: 1em;
+  font-family: Arvo, Georgia, serif;
+  font-weight: 400;
+  text-transform: lowercase;
+  color: #666;
+  text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.6);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.download #download {
+  display: block;
+  width: 90%;
+  height: 0;
+  padding-top: 3em;
+  margin-left: 3em;
+  background: url("../../img/sprite.png") no-repeat 0 -100px;
+  /* image replacement */
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.download .pf7 {
+  margin-left: 3em;
+}
+
+/* -- Informational blocks -- */
+#wat section {
+  margin-bottom: 1em;
 }
 
 #wat h3:after {
@@ -218,4 +283,25 @@ footer {
 
 #wat .support h3:after {
   background-position: -76px top;
+}
+
+#wat .support .button {
+  display: inline-block;
+  background: white url("../../img/sprite.png") no-repeat -130px 10px;
+  padding: .7em 1em .7em 2.3em;
+  font-size: 1.1em;
+  font-family: Arvo, Georgia, serif;
+  color: #c54b2c;
+  text-decoration: none;
+  border-radius: 7px;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/**
+ * Medium-sized devices with MQs. Size not final!!!
+ */
+@media only screen and (min-width: 42em) {
+  .download h2 {
+    text-align: center;
+  }
 }

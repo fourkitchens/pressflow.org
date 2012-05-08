@@ -21,24 +21,34 @@
   @include omega;
 }
 
-header {
-  @include columns(12);
-}
-
+header,
 header nav,
-header hgroup {
+header hgroup,
+.front .stripe {
   @include columns(12);
 }
-
 
 
 /**
  * Medium-sized devices with MQs. Size not final!!!
  */
 
-@media only screen and (min-width: 40em) {
+@media only screen and (min-width: 42em) {
 
-  /* -- What's the deal... */
+  /* -- Intro and Download -- */
+  hgroup .intro {
+    @include columns(5);
+    @include pad(1,0);
+    @include alpha;
+  }
+
+  hgroup .download {
+    @include columns(5);
+    @include pad(0,1);
+    @include omega;
+  }
+
+  /* -- What's the deal... -- */
   #wat section {
     @include columns(6);
   }
@@ -55,7 +65,20 @@ header hgroup {
  * Bigger devices with MQs. Size not final!!!
  */
 
-@media only screen and (min-width: 70em) {
+@media only screen and (min-width: 64em) {
+
+  /* -- Intro and Download -- */
+  hgroup .intro {
+    @include columns(3);
+    @include pad(2,1);
+    @include alpha;
+  }
+
+  hgroup .download {
+    @include columns(4);
+    @include pad(0,2);
+    @include omega;
+  }
 
   /* -- What's the deal... */
   #wat section {
@@ -66,6 +89,22 @@ header hgroup {
   body.front .view-pressflownians .views-row {
     width: 201px;
     @include columns(3);
+  }
+
+}
+
+
+/**
+ * Even bigger devices with MQs. Size not final!!!
+ */
+
+@media only screen and (min-width: 80em) {
+
+  /* -- Intro -- */
+  hgroup .intro {
+    @include columns(3);
+    @include pad(2,1);
+    @include alpha;
   }
 
 }

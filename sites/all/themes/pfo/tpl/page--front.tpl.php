@@ -13,15 +13,17 @@
           <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" id="logo">Pressflow</a>
         </h1>
 
-        <div class="intro">
-          <h2>Go ahead. Scale.</h2>
-          <p>Pressflow is a distribution of <a href="http://drupal.org">Drupal</a> with integrated performance, scalability, availability, and testing enhancements.</p>
-        </div><!-- .intro -->
+        <div class="stripe clearfix">
+          <div class="intro">
+            <h2>Go ahead. Scale.</h2>
+            <p>Pressflow is a distribution of <a href="http://drupal.org">Drupal</a> with integrated performance, scalability, availability, and testing enhancements.</p>
+          </div><!-- .intro -->
 
-        <div class="download">
-          <h2>download and install</h2>
-          <?php print $download; ?>
-          <p class="pf7">Looking for Pressflow 7? You can check the progress on <a href="https://github.com/pressflow/7">Github</a></p>
+          <div class="download">
+            <h2>download and install</h2>
+            <?php print $download; ?>
+            <p class="pf7">Looking for Pressflow 7?<br> Check the progress on <a href="https://github.com/pressflow/7">Github</a></p>
+          </div>
         </div>
       </hgroup><!-- #name-and-slogan -->
 
