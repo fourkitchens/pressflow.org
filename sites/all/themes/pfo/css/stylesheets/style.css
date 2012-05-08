@@ -155,6 +155,7 @@ tr.even {
 /**
  * Custom styles for Pressflow.org
  */
+/* === General styles === */
 body {
   background: #d8d8d8 url("../../img/bg-grid.png") left top;
   color: #424242;
@@ -190,4 +191,28 @@ header hgroup {
 footer {
   background: #c1c1c1;
   color: #fff;
+}
+
+/* === Front page === */
+#wat h3:after {
+  content: ' ';
+  display: inline-block;
+  width: 30px;
+  height: 25px;
+  background: url("../../img/sprite.png") no-repeat;
+  position: relative;
+  top: 6px;
+  margin-left: .8em;
+}
+
+#wat .install h3:after {
+  background-position: left top;
+}
+
+#wat .compat h3:after {
+  background-position: -40px top;
+}
+
+#wat .support h3:after {
+  background-position: -76px top;
 }
