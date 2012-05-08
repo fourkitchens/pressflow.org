@@ -35,6 +35,14 @@ header hgroup,
 
 @media only screen and (min-width: 42em) {
 
+  /* -- Nav -- */
+  header nav {
+    @include columns(10);
+    @include pad(1,1);
+    @include alpha;
+    @include omega;
+  }
+
   /* -- Intro and Download -- */
   hgroup .intro {
     @include columns(5);

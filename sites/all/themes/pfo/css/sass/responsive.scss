@@ -1,0 +1,34 @@
+/**
+ * Responsive styles
+ *
+ * All styles in this file are wrapped in media queries.
+ */
+
+
+/**
+ * Medium-sized devices with MQs. Size not final!!!
+ */
+
+@media only screen and (min-width: 42em) {
+
+  .download h2 {
+    text-align: center;
+  }
+
+}
+
+
+/**
+ * Bigger devices with MQs. Size not final!!!
+ */
+
+@media only screen and (min-width: 64em) {
+
+  body.front .view-pressflownians .views-row {
+    padding: 0 2em;
+  }
+  body.front .view-pressflownians .views-row-last {
+    display: none;
+  }
+
+}

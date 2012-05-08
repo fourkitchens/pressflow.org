@@ -38,6 +38,21 @@ header hgroup,
  * Medium-sized devices with MQs. Size not final!!!
  */
 @media only screen and (min-width: 42em) {
+  /* -- Nav -- */
+  header nav {
+    display: inline;
+    float: left;
+    width: 80.328%;
+    margin-right: 1.639%;
+    padding-left: 8.197%;
+    padding-right: 8.197%;
+    margin-left: 1.639%;
+    display: inline;
+    float: right;
+    margin-right: 1.639%;
+    #margin-left: -1em;
+  }
+
   /* -- Intro and Download -- */
   hgroup .intro {
     display: inline;

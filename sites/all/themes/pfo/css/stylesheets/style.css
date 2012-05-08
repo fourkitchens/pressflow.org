@@ -1,4 +1,5 @@
 @import url(http://fonts.googleapis.com/css?family=Arvo:400,700);
+@import url(http://fonts.googleapis.com/css?family=Arvo:400,700);
 /**
  * Regular comment block.
  *
@@ -232,6 +233,40 @@ footer {
   color: #fff;
 }
 
+/* === FAQ Page theming === */
+.hidden-answer {
+  display: none;
+}
+
+.view-id-faq_view .views-row {
+  margin: .8em 1.3em;
+  list-style-type: circle;
+  display: list-item;
+}
+
+.view-id-faq_view .views-row .hidden-answer {
+  margin: -0.5em 0 2em 1em;
+}
+
+/**
+ * Front page styles are in their own file
+ */
+/**
+ * @TODO: Why do I have to import _defaults.scss twice?
+ *        front.scss does not compile unless 'defaults' is imported redundantly.
+ *        Original @import is at the top of style.scss
+ */
+/**
+ * These are Compass declarations. This Sass file
+ * cannot compile to CSS3 without these libraries.
+ */
+/**
+ * Colors
+ */
+/**
+ * Fonts
+ */
+/* @todo: add League Gothic web font */
 /* === Front page === */
 .front header {
   width: 100%;
@@ -332,21 +367,14 @@ footer {
   box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
-/* === FAQ Page theming === */
-.hidden-answer {
-  display: none;
-}
-
-.view-id-faq_view .views-row {
-  margin: .8em 1.3em;
-  list-style-type: circle;
-  display: list-item;
-}
-
-.view-id-faq_view .views-row .hidden-answer {
-  margin: -0.5em 0 2em 1em;
-}
-
+/**
+ * Responsive styles are in their own file
+ */
+/**
+ * Responsive styles
+ *
+ * All styles in this file are wrapped in media queries.
+ */
 /**
  * Medium-sized devices with MQs. Size not final!!!
  */
