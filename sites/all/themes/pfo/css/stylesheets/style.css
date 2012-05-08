@@ -19,6 +19,7 @@
 /**
  * Fonts
  */
+/* @todo: add League Gothic web font */
 /**
  * Resets and helper classes not supplied by normalize.css
  */
@@ -54,7 +55,7 @@ h2 {
 }
 
 h3 {
-  color: #3d1c00;
+  color: #473430;
   font-family: Arvo, Georgia, serif;
 }
 

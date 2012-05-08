@@ -1,0 +1,31 @@
+/**
+ * These are Compass declarations. This Sass file
+ * cannot compile to CSS3 without these libraries.
+ */
+
+@import "compass/css3";
+
+
+/**
+ * Colors
+ */
+
+$zebra-odd    : #ebf6fa;
+$zebra-even   : #abcddc;
+
+$blue         : #2090b4;
+$brown        : #473430;
+$burnt-red    : #c54b2c;
+$c1           : #c1c1c1;
+$d8           : #d8d8d8;
+
+
+/**
+ * Fonts
+ */
+
+@import url(http://fonts.googleapis.com/css?family=Arvo:400,700);
+/* @todo: add League Gothic web font */
+
+$arvo         : Arvo, Georgia, serif;
+$league       : "League Gothic", sans-serif;

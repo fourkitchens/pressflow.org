@@ -12,36 +12,7 @@
 
 /* Individual comments should have no markings. Keep to one line or switch to comment block. */
 
-
-/**
- * These are Compass declarations. This Sass file
- * cannot compile to CSS3 without these libraries.
- */
-
-@import "compass/css3";
-
-
-/**
- * Colors
- */
-
-$zebra-odd: #ebf6fa;
-$zebra-even: #abcddc;
-
-$brown: #473430;
-$burnt-red: #c54b2c;
-$c1: #c1c1c1;
-$d8: #d8d8d8;
-
-
-/**
- * Fonts
- */
-
-@import url(http://fonts.googleapis.com/css?family=Arvo:400,700);
-
-$arvo: Arvo, Georgia, serif;
-$league: "League Gothic", sans-serif;
+@import 'defaults';
 
 
 /**
@@ -49,13 +20,13 @@ $league: "League Gothic", sans-serif;
  */
 
 a { 
-  color: #2090b4; 
+  color: $blue;
 }
 
-a:visited { color: #2090b4; }
+a:visited { color: $blue; }
 
 a:hover { 
-  color: #2090b4;
+  color: $blue;
   text-decoration: none;
 }
 
@@ -83,7 +54,7 @@ h2 {
 }
 
 h3 {
-  color: #3d1c00;
+  color: $brown;
   font-family: $arvo;
 }
 
