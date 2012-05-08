@@ -9,10 +9,13 @@
 /* -- Sub-headings: two dashes -- */
 /* Individual comments should have no markings. Keep to one line or switch to comment block. */
 /**
+ * Colors
+ */
+/**
  * Resets and helper classes not supplied by normalize.css
  */
 body {
-  background: #d7d7d7 url("../../img/bg-grid.png") left top;
+  background: #d8d8d8 url("../../img/bg-grid.png") left top;
   color: #424242;
   font-size: 15px;
   line-height: 1.231;
@@ -51,6 +54,10 @@ h3 {
   font-family: Adelle, Georgia, serif;
 }
 
+p {
+  opacity: .9;
+}
+
 ul {
   display: block;
 }
@@ -79,11 +86,11 @@ tr, tr.even, tr.odd {
 }
 
 tr.odd {
-  background-color: #EBF6FA;
+  background-color: #ebf6fa;
 }
 
 tr.even {
-  background-color: #ABCDDC;
+  background-color: #abcddc;
 }
 
 /* === Non-semantic helper classes. === */
@@ -179,6 +186,6 @@ header hgroup {
 
 /* -- Footer -- */
 footer {
-  background: #7d7d7d;
+  background: #c1c1c1;
   color: #fff;
 }

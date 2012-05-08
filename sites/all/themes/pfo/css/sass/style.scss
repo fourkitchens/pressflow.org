@@ -14,11 +14,23 @@
 
 
 /**
+ * Colors
+ */
+
+$zebra-odd: #ebf6fa;
+$zebra-even: #abcddc;
+
+$burnt-red: #c54b2c;
+$c1: #c1c1c1;
+$d8: #d8d8d8;
+
+
+/**
  * Resets and helper classes not supplied by normalize.css
  */
 
 body {
-  background: #d7d7d7 url('../../img/bg-grid.png') left top;
+  background: $d8 url('../../img/bg-grid.png') left top;
   color: #424242;
   font-size: 15px;
   line-height: 1.231;
@@ -66,7 +78,9 @@ h5 {}
 
 h6 {}
 
-p {}
+p {
+  opacity: .9;
+}
 
 ul,
 ol {}
@@ -103,11 +117,11 @@ tr, tr.even, tr.odd {
 }
 
 tr.odd {
-  background-color: #EBF6FA;
+  background-color: $zebra-odd;
 }
 
 tr.even {
-  background-color: #ABCDDC;
+  background-color: $zebra-even;
 }
 
 
@@ -185,6 +199,7 @@ tr.even {
  * Custom styles for Pressflow.org
  */
 
+
 /* -- Logo -- */
 
 .front #logo {
@@ -202,17 +217,18 @@ tr.even {
 /* -- Header -- */
 
 header {
-  background: #d8d8d8 url('../../img/bg-noise.png') left top;
-  border-bottom: 1px solid #c1c1c1;
+  background: $d8 url('../../img/bg-noise.png') left top;
+  border-bottom: 1px solid $c1;
 }
 
 header hgroup {
   background: url('../../img/bg-mountain.png') no-repeat 50% bottom;
 }
 
+
 /* -- Footer -- */
 
 footer {
-  background: #7d7d7d;
+  background: $c1;
   color: #fff;
 }
