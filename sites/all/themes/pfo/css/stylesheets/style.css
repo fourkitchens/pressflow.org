@@ -168,10 +168,11 @@ body {
 /* -- Logo -- */
 .front #logo {
   display: block;
-  width: 942px;
-  height: 198px;
-  margin: 3% auto;
   background: url("../../img/logo.png") no-repeat 50% top;
+  background-size: contain;
+  padding-top: 4em;
+  margin-bottom: 0;
+  /* image replacement */
   text-indent: 100%;
   white-space: nowrap;
   overflow: hidden;
@@ -183,10 +184,6 @@ header {
   border-bottom: 1px solid #c1c1c1;
 }
 
-header hgroup {
-  background: url("../../img/bg-mountain.png") no-repeat 50% bottom;
-}
-
 /* -- Footer -- */
 footer {
   background: #c1c1c1;
@@ -194,6 +191,12 @@ footer {
 }
 
 /* === Front page === */
+.front header {
+  width: 100%;
+  background: url("../../img/bg-mountain.png") no-repeat 50% 50%;
+  background-size: cover;
+}
+
 #wat h3:after {
   content: ' ';
   display: inline-block;

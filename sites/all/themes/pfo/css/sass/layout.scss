@@ -13,6 +13,7 @@
 /**
  * Basic layout. Will display on browsers without MQs, or small devices with MQs.
  */
+
 #main {
   @include columns(10);
   @include pad(1,1);
@@ -21,7 +22,7 @@
 }
 
 header {
-  width: 100%;
+  @include columns(12);
 }
 
 header nav,
@@ -30,9 +31,11 @@ header hgroup {
 }
 
 
+
 /**
  * Medium-sized devices with MQs. Size not final!!!
  */
+
 @media only screen and (min-width: 40em) {
 
   /* -- What's the deal... */
@@ -51,6 +54,7 @@ header hgroup {
 /**
  * Bigger devices with MQs. Size not final!!!
  */
+
 @media only screen and (min-width: 70em) {
 
   /* -- What's the deal... */
