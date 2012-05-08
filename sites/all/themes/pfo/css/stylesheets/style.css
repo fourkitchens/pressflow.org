@@ -14,13 +14,6 @@
 /**
  * Resets and helper classes not supplied by normalize.css
  */
-body {
-  background: #d8d8d8 url("../../img/bg-grid.png") left top;
-  color: #424242;
-  font-size: 15px;
-  line-height: 1.231;
-}
-
 a {
   color: #2090b4;
 }
@@ -162,6 +155,15 @@ tr.even {
 /**
  * Custom styles for Pressflow.org
  */
+body {
+  background: #d8d8d8 url("../../img/bg-grid.png") left top;
+  color: #424242;
+  font-size: 15px;
+  line-height: 1.231;
+  font-family: arial, sans-serif;
+  font-weight: 300;
+}
+
 /* -- Logo -- */
 .front #logo {
   display: block;
