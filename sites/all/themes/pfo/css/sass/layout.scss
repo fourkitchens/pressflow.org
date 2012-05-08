@@ -13,11 +13,20 @@
 /**
  * Basic layout. Will display on browsers without MQs, or small devices with MQs.
  */
-#page {
+#main {
   @include columns(10);
   @include pad(1,1);
   @include alpha;
   @include omega;
+}
+
+header {
+  width: 100%;
+}
+
+header nav,
+header hgroup {
+  @include columns(12);
 }
 
 
