@@ -14,6 +14,14 @@
 
 
 /**
+ * These are Compass declarations. This Sass file
+ * cannot compile to CSS3 without these libraries.
+ */
+
+@import "compass/css3";
+
+
+/**
  * Colors
  */
 
@@ -240,6 +248,32 @@ header {
   background: $d8 url('../../img/bg-noise.png') left top;
   border-bottom: 1px solid $c1;
 }
+
+nav li {
+  float: left;
+}
+
+nav li a {
+  display: inline-block;
+  margin: .5em;
+  padding: .4em 1em;
+  color: #666;
+  text-decoration: none;
+  @include background-image(linear-gradient(#fff, #eee));
+  border-radius: 7px;
+  box-shadow: inset 1px 1px 2px rgba(0,0,0,0.4);
+}
+
+/*
+nav li.first a {
+  @include background-image(
+    linear-gradient(#fff, #eee),
+    image-url('sprite.png')
+  );
+  background-repeat: repeat, no-repeat;
+  background-position: left top, -100px top;
+}
+*/
 
 
 /* -- Footer -- */
