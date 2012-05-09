@@ -182,13 +182,22 @@ body {
 .front #logo {
   display: block;
   background: url("../../img/logo.png") no-repeat 50% top;
-  background-size: contain;
   padding-top: 4em;
   margin-bottom: 0;
   /* image replacement */
   text-indent: 100%;
   white-space: nowrap;
   overflow: hidden;
+}
+.backgroundsize .front #logo {
+  background-size: contain;
+}
+.no-backgroundsize .front #logo {
+  min-height: 198px;
+  margin-bottom: -40px;
+  padding-top: 0;
+  z-index: 10;
+  position: relative;
 }
 
 /* -- Header -- */
@@ -218,6 +227,10 @@ nav li a {
   background-image: -o-linear-gradient(#ffffff, #eeeeee);
   background-image: -ms-linear-gradient(#ffffff, #eeeeee);
   background-image: linear-gradient(#ffffff, #eeeeee);
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  -ms-border-radius: 7px;
+  -o-border-radius: 7px;
   border-radius: 7px;
   box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.4);
 }

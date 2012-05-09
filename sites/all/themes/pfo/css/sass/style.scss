@@ -208,7 +208,6 @@ body {
 .front #logo {
   display: block;
   background: url('../../img/logo.png') no-repeat 50% top;
-  background-size: contain;
   padding-top: 4em;
   margin-bottom: 0;
 
@@ -216,6 +215,18 @@ body {
   text-indent: 100%;
   white-space: nowrap;
   overflow: hidden;
+
+  // Modernizr enhancements
+  .backgroundsize & {
+    background-size: contain;
+  }
+  .no-backgroundsize & {
+    min-height: 198px;
+    margin-bottom: -40px;
+    padding-top: 0;
+    z-index: 10;
+    position: relative;
+  }
 }
 
 
@@ -242,7 +253,7 @@ nav li a {
   color: #666;
   text-decoration: none;
   @include background-image(linear-gradient(#fff, #eee));
-  border-radius: 7px;
+  @include border-radius(7px);
   box-shadow: inset 1px 1px 2px rgba(0,0,0,0.4);
 }
 
