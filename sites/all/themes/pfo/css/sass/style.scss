@@ -1,16 +1,8 @@
 /**
- * Regular comment block.
+ * @file style.scss
  *
- * Feel free to skip lines, or otherwise format as you wish.
- * Make sure to add the second asterisk on the first line,
- * and try to make the comment a block for better readability.
+ * Contains global styles for pressflow.org
  */
-
-/* === Major Headings: three equal signs === */
-
-/* -- Sub-headings: two dashes -- */
-
-/* Individual comments should have no markings. Keep to one line or switch to comment block. */
 
 @import 'defaults';
 
@@ -211,7 +203,7 @@ body {
   padding-top: 4em;
   margin-bottom: 0;
 
-  /* image replacement */
+  // image replacement
   text-indent: 100%;
   white-space: nowrap;
   overflow: hidden;
@@ -241,7 +233,7 @@ nav li {
   float: right;
 }
 
-/* Home link is on the opposite side */
+// Home link is on the opposite side
 nav li.first {
   float: left;
 }
@@ -257,7 +249,7 @@ nav li a {
   box-shadow: inset 1px 1px 2px rgba(0,0,0,0.4);
 }
 
-/* Home link has an icon & dark gradient */
+// Home link has an icon & dark gradient
 .multiplebgs nav li.first a {
   width: 13px;
 

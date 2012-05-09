@@ -1,15 +1,10 @@
 @import url(http://fonts.googleapis.com/css?family=Arvo:400,700);
 @import url(http://fonts.googleapis.com/css?family=Arvo:400,700);
 /**
- * Regular comment block.
+ * @file style.scss
  *
- * Feel free to skip lines, or otherwise format as you wish.
- * Make sure to add the second asterisk on the first line,
- * and try to make the comment a block for better readability.
+ * Contains global styles for pressflow.org
  */
-/* === Major Headings: three equal signs === */
-/* -- Sub-headings: two dashes -- */
-/* Individual comments should have no markings. Keep to one line or switch to comment block. */
 /**
  * These are Compass declarations. This Sass file
  * cannot compile to CSS3 without these libraries.
@@ -184,7 +179,6 @@ body {
   background: url("../../img/logo.png") no-repeat 50% top;
   padding-top: 4em;
   margin-bottom: 0;
-  /* image replacement */
   text-indent: 100%;
   white-space: nowrap;
   overflow: hidden;
@@ -210,7 +204,6 @@ nav li {
   float: right;
 }
 
-/* Home link is on the opposite side */
 nav li.first {
   float: left;
 }
@@ -235,7 +228,6 @@ nav li a {
   box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.4);
 }
 
-/* Home link has an icon & dark gradient */
 .multiplebgs nav li.first a {
   width: 13px;
   background-image: url('/sites/all/themes/pfo/img/sprite.png'), -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #666666), color-stop(100%, #333333));
