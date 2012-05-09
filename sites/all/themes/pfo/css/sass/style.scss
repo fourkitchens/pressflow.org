@@ -274,6 +274,10 @@ nav li a {
   overflow: hidden;
 }
 
+// Hide home link on home page
+.front nav li.first {
+  display: none;
+}
 
 
 /* -- Footer -- */

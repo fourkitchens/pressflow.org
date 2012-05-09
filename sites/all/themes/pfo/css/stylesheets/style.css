@@ -252,6 +252,10 @@ nav li a {
   overflow: hidden;
 }
 
+.front nav li.first {
+  display: none;
+}
+
 /* -- Footer -- */
 footer {
   background: #c1c1c1;
