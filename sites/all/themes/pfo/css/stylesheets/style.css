@@ -198,6 +198,11 @@ header {
 }
 
 nav li {
+  float: right;
+}
+
+/* Home link is on the opposite side */
+nav li.first {
   float: left;
 }
 
@@ -217,16 +222,23 @@ nav li a {
   box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.4);
 }
 
-/*
-nav li.first a {
-  @include background-image(
-    linear-gradient(#fff, #eee),
-    image-url('sprite.png')
-  );
-  background-repeat: repeat, no-repeat;
-  background-position: left top, -100px top;
+/* Home link has an icon & dark gradient */
+.multiplebgs nav li.first a {
+  width: 13px;
+  background-image: url('/sites/all/themes/pfo/img/sprite.png'), -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #666666), color-stop(100%, #333333));
+  background-image: url('/sites/all/themes/pfo/img/sprite.png'), -webkit-linear-gradient(#666666, #333333);
+  background-image: url('/sites/all/themes/pfo/img/sprite.png'), -moz-linear-gradient(#666666, #333333);
+  background-image: url('/sites/all/themes/pfo/img/sprite.png'), -o-linear-gradient(#666666, #333333);
+  background-image: url('/sites/all/themes/pfo/img/sprite.png'), -ms-linear-gradient(#666666, #333333);
+  background-image: url('/sites/all/themes/pfo/img/sprite.png'), linear-gradient(#666666, #333333);
+  background-repeat: no-repeat;
+  background-position: -101px 6px, left top;
+  /* image replacement */
+  text-indent: 300%;
+  white-space: nowrap;
+  overflow: hidden;
 }
-*/
+
 /* -- Footer -- */
 footer {
   background: #c1c1c1;
