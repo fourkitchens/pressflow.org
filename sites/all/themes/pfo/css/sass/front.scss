@@ -15,6 +15,10 @@
   background-size: cover;
 }
 
+.front nav li.first {
+  display: none;
+}
+
 .front #logo {
   display: block;
   background: url('../../img/logo.png') no-repeat 50% top;

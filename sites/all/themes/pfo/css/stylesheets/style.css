@@ -227,10 +227,6 @@ nav li a {
   overflow: hidden;
 }
 
-.front nav li.first {
-  display: none;
-}
-
 hgroup#name-and-slogan {
   width: 103.46%;
   padding: 2em 0;
@@ -286,6 +282,10 @@ footer {
   width: 100%;
   background: url("../../img/bg-mountain.png") no-repeat 50% top;
   background-size: cover;
+}
+
+.front nav li.first {
+  display: none;
 }
 
 .front #logo {

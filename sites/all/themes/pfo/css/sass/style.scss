@@ -244,11 +244,6 @@ nav li a {
   overflow: hidden;
 }
 
-// Hide home link on home page
-.front nav li.first {
-  display: none;
-}
-
 // #name-and-slogan has been removed from page--front.tpl - see front.scss for its stripe
 hgroup#name-and-slogan {
   @include stripe();
