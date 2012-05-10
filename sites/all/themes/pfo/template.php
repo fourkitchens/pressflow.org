@@ -7,6 +7,7 @@ function pfo_preprocess(&$vars) {
   // kpr($vars);
 }
 
+
 /**
  * Implements theme_preprocess_page().
  */
@@ -15,14 +16,22 @@ function pfo_preprocess_page(&$vars) {
   // Special treatment for front page
   if ($vars['is_front'] == TRUE) {
 
-    // Download link for latest PRessflow release.
-    // This URL will is built by Ian's github integration code.
-    $vars['download'] = '<a href="###githubbb" id="download">Download!</a>';
-
     // Unset the page title
     $vars['title'] = '';
   }
+
+  // Generate the version number
+  if (module_exists('pf')) {
+    $version = pf_pull_pressflow_version();
+  }
+  else {
+    $version = 'latest';
+  }
+
+  // Build the download link. Points to Pressflow 6 github page.
+  $vars['download'] = '<a href="https://github.com/pressflow/6" id="download">ver '. $version .'</a>';
 }
+
 
 /**
  * Implements theme_preprocess_node().
@@ -36,6 +45,7 @@ function pfo_preprocess_node(&$vars) {
     $vars['title'] = '';
   }
 }
+
 
 /**
  * Implements pfo_preprocess_html().
