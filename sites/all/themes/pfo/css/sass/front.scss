@@ -24,7 +24,7 @@
   height: auto;
   background: url('../../img/logo.png') no-repeat 50% top;
   padding-top: 4em;
-  margin-bottom: -1.4em;
+  margin-bottom: -.6em;
 
   // Sit on top of stripe
   position: relative;
@@ -57,6 +57,9 @@
 }
 
 .intro h2 {
+  float: none;
+  margin: .8em 0;
+
   text-transform: none;
   color: $brown;
   font-family: $league;

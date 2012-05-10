@@ -316,7 +316,7 @@ footer {
   height: auto;
   background: url("../../img/logo.png") no-repeat 50% top;
   padding-top: 4em;
-  margin-bottom: -1.4em;
+  margin-bottom: -0.6em;
   position: relative;
   z-index: 10;
   text-indent: 100%;
@@ -344,6 +344,8 @@ footer {
 }
 
 .intro h2 {
+  float: none;
+  margin: .8em 0;
   text-transform: none;
   color: #473430;
   font-family: "League Gothic", sans-serif;
