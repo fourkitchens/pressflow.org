@@ -17,6 +17,9 @@
  */
 /* @todo: add League Gothic web font */
 /**
+ * Mixins
+ */
+/**
  * Resets and helper classes not supplied by normalize.css
  */
 a {
@@ -248,6 +251,13 @@ nav li a {
   display: none;
 }
 
+hgroup#name-and-slogan {
+  width: 103.46%;
+  padding: 2em 0;
+  background: rgba(255, 255, 255, 0.6);
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+}
+
 /* -- Footer -- */
 footer {
   background: #c1c1c1;
@@ -288,6 +298,9 @@ footer {
  * Fonts
  */
 /* @todo: add League Gothic web font */
+/**
+ * Mixins
+ */
 /* === Front page === */
 .front header {
   width: 100%;
@@ -296,8 +309,8 @@ footer {
 }
 
 .front .stripe {
-  width: 103.47%;
-  padding: 1em 0;
+  width: 103.46%;
+  padding: 2em 0;
   background: rgba(255, 255, 255, 0.6);
   border-top: 1px solid rgba(0, 0, 0, 0.2);
 }
