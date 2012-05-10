@@ -8,7 +8,7 @@
         </nav>
       <?php endif; ?>
 
-      <hgroup id="name-and-slogan">
+      <hgroup>
         <h1 id="site-name">
           <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" id="logo">Pressflow</a>
         </h1>
@@ -25,7 +25,7 @@
             <p class="pf7">Looking for Pressflow 7?<br> Check the progress on <a href="https://github.com/pressflow/7">Github</a></p>
           </div>
         </div>
-      </hgroup><!-- #name-and-slogan -->
+      </hgroup>
 
       <?php print render($page['header']); ?>
 
