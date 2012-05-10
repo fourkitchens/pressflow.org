@@ -1,5 +1,5 @@
-@import url(http://fonts.googleapis.com/css?family=Arvo:400,700);
-@import url(http://fonts.googleapis.com/css?family=Arvo:400,700);
+@import url('http://fonts.googleapis.com/css?family=Arvo:400,700');
+@import url('http://fonts.googleapis.com/css?family=Arvo:400,700');
 /**
  * @file style.scss
  *
@@ -15,7 +15,14 @@
 /**
  * Fonts
  */
-/* @todo: add League Gothic web font */
+@font-face {
+  font-family: 'League Gothic';
+  src: url("../../fonts/league-gothic/webfonts/League_Gothic-webfont.eot");
+  src: url("../../fonts/league-gothic/webfonts/League_Gothic-webfont.eot?iefix") format("eot"), url("../../fonts/league-gothic/webfonts/League_Gothic-webfont.woff") format("woff"), url("../../fonts/league-gothic/webfonts/League_Gothic-webfont.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
 /**
  * Resets and helper classes not supplied by normalize.css
  */
@@ -287,7 +294,14 @@ footer {
 /**
  * Fonts
  */
-/* @todo: add League Gothic web font */
+@font-face {
+  font-family: 'League Gothic';
+  src: url("../../fonts/league-gothic/webfonts/League_Gothic-webfont.eot");
+  src: url("../../fonts/league-gothic/webfonts/League_Gothic-webfont.eot?iefix") format("eot"), url("../../fonts/league-gothic/webfonts/League_Gothic-webfont.woff") format("woff"), url("../../fonts/league-gothic/webfonts/League_Gothic-webfont.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
 /* === Front page === */
 .front header {
   width: 100%;
