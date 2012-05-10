@@ -311,6 +311,9 @@ footer {
   font-style: normal;
 }
 
+/**
+ * Mixins
+ */
 /* === Front page === */
 .front header {
   width: 100%;
@@ -382,6 +385,7 @@ footer {
 
 .download #download {
   display: block;
+  clear: both;
   width: 0;
   height: 0;
   padding: 1.45em 4.2em 2.7em 18.6em;
