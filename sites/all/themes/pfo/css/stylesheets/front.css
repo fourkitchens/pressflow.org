@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Arvo:400,700);
+@import url('http://fonts.googleapis.com/css?family=Arvo:400,700');
 /**
  * @TODO: Why do I have to import _defaults.scss twice?
  *        front.scss does not compile unless 'defaults' is imported redundantly.
@@ -14,10 +14,14 @@
 /**
  * Fonts
  */
-/* @todo: add League Gothic web font */
-/**
- * Mixins
- */
+@font-face {
+  font-family: 'League Gothic';
+  src: url("../../fonts/league-gothic/webfonts/League_Gothic-webfont.eot");
+  src: url("../../fonts/league-gothic/webfonts/League_Gothic-webfont.eot?iefix") format("eot"), url("../../fonts/league-gothic/webfonts/League_Gothic-webfont.woff") format("woff"), url("../../fonts/league-gothic/webfonts/League_Gothic-webfont.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
 /* === Front page === */
 .front header {
   width: 100%;
@@ -89,15 +93,17 @@
 
 .download #download {
   display: block;
-  width: 90%;
+  width: 0;
   height: 0;
-  padding-top: 3em;
+  padding: 1.45em 4.2em 2.7em 18.6em;
   margin-left: 3em;
   background: url("../../img/sprite.png") no-repeat 0 -100px;
-  /* image replacement */
-  text-indent: 100%;
+  font-family: Arvo, Georgia, serif;
+  font-size: .8em;
+  font-style: italic;
+  text-decoration: none;
+  color: #777;
   white-space: nowrap;
-  overflow: hidden;
 }
 
 .download .pf7 {
