@@ -5,11 +5,16 @@ version = 0.1
 core = 7.x
 screenshot = screenshot.jpg
 
+; Unset
+stylesheets[all][] = unset/system.menus.css
+
+; CSS
 stylesheets[all][] = css/stylesheets/normalize.css
 stylesheets[all][] = css/stylesheets/formalize.css
 stylesheets[all][] = css/stylesheets/layout.css
 stylesheets[all][] = css/stylesheets/style.css
 
+; JS
 scripts[] = js/jquery.formalize.min.js
 scripts[] = js/script.js
 

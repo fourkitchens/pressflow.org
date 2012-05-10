@@ -1,0 +1,181 @@
+/* ========================================================================== */
+
+/**
+ * What's Sass?
+ *
+ * Sass is a CSS preprocessor. It will take the Sass-specific pieces of your
+ * document and translate it back into CSS3. The original syntax (known as .sass)
+ * was very different than CSS3. However, there is a newer syntax (called .scss)
+ * which is a superset of CSS3. You can write the entire document as plain CSS3
+ * and it will compile perfectly. We use .scss exclusively.
+ *
+ * Having a superset of CSS3 is very useful for incrementally porting old CSS
+ * into Sass. Just change the pieces that you need, the rest will stay intact.
+ */
+
+/* ========================================================================== */
+
+/**
+ * Sass variables
+ *
+ * Yes, Sass can do CSS variables! You can use them wherever you wish.
+ */
+
+$bright-blue = #36f;
+$light-blue = #def;
+
+// Sass
+
+.my .selector {
+  background: $bright-blue;
+  color: $light-blue;
+}
+
+// Output
+
+.my .selector {
+  background: #3366ff;
+  color: #ddeeff;
+}
+
+
+/* ========================================================================== */
+
+/**
+ * Nested selectors
+ *
+ * Sass offers support for nested selectors. This should be used rather sparingly
+ * because in many cases it is an anti-pattern that convolutes the compiled CSS.
+ */
+
+// Sass
+
+p {
+  font-weight: 700;
+  span {
+    font-weight: 400;
+  }
+}
+
+// Output
+
+p {
+  font-weight: 700;
+}
+p span {
+  font-weight: 400;
+}
+
+/**
+ * Nested parent selectors
+ *
+ * When you nest a selector, using ampersand (&) is equivalent to the full parent selector.
+ *
+ * This is especially useful when combined with Modernizr classes. It lets you nest all the
+ * properties for a particular element into one place. Example below uses a Modernizr class.
+ */
+
+// Sass
+
+#logo a {
+  background: url('/path-to/bg-image/with-rounded-corners.png') no-repeat left top;
+
+  // Append a Modernizr class to override
+  .borderradius & {
+    background-image: none;
+    border-radius: 7px;
+  }
+}
+
+// Output
+
+#logo a {
+  background: url('/path-to/bg-image/with-rounded-corners.png') no-repeat left top;
+}
+.borderradius #logo a {
+  background-image: none;
+  border-radius: 7px;
+}
+
+
+/* ========================================================================== */
+
+/**
+ * Sass @mixin
+ *
+ * Think of a @mixin as a function for Sass. It is a chunk of reusable CSS
+ * that can optionally take arguments.
+ */
+
+// Sass
+
+@mixin sprite ($x:0, $y:0) {
+  background-image: image-url("sprite.png");
+  background-repeat: no-repeat;
+  text-indent: -9999em;
+  display: block;
+  overflow: hidden;
+  background-position: $x $y;
+}
+
+.my .selector {
+  @include sprite();
+}
+
+.another .selector {
+  @include sprite(-101px, 6px);
+}
+
+// Output
+
+.my .selector {
+  background-image: url('/sites/all/themes/pfo/img/sprite.png');
+  background-repeat: no-repeat;
+  text-indent: -9999em;
+  display: block;
+  overflow: hidden;
+  background-position: 0 0;
+}
+.another .selector {
+  background-image: url('/sites/all/themes/pfo/img/sprite.png');
+  background-repeat: no-repeat;
+  text-indent: -9999em;
+  display: block;
+  overflow: hidden;
+  background-position: -101px 6px;
+}
+
+
+/* ========================================================================== */
+
+/**
+ * Sass @extends
+ *
+ * Using the @extends function will insert all the properties from the
+ * original selector into the more specific selector.
+ */
+
+// Sass
+
+.error {
+  border: 1px solid #f00;
+  background: #fee;
+  color: #900;
+}
+
+.bold-error {
+  @extends .error;
+  font-weight: 700;
+}
+
+// Output
+
+.error,
+.bold-error {
+  border: 1px solid #f00;
+  background: #fee;
+  color: #900;
+}
+.bold-error {
+  font-weight: 700;
+}

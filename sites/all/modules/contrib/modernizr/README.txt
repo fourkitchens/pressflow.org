@@ -34,6 +34,12 @@ so it is available to themes/modules that support HTML5/CSS3 features.
 For more information, visit: http://www.modernizr.com/docs/
 
 
+Usage
+=====
+
+Find admin settings at /admin/config/development/modernizr
+
+
 Drupal components
 =================
 
@@ -51,4 +57,7 @@ Project page: http://drupal.org/project/modernizr
 Library page: http://modernizr.com
 
 Module originally written by:
-Tam√°s Demeter-Haludka - http://drupal.org/user/372872
+Tamás Demeter-Haludka - http://drupal.org/user/372872
+
+Maintainers:
+Chris Ruppel - http://drupal.org/user/411999

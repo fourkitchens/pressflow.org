@@ -1,0 +1,42 @@
+/* ========================================================================== */
+
+/**
+ * Commenting styles.
+ *
+ * This is a regular comment block. Feel free to skip lines, or otherwise
+ * format as you wish. Make sure to add the second asterisk on the first
+ * line, and try to make the comment a block for better readability.
+ *
+ * Comment blocks (including major and sub-headings below) will show up
+ * in your compiled CSS that goes to production.
+ */
+
+/* === Major Headings: three equal signs === */
+
+/* -- Sub-headings: two dashes -- */
+
+// Sass-specific one-line comments start with // and end with nothing.
+// This style of commenting will not show up in compiled files.
+// Unlike this example, if you have three lines of comments, make a comment block.
+
+/* ========================================================================== */
+
+/**
+ * Basic selectors
+ *
+ * This is just good for CSS in general. Sass will compile to a more compact
+ * format automatically (configurable in config.rb). Drupal will further
+ * minify when it aggregates the assets.
+ */
+
+.one .selector .per-line {
+  display: block;
+  font-style: normal;
+}
+
+.multiple .selectors,
+.one .per-line,
+.comma .separated {
+  display: block;
+  font-size: 10px;
+}

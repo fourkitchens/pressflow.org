@@ -1,40 +1,37 @@
 /**
- * Regular comment block.
+ * @file style.scss
  *
- * Feel free to skip lines, or otherwise format as you wish.
- * Make sure to add the second asterisk on the first line,
- * and try to make the comment a block for better readability.
+ * Contains global styles for pressflow.org
  */
 
-/* === Major Headings: three equal signs === */
-
-/* -- Sub-headings: two dashes -- */
-
-/* Individual comments should have no markings. Keep to one line or switch to comment block. */
+@import 'defaults';
 
 
 /**
  * Resets and helper classes not supplied by normalize.css
- * You probably do not have to touch this file, just override style.scss
  */
 
-body {
-  background-color: #d7d7d7;
-  color: #424242;
-  font-size: 15px;
-  line-height: 1.231;
+a { 
+  color: $blue;
 }
 
-a { 
-  color: #2090b4; 
+a:visited {
+  color: $blue;
 }
-a:visited { color: #2090b4; }
+
 a:hover { 
-  color: #2090b4;
+  color: $blue;
   text-decoration: none;
 }
-a:focus { outline: thin dotted; }
-a:hover, a:active { outline: 0; }
+
+a:focus {
+  outline: thin dotted;
+}
+
+a:hover,
+a:active {
+  outline: 0;
+}
 
 h1,
 h2,
@@ -45,9 +42,19 @@ h6 {}
 
 h1 {}
 
-h2 { color: #c54b2c; }
+h2 {
+  clear: both;
+  color: #c54b2c;
+  text-transform: uppercase;
+  font-family: $league;
+  font-size: 2.4em;
+  font-weight: 400;
+}
 
-h3 { color: #3d1c00; }
+h3 {
+  color: $brown;
+  font-family: $arvo;
+}
 
 h4 {}
 
@@ -55,7 +62,9 @@ h5 {}
 
 h6 {}
 
-p {}
+p {
+  opacity: .9;
+}
 
 ul,
 ol {}
@@ -92,11 +101,11 @@ tr, tr.even, tr.odd {
 }
 
 tr.odd {
-  background-color: #EBF6FA;
+  background-color: $zebra-odd;
 }
 
 tr.even {
-  background-color: #ABCDDC;
+  background-color: $zebra-even;
 }
 
 
@@ -174,22 +183,105 @@ tr.even {
  * Custom styles for Pressflow.org
  */
 
+/* === General styles === */
+
+body {
+  background: $d8 url('../../img/bg-grid.png') left top;
+  color: #424242;
+  font-size: 15px;
+  line-height: 1.231;
+  font-family: arial, sans-serif;
+  font-weight: 300;
+}
+
+
 /* -- Logo -- */
 
-#logo figure img {
-  max-width: 100%;
+.front #logo {
+  display: block;
+  background: url('../../img/logo.png') no-repeat 50% top;
+  padding-top: 4em;
+  margin-bottom: 0;
+
+  // image replacement
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+
+  // Modernizr enhancements
+  .backgroundsize & {
+    background-size: contain;
+  }
+  .no-backgroundsize & {
+    min-height: 198px;
+    margin-bottom: -40px;
+    padding-top: 0;
+    z-index: 10;
+    position: relative;
+  }
 }
+
+
+/* -- Header -- */
+
+header {
+  background: $d8 url('../../img/bg-noise.png') left top;
+  border-bottom: 1px solid $c1;
+}
+
+nav li {
+  float: right;
+}
+
+// Home link is on the opposite side
+nav li.first {
+  float: left;
+}
+
+nav li a {
+  display: inline-block;
+  margin: .5em;
+  padding: .4em 1em;
+  color: #666;
+  text-decoration: none;
+  @include background-image(linear-gradient(#fff, #eee));
+  @include border-radius(7px);
+  box-shadow: inset 1px 1px 2px rgba(0,0,0,0.4);
+}
+
+// Home link has an icon & dark gradient
+.multiplebgs nav li.first a {
+  width: 13px;
+
+  @include background-image(
+    image-url('sprite.png'),
+    linear-gradient(#666, #333)
+  );
+  background-repeat: no-repeat;
+  background-position: -101px 6px, left top;
+
+  /* image replacement */
+  text-indent: 300%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+// Hide home link on home page
+.front nav li.first {
+  display: none;
+}
+
 
 /* -- Footer -- */
 
 footer {
-  background: #7d7d7d;
+  background: $c1;
   color: #fff;
 }
 
-/**
- * FAQ Page theming
- */
+
+/* === FAQ Page theming === */
+
 .hidden-answer {
   display: none;
 }
@@ -203,3 +295,16 @@ footer {
 .view-id-faq_view .views-row .hidden-answer {
   margin: -.5em 0 2em 1em;
 }
+
+
+/**
+ * Front page styles are in their own file
+ */
+
+@import 'front';
+
+/**
+ * Responsive styles are in their own file
+ */
+
+@import 'responsive';

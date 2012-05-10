@@ -1,24 +1,31 @@
+@import url('http://fonts.googleapis.com/css?family=Arvo:400,700');
+@import url('http://fonts.googleapis.com/css?family=Arvo:400,700');
 /**
- * Regular comment block.
+ * @file style.scss
  *
- * Feel free to skip lines, or otherwise format as you wish.
- * Make sure to add the second asterisk on the first line,
- * and try to make the comment a block for better readability.
+ * Contains global styles for pressflow.org
  */
-/* === Major Headings: three equal signs === */
-/* -- Sub-headings: two dashes -- */
-/* Individual comments should have no markings. Keep to one line or switch to comment block. */
 /**
- * Resets and helper classes not supplied by normalize.css
- * You probably do not have to touch this file, just override style.scss
+ * These are Compass declarations. This Sass file
+ * cannot compile to CSS3 without these libraries.
  */
-body {
-  background-color: #d7d7d7;
-  color: #424242;
-  font-size: 15px;
-  line-height: 1.231;
+/**
+ * Colors
+ */
+/**
+ * Fonts
+ */
+@font-face {
+  font-family: 'League Gothic';
+  src: url("../../fonts/league-gothic/webfonts/League_Gothic-webfont.eot");
+  src: url("../../fonts/league-gothic/webfonts/League_Gothic-webfont.eot?iefix") format("eot"), url("../../fonts/league-gothic/webfonts/League_Gothic-webfont.woff") format("woff"), url("../../fonts/league-gothic/webfonts/League_Gothic-webfont.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
 }
 
+/**
+ * Resets and helper classes not supplied by normalize.css
+ */
 a {
   color: #2090b4;
 }
@@ -36,16 +43,27 @@ a:focus {
   outline: thin dotted;
 }
 
-a:hover, a:active {
+a:hover,
+a:active {
   outline: 0;
 }
 
 h2 {
+  clear: both;
   color: #c54b2c;
+  text-transform: uppercase;
+  font-family: "League Gothic", sans-serif;
+  font-size: 2.4em;
+  font-weight: 400;
 }
 
 h3 {
-  color: #3d1c00;
+  color: #473430;
+  font-family: Arvo, Georgia, serif;
+}
+
+p {
+  opacity: .9;
 }
 
 ul {
@@ -76,11 +94,11 @@ tr, tr.even, tr.odd {
 }
 
 tr.odd {
-  background-color: #EBF6FA;
+  background-color: #ebf6fa;
 }
 
 tr.even {
-  background-color: #ABCDDC;
+  background-color: #abcddc;
 }
 
 /* === Non-semantic helper classes. === */
@@ -152,20 +170,98 @@ tr.even {
 /**
  * Custom styles for Pressflow.org
  */
+/* === General styles === */
+body {
+  background: #d8d8d8 url("../../img/bg-grid.png") left top;
+  color: #424242;
+  font-size: 15px;
+  line-height: 1.231;
+  font-family: arial, sans-serif;
+  font-weight: 300;
+}
+
 /* -- Logo -- */
-#logo figure img {
-  max-width: 100%;
+.front #logo {
+  display: block;
+  background: url("../../img/logo.png") no-repeat 50% top;
+  padding-top: 4em;
+  margin-bottom: 0;
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.backgroundsize .front #logo {
+  background-size: contain;
+}
+.no-backgroundsize .front #logo {
+  min-height: 198px;
+  margin-bottom: -40px;
+  padding-top: 0;
+  z-index: 10;
+  position: relative;
+}
+
+/* -- Header -- */
+header {
+  background: #d8d8d8 url("../../img/bg-noise.png") left top;
+  border-bottom: 1px solid #c1c1c1;
+}
+
+nav li {
+  float: right;
+}
+
+nav li.first {
+  float: left;
+}
+
+nav li a {
+  display: inline-block;
+  margin: .5em;
+  padding: .4em 1em;
+  color: #666;
+  text-decoration: none;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(100%, #eeeeee));
+  background-image: -webkit-linear-gradient(#ffffff, #eeeeee);
+  background-image: -moz-linear-gradient(#ffffff, #eeeeee);
+  background-image: -o-linear-gradient(#ffffff, #eeeeee);
+  background-image: -ms-linear-gradient(#ffffff, #eeeeee);
+  background-image: linear-gradient(#ffffff, #eeeeee);
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  -ms-border-radius: 7px;
+  -o-border-radius: 7px;
+  border-radius: 7px;
+  box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+.multiplebgs nav li.first a {
+  width: 13px;
+  background-image: url('/sites/all/themes/pfo/img/sprite.png'), -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #666666), color-stop(100%, #333333));
+  background-image: url('/sites/all/themes/pfo/img/sprite.png'), -webkit-linear-gradient(#666666, #333333);
+  background-image: url('/sites/all/themes/pfo/img/sprite.png'), -moz-linear-gradient(#666666, #333333);
+  background-image: url('/sites/all/themes/pfo/img/sprite.png'), -o-linear-gradient(#666666, #333333);
+  background-image: url('/sites/all/themes/pfo/img/sprite.png'), -ms-linear-gradient(#666666, #333333);
+  background-image: url('/sites/all/themes/pfo/img/sprite.png'), linear-gradient(#666666, #333333);
+  background-repeat: no-repeat;
+  background-position: -101px 6px, left top;
+  /* image replacement */
+  text-indent: 300%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.front nav li.first {
+  display: none;
 }
 
 /* -- Footer -- */
 footer {
-  background: #7d7d7d;
+  background: #c1c1c1;
   color: #fff;
 }
 
-/**
- * FAQ Page theming
- */
+/* === FAQ Page theming === */
 .hidden-answer {
   display: none;
 }
@@ -178,4 +274,161 @@ footer {
 
 .view-id-faq_view .views-row .hidden-answer {
   margin: -0.5em 0 2em 1em;
+}
+
+/**
+ * Front page styles are in their own file
+ */
+/**
+ * @TODO: Why do I have to import _defaults.scss twice?
+ *        front.scss does not compile unless 'defaults' is imported redundantly.
+ *        Original @import is at the top of style.scss
+ */
+/**
+ * These are Compass declarations. This Sass file
+ * cannot compile to CSS3 without these libraries.
+ */
+/**
+ * Colors
+ */
+/**
+ * Fonts
+ */
+@font-face {
+  font-family: 'League Gothic';
+  src: url("../../fonts/league-gothic/webfonts/League_Gothic-webfont.eot");
+  src: url("../../fonts/league-gothic/webfonts/League_Gothic-webfont.eot?iefix") format("eot"), url("../../fonts/league-gothic/webfonts/League_Gothic-webfont.woff") format("woff"), url("../../fonts/league-gothic/webfonts/League_Gothic-webfont.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* === Front page === */
+.front header {
+  width: 100%;
+  background: url("../../img/bg-mountain.png") no-repeat 50% top;
+  background-size: cover;
+}
+
+.front .stripe {
+  width: 103.47%;
+  padding: 1em 0;
+  background: rgba(255, 255, 255, 0.6);
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+/* -- Intro -- */
+.intro {
+  padding-left: 3em;
+}
+
+.intro h2 {
+  text-transform: none;
+  color: #473430;
+  font-family: "League Gothic", sans-serif;
+  font-size: 3em;
+  line-height: 0;
+  white-space: nowrap;
+}
+
+/* -- Download section -- */
+.download h2 {
+  width: 60%;
+  margin: 0 auto .6em 3em;
+  padding-bottom: .2em;
+  overflow: visible;
+  font-size: 1em;
+  font-family: Arvo, Georgia, serif;
+  font-weight: 400;
+  text-transform: lowercase;
+  color: #666;
+  text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.6);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.download #download {
+  display: block;
+  width: 0;
+  height: 0;
+  padding: 1.45em 4.2em 2.7em 18.6em;
+  margin-left: 3em;
+  background: url("../../img/sprite.png") no-repeat 0 -100px;
+  font-family: Arvo, Georgia, serif;
+  font-size: .8em;
+  font-style: italic;
+  text-decoration: none;
+  color: #777;
+  white-space: nowrap;
+}
+
+.download .pf7 {
+  margin-left: 3em;
+}
+
+/* -- Informational blocks -- */
+#wat section {
+  margin-bottom: 1em;
+}
+
+#wat h3:after {
+  content: ' ';
+  display: inline-block;
+  width: 30px;
+  height: 25px;
+  background: url("../../img/sprite.png") no-repeat;
+  position: relative;
+  top: 6px;
+  margin-left: .8em;
+}
+
+#wat .install h3:after {
+  background-position: left top;
+}
+
+#wat .compat h3:after {
+  background-position: -40px top;
+}
+
+#wat .support h3:after {
+  background-position: -76px top;
+}
+
+#wat .support .button {
+  display: inline-block;
+  background: white url("../../img/sprite.png") no-repeat -130px 10px;
+  padding: .7em 1em .7em 2.3em;
+  font-size: 1.1em;
+  font-family: Arvo, Georgia, serif;
+  color: #c54b2c;
+  text-decoration: none;
+  border-radius: 7px;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/**
+ * Responsive styles are in their own file
+ */
+/**
+ * Responsive styles
+ *
+ * All styles in this file are wrapped in media queries.
+ */
+/**
+ * Medium-sized devices with MQs. Size not final!!!
+ */
+@media only screen and (min-width: 42em) {
+  .download h2 {
+    text-align: center;
+  }
+}
+/**
+ * Bigger devices with MQs. Size not final!!!
+ */
+@media only screen and (min-width: 64em) {
+  body.front .view-pressflownians .views-row {
+    padding: 0 2em;
+  }
+
+  body.front .view-pressflownians .views-row-last {
+    display: none;
+  }
 }
