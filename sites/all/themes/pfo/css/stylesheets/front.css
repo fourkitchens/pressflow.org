@@ -25,6 +25,26 @@
   background-size: cover;
 }
 
+.front #logo {
+  display: block;
+  background: url("../../img/logo.png") no-repeat 50% top;
+  padding-top: 4em;
+  margin-bottom: 0;
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.backgroundsize .front #logo {
+  background-size: contain;
+}
+.no-backgroundsize .front #logo {
+  min-height: 198px;
+  margin-bottom: -40px;
+  padding-top: 0;
+  z-index: 10;
+  position: relative;
+}
+
 .front .stripe {
   width: 103.46%;
   padding: 2em 0;

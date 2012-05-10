@@ -177,26 +177,6 @@ body {
 }
 
 /* -- Logo -- */
-.front #logo {
-  display: block;
-  background: url("../../img/logo.png") no-repeat 50% top;
-  padding-top: 4em;
-  margin-bottom: 0;
-  text-indent: 100%;
-  white-space: nowrap;
-  overflow: hidden;
-}
-.backgroundsize .front #logo {
-  background-size: contain;
-}
-.no-backgroundsize .front #logo {
-  min-height: 198px;
-  margin-bottom: -40px;
-  padding-top: 0;
-  z-index: 10;
-  position: relative;
-}
-
 /* -- Header -- */
 header {
   background: #d8d8d8 url("../../img/bg-noise.png") left top;
@@ -306,6 +286,26 @@ footer {
   width: 100%;
   background: url("../../img/bg-mountain.png") no-repeat 50% top;
   background-size: cover;
+}
+
+.front #logo {
+  display: block;
+  background: url("../../img/logo.png") no-repeat 50% top;
+  padding-top: 4em;
+  margin-bottom: 0;
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.backgroundsize .front #logo {
+  background-size: contain;
+}
+.no-backgroundsize .front #logo {
+  min-height: 198px;
+  margin-bottom: -40px;
+  padding-top: 0;
+  z-index: 10;
+  position: relative;
 }
 
 .front .stripe {
