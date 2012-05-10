@@ -8,9 +8,9 @@
  *    Susy: https://github.com/ericam/compass-susy-plugin/blob/master/README.mkdn
  **/
 /**
- * Basic layout. Browsers without MQs, or small devices with MQs.
+ * Basic layout. Will display on browsers without MQs, or small devices with MQs.
  */
-#page {
+#main {
   display: inline;
   float: left;
   width: 80.328%;
@@ -24,9 +24,131 @@
   #margin-left: -1em;
 }
 
+header,
+header nav,
+header hgroup,
+.front .stripe {
+  display: inline;
+  float: left;
+  width: 96.721%;
+  margin-right: 1.639%;
+}
+
 /**
  * Medium-sized devices with MQs. Size not final!!!
  */
+@media only screen and (min-width: 42em) {
+  /* -- Nav -- */
+  header nav {
+    display: inline;
+    float: left;
+    width: 80.328%;
+    margin-right: 1.639%;
+    padding-left: 8.197%;
+    padding-right: 8.197%;
+    margin-left: 1.639%;
+    display: inline;
+    float: right;
+    margin-right: 1.639%;
+    #margin-left: -1em;
+  }
+
+  /* -- Intro and Download -- */
+  hgroup .intro {
+    display: inline;
+    float: left;
+    width: 39.344%;
+    margin-right: 1.639%;
+    padding-left: 8.197%;
+    padding-right: 0%;
+    margin-left: 1.639%;
+  }
+
+  hgroup .download {
+    display: inline;
+    float: left;
+    width: 39.344%;
+    margin-right: 1.639%;
+    padding-left: 0%;
+    padding-right: 8.197%;
+    display: inline;
+    float: right;
+    margin-right: 1.639%;
+    #margin-left: -1em;
+  }
+
+  /* -- What's the deal... -- */
+  #wat section {
+    display: inline;
+    float: left;
+    width: 47.541%;
+    margin-right: 1.639%;
+  }
+
+  /* -- Who uses Pressflow? -- */
+  body.front .view-pressflownians .views-row {
+    display: inline;
+    float: left;
+    width: 47.541%;
+    margin-right: 1.639%;
+  }
+}
 /**
  * Bigger devices with MQs. Size not final!!!
  */
+@media only screen and (min-width: 64em) {
+  /* -- Intro and Download -- */
+  hgroup .intro {
+    display: inline;
+    float: left;
+    width: 22.951%;
+    margin-right: 1.639%;
+    padding-left: 16.393%;
+    padding-right: 8.197%;
+    margin-left: 1.639%;
+  }
+
+  hgroup .download {
+    display: inline;
+    float: left;
+    width: 31.148%;
+    margin-right: 1.639%;
+    padding-left: 0%;
+    padding-right: 16.393%;
+    display: inline;
+    float: right;
+    margin-right: 1.639%;
+    #margin-left: -1em;
+  }
+
+  /* -- What's the deal... */
+  #wat section {
+    display: inline;
+    float: left;
+    width: 31.148%;
+    margin-right: 1.639%;
+  }
+
+  /* -- Who uses Pressflow? -- */
+  body.front .view-pressflownians .views-row {
+    display: inline;
+    float: left;
+    width: 22.951%;
+    margin-right: 1.639%;
+  }
+}
+/**
+ * Even bigger devices with MQs. Size not final!!!
+ */
+@media only screen and (min-width: 80em) {
+  /* -- Intro -- */
+  hgroup .intro {
+    display: inline;
+    float: left;
+    width: 22.951%;
+    margin-right: 1.639%;
+    padding-left: 16.393%;
+    padding-right: 8.197%;
+    margin-left: 1.639%;
+  }
+}

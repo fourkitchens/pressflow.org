@@ -8,23 +8,24 @@
         </nav>
       <?php endif; ?>
 
-      <?php if ($logo): ?>
-        <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" id="logo">
-          <figure><img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" /></figure>
-        </a>
-      <?php endif; ?>
+      <hgroup id="name-and-slogan">
+        <h1 id="site-name">
+          <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" id="logo">Pressflow</a>
+        </h1>
 
-      <?php if ($site_name || $site_slogan): ?>
-        <hgroup id="name-and-slogan">
-          <h1 id="site-name">
-            <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home"><span><?php print $site_name; ?></a>
-          </h1>
+        <div class="stripe clearfix">
+          <div class="intro">
+            <h2>Go ahead. Scale.</h2>
+            <p>Pressflow is a distribution of <a href="http://drupal.org">Drupal</a> with integrated performance, scalability, availability, and testing enhancements.</p>
+          </div><!-- .intro -->
 
-          <?php if ($site_slogan): ?>
-            <h2><?php print $site_slogan; ?></h2>
-          <?php endif; ?>
-        </hgroup><!-- #name-and-slogan -->
-      <?php endif; ?>
+          <div class="download">
+            <h2>download and install</h2>
+            <?php print $download; ?>
+            <p class="pf7">Looking for Pressflow 7?<br> Check the progress on <a href="https://github.com/pressflow/7">Github</a></p>
+          </div>
+        </div>
+      </hgroup><!-- #name-and-slogan -->
 
       <?php print render($page['header']); ?>
 
