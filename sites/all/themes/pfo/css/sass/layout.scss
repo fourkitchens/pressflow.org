@@ -14,18 +14,9 @@
  * Basic layout. Will display on browsers without MQs, or small devices with MQs.
  */
 
-#main {
-  @include columns(10);
-  @include pad(1,1);
-  @include alpha;
-  @include omega;
-}
-
-header,
-header nav,
-header hgroup,
-.front .stripe {
-  @include columns(12);
+#main,
+header nav {
+  @include container();
 }
 
 // Interior titles
@@ -46,14 +37,6 @@ hgroup .download {
  */
 
 @media only screen and (min-width: 42em) {
-
-  /* -- Nav -- */
-  header nav {
-    @include columns(10);
-    @include pad(1,1);
-    @include alpha;
-    @include omega;
-  }
 
   /* -- Intro and Download -- */
   hgroup .intro {
