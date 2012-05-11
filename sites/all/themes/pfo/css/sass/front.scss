@@ -20,7 +20,7 @@
 }
 
 .front #logo {
-  width: 100%;
+  width: 98%;
   height: auto;
   background: url('../../img/logo.png') no-repeat 50% top;
   padding-top: 4em;
@@ -46,15 +46,11 @@
 }
 
 .front .stripe {
-  @include stripe(103.46%);
+  @include stripe();
 }
 
 
 /* -- Intro -- */
-
-.intro {
-  padding-left: 3em;
-}
 
 .intro h2 {
   float: none;
@@ -72,7 +68,7 @@
 
 .download h2 {
   width: 60%;
-  margin: 0 auto .6em 3em;
+  margin-bottom: .6em;
   padding-bottom: .2em;
   overflow: visible;
   font-size: 1em;
@@ -90,7 +86,6 @@
   width: 0;
   height: 0;
   padding: 1.45em 4.2em 2.7em 18.6em;
-  margin-left: 3em;
   background: url('../../img/sprite.png') no-repeat 0 -100px;
 
   font-family: $arvo;
@@ -101,9 +96,7 @@
   white-space: nowrap;
 }
 
-.download .pf7 {
-  margin-left: 3em;
-}
+.download .pf7 {}
 
 
 /* -- Informational blocks -- */

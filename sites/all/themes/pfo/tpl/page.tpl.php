@@ -1,6 +1,7 @@
   <section id="page">
 
     <header class="clearfix page-container">
+      <div class="container">
 
       <?php if ($main_menu): ?>
         <nav>
@@ -8,13 +9,13 @@
         </nav>
       <?php endif; ?>
 
-      <div class="logo">
         <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" id="logo">Pressflow</a>
         <h2><?php print $site_slogan; ?></h2>
-      </div>
+
+      </div><!-- .container -->
 
       <?php if ($site_name || $site_slogan): ?>
-        <hgroup id="name-and-slogan">
+      <hgroup id="name-and-slogan">
         <div class="container">
           <?php print render($title_prefix); ?>
           <?php if ($title): ?><h1 class="title" id="page-title"><?php print $title; ?></h1><?php endif; ?>
@@ -24,7 +25,7 @@
             <?php print $download; ?>
           </div><!-- .download -->
         </div><!-- .container -->
-        </hgroup><!-- #name-and-slogan -->
+      </hgroup><!-- #name-and-slogan -->
       <?php endif; ?>
 
       <?php print render($page['header']); ?>

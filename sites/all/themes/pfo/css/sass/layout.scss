@@ -15,24 +15,41 @@
  */
 
 #main, // all pages
-.logo, // interior pages
-header nav, // all pages
-header hgroup .container { // interior pages
+header .container { // all pages
   @include container();
+  // @include susy-grid-background();
 }
 
 header hgroup,
 .front .stripe {
+  clear: both;
+}
+
+header nav {
+  @include full;
+}
+
+#main #content {
   @include columns(12);
+  @include alpha;
+}
+
+// home page
+.intro,
+.front .download {
+  @include columns(8);
+  @include pad(2,2);
 }
 
 // Interior titles
 h1.title {
   @include columns(6);
+  @include alpha;
 }
 // Interior download link
 hgroup .download {
   @include columns(6);
+  @include omega;
 }
 
 
@@ -44,15 +61,12 @@ hgroup .download {
 
   /* -- Intro and Download -- */
   hgroup .intro {
-    @include columns(5);
-    @include pad(1,0);
-    @include alpha;
+    @include columns(6);
   }
 
+  .front .download,
   hgroup .download {
-    @include columns(5);
-    @include pad(0,1);
-    @include omega;
+    @include columns(6);
   }
 
   /* -- What's the deal... -- */
@@ -72,18 +86,19 @@ hgroup .download {
  * Bigger devices with MQs. Size not final!!!
  */
 
-@media only screen and (min-width: 64em) {
+@media only screen and (min-width: 61em) {
 
   /* -- Intro and Download -- */
   hgroup .intro {
-    @include columns(3);
-    @include pad(2,1);
+    @include columns(4);
+    @include pad(1,1);
     @include alpha;
   }
 
+  .front .download,
   hgroup .download {
     @include columns(4);
-    @include pad(0,2);
+    @include pad(1,1);
     @include omega;
   }
 
@@ -95,22 +110,6 @@ hgroup .download {
   /* -- Who uses Pressflow? -- */
   body.front .view-pressflownians .views-row {
     @include columns(3);
-  }
-
-}
-
-
-/**
- * Even bigger devices with MQs. Size not final!!!
- */
-
-@media only screen and (min-width: 80em) {
-
-  /* -- Intro -- */
-  hgroup .intro {
-    @include columns(3);
-    @include pad(2,1);
-    @include alpha;
   }
 
 }
