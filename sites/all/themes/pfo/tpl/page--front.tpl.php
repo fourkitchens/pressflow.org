@@ -23,7 +23,7 @@
             <h2>download and install</h2>
             <?php print $download; ?>
             <p class="pf7">Looking for Pressflow 7?<br> Check the progress on <a href="https://github.com/pressflow/7">Github</a></p>
-          </div>
+          </div><!-- .download -->
         </div>
       </hgroup>
 

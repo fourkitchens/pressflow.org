@@ -28,6 +28,18 @@ header hgroup,
   @include columns(12);
 }
 
+// Interior titles
+h1.title {
+  @include columns(4,1);
+  @include pad(0,1);
+  position: relative;
+}
+// Interior download link
+hgroup .download {
+  @include columns(4);
+  @include pad(1,1);
+}
+
 
 /**
  * Medium-sized devices with MQs. Size not final!!!
