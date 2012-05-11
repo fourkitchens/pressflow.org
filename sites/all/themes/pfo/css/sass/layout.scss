@@ -19,6 +19,11 @@ header nav {
   @include container();
 }
 
+header hgroup,
+.front .stripe {
+  @include columns(12);
+}
+
 // Interior titles
 h1.title {
   @include columns(4,1);
