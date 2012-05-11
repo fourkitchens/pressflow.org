@@ -1,19 +1,21 @@
   <section id="page">
 
     <header class="clearfix page-container">
-
+      <div class="container">
       <?php if ($main_menu): ?>
         <nav>
           <?php print theme('links__system_main_menu', array('links' => $main_menu, 'attributes' => array('id' => 'main-menu', 'class' => array('links', 'inline', 'clearfix')))); ?>
         </nav>
       <?php endif; ?>
+      </div><!-- .container -->
 
-      <hgroup id="name-and-slogan">
+      <hgroup>
         <h1 id="site-name">
           <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" id="logo">Pressflow</a>
         </h1>
 
         <div class="stripe clearfix">
+        <div class="container">
           <div class="intro">
             <h2>Go ahead. Scale.</h2>
             <p>Pressflow is a distribution of <a href="http://drupal.org">Drupal</a> with integrated performance, scalability, availability, and testing enhancements.</p>
@@ -23,9 +25,10 @@
             <h2>download and install</h2>
             <?php print $download; ?>
             <p class="pf7">Looking for Pressflow 7?<br> Check the progress on <a href="https://github.com/pressflow/7">Github</a></p>
-          </div>
-        </div>
-      </hgroup><!-- #name-and-slogan -->
+          </div><!-- .download -->
+        </div><!-- .container -->
+        </div><!-- .stripe -->
+      </hgroup>
 
       <?php print render($page['header']); ?>
 

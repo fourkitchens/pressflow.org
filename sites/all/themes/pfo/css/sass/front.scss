@@ -15,20 +15,47 @@
   background-size: cover;
 }
 
-.front .stripe {
-  width: 103.47%;
-  padding: 1em 0;
-  background: rgba(255,255,255,0.6);
-  border-top: 1px solid rgba(0,0,0,0.2);
+.front nav li.first {
+  display: none;
 }
+
+.front #logo {
+  width: 98%;
+  height: auto;
+  background: url('../../img/logo.png') no-repeat 50% top;
+  padding-top: 4em;
+  margin-bottom: -.6em;
+
+  // Sit on top of stripe
+  position: relative;
+  z-index: 10;
+
+  // image replacement
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+
+  // Modernizr enhancements
+  .backgroundsize & {
+    background-size: contain;
+  }
+  .no-backgroundsize & {
+    min-height: 198px;
+    padding-top: 0;
+  }
+}
+
+.front .stripe {
+  @include stripe();
+}
+
 
 /* -- Intro -- */
 
-.intro {
-  padding-left: 3em;
-}
-
 .intro h2 {
+  float: none;
+  margin: .8em 0;
+
   text-transform: none;
   color: $brown;
   font-family: $league;
@@ -41,7 +68,7 @@
 
 .download h2 {
   width: 60%;
-  margin: 0 auto .6em 3em;
+  margin-bottom: .6em;
   padding-bottom: .2em;
   overflow: visible;
   font-size: 1em;
@@ -55,10 +82,10 @@
 
 .download #download {
   display: block;
+  clear: both;
   width: 0;
   height: 0;
   padding: 1.45em 4.2em 2.7em 18.6em;
-  margin-left: 3em;
   background: url('../../img/sprite.png') no-repeat 0 -100px;
 
   font-family: $arvo;
@@ -69,9 +96,7 @@
   white-space: nowrap;
 }
 
-.download .pf7 {
-  margin-left: 3em;
-}
+.download .pf7 {}
 
 
 /* -- Informational blocks -- */
