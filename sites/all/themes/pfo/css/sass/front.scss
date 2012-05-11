@@ -46,7 +46,7 @@
 }
 
 .front .stripe {
-  @include stripe();
+  @include stripe(103.46%);
 }
 
 

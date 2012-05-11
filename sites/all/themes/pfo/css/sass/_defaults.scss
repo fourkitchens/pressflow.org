@@ -47,8 +47,8 @@ $league       : "League Gothic", sans-serif;
 
 // White header stripe
 
-@mixin stripe() {
-  width: 103.46%;
+@mixin stripe($width: 100%) {
+  width: $width;
   padding: 2em 0;
   background: rgba(255,255,255,0.6);
   border-top: 1px solid rgba(0,0,0,0.2);

@@ -14,8 +14,10 @@
  * Basic layout. Will display on browsers without MQs, or small devices with MQs.
  */
 
-#main,
-header nav {
+#main, // all pages
+.logo, // interior pages
+header nav, // all pages
+header hgroup .container { // interior pages
   @include container();
 }
 
@@ -26,14 +28,11 @@ header hgroup,
 
 // Interior titles
 h1.title {
-  @include columns(4,1);
-  @include pad(0,1);
-  position: relative;
+  @include columns(6);
 }
 // Interior download link
 hgroup .download {
-  @include columns(4);
-  @include pad(1,1);
+  @include columns(6);
 }
 
 

@@ -8,17 +8,14 @@
         </nav>
       <?php endif; ?>
 
-      <?php if ($logo): ?>
+      <div class="logo">
         <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" id="logo">Pressflow</a>
-      <?php endif; ?>
-
-      <?php if ($site_slogan): ?>
         <h2><?php print $site_slogan; ?></h2>
-      <?php endif; ?>
+      </div>
 
       <?php if ($site_name || $site_slogan): ?>
         <hgroup id="name-and-slogan">
-
+        <div class="container">
           <?php print render($title_prefix); ?>
           <?php if ($title): ?><h1 class="title" id="page-title"><?php print $title; ?></h1><?php endif; ?>
           <?php print render($title_suffix); ?>
@@ -26,7 +23,7 @@
           <div class="download">
             <?php print $download; ?>
           </div><!-- .download -->
-
+        </div><!-- .container -->
         </hgroup><!-- #name-and-slogan -->
       <?php endif; ?>
 
