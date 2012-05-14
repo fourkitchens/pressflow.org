@@ -231,17 +231,13 @@ header h2 {
   letter-spacing: 1px;
 }
 
-nav li {
-  float: right;
-}
-
-// Home link is on the opposite side
 nav li.first {
-  float: left;
+  display: none;
 }
 
 nav li a {
-  display: inline-block;
+  display: block;
+  text-align: center;
   margin: .5em;
   padding: .4em 1em;
   color: #666;

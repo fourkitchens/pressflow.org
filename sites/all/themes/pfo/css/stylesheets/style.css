@@ -214,16 +214,13 @@ header h2 {
   letter-spacing: 1px;
 }
 
-nav li {
-  float: right;
-}
-
 nav li.first {
-  float: left;
+  display: none;
 }
 
 nav li a {
-  display: inline-block;
+  display: block;
+  text-align: center;
   margin: .5em;
   padding: .4em 1em;
   color: #666;
@@ -244,12 +241,12 @@ nav li a {
 
 .multiplebgs nav li.first a {
   width: 13px;
-  background-image: url('/sites/all/themes/pfo/img/sprite.png'), -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #666666), color-stop(100%, #333333));
-  background-image: url('/sites/all/themes/pfo/img/sprite.png'), -webkit-linear-gradient(#666666, #333333);
-  background-image: url('/sites/all/themes/pfo/img/sprite.png'), -moz-linear-gradient(#666666, #333333);
-  background-image: url('/sites/all/themes/pfo/img/sprite.png'), -o-linear-gradient(#666666, #333333);
-  background-image: url('/sites/all/themes/pfo/img/sprite.png'), -ms-linear-gradient(#666666, #333333);
-  background-image: url('/sites/all/themes/pfo/img/sprite.png'), linear-gradient(#666666, #333333);
+  background-image: url('/images/sprite.png'), -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #666666), color-stop(100%, #333333));
+  background-image: url('/images/sprite.png'), -webkit-linear-gradient(#666666, #333333);
+  background-image: url('/images/sprite.png'), -moz-linear-gradient(#666666, #333333);
+  background-image: url('/images/sprite.png'), -o-linear-gradient(#666666, #333333);
+  background-image: url('/images/sprite.png'), -ms-linear-gradient(#666666, #333333);
+  background-image: url('/images/sprite.png'), linear-gradient(#666666, #333333);
   background-repeat: no-repeat;
   background-position: -101px 6px, left top;
   /* image replacement */
@@ -327,7 +324,7 @@ footer {
 }
 
 .front #logo {
-  width: 98%;
+  width: 92%;
   height: auto;
   background: url("../../img/logo.png") no-repeat 50% top;
   padding-top: 4em;
@@ -450,11 +447,28 @@ footer {
   .download h2 {
     text-align: center;
   }
+
+  nav li {
+    float: right;
+  }
+
+  nav li.first {
+    float: left;
+    display: inline-block;
+  }
+
+  nav li a {
+    display: inline-block;
+  }
+
+  .front #logo {
+    width: 98%;
+  }
 }
 /**
  * Bigger devices with MQs. Size not final!!!
  */
-@media only screen and (min-width: 61em) {
+@media only screen and (min-width: 64em) {
   body.front .view-pressflownians .views-row {
     padding: 0 2em;
   }

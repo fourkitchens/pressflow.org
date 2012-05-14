@@ -6,8 +6,9 @@ Drupal.behaviors.pfoFAQpage = {
 
     $('.faq-title').each(function() {
       var hideID = this.id.replace("faq-title-id-", "hidden-answer-id-");
-      $(this).click(function() {
+      $(this).click(function(e) {
         $("#"+hideID).slideToggle();
+        e.preventDefault();
       });
     });
   }
