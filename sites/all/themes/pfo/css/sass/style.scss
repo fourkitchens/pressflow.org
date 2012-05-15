@@ -283,9 +283,20 @@ footer #twitter-signup a {
 }
 
 footer h2 {
+  padding: 1em 0 .5em;
+  border-bottom: 1px solid #fff;
+  text-align: center;
+  text-transform: none;
   font-family: $arvo;
-  color: #fff;
   font-size: 1.2em;
+  font-weight: 700;
+  color: #fff;
+}
+
+.footer-foot {
+  padding: 1em;
+  text-align: center;
+  font-size: .8em;
 }
 
 

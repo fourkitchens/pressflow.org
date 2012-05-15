@@ -82,17 +82,8 @@ hgroup .download {
 }
 
 footer .region-footer {
-  display: inline;
-  float: left;
-  width: 63.934%;
-  margin-right: 1.639%;
+  clear: both;
   margin-left: 1.639%;
-}
-
-footer .footer-col {
-  display: inline;
-  float: left;
-  width: 31.148%;
   margin-right: 1.639%;
 }
 

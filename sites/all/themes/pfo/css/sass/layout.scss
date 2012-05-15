@@ -53,13 +53,9 @@ hgroup .download {
   @include omega;
 }
 
+// Footer
 footer .region-footer {
-  @include columns(8);
-  @include alpha;
-}
-
-footer .footer-col {
-  @include columns(4);
+  @include full;
 }
 
 
