@@ -198,10 +198,17 @@ button,
 input[type="reset"],
 input[type="submit"],
 input[type="button"] {
-  border-color: #333 #666 #999;
+  border-color: #333 #666 #999 transparent;
   color: #fff;
+  cursor: pointer;
   @include background-image(linear-gradient(#4d4d4d, #363636));
   @include text-shadow(1px 1px 1px #000);
+
+  // hover styles
+  &:hover {
+    color: #444;
+    @include text-shadow(1px 1px 1px #fff);
+  }
 }
 
 
@@ -307,6 +314,18 @@ footer h2 {
   padding: 1em;
   text-align: center;
   font-size: .8em;
+}
+
+
+/* === MailChimp singup forms === */
+
+#mc_embed_signup input.email {
+  @include border-radius(6px 0 0 6px);
+}
+
+#mc_embed_signup input.button {
+  margin: 0 0 0 -6px;
+  @include border-radius(0 6px 6px 0);
 }
 
 

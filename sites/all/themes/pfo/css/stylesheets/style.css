@@ -187,8 +187,9 @@ button,
 input[type="reset"],
 input[type="submit"],
 input[type="button"] {
-  border-color: #333 #666 #999;
+  border-color: #333 #666 #999 transparent;
   color: #fff;
+  cursor: pointer;
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #4d4d4d), color-stop(100%, #363636));
   background-image: -webkit-linear-gradient(#4d4d4d, #363636);
   background-image: -moz-linear-gradient(#4d4d4d, #363636);
@@ -196,6 +197,13 @@ input[type="button"] {
   background-image: -ms-linear-gradient(#4d4d4d, #363636);
   background-image: linear-gradient(#4d4d4d, #363636);
   text-shadow: 1px 1px 1px black;
+}
+button:hover,
+input[type="reset"]:hover,
+input[type="submit"]:hover,
+input[type="button"]:hover {
+  color: #444;
+  text-shadow: 1px 1px 1px white;
 }
 
 /* -- Header -- */
@@ -304,6 +312,24 @@ footer h2 {
   padding: 1em;
   text-align: center;
   font-size: .8em;
+}
+
+/* === MailChimp singup forms === */
+#mc_embed_signup input.email {
+  -webkit-border-radius: 6px 0 0 6px;
+  -moz-border-radius: 6px 0 0 6px;
+  -ms-border-radius: 6px 0 0 6px;
+  -o-border-radius: 6px 0 0 6px;
+  border-radius: 6px 0 0 6px;
+}
+
+#mc_embed_signup input.button {
+  margin: 0 0 0 -6px;
+  -webkit-border-radius: 0 6px 6px 0;
+  -moz-border-radius: 0 6px 6px 0;
+  -ms-border-radius: 0 6px 6px 0;
+  -o-border-radius: 0 6px 6px 0;
+  border-radius: 0 6px 6px 0;
 }
 
 /* === FAQ Page theming === */
