@@ -87,6 +87,20 @@ footer .region-footer {
   margin-right: 1.639%;
 }
 
+footer .footer-foot {
+  clear: both;
+}
+
+footer .footer-col {
+  display: inline;
+  float: left;
+  width: 80.328%;
+  margin-right: 1.639%;
+  padding-left: 8.197%;
+  padding-right: 8.197%;
+  margin-bottom: 1em;
+}
+
 /**
  * Medium-sized devices with MQs. Size not final!!!
  */
@@ -121,6 +135,28 @@ footer .region-footer {
     float: left;
     width: 47.541%;
     margin-right: 1.639%;
+  }
+
+  footer .footer-col {
+    display: inline;
+    float: left;
+    width: 39.344%;
+    margin-right: 1.639%;
+  }
+
+  footer #footer-left-col {
+    padding-left: 8.197%;
+    padding-right: 49.18%;
+    margin-left: 1.639%;
+  }
+
+  footer #footer-right-col {
+    padding-left: 49.18%;
+    padding-right: 8.197%;
+    display: inline;
+    float: right;
+    margin-right: 1.639%;
+    #margin-left: -1em;
   }
 }
 /**

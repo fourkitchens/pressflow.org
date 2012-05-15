@@ -58,6 +58,16 @@ footer .region-footer {
   @include full;
 }
 
+footer .footer-foot {
+  clear: both;
+}
+
+footer .footer-col {
+  @include columns(10);
+  @include pad(1,1);
+  margin-bottom: 1em;
+}
+
 
 /**
  * Medium-sized devices with MQs. Size not final!!!
@@ -83,6 +93,21 @@ footer .region-footer {
   /* -- Who uses Pressflow? -- */
   body.front .view-pressflownians .views-row {
     @include columns(6);
+  }
+
+  // Footer
+  footer .footer-col {
+    @include columns(5);
+  }
+
+  footer #footer-left-col {
+    @include pad(1,6);
+    @include alpha;
+  }
+
+  footer #footer-right-col {
+    @include pad(6,1);
+    @include omega;
   }
 
 }
