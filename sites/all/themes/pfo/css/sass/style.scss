@@ -272,8 +272,20 @@ hgroup#name-and-slogan {
 /* -- Footer -- */
 
 footer {
-  background: $c1;
+  background: url('../../img/bg-footer.jpg');
   color: #fff;
+}
+
+footer #twitter-signup a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+footer h2 {
+  font-family: $arvo;
+  color: #fff;
+  font-size: 1.2em;
 }
 
 

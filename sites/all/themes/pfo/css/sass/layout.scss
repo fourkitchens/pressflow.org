@@ -15,9 +15,10 @@
  */
 
 #main, // all pages
-header .container { // all pages
+header .container, // all pages
+footer .footer-content { // all pages
   @include container();
-  // @include susy-grid-background();
+  @include susy-grid-background();
 }
 
 header hgroup,
@@ -50,6 +51,15 @@ h1.title {
 hgroup .download {
   @include columns(6);
   @include omega;
+}
+
+footer .region-footer {
+  @include columns(8);
+  @include alpha;
+}
+
+footer .footer-col {
+  @include columns(4);
 }
 
 
