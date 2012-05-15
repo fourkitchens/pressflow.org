@@ -194,6 +194,16 @@ body {
   font-weight: 300;
 }
 
+button,
+input[type="reset"],
+input[type="submit"],
+input[type="button"] {
+  border-color: #333 #666 #999;
+  color: #fff;
+  @include background-image(linear-gradient(#4d4d4d, #363636));
+  @include text-shadow(1px 1px 1px #000);
+}
+
 
 /* -- Header -- */
 
