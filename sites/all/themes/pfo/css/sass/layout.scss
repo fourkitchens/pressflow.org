@@ -50,9 +50,7 @@ header nav {
 // home page
 .intro,
 .front .download {
-  @include columns(10);
-  @include pad(1,1);
-  @include alpha;
+  @include padded-column;
 }
 
 // Interior titles
