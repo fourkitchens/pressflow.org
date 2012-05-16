@@ -55,7 +55,9 @@
     </section><!-- #main -->
 
     <footer class="section">
-      <?php print render($page['footer']); ?>
+      <div class="section-content footer-content">
+        <?php print render($page['footer']); ?>
+      </div>
     </footer>
 
   </section><!-- #page -->
