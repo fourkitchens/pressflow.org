@@ -17,7 +17,7 @@
 #main, // all pages
 header .container { // all pages
   @include container();
-  // @include susy-grid-background();
+  @include susy-grid-background();
 }
 
 header hgroup,
@@ -37,8 +37,9 @@ header nav {
 // home page
 .intro,
 .front .download {
-  @include columns(8);
-  @include pad(2,2);
+  @include columns(10);
+  @include pad(1,1);
+  @include alpha;
 }
 
 // Interior titles
