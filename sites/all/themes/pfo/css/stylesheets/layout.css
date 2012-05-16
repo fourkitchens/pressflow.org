@@ -40,9 +40,9 @@ header nav {
   margin-right: 1.639%;
 }
 
-#main #content,
+#content,
 .intro,
-.front .download,
+.download,
 footer .footer-col {
   display: inline;
   float: left;
@@ -60,7 +60,7 @@ h1.title {
   margin-left: 1.639%;
 }
 
-hgroup .download {
+.download {
   display: inline;
   float: left;
   width: 47.541%;
@@ -89,7 +89,7 @@ footer .footer-col {
  * Medium-sized devices with MQs. Size not final!!!
  */
 @media only screen and (min-width: 42em) {
-  #main #content {
+  #content {
     display: inline;
     float: left;
     width: 96.721%;
@@ -98,9 +98,8 @@ footer .footer-col {
     padding-right: 0%;
   }
 
-  hgroup .intro,
-  .front .download,
-  hgroup .download,
+  .intro,
+  .download,
   #wat section,
   body.front .view-pressflownians .views-row {
     display: inline;
@@ -127,7 +126,7 @@ footer .footer-col {
  */
 @media only screen and (min-width: 61em) {
   /* -- Intro and Download -- */
-  hgroup .intro {
+  .intro {
     display: inline;
     float: left;
     width: 31.148%;
@@ -137,8 +136,7 @@ footer .footer-col {
     margin-left: 1.639%;
   }
 
-  .front .download,
-  hgroup .download {
+  .download {
     display: inline;
     float: left;
     width: 31.148%;

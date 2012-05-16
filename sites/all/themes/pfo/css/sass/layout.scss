@@ -42,9 +42,9 @@ header nav {
   @include full;
 }
 
-#main #content,       // all pages
+#content,             // all pages
 .intro,               // home page
-.front .download,     // home page
+.download,            // home page
 footer .footer-col {  // all pages
   @include padded-column;
 }
@@ -55,7 +55,7 @@ h1.title {
   @include alpha;
 }
 // Interior download link
-hgroup .download {
+.download {
   @include columns(6);
   @include omega;
 }
@@ -80,15 +80,14 @@ footer .footer-col {
 
 @media only screen and (min-width: 42em) {
 
-  #main #content {
+  #content {
     @include columns(12);
     @include pad(0,0);
   }
 
-  hgroup .intro, // Intro and Download
-  .front .download, // download link
-  hgroup .download, // download link
-  #wat section, // What's the deal...
+  .intro,         // Intro
+  .download,      // download link
+  #wat section,   // What's the deal...
   body.front .view-pressflownians .views-row { // Who uses Pressflow?
     @include columns(6);
   }
@@ -116,14 +115,13 @@ footer .footer-col {
 @media only screen and (min-width: 61em) {
 
   /* -- Intro and Download -- */
-  hgroup .intro {
+  .intro {
     @include columns(4);
     @include pad(1,1);
     @include alpha;
   }
 
-  .front .download,
-  hgroup .download {
+  .download {
     @include columns(4);
     @include pad(1,1);
     @include omega;
