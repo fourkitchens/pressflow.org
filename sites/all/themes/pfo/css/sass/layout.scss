@@ -43,13 +43,10 @@ header nav {
   @include full;
 }
 
-#main #content {
-  @include padded-column();
-}
-
-// home page
-.intro,
-.front .download {
+#main #content,       // all pages
+.intro,               // home page
+.front .download,     // home page
+footer .footer-col {  // all pages
   @include padded-column;
 }
 
@@ -74,7 +71,6 @@ footer .footer-foot {
 }
 
 footer .footer-col {
-  @include padded-column();
   margin-bottom: 1em;
 }
 

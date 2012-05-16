@@ -40,18 +40,10 @@ header nav {
   margin-right: 1.639%;
 }
 
-#main #content {
-  display: inline;
-  float: left;
-  width: 80.328%;
-  margin-right: 1.639%;
-  padding-left: 8.197%;
-  padding-right: 8.197%;
-  margin-left: 1.639%;
-}
-
+#main #content,
 .intro,
-.front .download {
+.front .download,
+footer .footer-col {
   display: inline;
   float: left;
   width: 80.328%;
@@ -91,13 +83,6 @@ footer .footer-foot {
 }
 
 footer .footer-col {
-  display: inline;
-  float: left;
-  width: 80.328%;
-  margin-right: 1.639%;
-  padding-left: 8.197%;
-  padding-right: 8.197%;
-  margin-left: 1.639%;
   margin-bottom: 1em;
 }
 
