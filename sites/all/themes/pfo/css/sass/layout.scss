@@ -91,23 +91,11 @@ footer .footer-col {
     @include pad(0,0);
   }
 
-  /* -- Intro and Download -- */
-  hgroup .intro {
-    @include columns(6);
-  }
-
-  .front .download,
-  hgroup .download {
-    @include columns(6);
-  }
-
-  /* -- What's the deal... -- */
-  #wat section {
-    @include columns(6);
-  }
-
-  /* -- Who uses Pressflow? -- */
-  body.front .view-pressflownians .views-row {
+  hgroup .intro, // Intro and Download
+  .front .download, // download link
+  hgroup .download, // download link
+  #wat section, // What's the deal...
+  body.front .view-pressflownians .views-row { // Who uses Pressflow?
     @include columns(6);
   }
 
