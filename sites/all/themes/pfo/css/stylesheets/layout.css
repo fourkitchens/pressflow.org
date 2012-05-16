@@ -43,32 +43,15 @@ header nav {
 #content,
 .intro,
 .download,
-footer .footer-col {
+footer .footer-col,
+#page-title,
+.download {
   display: inline;
   float: left;
   width: 80.328%;
   margin-right: 1.639%;
   padding-left: 8.197%;
   padding-right: 8.197%;
-}
-
-h1.title {
-  display: inline;
-  float: left;
-  width: 47.541%;
-  margin-right: 1.639%;
-  margin-left: 1.639%;
-}
-
-.download {
-  display: inline;
-  float: left;
-  width: 47.541%;
-  margin-right: 1.639%;
-  display: inline;
-  float: right;
-  margin-right: 1.639%;
-  #margin-left: -1em;
 }
 
 footer .region-footer {

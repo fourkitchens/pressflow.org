@@ -45,19 +45,10 @@ header nav {
 #content,             // all pages
 .intro,               // home page
 .download,            // home page
-footer .footer-col {  // all pages
+footer .footer-col,   // all pages
+#page-title,          // interior pages
+.download {           // all pages
   @include padded-column;
-}
-
-// Interior titles
-h1.title {
-  @include columns(6);
-  @include alpha;
-}
-// Interior download link
-.download {
-  @include columns(6);
-  @include omega;
 }
 
 // Footer
