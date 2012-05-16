@@ -31,12 +31,3 @@
 /**
  * Bigger devices with MQs. Size not final!!!
  */
-@media only screen and (min-width: 64em) {
-  body.front .view-pressflownians .views-row {
-    padding: 0 2em;
-  }
-
-  body.front .view-pressflownians .views-row-last {
-    display: none;
-  }
-}
