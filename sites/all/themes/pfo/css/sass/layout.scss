@@ -19,7 +19,6 @@
 @mixin padded-column() {
   @include columns(10);
   @include pad(1,1);
-  @include alpha;
 }
 
 
