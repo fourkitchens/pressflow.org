@@ -538,10 +538,6 @@ footer h2 {
   nav li a {
     display: inline-block;
   }
-
-  .front #logo {
-    width: 98%;
-  }
 }
 /**
  * Bigger devices with MQs. Size not final!!!
