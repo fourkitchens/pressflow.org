@@ -14,6 +14,24 @@
   .download h2 {
     text-align: center;
   }
+  
+  nav li {
+    float: right;
+  }
+  
+  // Home link is on the opposite side
+  nav li.first {
+    float: left;
+    display: inline-block;
+  }
+  
+  nav li a {
+    display: inline-block;
+  }
+  
+  .front #logo {
+    width: 98%;
+  }
 
 }
 
@@ -23,12 +41,5 @@
  */
 
 @media only screen and (min-width: 61em) {
-
-  body.front .view-pressflownians .views-row {
-    padding: 0 2em;
-  }
-  body.front .view-pressflownians .views-row-last {
-    display: none;
-  }
 
 }

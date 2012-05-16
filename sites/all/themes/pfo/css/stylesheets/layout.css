@@ -8,17 +8,22 @@
  *    Susy: https://github.com/ericam/susy/blob/master/REFERENCE.mkdn
  **/
 /**
+ * Mixins
+ */
+/**
  * Basic layout. Will display on browsers without MQs, or small devices with MQs.
  */
 #main,
-header .container {
+header .container,
+footer .footer-content {
   *zoom: 1;
   margin: auto;
   width: 61em;
   max-width: 100%;
 }
 #main:after,
-header .container:after {
+header .container:after,
+footer .footer-content:after {
   content: "";
   display: table;
   clear: both;
@@ -38,8 +43,10 @@ header nav {
 #main #content {
   display: inline;
   float: left;
-  width: 96.721%;
+  width: 80.328%;
   margin-right: 1.639%;
+  padding-left: 8.197%;
+  padding-right: 8.197%;
   margin-left: 1.639%;
 }
 
@@ -72,40 +79,62 @@ hgroup .download {
   #margin-left: -1em;
 }
 
+footer .region-footer {
+  clear: both;
+  margin-left: 1.639%;
+  margin-right: 1.639%;
+}
+
+footer .footer-foot {
+  clear: both;
+}
+
+footer .footer-col {
+  display: inline;
+  float: left;
+  width: 80.328%;
+  margin-right: 1.639%;
+  padding-left: 8.197%;
+  padding-right: 8.197%;
+  margin-left: 1.639%;
+  margin-bottom: 1em;
+}
+
 /**
  * Medium-sized devices with MQs. Size not final!!!
  */
 @media only screen and (min-width: 42em) {
-  /* -- Intro and Download -- */
-  hgroup .intro {
+  #main #content {
     display: inline;
     float: left;
-    width: 47.541%;
+    width: 96.721%;
     margin-right: 1.639%;
+    padding-left: 0%;
+    padding-right: 0%;
   }
 
+  hgroup .intro,
   .front .download,
-  hgroup .download {
-    display: inline;
-    float: left;
-    width: 47.541%;
-    margin-right: 1.639%;
-  }
-
-  /* -- What's the deal... -- */
-  #wat section {
-    display: inline;
-    float: left;
-    width: 47.541%;
-    margin-right: 1.639%;
-  }
-
-  /* -- Who uses Pressflow? -- */
+  hgroup .download,
+  #wat section,
   body.front .view-pressflownians .views-row {
     display: inline;
     float: left;
     width: 47.541%;
     margin-right: 1.639%;
+  }
+
+  footer .footer-col {
+    display: inline;
+    float: left;
+    width: 39.344%;
+    margin-right: 1.639%;
+    padding-left: 0%;
+    padding-right: 0%;
+  }
+
+  footer #footer-left-col {
+    padding-left: 8.197%;
   }
 }
 /**

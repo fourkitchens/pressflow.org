@@ -11,13 +11,27 @@
 @import 'base';
 
 /**
+ * Mixins
+ */
+
+// Column padding for mobile phones
+
+@mixin padded-column() {
+  @include columns(10);
+  @include pad(1,1);
+  @include alpha;
+}
+
+
+/**
  * Basic layout. Will display on browsers without MQs, or small devices with MQs.
  */
 
 #main, // all pages
-header .container { // all pages
+header .container, // all pages
+footer .footer-content { // all pages
   @include container();
-  // @include susy-grid-background();
+  @include susy-grid-background();
 }
 
 header hgroup,
@@ -30,8 +44,7 @@ header nav {
 }
 
 #main #content {
-  @include columns(12);
-  @include alpha;
+  @include padded-column();
 }
 
 // home page
@@ -52,6 +65,20 @@ hgroup .download {
   @include omega;
 }
 
+// Footer
+footer .region-footer {
+  @include full;
+}
+
+footer .footer-foot {
+  clear: both;
+}
+
+footer .footer-col {
+  @include padded-column();
+  margin-bottom: 1em;
+}
+
 
 /**
  * Medium-sized devices with MQs. Size not final!!!
@@ -59,24 +86,30 @@ hgroup .download {
 
 @media only screen and (min-width: 42em) {
 
-  /* -- Intro and Download -- */
-  hgroup .intro {
+  #main #content {
+    @include columns(12);
+    @include pad(0,0);
+  }
+
+  hgroup .intro, // Intro and Download
+  .front .download, // download link
+  hgroup .download, // download link
+  #wat section, // What's the deal...
+  body.front .view-pressflownians .views-row { // Who uses Pressflow?
     @include columns(6);
   }
 
-  .front .download,
-  hgroup .download {
-    @include columns(6);
+  // Footer
+  footer .footer-col {
+    @include columns(5);
+    @include pad(0,0);
   }
 
-  /* -- What's the deal... -- */
-  #wat section {
-    @include columns(6);
+  footer #footer-left-col {
+    @include prefix(1);
   }
 
-  /* -- Who uses Pressflow? -- */
-  body.front .view-pressflownians .views-row {
-    @include columns(6);
+  footer #footer-right-col {
   }
 
 }
