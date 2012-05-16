@@ -1,14 +1,13 @@
 name = Pressfacts
 core = 7.x
 package = Features
+php = 5.2.4
 version = 7.x-1.0
 project = pfo_pressfacts
 dependencies[] = ctools
 dependencies[] = features
-dependencies[] = field_sql_storage
-dependencies[] = node
+dependencies[] = nodequeue
 dependencies[] = strongarm
-dependencies[] = text
 dependencies[] = views
 features[ctools][] = strongarm:strongarm:1
 features[ctools][] = views:views_default:3.0
