@@ -11,6 +11,19 @@
 @import 'base';
 
 /**
+ * Mixins
+ */
+
+// Column padding for mobile phones
+
+@mixin padded-column() {
+  @include columns(10);
+  @include pad(1,1);
+  @include alpha;
+}
+
+
+/**
  * Basic layout. Will display on browsers without MQs, or small devices with MQs.
  */
 
@@ -31,9 +44,7 @@ header nav {
 }
 
 #main #content {
-  @include columns(10);
-  @include pad(1,1);
-  @include alpha;
+  @include padded-column();
 }
 
 // home page
@@ -64,9 +75,7 @@ footer .footer-foot {
 }
 
 footer .footer-col {
-  @include columns(10);
-  @include pad(1,1);
-  @include alpha;
+  @include padded-column();
   margin-bottom: 1em;
 }
 
