@@ -291,12 +291,6 @@ footer {
   color: #fff;
 }
 
-footer #twitter-signup a {
-  display: block;
-  width: 100%;
-  height: 100%;
-}
-
 footer h2 {
   padding: 1em 0 .5em;
   border-bottom: 1px solid #fff;
@@ -306,6 +300,26 @@ footer h2 {
   font-size: 1.2em;
   font-weight: 700;
   color: #fff;
+}
+
+/* -- Social media icons -- */
+.social a {
+  float: left;
+  width: 32.2%;
+  height: 2em;
+  text-indent: -9999px;
+}
+
+.social-twitter {
+  background: url("../img/social/twitter.png") no-repeat 40% top;
+}
+
+.social-facebook {
+  background: url("../img/social/facebook.png") no-repeat 40% top;
+}
+
+.social-google-plus {
+  background: url("../img/social/google-plus.png") no-repeat 40% top;
 }
 
 .footer-foot {
