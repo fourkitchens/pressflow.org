@@ -66,6 +66,7 @@ footer .footer-foot {
 footer .footer-col {
   @include columns(10);
   @include pad(1,1);
+  @include alpha;
   margin-bottom: 1em;
 }
 
@@ -104,15 +105,14 @@ footer .footer-col {
   // Footer
   footer .footer-col {
     @include columns(5);
+    @include pad(0,0);
   }
 
   footer #footer-left-col {
     @include prefix(1);
-    @include alpha;
   }
 
   footer #footer-right-col {
-    @include suffix(1);
   }
 
 }
