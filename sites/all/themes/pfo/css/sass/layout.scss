@@ -76,6 +76,11 @@ footer .footer-col {
     @include pad(0,0);
   }
 
+  #page-title {
+    @include span-columns(6);
+    @include pad(0,0);
+  }
+
   .intro,         // Intro
   .download,      // download link
   #wat section,   // What's the deal...

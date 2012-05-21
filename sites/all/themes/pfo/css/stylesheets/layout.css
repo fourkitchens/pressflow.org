@@ -95,6 +95,15 @@ footer .footer-col {
     padding-right: 0%;
   }
 
+  #page-title {
+    width: 49.153%;
+    float: left;
+    margin-right: 1.695%;
+    display: inline;
+    padding-left: 0%;
+    padding-right: 0%;
+  }
+
   .intro,
   .download,
   #wat section,
