@@ -10,17 +10,6 @@
 
 @import 'base';
 
-/**
- * Mixins
- */
-
-// Column padding for mobile phones
-
-@mixin padded-column() {
-  @include span-columns(10);
-  @include pad(1,1);
-}
-
 
 /**
  * Basic layout. Will display on browsers without MQs, or small devices with MQs.
@@ -48,7 +37,8 @@ header nav {
 footer .footer-col,   // all pages
 #page-title,          // interior pages
 .download {           // all pages
-  @include padded-column;
+  @include span-columns(10);
+  @include pad(1,1);
 }
 
 .download {

@@ -8,9 +8,6 @@
  *    Susy: https://github.com/ericam/susy/blob/master/REFERENCE.mkdn
  **/
 /**
- * Mixins
- */
-/**
  * Basic layout. Will display on browsers without MQs, or small devices with MQs.
  */
 #main,
