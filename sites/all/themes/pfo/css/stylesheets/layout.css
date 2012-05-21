@@ -1,92 +1,189 @@
-/*
-Syntax error: Undefined mixin 'span-columns'.
-        on line 20 of /home/ian/www/pressflow/sites/all/themes/pfo/css/sass/layout.scss, in `span-columns'
-        from line 20 of /home/ian/www/pressflow/sites/all/themes/pfo/css/sass/layout.scss, in `padded-column'
-        from line 46 of /home/ian/www/pressflow/sites/all/themes/pfo/css/sass/layout.scss
+/**
+ * Layout for pressflow.org
+ *
+ * For help with...
+ *
+ *    Sass: http://sass-lang.com/tutorial.html
+ * Compass: http://compass-style.org/reference/compass/
+ *    Susy: https://github.com/ericam/susy/blob/master/REFERENCE.mkdn
+ **/
+/**
+ * Mixins
+ */
+/**
+ * Basic layout. Will display on browsers without MQs, or small devices with MQs.
+ */
+#main,
+header .container,
+footer .footer-content {
+  *zoom: 1;
+  max-width: 59em;
+  _width: 59em;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1em;
+  padding-right: 1em;
+  background-image: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, rgba(0, 0, 0, 0)), color-stop(0%, rgba(100, 100, 225, 0.25)), color-stop(6.78%, rgba(100, 100, 225, 0.25)), color-stop(6.78%, rgba(0, 0, 0, 0)), color-stop(8.475%, rgba(0, 0, 0, 0)), color-stop(8.475%, rgba(100, 100, 225, 0.25)), color-stop(15.254%, rgba(100, 100, 225, 0.25)), color-stop(15.254%, rgba(0, 0, 0, 0)), color-stop(16.949%, rgba(0, 0, 0, 0)), color-stop(16.949%, rgba(100, 100, 225, 0.25)), color-stop(23.729%, rgba(100, 100, 225, 0.25)), color-stop(23.729%, rgba(0, 0, 0, 0)), color-stop(25.424%, rgba(0, 0, 0, 0)), color-stop(25.424%, rgba(100, 100, 225, 0.25)), color-stop(32.203%, rgba(100, 100, 225, 0.25)), color-stop(32.203%, rgba(0, 0, 0, 0)), color-stop(33.898%, rgba(0, 0, 0, 0)), color-stop(33.898%, rgba(100, 100, 225, 0.25)), color-stop(40.678%, rgba(100, 100, 225, 0.25)), color-stop(40.678%, rgba(0, 0, 0, 0)), color-stop(42.373%, rgba(0, 0, 0, 0)), color-stop(42.373%, rgba(100, 100, 225, 0.25)), color-stop(49.153%, rgba(100, 100, 225, 0.25)), color-stop(49.153%, rgba(0, 0, 0, 0)), color-stop(50.847%, rgba(0, 0, 0, 0)), color-stop(50.847%, rgba(100, 100, 225, 0.25)), color-stop(57.627%, rgba(100, 100, 225, 0.25)), color-stop(57.627%, rgba(0, 0, 0, 0)), color-stop(59.322%, rgba(0, 0, 0, 0)), color-stop(59.322%, rgba(100, 100, 225, 0.25)), color-stop(66.102%, rgba(100, 100, 225, 0.25)), color-stop(66.102%, rgba(0, 0, 0, 0)), color-stop(67.797%, rgba(0, 0, 0, 0)), color-stop(67.797%, rgba(100, 100, 225, 0.25)), color-stop(74.576%, rgba(100, 100, 225, 0.25)), color-stop(74.576%, rgba(0, 0, 0, 0)), color-stop(76.271%, rgba(0, 0, 0, 0)), color-stop(76.271%, rgba(100, 100, 225, 0.25)), color-stop(83.051%, rgba(100, 100, 225, 0.25)), color-stop(83.051%, rgba(0, 0, 0, 0)), color-stop(84.746%, rgba(0, 0, 0, 0)), color-stop(84.746%, rgba(100, 100, 225, 0.25)), color-stop(91.525%, rgba(100, 100, 225, 0.25)), color-stop(91.525%, rgba(0, 0, 0, 0)), color-stop(93.22%, rgba(0, 0, 0, 0)), color-stop(93.22%, rgba(100, 100, 225, 0.25)), color-stop(100.0%, rgba(100, 100, 225, 0.25)), color-stop(100.0%, rgba(0, 0, 0, 0)), color-stop(100%, rgba(0, 0, 0, 0)));
+  background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0) 0%, rgba(100, 100, 225, 0.25) 0%, rgba(100, 100, 225, 0.25) 6.78%, rgba(0, 0, 0, 0) 6.78%, rgba(0, 0, 0, 0) 8.475%, rgba(100, 100, 225, 0.25) 8.475%, rgba(100, 100, 225, 0.25) 15.254%, rgba(0, 0, 0, 0) 15.254%, rgba(0, 0, 0, 0) 16.949%, rgba(100, 100, 225, 0.25) 16.949%, rgba(100, 100, 225, 0.25) 23.729%, rgba(0, 0, 0, 0) 23.729%, rgba(0, 0, 0, 0) 25.424%, rgba(100, 100, 225, 0.25) 25.424%, rgba(100, 100, 225, 0.25) 32.203%, rgba(0, 0, 0, 0) 32.203%, rgba(0, 0, 0, 0) 33.898%, rgba(100, 100, 225, 0.25) 33.898%, rgba(100, 100, 225, 0.25) 40.678%, rgba(0, 0, 0, 0) 40.678%, rgba(0, 0, 0, 0) 42.373%, rgba(100, 100, 225, 0.25) 42.373%, rgba(100, 100, 225, 0.25) 49.153%, rgba(0, 0, 0, 0) 49.153%, rgba(0, 0, 0, 0) 50.847%, rgba(100, 100, 225, 0.25) 50.847%, rgba(100, 100, 225, 0.25) 57.627%, rgba(0, 0, 0, 0) 57.627%, rgba(0, 0, 0, 0) 59.322%, rgba(100, 100, 225, 0.25) 59.322%, rgba(100, 100, 225, 0.25) 66.102%, rgba(0, 0, 0, 0) 66.102%, rgba(0, 0, 0, 0) 67.797%, rgba(100, 100, 225, 0.25) 67.797%, rgba(100, 100, 225, 0.25) 74.576%, rgba(0, 0, 0, 0) 74.576%, rgba(0, 0, 0, 0) 76.271%, rgba(100, 100, 225, 0.25) 76.271%, rgba(100, 100, 225, 0.25) 83.051%, rgba(0, 0, 0, 0) 83.051%, rgba(0, 0, 0, 0) 84.746%, rgba(100, 100, 225, 0.25) 84.746%, rgba(100, 100, 225, 0.25) 91.525%, rgba(0, 0, 0, 0) 91.525%, rgba(0, 0, 0, 0) 93.22%, rgba(100, 100, 225, 0.25) 93.22%, rgba(100, 100, 225, 0.25) 100.0%, rgba(0, 0, 0, 0) 100.0%, rgba(0, 0, 0, 0) 100%);
+  background-image: -moz-linear-gradient(left, rgba(0, 0, 0, 0) 0%, rgba(100, 100, 225, 0.25) 0%, rgba(100, 100, 225, 0.25) 6.78%, rgba(0, 0, 0, 0) 6.78%, rgba(0, 0, 0, 0) 8.475%, rgba(100, 100, 225, 0.25) 8.475%, rgba(100, 100, 225, 0.25) 15.254%, rgba(0, 0, 0, 0) 15.254%, rgba(0, 0, 0, 0) 16.949%, rgba(100, 100, 225, 0.25) 16.949%, rgba(100, 100, 225, 0.25) 23.729%, rgba(0, 0, 0, 0) 23.729%, rgba(0, 0, 0, 0) 25.424%, rgba(100, 100, 225, 0.25) 25.424%, rgba(100, 100, 225, 0.25) 32.203%, rgba(0, 0, 0, 0) 32.203%, rgba(0, 0, 0, 0) 33.898%, rgba(100, 100, 225, 0.25) 33.898%, rgba(100, 100, 225, 0.25) 40.678%, rgba(0, 0, 0, 0) 40.678%, rgba(0, 0, 0, 0) 42.373%, rgba(100, 100, 225, 0.25) 42.373%, rgba(100, 100, 225, 0.25) 49.153%, rgba(0, 0, 0, 0) 49.153%, rgba(0, 0, 0, 0) 50.847%, rgba(100, 100, 225, 0.25) 50.847%, rgba(100, 100, 225, 0.25) 57.627%, rgba(0, 0, 0, 0) 57.627%, rgba(0, 0, 0, 0) 59.322%, rgba(100, 100, 225, 0.25) 59.322%, rgba(100, 100, 225, 0.25) 66.102%, rgba(0, 0, 0, 0) 66.102%, rgba(0, 0, 0, 0) 67.797%, rgba(100, 100, 225, 0.25) 67.797%, rgba(100, 100, 225, 0.25) 74.576%, rgba(0, 0, 0, 0) 74.576%, rgba(0, 0, 0, 0) 76.271%, rgba(100, 100, 225, 0.25) 76.271%, rgba(100, 100, 225, 0.25) 83.051%, rgba(0, 0, 0, 0) 83.051%, rgba(0, 0, 0, 0) 84.746%, rgba(100, 100, 225, 0.25) 84.746%, rgba(100, 100, 225, 0.25) 91.525%, rgba(0, 0, 0, 0) 91.525%, rgba(0, 0, 0, 0) 93.22%, rgba(100, 100, 225, 0.25) 93.22%, rgba(100, 100, 225, 0.25) 100.0%, rgba(0, 0, 0, 0) 100.0%, rgba(0, 0, 0, 0) 100%);
+  background-image: -o-linear-gradient(left, rgba(0, 0, 0, 0) 0%, rgba(100, 100, 225, 0.25) 0%, rgba(100, 100, 225, 0.25) 6.78%, rgba(0, 0, 0, 0) 6.78%, rgba(0, 0, 0, 0) 8.475%, rgba(100, 100, 225, 0.25) 8.475%, rgba(100, 100, 225, 0.25) 15.254%, rgba(0, 0, 0, 0) 15.254%, rgba(0, 0, 0, 0) 16.949%, rgba(100, 100, 225, 0.25) 16.949%, rgba(100, 100, 225, 0.25) 23.729%, rgba(0, 0, 0, 0) 23.729%, rgba(0, 0, 0, 0) 25.424%, rgba(100, 100, 225, 0.25) 25.424%, rgba(100, 100, 225, 0.25) 32.203%, rgba(0, 0, 0, 0) 32.203%, rgba(0, 0, 0, 0) 33.898%, rgba(100, 100, 225, 0.25) 33.898%, rgba(100, 100, 225, 0.25) 40.678%, rgba(0, 0, 0, 0) 40.678%, rgba(0, 0, 0, 0) 42.373%, rgba(100, 100, 225, 0.25) 42.373%, rgba(100, 100, 225, 0.25) 49.153%, rgba(0, 0, 0, 0) 49.153%, rgba(0, 0, 0, 0) 50.847%, rgba(100, 100, 225, 0.25) 50.847%, rgba(100, 100, 225, 0.25) 57.627%, rgba(0, 0, 0, 0) 57.627%, rgba(0, 0, 0, 0) 59.322%, rgba(100, 100, 225, 0.25) 59.322%, rgba(100, 100, 225, 0.25) 66.102%, rgba(0, 0, 0, 0) 66.102%, rgba(0, 0, 0, 0) 67.797%, rgba(100, 100, 225, 0.25) 67.797%, rgba(100, 100, 225, 0.25) 74.576%, rgba(0, 0, 0, 0) 74.576%, rgba(0, 0, 0, 0) 76.271%, rgba(100, 100, 225, 0.25) 76.271%, rgba(100, 100, 225, 0.25) 83.051%, rgba(0, 0, 0, 0) 83.051%, rgba(0, 0, 0, 0) 84.746%, rgba(100, 100, 225, 0.25) 84.746%, rgba(100, 100, 225, 0.25) 91.525%, rgba(0, 0, 0, 0) 91.525%, rgba(0, 0, 0, 0) 93.22%, rgba(100, 100, 225, 0.25) 93.22%, rgba(100, 100, 225, 0.25) 100.0%, rgba(0, 0, 0, 0) 100.0%, rgba(0, 0, 0, 0) 100%);
+  background-image: -ms-linear-gradient(left, rgba(0, 0, 0, 0) 0%, rgba(100, 100, 225, 0.25) 0%, rgba(100, 100, 225, 0.25) 6.78%, rgba(0, 0, 0, 0) 6.78%, rgba(0, 0, 0, 0) 8.475%, rgba(100, 100, 225, 0.25) 8.475%, rgba(100, 100, 225, 0.25) 15.254%, rgba(0, 0, 0, 0) 15.254%, rgba(0, 0, 0, 0) 16.949%, rgba(100, 100, 225, 0.25) 16.949%, rgba(100, 100, 225, 0.25) 23.729%, rgba(0, 0, 0, 0) 23.729%, rgba(0, 0, 0, 0) 25.424%, rgba(100, 100, 225, 0.25) 25.424%, rgba(100, 100, 225, 0.25) 32.203%, rgba(0, 0, 0, 0) 32.203%, rgba(0, 0, 0, 0) 33.898%, rgba(100, 100, 225, 0.25) 33.898%, rgba(100, 100, 225, 0.25) 40.678%, rgba(0, 0, 0, 0) 40.678%, rgba(0, 0, 0, 0) 42.373%, rgba(100, 100, 225, 0.25) 42.373%, rgba(100, 100, 225, 0.25) 49.153%, rgba(0, 0, 0, 0) 49.153%, rgba(0, 0, 0, 0) 50.847%, rgba(100, 100, 225, 0.25) 50.847%, rgba(100, 100, 225, 0.25) 57.627%, rgba(0, 0, 0, 0) 57.627%, rgba(0, 0, 0, 0) 59.322%, rgba(100, 100, 225, 0.25) 59.322%, rgba(100, 100, 225, 0.25) 66.102%, rgba(0, 0, 0, 0) 66.102%, rgba(0, 0, 0, 0) 67.797%, rgba(100, 100, 225, 0.25) 67.797%, rgba(100, 100, 225, 0.25) 74.576%, rgba(0, 0, 0, 0) 74.576%, rgba(0, 0, 0, 0) 76.271%, rgba(100, 100, 225, 0.25) 76.271%, rgba(100, 100, 225, 0.25) 83.051%, rgba(0, 0, 0, 0) 83.051%, rgba(0, 0, 0, 0) 84.746%, rgba(100, 100, 225, 0.25) 84.746%, rgba(100, 100, 225, 0.25) 91.525%, rgba(0, 0, 0, 0) 91.525%, rgba(0, 0, 0, 0) 93.22%, rgba(100, 100, 225, 0.25) 93.22%, rgba(100, 100, 225, 0.25) 100.0%, rgba(0, 0, 0, 0) 100.0%, rgba(0, 0, 0, 0) 100%);
+  background-image: linear-gradient(left, rgba(0, 0, 0, 0) 0%, rgba(100, 100, 225, 0.25) 0%, rgba(100, 100, 225, 0.25) 6.78%, rgba(0, 0, 0, 0) 6.78%, rgba(0, 0, 0, 0) 8.475%, rgba(100, 100, 225, 0.25) 8.475%, rgba(100, 100, 225, 0.25) 15.254%, rgba(0, 0, 0, 0) 15.254%, rgba(0, 0, 0, 0) 16.949%, rgba(100, 100, 225, 0.25) 16.949%, rgba(100, 100, 225, 0.25) 23.729%, rgba(0, 0, 0, 0) 23.729%, rgba(0, 0, 0, 0) 25.424%, rgba(100, 100, 225, 0.25) 25.424%, rgba(100, 100, 225, 0.25) 32.203%, rgba(0, 0, 0, 0) 32.203%, rgba(0, 0, 0, 0) 33.898%, rgba(100, 100, 225, 0.25) 33.898%, rgba(100, 100, 225, 0.25) 40.678%, rgba(0, 0, 0, 0) 40.678%, rgba(0, 0, 0, 0) 42.373%, rgba(100, 100, 225, 0.25) 42.373%, rgba(100, 100, 225, 0.25) 49.153%, rgba(0, 0, 0, 0) 49.153%, rgba(0, 0, 0, 0) 50.847%, rgba(100, 100, 225, 0.25) 50.847%, rgba(100, 100, 225, 0.25) 57.627%, rgba(0, 0, 0, 0) 57.627%, rgba(0, 0, 0, 0) 59.322%, rgba(100, 100, 225, 0.25) 59.322%, rgba(100, 100, 225, 0.25) 66.102%, rgba(0, 0, 0, 0) 66.102%, rgba(0, 0, 0, 0) 67.797%, rgba(100, 100, 225, 0.25) 67.797%, rgba(100, 100, 225, 0.25) 74.576%, rgba(0, 0, 0, 0) 74.576%, rgba(0, 0, 0, 0) 76.271%, rgba(100, 100, 225, 0.25) 76.271%, rgba(100, 100, 225, 0.25) 83.051%, rgba(0, 0, 0, 0) 83.051%, rgba(0, 0, 0, 0) 84.746%, rgba(100, 100, 225, 0.25) 84.746%, rgba(100, 100, 225, 0.25) 91.525%, rgba(0, 0, 0, 0) 91.525%, rgba(0, 0, 0, 0) 93.22%, rgba(100, 100, 225, 0.25) 93.22%, rgba(100, 100, 225, 0.25) 100.0%, rgba(0, 0, 0, 0) 100.0%, rgba(0, 0, 0, 0) 100%);
+  background-position: left top;
+  -webkit-background-origin: content;
+  -moz-background-origin: content;
+  -ms-background-origin: content-box;
+  -o-background-origin: content-box;
+  background-origin: content-box;
+  -webkit-background-clip: content-box;
+  -moz-background-clip: content-box;
+  background-clip: content-box;
+}
+#main:after,
+header .container:after,
+footer .footer-content:after {
+  content: "";
+  display: table;
+  clear: both;
+}
 
-Backtrace:
-/home/ian/www/pressflow/sites/all/themes/pfo/css/sass/layout.scss:20:in `span-columns'
-/home/ian/www/pressflow/sites/all/themes/pfo/css/sass/layout.scss:20:in `padded-column'
-/home/ian/www/pressflow/sites/all/themes/pfo/css/sass/layout.scss:46
-/usr/lib/ruby/gems/1.8/gems/sass-3.1.16/lib/sass/../sass/tree/visitors/perform.rb:170:in `visit_mixin'
-/usr/lib/ruby/gems/1.8/gems/sass-3.1.16/lib/sass/../sass/tree/visitors/base.rb:37:in `send'
-/usr/lib/ruby/gems/1.8/gems/sass-3.1.16/lib/sass/../sass/tree/visitors/base.rb:37:in `visit'
-/usr/lib/ruby/gems/1.8/gems/sass-3.1.16/lib/sass/../sass/tree/visitors/perform.rb:18:in `visit'
-/usr/lib/ruby/gems/1.8/gems/sass-3.1.16/lib/sass/../sass/tree/visitors/perform.rb:201:in `visit_mixin'
-/usr/lib/ruby/gems/1.8/gems/sass-3.1.16/lib/sass/../sass/tree/visitors/perform.rb:201:in `map'
-/usr/lib/ruby/gems/1.8/gems/sass-3.1.16/lib/sass/../sass/tree/visitors/perform.rb:201:in `visit_mixin'
-/usr/lib/ruby/gems/1.8/gems/sass-3.1.16/lib/sass/../sass/tree/visitors/perform.rb:39:in `with_environment'
-/usr/lib/ruby/gems/1.8/gems/sass-3.1.16/lib/sass/../sass/tree/visitors/perform.rb:201:in `visit_mixin'
-/usr/lib/ruby/gems/1.8/gems/sass-3.1.16/lib/sass/../sass/tree/visitors/base.rb:37:in `send'
-/usr/lib/ruby/gems/1.8/gems/sass-3.1.16/lib/sass/../sass/tree/visitors/base.rb:37:in `visit'
-/usr/lib/ruby/gems/1.8/gems/sass-3.1.16/lib/sass/../sass/tree/visitors/perform.rb:18:in `visit'
-/usr/lib/ruby/gems/1.8/gems/sass-3.1.16/lib/sass/../sass/tree/visitors/base.rb:53:in `visit_children'
-/usr/lib/ruby/gems/1.8/gems/sass-3.1.16/lib/sass/../sass/tree/visitors/base.rb:53:in `map'
-/usr/lib/ruby/gems/1.8/gems/sass-3.1.16/lib/sass/../sass/tree/visitors/base.rb:53:in `visit_children'
-/usr/lib/ruby/gems/1.8/gems/sass-3.1.16/lib/sass/../sass/tree/visitors/perform.rb:27:in `visit_children'
-/usr/lib/ruby/gems/1.8/gems/sass-3.1.16/lib/sass/../sass/tree/visitors/perform.rb:39:in `with_environment'
-/usr/lib/ruby/gems/1.8/gems/sass-3.1.16/lib/sass/../sass/tree/visitors/perform.rb:26:in `visit_children'
-/usr/lib/ruby/gems/1.8/gems/sass-3.1.16/lib/sass/../sass/tree/visitors/base.rb:37:in `visit'
-/usr/lib/ruby/gems/1.8/gems/sass-3.1.16/lib/sass/../sass/tree/visitors/perform.rb:238:in `visit_rule'
-/usr/lib/ruby/gems/1.8/gems/sass-3.1.16/lib/sass/../sass/tree/visitors/base.rb:37:in `send'
-/usr/lib/ruby/gems/1.8/gems/sass-3.1.16/lib/sass/../sass/tree/visitors/base.rb:37:in `visit'
-/usr/lib/ruby/gems/1.8/gems/sass-3.1.16/lib/sass/../sass/tree/visitors/perform.rb:18:in `visit'
-/usr/lib/ruby/gems/1.8/gems/sass-3.1.16/lib/sass/../sass/tree/visitors/base.rb:53:in `visit_children'
-/usr/lib/ruby/gems/1.8/gems/sass-3.1.16/lib/sass/../sass/tree/visitors/base.rb:53:in `map'
-/usr/lib/ruby/gems/1.8/gems/sass-3.1.16/lib/sass/../sass/tree/visitors/base.rb:53:in `visit_children'
-/usr/lib/ruby/gems/1.8/gems/sass-3.1.16/lib/sass/../sass/tree/visitors/perform.rb:27:in `visit_children'
-/usr/lib/ruby/gems/1.8/gems/sass-3.1.16/lib/sass/../sass/tree/visitors/perform.rb:39:in `with_environment'
-/usr/lib/ruby/gems/1.8/gems/sass-3.1.16/lib/sass/../sass/tree/visitors/perform.rb:26:in `visit_children'
-/usr/lib/ruby/gems/1.8/gems/sass-3.1.16/lib/sass/../sass/tree/visitors/base.rb:37:in `visit'
-/usr/lib/ruby/gems/1.8/gems/sass-3.1.16/lib/sass/../sass/tree/visitors/perform.rb:47:in `visit_root'
-/usr/lib/ruby/gems/1.8/gems/sass-3.1.16/lib/sass/../sass/tree/visitors/base.rb:37:in `send'
-/usr/lib/ruby/gems/1.8/gems/sass-3.1.16/lib/sass/../sass/tree/visitors/base.rb:37:in `visit'
-/usr/lib/ruby/gems/1.8/gems/sass-3.1.16/lib/sass/../sass/tree/visitors/perform.rb:18:in `visit'
-/usr/lib/ruby/gems/1.8/gems/sass-3.1.16/lib/sass/../sass/tree/visitors/perform.rb:7:in `send'
-/usr/lib/ruby/gems/1.8/gems/sass-3.1.16/lib/sass/../sass/tree/visitors/perform.rb:7:in `visit'
-/usr/lib/ruby/gems/1.8/gems/sass-3.1.16/lib/sass/../sass/tree/root_node.rb:20:in `render'
-/usr/lib/ruby/gems/1.8/gems/sass-3.1.16/lib/sass/../sass/engine.rb:299:in `_render'
-/usr/lib/ruby/gems/1.8/gems/sass-3.1.16/lib/sass/../sass/engine.rb:246:in `render'
-/usr/lib/ruby/gems/1.8/gems/compass-0.12.1/lib/compass/compiler.rb:140:in `compile'
-/usr/lib/ruby/gems/1.8/gems/compass-0.12.1/lib/compass/compiler.rb:126:in `timed'
-/usr/lib/ruby/gems/1.8/gems/compass-0.12.1/lib/compass/compiler.rb:139:in `compile'
-/usr/lib/ruby/gems/1.8/gems/compass-0.12.1/lib/compass/logger.rb:45:in `red'
-/usr/lib/ruby/gems/1.8/gems/compass-0.12.1/lib/compass/compiler.rb:138:in `compile'
-/usr/lib/ruby/gems/1.8/gems/compass-0.12.1/lib/compass/compiler.rb:118:in `compile_if_required'
-/usr/lib/ruby/gems/1.8/gems/compass-0.12.1/lib/compass/compiler.rb:103:in `run'
-/usr/lib/ruby/gems/1.8/gems/compass-0.12.1/lib/compass/compiler.rb:101:in `each'
-/usr/lib/ruby/gems/1.8/gems/compass-0.12.1/lib/compass/compiler.rb:101:in `run'
-/usr/lib/ruby/gems/1.8/gems/compass-0.12.1/lib/compass/compiler.rb:126:in `timed'
-/usr/lib/ruby/gems/1.8/gems/compass-0.12.1/lib/compass/compiler.rb:100:in `run'
-/usr/lib/ruby/gems/1.8/gems/compass-0.12.1/lib/compass/commands/watch_project.rb:147:in `recompile'
-/usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:36
-/usr/lib/ruby/gems/1.8/gems/fssm-0.2.9/lib/fssm/path.rb:73:in `call'
-/usr/lib/ruby/gems/1.8/gems/fssm-0.2.9/lib/fssm/path.rb:73:in `run_callback'
-/usr/lib/ruby/gems/1.8/gems/fssm-0.2.9/lib/fssm/path.rb:55:in `callback_action'
-/usr/lib/ruby/gems/1.8/gems/fssm-0.2.9/lib/fssm/path.rb:35:in `update'
-/usr/lib/ruby/gems/1.8/gems/fssm-0.2.9/lib/fssm/state/directory.rb:39:in `modified'
-/usr/lib/ruby/gems/1.8/gems/fssm-0.2.9/lib/fssm/state/directory.rb:37:in `each'
-/usr/lib/ruby/gems/1.8/gems/fssm-0.2.9/lib/fssm/state/directory.rb:37:in `modified'
-/usr/lib/ruby/gems/1.8/gems/fssm-0.2.9/lib/fssm/state/directory.rb:18:in `refresh'
-/usr/lib/ruby/gems/1.8/gems/fssm-0.2.9/lib/fssm/backends/polling.rb:17:in `run'
-/usr/lib/ruby/gems/1.8/gems/fssm-0.2.9/lib/fssm/backends/polling.rb:17:in `each'
-/usr/lib/ruby/gems/1.8/gems/fssm-0.2.9/lib/fssm/backends/polling.rb:17:in `run'
-/usr/lib/ruby/gems/1.8/gems/fssm-0.2.9/lib/fssm/backends/polling.rb:15:in `loop'
-/usr/lib/ruby/gems/1.8/gems/fssm-0.2.9/lib/fssm/backends/polling.rb:15:in `run'
-/usr/lib/ruby/gems/1.8/gems/fssm-0.2.9/lib/fssm/monitor.rb:26:in `run'
-/usr/lib/ruby/gems/1.8/gems/fssm-0.2.9/lib/fssm.rb:70:in `monitor'
-/usr/lib/ruby/gems/1.8/gems/compass-0.12.1/lib/compass/commands/watch_project.rb:87:in `perform'
-/usr/lib/ruby/gems/1.8/gems/compass-0.12.1/lib/compass/commands/base.rb:18:in `execute'
-/usr/lib/ruby/gems/1.8/gems/compass-0.12.1/lib/compass/commands/project_base.rb:19:in `execute'
-/usr/lib/ruby/gems/1.8/gems/compass-0.12.1/lib/compass/exec/sub_command_ui.rb:43:in `perform!'
-/usr/lib/ruby/gems/1.8/gems/compass-0.12.1/lib/compass/exec/sub_command_ui.rb:15:in `run!'
-/usr/lib/ruby/gems/1.8/gems/compass-0.12.1/bin/compass:29
-/usr/lib/ruby/gems/1.8/gems/compass-0.12.1/bin/compass:43:in `call'
-/usr/lib/ruby/gems/1.8/gems/compass-0.12.1/bin/compass:43
-/usr/bin/compass:23:in `load'
-/usr/bin/compass:23
-*/
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Syntax error: Undefined mixin 'span-columns'.\A         on line 20 of /home/ian/www/pressflow/sites/all/themes/pfo/css/sass/layout.scss, in `span-columns'\A         from line 20 of /home/ian/www/pressflow/sites/all/themes/pfo/css/sass/layout.scss, in `padded-column'\A         from line 46 of /home/ian/www/pressflow/sites/all/themes/pfo/css/sass/layout.scss"; }
+header hgroup,
+.front .stripe {
+  clear: both;
+}
+
+header nav {
+  clear: both;
+}
+
+#main #content {
+  width: 83.051%;
+  float: left;
+  margin-right: 1.695%;
+  display: inline;
+  padding-left: 8.475%;
+  padding-right: 8.475%;
+}
+
+.intro,
+.front .download {
+  width: 66.102%;
+  float: left;
+  margin-right: 1.695%;
+  display: inline;
+  padding-left: 16.949%;
+  padding-right: 16.949%;
+}
+
+h1.title {
+  width: 49.153%;
+  float: left;
+  margin-right: 1.695%;
+  display: inline;
+}
+
+hgroup .download {
+  width: 49.153%;
+  float: right;
+  margin-right: 0;
+  #margin-left: -1em;
+  display: inline;
+}
+
+footer .region-footer {
+  clear: both;
+}
+
+footer .footer-foot {
+  clear: both;
+}
+
+footer .footer-col {
+  width: 83.051%;
+  float: left;
+  margin-right: 1.695%;
+  display: inline;
+  padding-left: 8.475%;
+  padding-right: 8.475%;
+  margin-bottom: 1em;
+}
+
+/**
+ * Medium-sized devices with MQs. Size not final!!!
+ */
+@media only screen and (min-width: 42em) {
+  #main #content {
+    width: 100%;
+    float: left;
+    margin-right: 1.695%;
+    display: inline;
+    padding-left: 0%;
+    padding-right: 0%;
+  }
+
+  hgroup .intro,
+  .front .download,
+  hgroup .download,
+  #wat section,
+  body.front .view-pressflownians .views-row {
+    width: 49.153%;
+    float: left;
+    margin-right: 1.695%;
+    display: inline;
+  }
+
+  footer .footer-col {
+    width: 40.678%;
+    float: left;
+    margin-right: 1.695%;
+    display: inline;
+    padding-left: 0%;
+    padding-right: 0%;
+  }
+
+  footer #footer-left-col {
+    padding-left: 8.475%;
+    padding-right: 0%;
+  }
+}
+/**
+ * Bigger devices with MQs. Size not final!!!
+ */
+@media only screen and (min-width: 61em) {
+  /* -- Intro and Download -- */
+  hgroup .intro {
+    width: 32.203%;
+    float: left;
+    margin-right: 1.695%;
+    display: inline;
+    padding-left: 8.475%;
+    padding-right: 8.475%;
+  }
+
+  .front .download,
+  hgroup .download {
+    width: 32.203%;
+    float: right;
+    margin-right: 0;
+    #margin-left: -1em;
+    display: inline;
+    padding-left: 8.475%;
+    padding-right: 8.475%;
+  }
+
+  /* -- What's the deal... */
+  #wat section {
+    width: 32.203%;
+    float: left;
+    margin-right: 1.695%;
+    display: inline;
+  }
+
+  /* -- Who uses Pressflow? -- */
+  body.front .view-pressflownians .views-row {
+    width: 23.729%;
+    float: left;
+    margin-right: 1.695%;
+    display: inline;
+  }
+}

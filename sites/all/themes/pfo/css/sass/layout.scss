@@ -39,7 +39,7 @@ header hgroup,
 }
 
 header nav {
-  @include full;
+  clear: both;
 }
 
 #main #content {
@@ -64,7 +64,7 @@ hgroup .download {
 
 // Footer
 footer .region-footer {
-  @include full;
+  clear: both;
 }
 
 footer .footer-foot {
@@ -103,7 +103,7 @@ footer .footer-col {
   }
 
   footer #footer-left-col {
-    @include prefix(1);
+    @include pad(1,0);
   }
 
   footer #footer-right-col {
