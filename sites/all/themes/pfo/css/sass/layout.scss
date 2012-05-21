@@ -17,9 +17,8 @@
 // Column padding for mobile phones
 
 @mixin padded-column() {
-  @include columns(10);
+  @include span-columns(10);
   @include pad(1,1);
-  @include alpha;
 }
 
 
@@ -50,19 +49,17 @@ header nav {
 // home page
 .intro,
 .front .download {
-  @include columns(8);
+  @include span-columns(8);
   @include pad(2,2);
 }
 
 // Interior titles
 h1.title {
-  @include columns(6);
-  @include alpha;
+  @include span-columns(6);
 }
 // Interior download link
 hgroup .download {
-  @include columns(6);
-  @include omega;
+  @include span-columns(6 omega);
 }
 
 // Footer
@@ -87,7 +84,7 @@ footer .footer-col {
 @media only screen and (min-width: 42em) {
 
   #main #content {
-    @include columns(12);
+    @include span-columns(12);
     @include pad(0,0);
   }
 
@@ -96,12 +93,12 @@ footer .footer-col {
   hgroup .download, // download link
   #wat section, // What's the deal...
   body.front .view-pressflownians .views-row { // Who uses Pressflow?
-    @include columns(6);
+    @include span-columns(6);
   }
 
   // Footer
   footer .footer-col {
-    @include columns(5);
+    @include span-columns(5);
     @include pad(0,0);
   }
 
@@ -123,26 +120,25 @@ footer .footer-col {
 
   /* -- Intro and Download -- */
   hgroup .intro {
-    @include columns(4);
+    @include span-columns(4);
     @include pad(1,1);
-    @include alpha;
+    
   }
 
   .front .download,
   hgroup .download {
-    @include columns(4);
+    @include span-columns(4 omega);
     @include pad(1,1);
-    @include omega;
   }
 
   /* -- What's the deal... */
   #wat section {
-    @include columns(4);
+    @include span-columns(4);
   }
 
   /* -- Who uses Pressflow? -- */
   body.front .view-pressflownians .views-row {
-    @include columns(3);
+    @include span-columns(3);
   }
 
 }
