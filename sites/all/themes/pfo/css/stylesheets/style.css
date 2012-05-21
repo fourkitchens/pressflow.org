@@ -402,11 +402,12 @@ footer h2 {
 }
 
 .front #logo {
-  width: 92%;
+  width: 95%;
   height: auto;
   background: url("../../img/logo.png") no-repeat 50% top;
   padding-top: 4em;
   margin-bottom: -0.6em;
+  margin-left: 2.5%;
   position: relative;
   z-index: 10;
   text-indent: 100%;
@@ -442,7 +443,6 @@ footer h2 {
 
 /* -- Download section -- */
 .download h2 {
-  width: 60%;
   margin-bottom: .6em;
   padding-bottom: .2em;
   overflow: visible;
@@ -519,13 +519,9 @@ footer h2 {
  * All styles in this file are wrapped in media queries.
  */
 /**
- * Medium-sized devices with MQs. Size not final!!!
+ * Navigation-specific styling.
  */
-@media only screen and (min-width: 42em) {
-  .download h2 {
-    text-align: center;
-  }
-
+@media only screen and (min-width: 36em) {
   nav li {
     float: right;
   }
@@ -538,11 +534,7 @@ footer h2 {
   nav li a {
     display: inline-block;
   }
-
-  .front #logo {
-    width: 98%;
-  }
 }
 /**
- * Bigger devices with MQs. Size not final!!!
+ * Bigger devices with MQs.
  */
