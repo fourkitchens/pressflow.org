@@ -10,17 +10,6 @@
 
 @import 'base';
 
-/**
- * Mixins
- */
-
-// Column padding for mobile phones
-
-@mixin padded-column() {
-  @include span-columns(10);
-  @include pad(1,1);
-}
-
 
 /**
  * Basic layout. Will display on browsers without MQs, or small devices with MQs.
@@ -42,24 +31,18 @@ header nav {
   clear: both;
 }
 
-#main #content {
-  @include padded-column();
+#content,             // all pages
+.intro,               // home page
+.download,            // home page
+footer .footer-col,   // all pages
+#page-title,          // interior pages
+.download {           // all pages
+  @include span-columns(10);
+  @include pad(1,1);
 }
 
-// home page
-.intro,
-.front .download {
-  @include span-columns(8);
-  @include pad(2,2);
-}
-
-// Interior titles
-h1.title {
-  @include span-columns(6);
-}
-// Interior download link
-hgroup .download {
-  @include span-columns(6 omega);
+.download {
+  display: none;
 }
 
 // Footer
@@ -72,7 +55,6 @@ footer .footer-foot {
 }
 
 footer .footer-col {
-  @include padded-column();
   margin-bottom: 1em;
 }
 
@@ -88,10 +70,18 @@ footer .footer-col {
     @include pad(0,0);
   }
 
-  hgroup .intro, // Intro and Download
-  .front .download, // download link
-  hgroup .download, // download link
-  #wat section, // What's the deal...
+  #page-title {
+    @include span-columns(6);
+    @include pad(0,0);
+  }
+
+  .download {
+    display: block;
+  }
+
+  .intro,         // Intro
+  .download,      // download link
+  #wat section,   // What's the deal...
   body.front .view-pressflownians .views-row { // Who uses Pressflow?
     @include span-columns(6);
   }
@@ -119,14 +109,12 @@ footer .footer-col {
 @media only screen and (min-width: 61em) {
 
   /* -- Intro and Download -- */
-  hgroup .intro {
+  .intro {
     @include span-columns(4);
     @include pad(1,1);
     
   }
-
-  .front .download,
-  hgroup .download {
+  .download {
     @include span-columns(4 omega);
     @include pad(1,1);
   }
@@ -143,6 +131,9 @@ footer .footer-col {
   /* -- Who uses Pressflow? -- */
   body.front .view-pressflownians .views-row {
     @include span-columns(3);
+  }
+  body.front .view-pressflownians .views-row:nth-child(4n) {
+    @include span-columns(3 omega);
   }
 
 }

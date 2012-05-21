@@ -4,13 +4,9 @@
  * All styles in this file are wrapped in media queries.
  */
 /**
- * Medium-sized devices with MQs. Size not final!!!
+ * Navigation-specific styling.
  */
-@media only screen and (min-width: 42em) {
-  .download h2 {
-    text-align: center;
-  }
-
+@media only screen and (min-width: 36em) {
   nav li {
     float: right;
   }
@@ -23,11 +19,7 @@
   nav li a {
     display: inline-block;
   }
-
-  .front #logo {
-    width: 98%;
-  }
 }
 /**
- * Bigger devices with MQs. Size not final!!!
+ * Bigger devices with MQs.
  */
