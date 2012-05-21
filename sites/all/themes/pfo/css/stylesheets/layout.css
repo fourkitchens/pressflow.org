@@ -70,6 +70,10 @@ footer .footer-col,
   padding-right: 8.475%;
 }
 
+.download {
+  display: none;
+}
+
 footer .region-footer {
   clear: both;
 }
@@ -102,6 +106,10 @@ footer .footer-col {
     display: inline;
     padding-left: 0%;
     padding-right: 0%;
+  }
+
+  .download {
+    display: block;
   }
 
   .intro,

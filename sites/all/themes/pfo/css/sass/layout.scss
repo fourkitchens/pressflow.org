@@ -51,6 +51,10 @@ footer .footer-col,   // all pages
   @include padded-column;
 }
 
+.download {
+  display: none;
+}
+
 // Footer
 footer .region-footer {
   clear: both;
@@ -79,6 +83,10 @@ footer .footer-col {
   #page-title {
     @include span-columns(6);
     @include pad(0,0);
+  }
+
+  .download {
+    display: block;
   }
 
   .intro,         // Intro
