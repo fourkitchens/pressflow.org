@@ -134,5 +134,8 @@ footer .footer-col {
   body.front .view-pressflownians .views-row {
     @include span-columns(3);
   }
+  body.front .view-pressflownians .views-row:nth-child(4n) {
+    @include span-columns(3 omega);
+  }
 
 }
