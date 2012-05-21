@@ -179,6 +179,14 @@ footer .footer-col {
     display: inline;
   }
 
+  #wat section.support {
+    width: 32.203%;
+    float: right;
+    margin-right: 0;
+    #margin-left: -1em;
+    display: inline;
+  }
+
   /* -- Who uses Pressflow? -- */
   body.front .view-pressflownians .views-row {
     width: 23.729%;

@@ -135,6 +135,10 @@ footer .footer-col {
   #wat section {
     @include span-columns(4);
   }
+  
+  #wat section.support {
+    @include span-columns(4 omega);
+  }
 
   /* -- Who uses Pressflow? -- */
   body.front .view-pressflownians .views-row {
