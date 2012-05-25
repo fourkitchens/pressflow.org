@@ -190,7 +190,7 @@ body {
   color: #424242;
   font-size: 15px;
   line-height: 1.231;
-  font-family: arial, sans-serif;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 300;
 }
 
@@ -308,20 +308,10 @@ footer h2 {
 /* -- Social media icons -- */
 
 .social a {
-  float: left;
   width: 32.2%;
-  height: 2em;
-
-  // image replacement
-  text-indent: -9999px;
-}
-
-.social-twitter {
-  background: url('../img/social/twitter.png') no-repeat 40% top;
-}
-
-.social-facebook {
-  background: url('../img/social/facebook.png') no-repeat 40% top;
+  color: white;
+  text-decoration: none;
+//  text-indent: -9999px;
 }
 
 .social-google-plus {

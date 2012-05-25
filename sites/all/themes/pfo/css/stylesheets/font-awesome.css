@@ -1,19 +1,3 @@
-@import url("http://fonts.googleapis.com/css?family=Arvo:400,700");
-/**
- * @TODO: Why do I have to import _defaults.scss twice?
- *        front.scss does not compile unless 'defaults' is imported redundantly.
- *        Original @import is at the top of style.scss
- */
-/**
- * These are Compass declarations. This Sass file
- * cannot compile to CSS3 without these libraries.
- */
-/**
- * Colors
- */
-/**
- * Fonts
- */
 /*  Font Awesome
     the iconic font designed for use with Twitter Bootstrap
     -------------------------------------------------------
@@ -86,17 +70,20 @@ a [class*=" icon-"] {
   font-size: 4/3em;
 }
 
-.btn [class^="icon-"], .btn [class*=" icon-"] {
+.btn [class^="icon-"],
+.btn [class*=" icon-"] {
   /* keeps button heights with and without icons the same */
   line-height: .9em;
 }
 
-li [class^="icon-"], li [class*=" icon-"] {
+li [class^="icon-"],
+li [class*=" icon-"] {
   display: inline-block;
   width: 1.25em;
   text-align: center;
 }
-li .icon-large[class^="icon-"], li .icon-large[class*=" icon-"] {
+li .icon-large[class^="icon-"],
+li .icon-large[class*=" icon-"] {
   /* 1.5 increased font size for icon-large * 1.25 width */
   width: 1.875em;
 }
@@ -677,135 +664,4 @@ li[class*=" icon-"].icon-large:before {
 
 .icon-lemon:before {
   content: "\f094";
-}
-
-@font-face {
-  font-family: 'League Gothic';
-  src: url("../../fonts/league-gothic/webfonts/League_Gothic-webfont.eot");
-  src: url("../../fonts/league-gothic/webfonts/League_Gothic-webfont.eot?iefix") format("eot"), url("../../fonts/league-gothic/webfonts/League_Gothic-webfont.woff") format("woff"), url("../../fonts/league-gothic/webfonts/League_Gothic-webfont.ttf") format("truetype");
-  font-weight: 400;
-  font-style: normal;
-}
-
-/**
- * Mixins
- */
-/* === Front page === */
-.front header {
-  width: 100%;
-  background: url("../../img/bg-mountain.png") no-repeat 50% top;
-  background-size: cover;
-}
-
-.front nav li.first {
-  display: none;
-}
-
-.front #logo {
-  width: 95%;
-  height: auto;
-  background: url("../../img/logo.png") no-repeat 50% top;
-  padding-top: 4em;
-  margin-bottom: -0.6em;
-  margin-left: 2.5%;
-  position: relative;
-  z-index: 10;
-  text-indent: 100%;
-  white-space: nowrap;
-  overflow: hidden;
-}
-.backgroundsize .front #logo {
-  background-size: contain;
-}
-.no-backgroundsize .front #logo {
-  min-height: 198px;
-  padding-top: 0;
-}
-
-.front .stripe {
-  width: 100%;
-  padding: 2em 0;
-  background: rgba(255, 255, 255, 0.6);
-  border-top: 1px solid rgba(0, 0, 0, 0.2);
-}
-
-/* -- Intro -- */
-.intro h2 {
-  float: none;
-  margin: .8em 0;
-  text-transform: none;
-  color: #473430;
-  font-family: "League Gothic", sans-serif;
-  font-size: 3em;
-  line-height: 0;
-  white-space: nowrap;
-}
-
-/* -- Download section -- */
-.download h2 {
-  margin-bottom: .6em;
-  padding-bottom: .2em;
-  overflow: visible;
-  font-size: 1em;
-  font-family: Arvo, Georgia, serif;
-  font-weight: 400;
-  text-transform: lowercase;
-  color: #666;
-  text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.6);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
-}
-
-.download #download {
-  display: block;
-  clear: both;
-  width: 0;
-  height: 0;
-  padding: 1.45em 4.2em 2.7em 18.6em;
-  background: url("../../img/sprite.png") no-repeat 0 -100px;
-  font-family: Arvo, Georgia, serif;
-  font-size: .8em;
-  font-style: italic;
-  text-decoration: none;
-  color: #777;
-  white-space: nowrap;
-}
-
-/* -- Informational blocks -- */
-#wat section {
-  margin-bottom: 1em;
-}
-
-#wat h3:after {
-  content: ' ';
-  display: inline-block;
-  width: 30px;
-  height: 25px;
-  background: url("../../img/sprite.png") no-repeat;
-  position: relative;
-  top: 6px;
-  margin-left: .8em;
-}
-
-#wat .install h3:after {
-  background-position: left top;
-}
-
-#wat .compat h3:after {
-  background-position: -40px top;
-}
-
-#wat .support h3:after {
-  background-position: -76px top;
-}
-
-#wat .support .button {
-  display: inline-block;
-  background: white url("../../img/sprite.png") no-repeat -130px 10px;
-  padding: .7em 1em .7em 2.3em;
-  font-size: 1.1em;
-  font-family: Arvo, Georgia, serif;
-  color: #c54b2c;
-  text-decoration: none;
-  border-radius: 7px;
-  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
 }

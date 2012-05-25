@@ -5,9 +5,9 @@
         <div class="region region-footer">
           <h2>Stay Connected to Pressflow</h2>
           <div id="footer-left-col" class="footer-col social">
-            <a href="http://twitter.com/#!/Pressflow" target="_blank" class="social-twitter">Follow us on Twitter</a>
-            <a href="http://facebook.com/Pressflow" target="_blank" class="social-facebook">Follow us on Facebook</a>
-            <a href="##WAT" target="_blank" class="social-google-plus">G+</a>
+            <a href="http://twitter.com/#!/Pressflow" target="_blank" class="icon-twitter-sign icon-large">Twitter</a>
+            <a href="http://facebook.com/Pressflow" target="_blank" class="icon-facebook-sign icon-large">Facebook</a>
+            <a href="##WAT" target="_blank">Google+</a>
           </div>
 
           <div id="footer-right-col" class="footer-col">
