@@ -47,7 +47,36 @@
         <?php if ($tabs): ?><div class="tabs"><?php print render($tabs); ?></div><?php endif; ?>
         <?php print render($page['help']); ?>
         <?php if ($action_links): ?><ul class="action-links"><?php print render($action_links); ?></ul><?php endif; ?>
-        <?php print render($page['content']); ?>
+        <?php /* print render($page['content']); */ ?>
+
+        <div id="wat">
+          <section class="install">
+            <h3>What is Pressflow?</h3>
+            <p>Pressflow is a fully API-compatible distribution of Drupal that offers the following benefits over a standard Drupal installation:</p>
+            <ul>
+              <li>One</li>
+              <li>Two</li>
+              <li>Three</li>
+            </ul>
+          </section>
+
+          <section class="compat">
+            <h3>Get involved</h3>
+            <p>Pressflow is an open source project, which means not only is it free for everyone to use, but if you have ideas for improvement, it's possible to get them included in the next release.</p>
+            <p>Get started today by viewing the project on <a href="http://github.com/pressflow">Github</a></p>
+          </section>
+
+          <section class="support">
+            <h3>Need Support?</h3>
+            <ul>
+              <li>Read the documentation on the <a href="http://pressflow.atlassian.org">Pressflow wiki</a>.</li>
+              <li>File bugs and issues on <a href="https://github.com/pressflow">Github</a></li>
+              <li>Post questions and answers at <a href="http://drupal.stackexchange.com/questions/tagged/pressflow">drupal.stackexchange.com</a></li>
+            </ul>
+
+          </section>
+        </div><!-- #wat -->
+
         <?php print $feed_icons; ?>
       </div><!-- #content -->
 
