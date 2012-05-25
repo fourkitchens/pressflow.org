@@ -54,10 +54,6 @@
 
     </section><!-- #main -->
 
-    <footer class="section">
-      <div class="section-content footer-content">
-        <?php print render($page['footer']); ?>
-      </div>
-    </footer>
+    <?php include('_footer.tpl.inc'); ?>
 
   </section><!-- #page -->
