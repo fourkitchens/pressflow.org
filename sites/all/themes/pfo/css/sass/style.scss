@@ -311,11 +311,15 @@ footer h2 {
   width: 32.2%;
   color: white;
   text-decoration: none;
-//  text-indent: -9999px;
+  font-size: 18px;
+  margin-right: 10px;
+  // text-indent: -9999px;
 }
 
-.social-google-plus {
-  background: url('../img/social/google-plus.png') no-repeat 40% top;
+// Temporary Google+ icon until Awesome Font adds one.
+.social .icon-google-plus {
+  background: url('../../img/icon-google-plus.png') no-repeat left 3px;
+  padding-left: 20px;
 }
 
 // Copyright

@@ -975,10 +975,13 @@ footer h2 {
   width: 32.2%;
   color: white;
   text-decoration: none;
+  font-size: 18px;
+  margin-right: 10px;
 }
 
-.social-google-plus {
-  background: url("../img/social/google-plus.png") no-repeat 40% top;
+.social .icon-google-plus {
+  background: url("../../img/icon-google-plus.png") no-repeat left 3px;
+  padding-left: 20px;
 }
 
 .footer-foot {
