@@ -22,7 +22,7 @@
           </div><!-- .intro -->
 
           <div class="download">
-            <h2>download and install</h2>
+            <h2>Download and install</h2>
             <?php print $download; ?>
             <p class="pf7">Looking for Pressflow 7?<br> Check the progress on <a href="https://github.com/pressflow/7">Github</a></p>
           </div><!-- .download -->
@@ -49,33 +49,33 @@
         <?php if ($action_links): ?><ul class="action-links"><?php print render($action_links); ?></ul><?php endif; ?>
         <?php /* print render($page['content']); */ ?>
 
-        <div id="wat">
-          <section class="install">
-            <h3>What is Pressflow?</h3>
+        <div id="front-info">
+          <section class="front-info-col-1">
+            <h3><i class="icon-info-sign"></i> What is Pressflow?</h3>
             <p>Pressflow is a fully API-compatible distribution of Drupal that offers the following benefits over a standard Drupal installation:</p>
             <ul>
-              <li>One</li>
-              <li>Two</li>
-              <li>Three</li>
+              <li class="icon-ok">One</li>
+              <li class="icon-ok">Two</li>
+              <li class="icon-ok">Three</li>
             </ul>
           </section>
 
-          <section class="compat">
-            <h3>Get involved</h3>
+          <section class="front-info-col-2">
+            <h3><i class="icon-cog"></i> Get involved</h3>
             <p>Pressflow is an open source project, which means not only is it free for everyone to use, but if you have ideas for improvement, it's possible to get them included in the next release.</p>
             <p>Get started today by viewing the project on <a href="http://github.com/pressflow">Github</a></p>
           </section>
 
-          <section class="support">
-            <h3>Need Support?</h3>
+          <section class="front-info-col-3">
+            <h3><i class="icon-comments"></i> Need Support?</h3>
             <ul>
-              <li>Read the documentation on the <a href="http://pressflow.atlassian.org">Pressflow wiki</a>.</li>
-              <li>File bugs and issues on <a href="https://github.com/pressflow">Github</a></li>
-              <li>Post questions and answers at <a href="http://drupal.stackexchange.com/questions/tagged/pressflow">drupal.stackexchange.com</a></li>
+              <li class="icon-book">Read the documentation on the <a href="http://pressflow.atlassian.org">Pressflow wiki</a>.</li>
+              <li class="icon-github-sign">File bugs and issues on <a href="https://github.com/pressflow">Github</a></li>
+              <li class="icon-question-sign">Post questions and answers at <a href="http://drupal.stackexchange.com/questions/tagged/pressflow">drupal.stackexchange.com</a></li>
             </ul>
 
           </section>
-        </div><!-- #wat -->
+        </div><!-- #front-info -->
 
         <?php print $feed_icons; ?>
       </div><!-- #content -->
