@@ -104,7 +104,7 @@ footer .footer-col {
 
   .intro,
   .download,
-  #wat section,
+  #front-info section,
   body.front .view-pressflownians .views-row {
     width: 49.153%;
     float: left;
@@ -151,14 +151,14 @@ footer .footer-col {
   }
 
   /* -- What's the deal... */
-  #wat section {
+  #front-info section {
     width: 32.203%;
     float: left;
     margin-right: 1.695%;
     display: inline;
   }
 
-  #wat section.support {
+  #front-info section.front-info-col-3 {
     width: 32.203%;
     float: right;
     margin-right: 0;

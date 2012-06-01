@@ -81,7 +81,7 @@ footer .footer-col {
 
   .intro,         // Intro
   .download,      // download link
-  #wat section,   // What's the deal...
+  #front-info section,   // What's the deal...
   body.front .view-pressflownians .views-row { // Who uses Pressflow?
     @include span-columns(6);
   }
@@ -120,11 +120,11 @@ footer .footer-col {
   }
 
   /* -- What's the deal... */
-  #wat section {
+  #front-info section {
     @include span-columns(4);
   }
   
-  #wat section.support {
+  #front-info section.front-info-col-3 {
     @include span-columns(4 omega);
   }
 

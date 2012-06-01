@@ -190,7 +190,7 @@ body {
   color: #424242;
   font-size: 15px;
   line-height: 1.231;
-  font-family: arial, sans-serif;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 300;
 }
 
@@ -308,24 +308,18 @@ footer h2 {
 /* -- Social media icons -- */
 
 .social a {
-  float: left;
   width: 32.2%;
-  height: 2em;
-
-  // image replacement
-  text-indent: -9999px;
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  margin-right: 10px;
+  // text-indent: -9999px;
 }
 
-.social-twitter {
-  background: url('../img/social/twitter.png') no-repeat 40% top;
-}
-
-.social-facebook {
-  background: url('../img/social/facebook.png') no-repeat 40% top;
-}
-
-.social-google-plus {
-  background: url('../img/social/google-plus.png') no-repeat 40% top;
+// Temporary Google+ icon until Awesome Font adds one.
+.social .icon-google-plus {
+  background: url('../../img/icon-google-plus.png') no-repeat left 3px;
+  padding-left: 20px;
 }
 
 // Copyright
