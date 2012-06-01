@@ -948,7 +948,7 @@ nav li a {
 
 hgroup#name-and-slogan {
   width: 100%;
-  padding: 2em 0;
+  padding: 1em 0;
   background: rgba(255, 255, 255, 0.6);
   border-top: 1px solid rgba(0, 0, 0, 0.2);
 }
@@ -1751,12 +1751,15 @@ li[class*=" icon-"].icon-large:before {
 
 .front .stripe {
   width: 100%;
-  padding: 2em 0;
+  padding: 1em 0;
   background: rgba(255, 255, 255, 0.6);
   border-top: 1px solid rgba(0, 0, 0, 0.2);
 }
 
 /* -- Intro -- */
+.intro {
+  font-size: 18px;
+}
 .intro h2 {
   float: none;
   margin: .8em 0;
@@ -1798,34 +1801,24 @@ li[class*=" icon-"].icon-large:before {
 }
 
 /* -- Informational blocks -- */
-#wat section {
+#front-info {
+  font-size: 18px;
+}
+#front-info section {
   margin-bottom: 1em;
 }
 
-#wat h3:after {
-  content: ' ';
-  display: inline-block;
-  width: 30px;
-  height: 25px;
-  background: url("../../img/sprite.png") no-repeat;
-  position: relative;
-  top: 6px;
-  margin-left: .8em;
+#front-info ul {
+  opacity: .9;
+  list-style-type: none;
+  margin-left: 1.5em;
+  padding: 0;
+}
+#front-info li {
+  margin-bottom: .5em;
 }
 
-#wat .install h3:after {
-  background-position: left top;
-}
-
-#wat .compat h3:after {
-  background-position: -40px top;
-}
-
-#wat .support h3:after {
-  background-position: -76px top;
-}
-
-#wat .support .button {
+#front-info .support .button {
   display: inline-block;
   background: white url("../../img/sprite.png") no-repeat -130px 10px;
   padding: .7em 1em .7em 2.3em;
