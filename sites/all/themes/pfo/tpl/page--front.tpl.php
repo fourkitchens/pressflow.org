@@ -10,8 +10,8 @@
       </div><!-- .container -->
 
       <hgroup>
-        <h1 id="site-name">
-          <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" id="logo">Pressflow</a>
+        <h1 id="logo-front">
+          <img src="<?php print drupal_get_path('theme', 'pfo'); ?>/img/logo.svg" title="Pressflow">
         </h1>
 
         <div class="stripe clearfix">
