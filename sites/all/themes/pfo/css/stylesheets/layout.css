@@ -112,6 +112,28 @@ footer .footer-col {
     display: inline;
   }
 
+  #front-info section:nth-child(even) {
+    width: 49.153%;
+    float: right;
+    margin-right: 0;
+    #margin-left: -1em;
+    display: inline;
+  }
+
+  .front .intro,
+  .front .download {
+    padding-left: 0%;
+    padding-right: 0%;
+  }
+
+  .front .download {
+    width: 49.153%;
+    float: right;
+    margin-right: 0;
+    #margin-left: -1em;
+    display: inline;
+  }
+
   footer .footer-col {
     width: 40.678%;
     float: left;
@@ -131,7 +153,7 @@ footer .footer-col {
  */
 @media only screen and (min-width: 61em) {
   /* -- Intro and Download -- */
-  .intro {
+  .front .intro {
     width: 32.203%;
     float: left;
     margin-right: 1.695%;
@@ -140,7 +162,7 @@ footer .footer-col {
     padding-right: 8.475%;
   }
 
-  .download {
+  .front .download {
     width: 32.203%;
     float: right;
     margin-right: 0;
@@ -151,7 +173,8 @@ footer .footer-col {
   }
 
   /* -- What's the deal... */
-  #front-info section {
+  #front-info section,
+  #front-info section:nth-child(even) {
     width: 32.203%;
     float: left;
     margin-right: 1.695%;
