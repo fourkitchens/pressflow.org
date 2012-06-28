@@ -54,9 +54,9 @@
             <h3><i class="icon-info-sign"></i> What is Pressflow?</h3>
             <p>Pressflow is a fully API-compatible distribution of Drupal that offers the following benefits over a standard Drupal installation:</p>
             <ul>
-              <li class="icon-ok">One</li>
-              <li class="icon-ok">Two</li>
-              <li class="icon-ok">Three</li>
+              <li class="icon-ok"> One</li>
+              <li class="icon-ok"> Two</li>
+              <li class="icon-ok"> Three</li>
             </ul>
           </section>
 
@@ -69,9 +69,9 @@
           <section class="front-info-col-3">
             <h3><i class="icon-comments"></i> Need Support?</h3>
             <ul>
-              <li class="icon-book">Read the documentation on the <a href="http://pressflow.atlassian.org">Pressflow wiki</a>.</li>
-              <li class="icon-github-sign">File bugs and issues on <a href="https://github.com/pressflow">Github</a></li>
-              <li class="icon-question-sign">Post questions and answers at <a href="http://drupal.stackexchange.com/questions/tagged/pressflow">drupal.stackexchange.com</a></li>
+              <li class="icon-book"> Read the documentation on the <a href="http://pressflow.atlassian.org">Pressflow wiki</a>.</li>
+              <li class="icon-github-sign"> File bugs and issues on <a href="https://github.com/pressflow">Github</a></li>
+              <li class="icon-question-sign"> Post questions and answers at <a href="http://drupal.stackexchange.com/questions/tagged/pressflow">drupal.stackexchange.com</a></li>
             </ul>
 
           </section>

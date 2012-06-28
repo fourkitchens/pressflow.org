@@ -105,11 +105,12 @@
   ul {
     opacity: .9;
     list-style-type: none;
-    margin-left: 1.5em;
+    margin-left: 1em;
     padding: 0;
   }
   li {
     margin-bottom: .5em;
+    text-indent: -.5em;
   }
 }
 
