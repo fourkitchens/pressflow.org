@@ -86,6 +86,19 @@ footer .footer-col {
     @include span-columns(6);
   }
 
+  #front-info section:nth-child(even) {
+    @include span-columns(6 omega);
+  }
+
+  .front .intro,
+  .front .download {
+    @include pad(0,0);
+  }
+
+  .front .download {
+    @include span-columns(6 omega);
+  }
+
   // Footer
   footer .footer-col {
     @include span-columns(5);
@@ -109,18 +122,19 @@ footer .footer-col {
 @media only screen and (min-width: 61em) {
 
   /* -- Intro and Download -- */
-  .intro {
+  .front .intro {
     @include span-columns(4);
     @include pad(1,1);
     
   }
-  .download {
+  .front .download {
     @include span-columns(4 omega);
     @include pad(1,1);
   }
 
   /* -- What's the deal... */
-  #front-info section {
+  #front-info section,
+  #front-info section:nth-child(even) {
     @include span-columns(4);
   }
   
