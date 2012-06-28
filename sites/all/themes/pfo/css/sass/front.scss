@@ -19,27 +19,19 @@
   display: none;
 }
 
-.front #logo {
-  width: 95%;
-  height: auto;
-  background: url('../../img/logo.png') no-repeat 50% top;
-  padding-top: 4em;
-  margin-bottom: -.6em;
-  margin-left: 2.5%;
+#logo-front {
+  text-align: center;
+  margin-bottom: -1.5em;
+  img {
+    width: 80%;
+    max-width: 800px;
+  }
 
   // Sit on top of stripe
   position: relative;
   z-index: 10;
 
-  // image replacement
-  text-indent: 100%;
-  white-space: nowrap;
-  overflow: hidden;
-
   // Modernizr enhancements
-  .backgroundsize & {
-    background-size: contain;
-  }
   .no-backgroundsize & {
     min-height: 198px;
     padding-top: 0;
@@ -76,7 +68,6 @@
   font-size: 1em;
   font-family: $arvo;
   font-weight: 400;
-  text-transform: lowercase;
   color: #666;
   text-shadow: 1px 1px 0 rgba(255,255,255,0.6);
   border-bottom: 1px solid rgba(0,0,0,0.3);
@@ -125,7 +116,7 @@
 
 #front-info .support .button {
   display: inline-block;
-  background: #fff url('../../img/sprite.png') no-repeat -130px 10px;
+  background: #fff url('../../img/sprite.png') no-repeat -130px 10px; 
   padding: .7em 1em .7em 2.3em;
   font-size: 1.1em;
   font-family: $arvo;

@@ -9,7 +9,7 @@
         </nav>
       <?php endif; ?>
 
-        <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" id="logo">Pressflow</a>
+        <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" id="logo"><img src="<?php print drupal_get_path('theme', 'pfo'); ?>/img/logo-black.svg" alt="Pressflow"></a>
         <h2><?php print $site_slogan; ?></h2>
 
       </div><!-- .container -->
