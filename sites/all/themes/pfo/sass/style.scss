@@ -186,7 +186,7 @@ tr.even {
 /* === General styles === */
 
 body {
-  background: $d8 url('../../img/bg-grid.png') left top;
+  background: $d8 image-url('bg-grid.png') left top;
   color: #424242;
   font-size: 15px;
   line-height: 1.231;
@@ -251,7 +251,7 @@ nav li a {
 /* -- Header -- */
 
 header {
-  background: $d8 url('../../img/bg-noise.png') left top;
+  background: $d8 image-url('bg-noise.png') left top;
   border-bottom: 1px solid $c1;
 }
 
@@ -305,7 +305,7 @@ header h2 {
 /* -- Footer -- */
 
 footer {
-  background: url('../../img/bg-footer.jpg');
+  background: image-url('bg-footer.jpg');
   color: #fff;
 }
 
