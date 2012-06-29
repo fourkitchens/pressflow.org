@@ -1222,7 +1222,7 @@ h1#page-title {
   margin-bottom: -0.25em;
 }
 
-header h2 {
+.not-front header h2 {
   display: none;
 }
 
