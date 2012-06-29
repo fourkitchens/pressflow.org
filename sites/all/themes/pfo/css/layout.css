@@ -142,6 +142,15 @@ footer .footer-col {
     display: inline;
   }
 
+  .page-faq #main #content {
+    width: 83.051%;
+    float: left;
+    margin-right: 1.695%;
+    display: inline;
+    padding-left: 8.475%;
+    padding-right: 8.475%;
+  }
+
   footer .footer-col {
     width: 40.678%;
     float: left;
@@ -211,5 +220,14 @@ footer .footer-col {
     margin-right: 0;
     #margin-left: -1em;
     display: inline;
+  }
+
+  .page-faq #main #content {
+    width: 100%;
+    float: left;
+    margin-right: 1.695%;
+    display: inline;
+    padding-left: 0%;
+    padding-right: 0%;
   }
 }
