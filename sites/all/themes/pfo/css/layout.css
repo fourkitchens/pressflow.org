@@ -90,7 +90,7 @@ footer .footer-col {
   }
 
   #page-title {
-    width: 49.153%;
+    width: 57.627%;
     float: left;
     margin-right: 1.695%;
     display: inline;
@@ -121,13 +121,21 @@ footer .footer-col {
   }
 
   .front .intro,
-  .front .download {
+  .download {
     padding-left: 0%;
     padding-right: 0%;
   }
 
   .front .download {
     width: 49.153%;
+    float: right;
+    margin-right: 0;
+    #margin-left: -1em;
+    display: inline;
+  }
+
+  .not-front .download {
+    width: 40.678%;
     float: right;
     margin-right: 0;
     #margin-left: -1em;
