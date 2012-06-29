@@ -2,7 +2,7 @@
 
 .front header {
   width: 100%;
-  background: url('../../img/bg-mountain.png') no-repeat 50% top;
+  background: image-url('bg-mountain.png') no-repeat 50% top;
   background-size: cover;
 }
 
@@ -70,7 +70,7 @@
   width: 0;
   height: 0;
   padding: 1.45em 4.2em 2.7em 18.6em;
-  background: url('../../img/sprite.png') no-repeat 0 -100px;
+  background: image-url('sprite.png') no-repeat 0 -100px;
 
   font-family: $arvo;
   font-size: .8em;
@@ -107,7 +107,7 @@
 
 #front-info .support .button {
   display: inline-block;
-  background: #fff url('../../img/sprite.png') no-repeat -130px 10px; 
+  background: #fff image-url('sprite.png') no-repeat -130px 10px;
   padding: .7em 1em .7em 2.3em;
   font-size: 1.1em;
   font-family: $arvo;
