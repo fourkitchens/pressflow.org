@@ -71,7 +71,7 @@ footer .footer-col {
   }
 
   #page-title {
-    @include span-columns(6);
+    @include span-columns(7);
     @include pad(0,0);
   }
 
@@ -91,12 +91,16 @@ footer .footer-col {
   }
 
   .front .intro,
-  .front .download {
+  .download {
     @include pad(0,0);
   }
 
   .front .download {
     @include span-columns(6 omega);
+  }
+
+  .not-front .download {
+    @include span-columns(5 omega);
   }
 
   // Footer
