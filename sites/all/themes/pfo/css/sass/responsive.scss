@@ -10,7 +10,9 @@
  */
 
 @media only screen and (min-width: 36em) {
-  
+
+  /* -- Main navigation -- */
+
   nav li {
     float: right;
   }
@@ -23,6 +25,11 @@
   
   nav li a {
     display: inline-block;
+  }
+
+  /* -- Interior page: Slogan -- */
+  .not-front header h2 {
+    display: block;
   }
 
 }
