@@ -9,10 +9,10 @@ screenshot = screenshot.jpg
 stylesheets[all][] = unset/system.menus.css
 
 ; CSS
-stylesheets[all][] = css/stylesheets/normalize.css
-stylesheets[all][] = css/stylesheets/formalize.css
-stylesheets[all][] = css/stylesheets/layout.css
-stylesheets[all][] = css/stylesheets/style.css
+stylesheets[all][] = stylesheets/normalize.css
+stylesheets[all][] = stylesheets/formalize.css
+stylesheets[all][] = stylesheets/layout.css
+stylesheets[all][] = stylesheets/style.css
 
 ; JS
 scripts[] = js/jquery.formalize.min.js
