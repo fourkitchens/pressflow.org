@@ -1,12 +1,3 @@
-/**
- * @TODO: Why do I have to import _defaults.scss twice?
- *        front.scss does not compile unless 'defaults' is imported redundantly.
- *        Original @import is at the top of style.scss
- */
-
-@import 'defaults';
-
-
 /* === Front page === */
 
 .front header {
