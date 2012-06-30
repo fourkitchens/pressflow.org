@@ -1282,10 +1282,12 @@ footer h2 {
 }
 
 #magic-search {
+  display: block;
   width: 80%;
   margin-left: 10%;
   margin-right: 10%;
   font-size: 2em;
+  text-align: center;
 }
 
 .view-id-faq_view .views-row {
