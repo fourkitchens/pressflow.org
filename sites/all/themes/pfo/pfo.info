@@ -16,7 +16,7 @@ stylesheets[all][] = css/style.css
 
 ; JS
 scripts[] = js/jquery.formalize.min.js
-; scripts[] = js/script.js
+scripts[] = js/script.js
 
 regions[header] = Header
 regions[help] = Help
