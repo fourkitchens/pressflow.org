@@ -1290,6 +1290,10 @@ footer h2 {
   text-align: center;
 }
 
+#magic-search:focus {
+  box-shadow: 0 0 6px 1px #c54b2c;
+}
+
 .view-id-faq_view .views-row {
   margin: .8em 0;
 }
