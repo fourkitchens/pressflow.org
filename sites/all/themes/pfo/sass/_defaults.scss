@@ -32,10 +32,10 @@ $d8           : #d8d8d8;
 // League Gothic
 @font-face {
   font-family: 'League Gothic';
-  src:  url('../../fonts/league-gothic/webfonts/League_Gothic-webfont.eot');
-  src:  url('../../fonts/league-gothic/webfonts/League_Gothic-webfont.eot?iefix') format('eot'),
-        url('../../fonts/league-gothic/webfonts/League_Gothic-webfont.woff') format('woff'),
-        url('../../fonts/league-gothic/webfonts/League_Gothic-webfont.ttf') format('truetype');
+  src: url('../fonts/league-gothic/webfonts/League_Gothic-webfont.eot');
+  src: url('../fonts/league-gothic/webfonts/League_Gothic-webfont.eot?iefix') format('eot'),
+       url('../fonts/league-gothic/webfonts/League_Gothic-webfont.woff') format('woff'),
+       url('../fonts/league-gothic/webfonts/League_Gothic-webfont.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
 }
