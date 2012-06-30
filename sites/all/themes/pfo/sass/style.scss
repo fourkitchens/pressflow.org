@@ -366,6 +366,7 @@ footer h2 {
   margin-right: 10%;
   font-size: 2em;
   text-align: center;
+  @include transition(200ms all ease-in-out);
 }
 
 #magic-search:focus {

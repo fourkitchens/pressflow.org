@@ -1288,6 +1288,11 @@ footer h2 {
   margin-right: 10%;
   font-size: 2em;
   text-align: center;
+  -webkit-transition: 200ms all ease-in-out;
+  -moz-transition: 200ms all ease-in-out;
+  -ms-transition: 200ms all ease-in-out;
+  -o-transition: 200ms all ease-in-out;
+  transition: 200ms all ease-in-out;
 }
 
 #magic-search:focus {
