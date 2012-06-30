@@ -103,6 +103,12 @@ footer .footer-col {
     @include span-columns(5 omega);
   }
 
+  // FAQs
+  .page-faq #main #content {
+    @include span-columns(10);
+    @include pad(1,1);
+  }
+
   // Footer
   footer .footer-col {
     @include span-columns(5);
@@ -152,6 +158,12 @@ footer .footer-col {
   }
   body.front .view-pressflownians .views-row:nth-child(4n) {
     @include span-columns(3 omega);
+  }
+
+  // FAQs
+  .page-faq #main #content {
+    @include span-columns(12);
+    @include pad(0,0);
   }
 
 }

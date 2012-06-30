@@ -1277,18 +1277,8 @@ footer h2 {
 }
 
 /* === FAQ Page theming === */
-.hidden-answer {
-  display: none;
-}
-
 .view-id-faq_view .views-row {
-  margin: .8em 1.3em;
-  list-style-type: circle;
-  display: list-item;
-}
-
-.view-id-faq_view .views-row .hidden-answer {
-  margin: -0.5em 0 2em 1em;
+  margin: .8em 0;
 }
 
 /**
@@ -1435,3 +1425,10 @@ footer h2 {
 /**
  * Bigger devices with MQs.
  */
+@media only screen and (min-width: 61em) {
+  .view-id-faq_view .views-row {
+    margin: .8em 2%;
+    width: 46%;
+    float: left;
+  }
+}
