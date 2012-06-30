@@ -1277,6 +1277,17 @@ footer h2 {
 }
 
 /* === FAQ Page theming === */
+.page-faq .view-faq-view {
+  padding-top: 2em;
+}
+
+#magic-search {
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+  font-size: 2em;
+}
+
 .view-id-faq_view .views-row {
   margin: .8em 0;
 }

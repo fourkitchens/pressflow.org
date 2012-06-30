@@ -31,7 +31,7 @@ Drupal.behaviors.faqSearch = {
     });
 
     // insert search box
-    $('.page-faq .view-faq-view').prepend('<input id="magic-search" type="text" placeholder="type here to search">');
+    $('.page-faq .view-faq-view').prepend('<input id="magic-search" type="text" placeholder="type to search">');
 
     // Search code. Does simple searching on each key press,
     // then shows/hides individual FAQs
