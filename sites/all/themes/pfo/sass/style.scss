@@ -359,6 +359,12 @@ footer h2 {
   padding-top: 2em;
 }
 
+.view-id-faq_view .views-row {
+  margin: .8em 0;
+}
+
+// FAQs search
+
 #magic-search {
   display: block;
   width: 80%;
@@ -373,9 +379,38 @@ footer h2 {
   box-shadow: 0 0 6px 1px $burnt-red;
 }
 
-.view-id-faq_view .views-row {
-  margin: .8em 0;
+// These styles cause the title to be highlighted
+// when you deep-link to a particular FAQ
+.view-id-faq_view :target {
+  -webkit-animation: highlight 3s ease-in-out;
+     -moz-animation: highlight 3s ease-in-out;
+      -ms-animation: highlight 3s ease-in-out;
+       -o-animation: highlight 3s ease-in-out;
+          animation: highlight 3s ease-in-out;
 }
+
+@-webkit-keyframes highlight {
+  0% { background: #ffb; }
+  50% { background: #ffb; }
+  100% { background: transparent; }
+}
+@-moz-keyframes highlight {
+  0% { background: #ffb; }
+  50% { background: #ffb; }
+  100% { background: transparent; }
+}
+@-ms-keyframes highlight {
+  0% { background: #ffb; }
+  50% { background: #ffb; }
+  100% { background: transparent; }
+}
+@-o-keyframes highlight {
+  0% { background: #ffb; }
+  50% { background: #ffb; }
+  100% { background: transparent; }
+}
+
+
 
 
 /**
