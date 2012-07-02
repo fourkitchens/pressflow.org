@@ -1373,7 +1373,7 @@ footer h2 {
 /* === Front page === */
 .front header {
   width: 100%;
-  background: url('/sites/all/themes/pfo/img/bg-mountain.png?1336754129') no-repeat 50% top;
+  background: no-repeat 50% top;
   background-size: cover;
 }
 
