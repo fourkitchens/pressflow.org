@@ -1136,12 +1136,16 @@ input[type="button"]:hover {
 }
 
 /* -- Navigation -- */
+nav li {
+  float: right;
+}
+
 nav li.first {
   display: none;
 }
 
 nav li a {
-  display: block;
+  display: inline-block;
   text-align: center;
   margin: .5em;
   padding: .4em 1em;
@@ -1205,6 +1209,10 @@ header h2 {
   letter-spacing: 1px;
 }
 
+.not-front header h2 {
+  display: none;
+}
+
 hgroup#name-and-slogan {
   width: 100%;
   padding: 1em 0;
@@ -1220,10 +1228,6 @@ h1#page-title {
   font-size: 4em;
   margin-top: -0.25em;
   margin-bottom: -0.25em;
-}
-
-.not-front header h2 {
-  display: none;
 }
 
 /* -- Footer -- */
@@ -1486,24 +1490,9 @@ footer h2 {
  * All styles in this file are wrapped in media queries.
  */
 /**
- * Navigation-specific styling.
+ * Not-phones
  */
 @media only screen and (min-width: 36em) {
-  /* -- Main navigation -- */
-  nav li {
-    float: right;
-  }
-
-  nav li.first {
-    float: left;
-    display: inline-block;
-  }
-
-  nav li a {
-    display: inline-block;
-  }
-
-  /* -- Interior page: Slogan -- */
   .not-front header h2 {
     display: block;
   }
