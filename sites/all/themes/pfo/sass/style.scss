@@ -44,7 +44,7 @@ h1 {}
 
 h2 {
   clear: both;
-  color: #c54b2c;
+  color: $burnt-red;
   text-transform: uppercase;
   font-family: $league;
   font-size: 2.4em;
@@ -186,7 +186,7 @@ tr.even {
 /* === General styles === */
 
 body {
-  background: $d8 url('../../img/bg-grid.png') left top;
+  background: $d8 image-url('bg-grid.png') left top;
   color: #424242;
   font-size: 15px;
   line-height: 1.231;
@@ -212,41 +212,7 @@ input[type="button"] {
 }
 
 
-/* -- Header -- */
-
-header {
-  background: $d8 url('../../img/bg-noise.png') left top;
-  border-bottom: 1px solid $c1;
-}
-
-#logo {
-  display: block;
-  float: left;
-  clear: left;
-  width: 224px;
-  height: 50px;
-  margin: 1em 0 1em 1em;
-  background: url('../../img/sprite.png') no-repeat left -168px;
-
-  // image replacement
-  text-indent: 300%;
-  white-space: nowrap;
-  overflow: hidden;
-}
-
-// Page titles
-header h2 {
-  float: left;
-  clear: none;
-  width: auto;
-  margin: .75em 0 0 .2em;
-  padding: 0;
-
-  font-size: 2.1em;
-  text-transform: none;
-  font-weight: 400;
-  letter-spacing: 1px;
-}
+/* -- Navigation -- */
 
 nav li.first {
   display: none;
@@ -281,15 +247,65 @@ nav li a {
   overflow: hidden;
 }
 
+
+/* -- Header -- */
+
+header {
+  background: $d8 image-url('bg-noise.png') left top;
+  border-bottom: 1px solid $c1;
+}
+
+#logo {
+  float: left;
+  clear: left;
+  margin: 1em 0 1em 1em;
+  width: 224px;
+  img {
+    width: 224px;
+  }
+}
+
+// Subtitle: Go ahead. Scale.
+header h2 {
+  float: left;
+  clear: none;
+  width: auto;
+  margin: .75em 0 0 .2em;
+  padding: 0;
+
+  font-size: 2.1em;
+  text-transform: none;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
 // #name-and-slogan has been removed from page--front.tpl - see front.scss for its stripe
 hgroup#name-and-slogan {
   @include stripe();
 }
 
+/* -- Main content -- */
+
+// Page title
+
+h1#page-title {
+  color: $burnt-red;
+  font-family: $league;
+  font-weight: normal;
+  font-size: 4em;
+  margin-top: -.25em;
+  margin-bottom: -.25em;
+}
+
+// Interior page - Slogan
+.not-front header h2 {
+  display: none;
+}
+
 /* -- Footer -- */
 
 footer {
-  background: url('../../img/bg-footer.jpg');
+  background: image-url('bg-footer.jpg');
   color: #fff;
 }
 
@@ -339,19 +355,62 @@ footer h2 {
 
 /* === FAQ Page theming === */
 
-.hidden-answer {
-  display: none;
+.page-faq .view-faq-view {
+  padding-top: 2em;
 }
 
 .view-id-faq_view .views-row {
-  margin: .8em 1.3em;
-  list-style-type: circle;
-  display: list-item;
+  margin: .8em 0;
 }
 
-.view-id-faq_view .views-row .hidden-answer {
-  margin: -.5em 0 2em 1em;
+// FAQs search
+
+#magic-search {
+  display: block;
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+  font-size: 2em;
+  text-align: center;
+  @include transition(200ms all ease-in-out);
 }
+
+#magic-search:focus {
+  box-shadow: 0 0 6px 1px $burnt-red;
+}
+
+// These styles cause the title to be highlighted
+// when you deep-link to a particular FAQ
+.view-id-faq_view :target {
+  -webkit-animation: highlight 3s ease-in-out;
+     -moz-animation: highlight 3s ease-in-out;
+      -ms-animation: highlight 3s ease-in-out;
+       -o-animation: highlight 3s ease-in-out;
+          animation: highlight 3s ease-in-out;
+}
+
+@-webkit-keyframes highlight {
+  0% { background: #ffb; }
+  50% { background: #ffb; }
+  100% { background: transparent; }
+}
+@-moz-keyframes highlight {
+  0% { background: #ffb; }
+  50% { background: #ffb; }
+  100% { background: transparent; }
+}
+@-ms-keyframes highlight {
+  0% { background: #ffb; }
+  50% { background: #ffb; }
+  100% { background: transparent; }
+}
+@-o-keyframes highlight {
+  0% { background: #ffb; }
+  50% { background: #ffb; }
+  100% { background: transparent; }
+}
+
+
 
 
 /**

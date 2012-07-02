@@ -71,7 +71,7 @@ footer .footer-col {
   }
 
   #page-title {
-    @include span-columns(6);
+    @include span-columns(7);
     @include pad(0,0);
   }
 
@@ -84,6 +84,29 @@ footer .footer-col {
   #front-info section,   // What's the deal...
   body.front .view-pressflownians .views-row { // Who uses Pressflow?
     @include span-columns(6);
+  }
+
+  #front-info section:nth-child(even) {
+    @include span-columns(6 omega);
+  }
+
+  .front .intro,
+  .download {
+    @include pad(0,0);
+  }
+
+  .front .download {
+    @include span-columns(6 omega);
+  }
+
+  .not-front .download {
+    @include span-columns(5 omega);
+  }
+
+  // FAQs
+  .page-faq #main #content {
+    @include span-columns(10);
+    @include pad(1,1);
   }
 
   // Footer
@@ -109,18 +132,19 @@ footer .footer-col {
 @media only screen and (min-width: 61em) {
 
   /* -- Intro and Download -- */
-  .intro {
+  .front .intro {
     @include span-columns(4);
     @include pad(1,1);
     
   }
-  .download {
+  .front .download {
     @include span-columns(4 omega);
     @include pad(1,1);
   }
 
   /* -- What's the deal... */
-  #front-info section {
+  #front-info section,
+  #front-info section:nth-child(even) {
     @include span-columns(4);
   }
   
@@ -134,6 +158,12 @@ footer .footer-col {
   }
   body.front .view-pressflownians .views-row:nth-child(4n) {
     @include span-columns(3 omega);
+  }
+
+  // FAQs
+  .page-faq #main #content {
+    @include span-columns(12);
+    @include pad(0,0);
   }
 
 }

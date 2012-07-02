@@ -1,3 +1,19 @@
+@import url("http://fonts.googleapis.com/css?family=Arvo:400,700");
+/**
+ * @file style.scss
+ *
+ * Contains global styles for pressflow.org
+ */
+/**
+ * These are Compass declarations. This Sass file
+ * cannot compile to CSS3 without these libraries.
+ */
+/**
+ * Colors
+ */
+/**
+ * Fonts
+ */
 /*  Font Awesome
     the iconic font designed for use with Twitter Bootstrap
     -------------------------------------------------------
@@ -23,8 +39,8 @@
     */
 @font-face {
   font-family: "FontAwesome";
-  src: url('/sites/all/themes/pfo/stylesheets/fonts/../../fonts/font-awesome/fontawesome-webfont.eot');
-  src: url('/sites/all/themes/pfo/stylesheets/fonts/../../fonts/font-awesome/fontawesome-webfont.eot?#iefix') format('eot'), url('/sites/all/themes/pfo/stylesheets/fonts/../../fonts/font-awesome/fontawesome-webfont.woff') format('woff'), url('/sites/all/themes/pfo/stylesheets/fonts/../../fonts/font-awesome/fontawesome-webfont.ttf') format('truetype'), url('/sites/all/themes/pfo/stylesheets/fonts/../../fonts/font-awesome/fontawesome-webfont.otf') format('opentype'), url('/sites/all/themes/pfo/stylesheets/fonts/../../fonts/font-awesome/fontawesome-webfont.svgz#FontAwesomeRegular') format('svg'), url('/sites/all/themes/pfo/stylesheets/fonts/../../fonts/font-awesome/fontawesome-webfont.svg#FontAwesomeRegular') format('svg');
+  src: url('/sites/all/themes/pfo/css/fonts/../../fonts/font-awesome/fontawesome-webfont.eot');
+  src: url('/sites/all/themes/pfo/css/fonts/../../fonts/font-awesome/fontawesome-webfont.eot?#iefix') format('eot'), url('/sites/all/themes/pfo/css/fonts/../../fonts/font-awesome/fontawesome-webfont.woff') format('woff'), url('/sites/all/themes/pfo/css/fonts/../../fonts/font-awesome/fontawesome-webfont.ttf') format('truetype'), url('/sites/all/themes/pfo/css/fonts/../../fonts/font-awesome/fontawesome-webfont.otf') format('opentype'), url('/sites/all/themes/pfo/css/fonts/../../fonts/font-awesome/fontawesome-webfont.svgz#FontAwesomeRegular') format('svg'), url('/sites/all/themes/pfo/css/fonts/../../fonts/font-awesome/fontawesome-webfont.svg#FontAwesomeRegular') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -49,7 +65,7 @@ a [class*=" icon-"] {
 /* makes the font 33% larger relative to the icon container */
 .icon-large:before {
   vertical-align: middle;
-  font-size: 4/3em;
+  font-size: 1.333em;
 }
 
 .btn [class^="icon-"],
@@ -926,4 +942,579 @@ ul.icons li .icon-large:before {
 
 .icon-user-md:before {
   content: "\f200";
+}
+
+@font-face {
+  font-family: 'League Gothic';
+  src: url("../fonts/league-gothic/webfonts/League_Gothic-webfont.eot");
+  src: url("../fonts/league-gothic/webfonts/League_Gothic-webfont.eot?iefix") format("eot"), url("../fonts/league-gothic/webfonts/League_Gothic-webfont.woff") format("woff"), url("../fonts/league-gothic/webfonts/League_Gothic-webfont.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+/**
+ * Mixins
+ */
+/**
+ * Resets and helper classes not supplied by normalize.css
+ */
+a {
+  color: #2090b4;
+}
+
+a:visited {
+  color: #2090b4;
+}
+
+a:hover {
+  color: #2090b4;
+  text-decoration: none;
+}
+
+a:focus {
+  outline: thin dotted;
+}
+
+a:hover,
+a:active {
+  outline: 0;
+}
+
+h2 {
+  clear: both;
+  color: #c54b2c;
+  text-transform: uppercase;
+  font-family: "League Gothic", sans-serif;
+  font-size: 2.4em;
+  font-weight: 400;
+}
+
+h3 {
+  color: #473430;
+  font-family: Arvo, Georgia, serif;
+}
+
+p {
+  opacity: .9;
+}
+
+ul {
+  display: block;
+}
+
+ul.links {
+  display: inline;
+}
+
+nav ul {
+  margin: 0;
+  display: inline;
+}
+
+table {
+  width: 100%;
+  font-size: 1em;
+}
+
+thead th {
+  border-bottom: 1px solid #fff;
+}
+
+tr, tr.even, tr.odd {
+  border-bottom: 1px solid #fff;
+  padding: 0;
+}
+
+tr.odd {
+  background-color: #ebf6fa;
+}
+
+tr.even {
+  background-color: #abcddc;
+}
+
+/* === Non-semantic helper classes. === */
+/* For image replacement */
+.ir {
+  display: block;
+  border: 0;
+  text-indent: -999em;
+  overflow: hidden;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  text-align: left;
+  direction: ltr;
+}
+
+.ir br {
+  display: none;
+}
+
+/* Hide for both screenreaders and browsers: h5bp.com/m */
+.hidden {
+  display: none !important;
+  visibility: hidden;
+}
+
+/*  Hide only visually, but have it available for screenreaders: h5bp.com/v */
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+/* Extends the .visuallyhidden class to allow the element to be focusable when navigated to via the keyboard: h5bp.com/p */
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+}
+
+/* Hide visually and from screenreaders, but maintain layout */
+.invisible {
+  visibility: hidden;
+}
+
+/* Contain floats: h5bp.com/q */
+.clearfix:before,
+.clearfix:after {
+  content: "";
+  display: table;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+.clearfix {
+  zoom: 1;
+}
+
+/**
+ * Custom styles for Pressflow.org
+ */
+/* === General styles === */
+body {
+  background: #d8d8d8 url('/sites/all/themes/pfo/img/bg-grid.png?1336754129') left top;
+  color: #424242;
+  font-size: 15px;
+  line-height: 1.231;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 300;
+}
+
+button,
+input[type="reset"],
+input[type="submit"],
+input[type="button"] {
+  border-color: #333 #666 #999 transparent;
+  color: #fff;
+  cursor: pointer;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #4d4d4d), color-stop(100%, #363636));
+  background-image: -webkit-linear-gradient(#4d4d4d, #363636);
+  background-image: -moz-linear-gradient(#4d4d4d, #363636);
+  background-image: -o-linear-gradient(#4d4d4d, #363636);
+  background-image: -ms-linear-gradient(#4d4d4d, #363636);
+  background-image: linear-gradient(#4d4d4d, #363636);
+  text-shadow: 1px 1px 1px black;
+}
+button:hover,
+input[type="reset"]:hover,
+input[type="submit"]:hover,
+input[type="button"]:hover {
+  color: #444;
+  text-shadow: 1px 1px 1px white;
+}
+
+/* -- Navigation -- */
+nav li.first {
+  display: none;
+}
+
+nav li a {
+  display: block;
+  text-align: center;
+  margin: .5em;
+  padding: .4em 1em;
+  color: #666;
+  text-decoration: none;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(100%, #eeeeee));
+  background-image: -webkit-linear-gradient(#ffffff, #eeeeee);
+  background-image: -moz-linear-gradient(#ffffff, #eeeeee);
+  background-image: -o-linear-gradient(#ffffff, #eeeeee);
+  background-image: -ms-linear-gradient(#ffffff, #eeeeee);
+  background-image: linear-gradient(#ffffff, #eeeeee);
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  -ms-border-radius: 7px;
+  -o-border-radius: 7px;
+  border-radius: 7px;
+  box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+.multiplebgs nav li.first a {
+  width: 13px;
+  background-image: url('/sites/all/themes/pfo/img/sprite.png?1340994739'), -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #666666), color-stop(100%, #333333));
+  background-image: url('/sites/all/themes/pfo/img/sprite.png?1340994739'), -webkit-linear-gradient(#666666, #333333);
+  background-image: url('/sites/all/themes/pfo/img/sprite.png?1340994739'), -moz-linear-gradient(#666666, #333333);
+  background-image: url('/sites/all/themes/pfo/img/sprite.png?1340994739'), -o-linear-gradient(#666666, #333333);
+  background-image: url('/sites/all/themes/pfo/img/sprite.png?1340994739'), -ms-linear-gradient(#666666, #333333);
+  background-image: url('/sites/all/themes/pfo/img/sprite.png?1340994739'), linear-gradient(#666666, #333333);
+  background-repeat: no-repeat;
+  background-position: -101px 6px, left top;
+  /* image replacement */
+  text-indent: 300%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/* -- Header -- */
+header {
+  background: #d8d8d8 url('/sites/all/themes/pfo/img/bg-noise.png?1336754129') left top;
+  border-bottom: 1px solid #c1c1c1;
+}
+
+#logo {
+  float: left;
+  clear: left;
+  margin: 1em 0 1em 1em;
+  width: 224px;
+}
+#logo img {
+  width: 224px;
+}
+
+header h2 {
+  float: left;
+  clear: none;
+  width: auto;
+  margin: .75em 0 0 .2em;
+  padding: 0;
+  font-size: 2.1em;
+  text-transform: none;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
+hgroup#name-and-slogan {
+  width: 100%;
+  padding: 1em 0;
+  background: rgba(255, 255, 255, 0.6);
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+/* -- Main content -- */
+h1#page-title {
+  color: #c54b2c;
+  font-family: "League Gothic", sans-serif;
+  font-weight: normal;
+  font-size: 4em;
+  margin-top: -0.25em;
+  margin-bottom: -0.25em;
+}
+
+.not-front header h2 {
+  display: none;
+}
+
+/* -- Footer -- */
+footer {
+  background: url('/sites/all/themes/pfo/img/bg-footer.jpg?1337186436');
+  color: #fff;
+}
+
+footer h2 {
+  padding: 1em 0 .5em;
+  border-bottom: 1px solid #fff;
+  text-align: center;
+  text-transform: none;
+  font-family: Arvo, Georgia, serif;
+  font-size: 1.2em;
+  font-weight: 700;
+  color: #fff;
+}
+
+/* -- Social media icons -- */
+.social a {
+  width: 32.2%;
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  margin-right: 10px;
+}
+
+.footer-foot {
+  padding: 1em;
+  text-align: center;
+  font-size: .8em;
+}
+
+/* === MailChimp singup forms === */
+#mc_embed_signup input.email {
+  -webkit-border-radius: 6px 0 0 6px;
+  -moz-border-radius: 6px 0 0 6px;
+  -ms-border-radius: 6px 0 0 6px;
+  -o-border-radius: 6px 0 0 6px;
+  border-radius: 6px 0 0 6px;
+}
+
+#mc_embed_signup input.button {
+  margin: 0 0 0 -6px;
+  -webkit-border-radius: 0 6px 6px 0;
+  -moz-border-radius: 0 6px 6px 0;
+  -ms-border-radius: 0 6px 6px 0;
+  -o-border-radius: 0 6px 6px 0;
+  border-radius: 0 6px 6px 0;
+}
+
+/* === FAQ Page theming === */
+.page-faq .view-faq-view {
+  padding-top: 2em;
+}
+
+.view-id-faq_view .views-row {
+  margin: .8em 0;
+}
+
+#magic-search {
+  display: block;
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+  font-size: 2em;
+  text-align: center;
+  -webkit-transition: 200ms all ease-in-out;
+  -moz-transition: 200ms all ease-in-out;
+  -ms-transition: 200ms all ease-in-out;
+  -o-transition: 200ms all ease-in-out;
+  transition: 200ms all ease-in-out;
+}
+
+#magic-search:focus {
+  box-shadow: 0 0 6px 1px #c54b2c;
+}
+
+.view-id-faq_view :target {
+  -webkit-animation: highlight 3s ease-in-out;
+  -moz-animation: highlight 3s ease-in-out;
+  -ms-animation: highlight 3s ease-in-out;
+  -o-animation: highlight 3s ease-in-out;
+  animation: highlight 3s ease-in-out;
+}
+
+@-webkit-keyframes highlight {
+  0% {
+    background: #ffb;
+  }
+
+  50% {
+    background: #ffb;
+  }
+
+  100% {
+    background: transparent;
+  }
+}
+
+@-moz-keyframes highlight {
+  0% {
+    background: #ffb;
+  }
+
+  50% {
+    background: #ffb;
+  }
+
+  100% {
+    background: transparent;
+  }
+}
+
+@-ms-keyframes highlight {
+  0% {
+    background: #ffb;
+  }
+
+  50% {
+    background: #ffb;
+  }
+
+  100% {
+    background: transparent;
+  }
+}
+
+@-o-keyframes highlight {
+  0% {
+    background: #ffb;
+  }
+
+  50% {
+    background: #ffb;
+  }
+
+  100% {
+    background: transparent;
+  }
+}
+
+/**
+ * Front page styles are in their own file
+ */
+/* === Front page === */
+.front header {
+  width: 100%;
+  background: url('/sites/all/themes/pfo/img/bg-mountain.png?1336754129') no-repeat 50% top;
+  background-size: cover;
+}
+
+.front nav li.first {
+  display: none;
+}
+
+#logo-front {
+  text-align: center;
+  margin-bottom: -1.5em;
+  position: relative;
+  z-index: 10;
+}
+#logo-front img {
+  width: 80%;
+  max-width: 800px;
+}
+.no-backgroundsize #logo-front {
+  min-height: 198px;
+  padding-top: 0;
+}
+
+.front .stripe {
+  width: 100%;
+  padding: 1em 0;
+  background: rgba(255, 255, 255, 0.6);
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+/* -- Intro -- */
+.intro {
+  font-size: 18px;
+}
+.intro h2 {
+  float: none;
+  margin: .8em 0;
+  text-transform: none;
+  color: #473430;
+  font-family: "League Gothic", sans-serif;
+  font-size: 3em;
+  line-height: 0;
+  white-space: nowrap;
+}
+
+/* -- Download section -- */
+.download h2 {
+  margin-bottom: .6em;
+  padding-bottom: .2em;
+  overflow: visible;
+  font-size: 1em;
+  font-family: Arvo, Georgia, serif;
+  font-weight: 400;
+  color: #666;
+  text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.6);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.download #download {
+  display: block;
+  clear: both;
+  width: 0;
+  height: 0;
+  padding: 1.45em 4.2em 2.7em 18.6em;
+  background: url('/sites/all/themes/pfo/img/sprite.png?1340994739') no-repeat 0 -100px;
+  font-family: Arvo, Georgia, serif;
+  font-size: .8em;
+  font-style: italic;
+  text-decoration: none;
+  color: #777;
+  white-space: nowrap;
+}
+
+/* -- Informational blocks -- */
+#front-info {
+  font-size: 18px;
+}
+#front-info section {
+  margin-bottom: 1em;
+}
+
+#front-info ul {
+  opacity: .9;
+  list-style-type: none;
+  margin-left: 1em;
+  padding: 0;
+}
+#front-info li {
+  margin-bottom: .5em;
+  text-indent: -0.5em;
+}
+
+#front-info .support .button {
+  display: inline-block;
+  background: white url('/sites/all/themes/pfo/img/sprite.png?1340994739') no-repeat -130px 10px;
+  padding: .7em 1em .7em 2.3em;
+  font-size: 1.1em;
+  font-family: Arvo, Georgia, serif;
+  color: #c54b2c;
+  text-decoration: none;
+  border-radius: 7px;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/**
+ * Responsive styles are in their own file
+ */
+/**
+ * Responsive styles
+ *
+ * All styles in this file are wrapped in media queries.
+ */
+/**
+ * Navigation-specific styling.
+ */
+@media only screen and (min-width: 36em) {
+  /* -- Main navigation -- */
+  nav li {
+    float: right;
+  }
+
+  nav li.first {
+    float: left;
+    display: inline-block;
+  }
+
+  nav li a {
+    display: inline-block;
+  }
+
+  /* -- Interior page: Slogan -- */
+  .not-front header h2 {
+    display: block;
+  }
+}
+/**
+ * Bigger devices with MQs.
+ */
+@media only screen and (min-width: 61em) {
+  .view-id-faq_view .views-row {
+    margin: .8em 2%;
+    width: 46%;
+    float: left;
+  }
 }

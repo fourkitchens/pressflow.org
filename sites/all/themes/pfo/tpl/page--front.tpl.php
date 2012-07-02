@@ -10,8 +10,8 @@
       </div><!-- .container -->
 
       <hgroup>
-        <h1 id="site-name">
-          <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" id="logo">Pressflow</a>
+        <h1 id="logo-front">
+          <img src="<?php print drupal_get_path('theme', 'pfo'); ?>/img/logo.svg" title="Pressflow">
         </h1>
 
         <div class="stripe clearfix">
@@ -24,7 +24,7 @@
           <div class="download">
             <h2>Download and install</h2>
             <?php print $download; ?>
-            <p class="pf7">Looking for Pressflow 7?<br> Check the progress on <a href="https://github.com/pressflow/7">Github</a></p>
+            <p class="pf7"><a href="/faq#faq-title-id-8">Looking for Pressflow 7?</a><br> Check the progress on <a href="https://github.com/pressflow/7">Github</a></p>
           </div><!-- .download -->
         </div><!-- .container -->
         </div><!-- .stripe -->

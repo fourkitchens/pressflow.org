@@ -3,23 +3,49 @@
  *
  * All styles in this file are wrapped in media queries.
  */
+
+
 /**
  * Navigation-specific styling.
  */
+
 @media only screen and (min-width: 36em) {
+
+  /* -- Main navigation -- */
+
   nav li {
     float: right;
   }
-
+  
+  // Home link is on the opposite side
   nav li.first {
     float: left;
     display: inline-block;
   }
-
+  
   nav li a {
     display: inline-block;
   }
+
+  /* -- Interior page: Slogan -- */
+  .not-front header h2 {
+    display: block;
+  }
+
 }
+
+
 /**
  * Bigger devices with MQs.
  */
+
+@media only screen and (min-width: 61em) {
+
+  // FAQs
+  .view-id-faq_view .views-row {
+    margin: .8em 2%;
+    width: 46%;
+    float: left;
+  }
+
+}

@@ -90,7 +90,7 @@ footer .footer-col {
   }
 
   #page-title {
-    width: 49.153%;
+    width: 57.627%;
     float: left;
     margin-right: 1.695%;
     display: inline;
@@ -112,6 +112,45 @@ footer .footer-col {
     display: inline;
   }
 
+  #front-info section:nth-child(even) {
+    width: 49.153%;
+    float: right;
+    margin-right: 0;
+    #margin-left: -1em;
+    display: inline;
+  }
+
+  .front .intro,
+  .download {
+    padding-left: 0%;
+    padding-right: 0%;
+  }
+
+  .front .download {
+    width: 49.153%;
+    float: right;
+    margin-right: 0;
+    #margin-left: -1em;
+    display: inline;
+  }
+
+  .not-front .download {
+    width: 40.678%;
+    float: right;
+    margin-right: 0;
+    #margin-left: -1em;
+    display: inline;
+  }
+
+  .page-faq #main #content {
+    width: 83.051%;
+    float: left;
+    margin-right: 1.695%;
+    display: inline;
+    padding-left: 8.475%;
+    padding-right: 8.475%;
+  }
+
   footer .footer-col {
     width: 40.678%;
     float: left;
@@ -131,7 +170,7 @@ footer .footer-col {
  */
 @media only screen and (min-width: 61em) {
   /* -- Intro and Download -- */
-  .intro {
+  .front .intro {
     width: 32.203%;
     float: left;
     margin-right: 1.695%;
@@ -140,7 +179,7 @@ footer .footer-col {
     padding-right: 8.475%;
   }
 
-  .download {
+  .front .download {
     width: 32.203%;
     float: right;
     margin-right: 0;
@@ -151,7 +190,8 @@ footer .footer-col {
   }
 
   /* -- What's the deal... */
-  #front-info section {
+  #front-info section,
+  #front-info section:nth-child(even) {
     width: 32.203%;
     float: left;
     margin-right: 1.695%;
@@ -180,5 +220,14 @@ footer .footer-col {
     margin-right: 0;
     #margin-left: -1em;
     display: inline;
+  }
+
+  .page-faq #main #content {
+    width: 100%;
+    float: left;
+    margin-right: 1.695%;
+    display: inline;
+    padding-left: 0%;
+    padding-right: 0%;
   }
 }

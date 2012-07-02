@@ -1,17 +1,8 @@
-/**
- * @TODO: Why do I have to import _defaults.scss twice?
- *        front.scss does not compile unless 'defaults' is imported redundantly.
- *        Original @import is at the top of style.scss
- */
-
-@import 'defaults';
-
-
 /* === Front page === */
 
 .front header {
   width: 100%;
-  background: url('../../img/bg-mountain.png') no-repeat 50% top;
+  background: image-url('bg-mountain.png') no-repeat 50% top;
   background-size: cover;
 }
 
@@ -19,27 +10,19 @@
   display: none;
 }
 
-.front #logo {
-  width: 95%;
-  height: auto;
-  background: url('../../img/logo.png') no-repeat 50% top;
-  padding-top: 4em;
-  margin-bottom: -.6em;
-  margin-left: 2.5%;
+#logo-front {
+  text-align: center;
+  margin-bottom: -1.5em;
+  img {
+    width: 80%;
+    max-width: 800px;
+  }
 
   // Sit on top of stripe
   position: relative;
   z-index: 10;
 
-  // image replacement
-  text-indent: 100%;
-  white-space: nowrap;
-  overflow: hidden;
-
   // Modernizr enhancements
-  .backgroundsize & {
-    background-size: contain;
-  }
   .no-backgroundsize & {
     min-height: 198px;
     padding-top: 0;
@@ -76,7 +59,6 @@
   font-size: 1em;
   font-family: $arvo;
   font-weight: 400;
-  text-transform: lowercase;
   color: #666;
   text-shadow: 1px 1px 0 rgba(255,255,255,0.6);
   border-bottom: 1px solid rgba(0,0,0,0.3);
@@ -88,7 +70,7 @@
   width: 0;
   height: 0;
   padding: 1.45em 4.2em 2.7em 18.6em;
-  background: url('../../img/sprite.png') no-repeat 0 -100px;
+  background: image-url('sprite.png') no-repeat 0 -100px;
 
   font-family: $arvo;
   font-size: .8em;
@@ -125,7 +107,7 @@
 
 #front-info .support .button {
   display: inline-block;
-  background: #fff url('../../img/sprite.png') no-repeat -130px 10px;
+  background: #fff image-url('sprite.png') no-repeat -130px 10px;
   padding: .7em 1em .7em 2.3em;
   font-size: 1.1em;
   font-family: $arvo;
