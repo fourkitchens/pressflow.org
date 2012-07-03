@@ -214,12 +214,16 @@ input[type="button"] {
 
 /* -- Navigation -- */
 
+nav li {
+  float: right;
+}
+
 nav li.first {
   display: none;
 }
 
 nav li a {
-  display: block;
+  display: inline-block;
   text-align: center;
   margin: .5em;
   padding: .4em 1em;
@@ -246,6 +250,10 @@ nav li a {
   white-space: nowrap;
   overflow: hidden;
 }
+
+
+
+
 
 
 /* -- Header -- */
@@ -279,6 +287,11 @@ header h2 {
   letter-spacing: 1px;
 }
 
+// hide on interior pages viewed on small screens
+.not-front header h2 {
+  display: none;
+}
+
 // #name-and-slogan has been removed from page--front.tpl - see front.scss for its stripe
 hgroup#name-and-slogan {
   @include stripe();
@@ -297,10 +310,6 @@ h1#page-title {
   margin-bottom: -.25em;
 }
 
-// Interior page - Slogan
-.not-front header h2 {
-  display: none;
-}
 
 /* -- Footer -- */
 
