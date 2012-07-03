@@ -1104,7 +1104,7 @@ tr.even {
  */
 /* === General styles === */
 body {
-  background: #d8d8d8 url('/sites/all/themes/pfo/img/bg-grid.png?1336754129') left top;
+  background: #d8d8d8 url('/sites/all/themes/pfo/img/bg-grid.png?1336752223') left top;
   color: #424242;
   font-size: 15px;
   line-height: 1.231;
@@ -1163,12 +1163,12 @@ nav li a {
 
 .multiplebgs nav li.first a {
   width: 13px;
-  background-image: url('/sites/all/themes/pfo/img/sprite.png?1340994739'), -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #666666), color-stop(100%, #333333));
-  background-image: url('/sites/all/themes/pfo/img/sprite.png?1340994739'), -webkit-linear-gradient(#666666, #333333);
-  background-image: url('/sites/all/themes/pfo/img/sprite.png?1340994739'), -moz-linear-gradient(#666666, #333333);
-  background-image: url('/sites/all/themes/pfo/img/sprite.png?1340994739'), -o-linear-gradient(#666666, #333333);
-  background-image: url('/sites/all/themes/pfo/img/sprite.png?1340994739'), -ms-linear-gradient(#666666, #333333);
-  background-image: url('/sites/all/themes/pfo/img/sprite.png?1340994739'), linear-gradient(#666666, #333333);
+  background-image: url('/sites/all/themes/pfo/img/sprite.png?1337176634'), -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #666666), color-stop(100%, #333333));
+  background-image: url('/sites/all/themes/pfo/img/sprite.png?1337176634'), -webkit-linear-gradient(#666666, #333333);
+  background-image: url('/sites/all/themes/pfo/img/sprite.png?1337176634'), -moz-linear-gradient(#666666, #333333);
+  background-image: url('/sites/all/themes/pfo/img/sprite.png?1337176634'), -o-linear-gradient(#666666, #333333);
+  background-image: url('/sites/all/themes/pfo/img/sprite.png?1337176634'), -ms-linear-gradient(#666666, #333333);
+  background-image: url('/sites/all/themes/pfo/img/sprite.png?1337176634'), linear-gradient(#666666, #333333);
   background-repeat: no-repeat;
   background-position: -101px 6px, left top;
   /* image replacement */
@@ -1179,7 +1179,7 @@ nav li a {
 
 /* -- Header -- */
 header {
-  background: #d8d8d8 url('/sites/all/themes/pfo/img/bg-noise.png?1336754129') left top;
+  background: #d8d8d8 url('/sites/all/themes/pfo/img/bg-noise.png?1336752223') left top;
   border-bottom: 1px solid #c1c1c1;
 }
 
@@ -1228,7 +1228,7 @@ h1#page-title {
 
 /* -- Footer -- */
 footer {
-  background: url('/sites/all/themes/pfo/img/bg-footer.jpg?1337186436');
+  background: url('/sites/all/themes/pfo/img/bg-footer.jpg?1337538087');
   color: #fff;
 }
 
@@ -1245,11 +1245,21 @@ footer h2 {
 
 /* -- Social media icons -- */
 .social a {
-  width: 32.2%;
   color: white;
   text-decoration: none;
   font-size: 18px;
-  margin-right: 10px;
+}
+
+.footer-social-btn {
+  width: 90%;
+  background-color: #2090b4;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+  padding: 0 .5em 0 .5em;
+  margin: 0 .5em .5em;
 }
 
 .footer-foot {
@@ -1437,7 +1447,7 @@ footer h2 {
   width: 0;
   height: 0;
   padding: 1.45em 4.2em 2.7em 18.6em;
-  background: url('/sites/all/themes/pfo/img/sprite.png?1340994739') no-repeat 0 -100px;
+  background: url('/sites/all/themes/pfo/img/sprite.png?1337176634') no-repeat 0 -100px;
   font-family: Arvo, Georgia, serif;
   font-size: .8em;
   font-style: italic;
@@ -1467,7 +1477,7 @@ footer h2 {
 
 #front-info .support .button {
   display: inline-block;
-  background: white url('/sites/all/themes/pfo/img/sprite.png?1340994739') no-repeat -130px 10px;
+  background: white url('/sites/all/themes/pfo/img/sprite.png?1337176634') no-repeat -130px 10px;
   padding: .7em 1em .7em 2.3em;
   font-size: 1.1em;
   font-family: Arvo, Georgia, serif;
@@ -1506,6 +1516,11 @@ footer h2 {
   /* -- Interior page: Slogan -- */
   .not-front header h2 {
     display: block;
+  }
+
+  .footer-social-btn {
+    width: auto;
+    float: left;
   }
 }
 /**
