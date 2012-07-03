@@ -5,9 +5,9 @@
         <div class="region region-footer">
           <h2>Stay Connected to Pressflow</h2>
           <div id="footer-left-col" class="footer-col social">
-            <i class="icon-twitter-sign icon-large"></i><a href="http://twitter.com/#!/Pressflow" target="_blank" title="Pressflow on Twitter" > Twitter</a>
-            <i class="icon-facebook-sign icon-large"></i><a href="http://facebook.com/Pressflow" target="_blank" title="Pressflow on Facebook"> Facebook</a>
-            <i class="icon-google-plus-sign icon-large"></i><a href="https://plus.google.com/u/0/110017415213242121438" target="_blank" title="Pressflow on Google+"> Google+</a>
+            <div class="footer-social-btn"><i class="icon-twitter icon-large"></i><a href="http://twitter.com/#!/Pressflow" target="_blank" title="Pressflow on Twitter" > Twitter</a></div>
+            <div class="footer-social-btn"><i class="icon-facebook icon-large"></i><a href="http://facebook.com/Pressflow" target="_blank" title="Pressflow on Facebook"> Facebook</a></div>
+            <div class="footer-social-btn"><i class="icon-google-plus icon-large"></i><a href="https://plus.google.com/u/0/110017415213242121438" target="_blank" title="Pressflow on Google+"> Google+</a></div>
           </div>
 
           <div id="footer-right-col" class="footer-col">
