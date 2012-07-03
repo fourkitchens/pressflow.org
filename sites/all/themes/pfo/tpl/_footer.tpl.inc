@@ -14,7 +14,7 @@
             <!-- Begin MailChimp Signup Form -->
             <div id="mc_embed_signup">
               <form action="http://fourkitchens.us2.list-manage.com/subscribe/post?u=a69fca90d904cf3933c9776c3&amp;id=823153bfef" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
-                <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
+                <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="Get the newsletter">
                 <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
                 <div id="mce-responses" class="clear">
                   <div class="response" id="mce-error-response" style="display:none"></div>
