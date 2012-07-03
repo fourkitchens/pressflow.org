@@ -333,12 +333,18 @@ footer h2 {
 /* -- Social media icons -- */
 
 .social a {
-  width: 32.2%;
   color: white;
   text-decoration: none;
   font-size: 18px;
-  margin-right: 10px;
   // text-indent: -9999px;
+}
+
+.footer-social-btn {
+  width: 90%;
+  background-color: $blue;
+  @include border-radius(3px);
+  padding: 0 .5em 0 .5em;
+  margin: 0 .5em .5em;
 }
 
 
