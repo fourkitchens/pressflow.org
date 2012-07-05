@@ -982,6 +982,11 @@ a:active {
 
 h1 {
   font-size: 2em;
+  font-family: Arvo, Georgia, serif;
+}
+
+h1 a {
+  text-decoration: none;
 }
 
 h2 {
@@ -1110,7 +1115,7 @@ tr.even {
 body {
   background: #d8d8d8 url('/sites/all/themes/pfo/img/bg-grid.png?1336752223') left top;
   color: #424242;
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.231;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 300;

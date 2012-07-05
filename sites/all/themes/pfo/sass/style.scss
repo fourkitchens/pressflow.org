@@ -42,6 +42,11 @@ h6 {}
 
 h1 {
   font-size: 2em;
+  font-family: $arvo;
+}
+
+h1 a {
+  text-decoration: none;
 }
 
 h2 {
@@ -190,7 +195,7 @@ tr.even {
 body {
   background: $d8 image-url('bg-grid.png') left top;
   color: #424242;
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.231;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 300;

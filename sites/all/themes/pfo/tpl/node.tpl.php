@@ -82,9 +82,11 @@
 
   <?php print $user_picture; ?>
 
-  <?php print render($title_prefix); ?>
-    <h1<?php print $title_attributes; ?>><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h1>
-  <?php print render($title_suffix); ?>
+  <?php if ($teaser): ?>
+    <?php print render($title_prefix); ?>
+      <h1<?php print $title_attributes; ?>><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h1>
+    <?php print render($title_suffix); ?>
+  <?php endif;  ?>
 
   <?php if ($display_submitted): ?>
       <?php print '<div class="submitted">' . $submitted . '</div>'; ?>
