@@ -40,7 +40,9 @@ h4,
 h5,
 h6 {}
 
-h1 {}
+h1 {
+  font-size: 2em;
+}
 
 h2 {
   clear: both;
@@ -423,6 +425,12 @@ footer h2 {
   0% { background: #ffb; }
   50% { background: #ffb; }
   100% { background: transparent; }
+}
+
+/* === News Page theming === */
+
+.view-id-news .content {
+  font-size: 1.3em;
 }
 
 

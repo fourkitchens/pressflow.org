@@ -980,6 +980,10 @@ a:active {
   outline: 0;
 }
 
+h1 {
+  font-size: 2em;
+}
+
 h2 {
   clear: both;
   color: #c54b2c;
@@ -1379,6 +1383,11 @@ footer h2 {
   100% {
     background: transparent;
   }
+}
+
+/* === News Page theming === */
+.view-id-news .content {
+  font-size: 1.3em;
 }
 
 /**
