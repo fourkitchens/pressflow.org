@@ -1222,6 +1222,11 @@ header h2 {
   display: none;
 }
 
+@media only screen and (min-width: 43em) {
+  .not-front header h2 {
+    display: block;
+  }
+}
 hgroup#name-and-slogan {
   width: 100%;
   padding: 1em 0;
@@ -1274,6 +1279,12 @@ footer h2 {
   margin: 0 .5em .5em;
 }
 
+@media only screen and (min-width: 43em) {
+  .footer-social-btn {
+    width: auto;
+    float: left;
+  }
+}
 .footer-foot {
   padding: 1em;
   text-align: center;
@@ -1304,9 +1315,18 @@ footer h2 {
 }
 
 .view-id-faq_view .views-row {
+  font-size: 1.2em;
   margin: .8em 0;
 }
 
+@media screen and (min-width: 61em) {
+  .view-id-faq_view .views-row {
+    margin: .8em 2%;
+    width: 46%;
+    float: left;
+    font-size: 1em;
+  }
+}
 #magic-search {
   display: block;
   width: 80%;
@@ -1422,8 +1442,7 @@ article.node-news .submitted:hover {
 /* === Front page === */
 .front header {
   width: 100%;
-  background: no-repeat 50% top;
-  background-size: cover;
+  background: url('/sites/all/themes/pfo/img/bg-noise.png') 50% top;
 }
 
 .front nav li.first {
@@ -1432,12 +1451,12 @@ article.node-news .submitted:hover {
 
 #logo-front {
   text-align: center;
-  margin-bottom: -1.5em;
+  margin-bottom: -1.1em;
   position: relative;
   z-index: 10;
 }
 #logo-front img {
-  width: 80%;
+  width: 90%;
   max-width: 800px;
 }
 .no-backgroundsize #logo-front {
@@ -1485,7 +1504,7 @@ article.node-news .submitted:hover {
   clear: both;
   width: 0;
   height: 0;
-  padding: 1.45em 4.2em 2.7em 18.6em;
+  padding: 1.35em 4.2em 2.7em 17.3em;
   background: url('/sites/all/themes/pfo/img/sprite.png') no-repeat 0 -100px;
   font-family: Arvo, Georgia, serif;
   font-size: .8em;
@@ -1524,36 +1543,4 @@ article.node-news .submitted:hover {
   text-decoration: none;
   border-radius: 7px;
   box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
-}
-
-/**
- * Responsive styles are in their own file
- */
-/**
- * Responsive styles
- *
- * All styles in this file are wrapped in media queries.
- */
-/**
- * Not-phones
- */
-@media only screen and (min-width: 43em) {
-  .not-front header h2 {
-    display: block;
-  }
-
-  .footer-social-btn {
-    width: auto;
-    float: left;
-  }
-}
-/**
- * Bigger devices with MQs.
- */
-@media only screen and (min-width: 61em) {
-  .view-id-faq_view .views-row {
-    margin: .8em 2%;
-    width: 46%;
-    float: left;
-  }
 }

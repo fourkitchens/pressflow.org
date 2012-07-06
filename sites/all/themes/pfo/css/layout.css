@@ -52,12 +52,10 @@ header nav {
 footer .footer-col,
 #page-title,
 .download {
-  width: 83.051%;
+  width: 100%;
   float: left;
   margin-right: 1.695%;
   display: inline;
-  padding-left: 8.475%;
-  padding-right: 8.475%;
 }
 
 .download {
