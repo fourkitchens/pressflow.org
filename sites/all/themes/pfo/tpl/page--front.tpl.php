@@ -52,10 +52,10 @@
         <div id="front-info">
           <section class="front-info-col-1">
             <h3><i class="icon-info-sign"></i> What is Pressflow?</h3>
-            <p>Pressflow is a fully API-compatible distribution of Drupal that offers the following benefits over a standard Drupal installation:</p>
+            <p>Pressflow is a fully API-compatible distribution of Drupal that offers many benefits over a standard Drupal installation:</p>
             <ul>
               <li class="icon-ok"> Built-in support for tools that enable you to create high-performance, enterprise-level Drupal websites.</li>
-              <li class="icon-ok"> Fully compatible with the Drupal API.</li>
+              <!-- li class="icon-ok"> Fully compatible with the Drupal API.</li -->
               <li class="icon-ok"> Proven reliability, powering many of the largest Drupal websites in the world.</li>
             </ul>
           </section>
