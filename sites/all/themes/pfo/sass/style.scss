@@ -40,7 +40,14 @@ h4,
 h5,
 h6 {}
 
-h1 {}
+h1 {
+  font-size: 2em;
+  font-family: $arvo;
+}
+
+h1 a {
+  text-decoration: none;
+}
 
 h2 {
   clear: both;
@@ -188,7 +195,7 @@ tr.even {
 body {
   background: $d8 image-url('bg-grid.png') left top;
   color: #424242;
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.231;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 300;
@@ -306,8 +313,7 @@ h1#page-title {
   font-family: $league;
   font-weight: normal;
   font-size: 4em;
-  margin-top: -.25em;
-  margin-bottom: -.25em;
+  margin: 0 auto;
 }
 
 
@@ -425,7 +431,31 @@ footer h2 {
   100% { background: transparent; }
 }
 
+/* === News === */
 
+// Views
+
+.view-id-news .content {
+  font-size: 1.3em;
+}
+
+// News articles
+
+article.node-news h1 {
+  line-height: 1em;
+  margin-bottom: 0;
+}
+
+article.node-news .submitted {
+  margin-bottom: .4em;
+  @include opacity(.7);
+  @include transition(.2s opacity linear);
+  -webkit-font-smoothing: antialiased;
+}
+
+article.node-news .submitted:hover {
+  @include opacity(1);
+}
 
 
 /**

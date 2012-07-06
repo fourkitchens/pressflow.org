@@ -980,6 +980,15 @@ a:active {
   outline: 0;
 }
 
+h1 {
+  font-size: 2em;
+  font-family: Arvo, Georgia, serif;
+}
+
+h1 a {
+  text-decoration: none;
+}
+
 h2 {
   clear: both;
   color: #c54b2c;
@@ -1104,9 +1113,9 @@ tr.even {
  */
 /* === General styles === */
 body {
-  background: #d8d8d8 url('/sites/all/themes/pfo/img/bg-grid.png?1336752223') left top;
+  background: #d8d8d8 url('/sites/all/themes/pfo/img/bg-grid.png') left top;
   color: #424242;
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.231;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 300;
@@ -1167,12 +1176,12 @@ nav li a {
 
 .multiplebgs nav li.first a {
   width: 13px;
-  background-image: url('/sites/all/themes/pfo/img/sprite.png?1337176634'), -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #666666), color-stop(100%, #333333));
-  background-image: url('/sites/all/themes/pfo/img/sprite.png?1337176634'), -webkit-linear-gradient(#666666, #333333);
-  background-image: url('/sites/all/themes/pfo/img/sprite.png?1337176634'), -moz-linear-gradient(#666666, #333333);
-  background-image: url('/sites/all/themes/pfo/img/sprite.png?1337176634'), -o-linear-gradient(#666666, #333333);
-  background-image: url('/sites/all/themes/pfo/img/sprite.png?1337176634'), -ms-linear-gradient(#666666, #333333);
-  background-image: url('/sites/all/themes/pfo/img/sprite.png?1337176634'), linear-gradient(#666666, #333333);
+  background-image: url('/sites/all/themes/pfo/img/sprite.png'), -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #666666), color-stop(100%, #333333));
+  background-image: url('/sites/all/themes/pfo/img/sprite.png'), -webkit-linear-gradient(#666666, #333333);
+  background-image: url('/sites/all/themes/pfo/img/sprite.png'), -moz-linear-gradient(#666666, #333333);
+  background-image: url('/sites/all/themes/pfo/img/sprite.png'), -o-linear-gradient(#666666, #333333);
+  background-image: url('/sites/all/themes/pfo/img/sprite.png'), -ms-linear-gradient(#666666, #333333);
+  background-image: url('/sites/all/themes/pfo/img/sprite.png'), linear-gradient(#666666, #333333);
   background-repeat: no-repeat;
   background-position: -101px 6px, left top;
   /* image replacement */
@@ -1183,7 +1192,7 @@ nav li a {
 
 /* -- Header -- */
 header {
-  background: #d8d8d8 url('/sites/all/themes/pfo/img/bg-noise.png?1336752223') left top;
+  background: #d8d8d8 url('/sites/all/themes/pfo/img/bg-noise.png') left top;
   border-bottom: 1px solid #c1c1c1;
 }
 
@@ -1226,13 +1235,12 @@ h1#page-title {
   font-family: "League Gothic", sans-serif;
   font-weight: normal;
   font-size: 4em;
-  margin-top: -0.25em;
-  margin-bottom: -0.25em;
+  margin: 0 auto;
 }
 
 /* -- Footer -- */
 footer {
-  background: url('/sites/all/themes/pfo/img/bg-footer.jpg?1337538087');
+  background: url('/sites/all/themes/pfo/img/bg-footer.jpg');
   color: #fff;
 }
 
@@ -1381,6 +1389,33 @@ footer h2 {
   }
 }
 
+/* === News === */
+.view-id-news .content {
+  font-size: 1.3em;
+}
+
+article.node-news h1 {
+  line-height: 1em;
+  margin-bottom: 0;
+}
+
+article.node-news .submitted {
+  margin-bottom: .4em;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70);
+  opacity: 0.7;
+  -webkit-transition: 0.2s opacity linear;
+  -moz-transition: 0.2s opacity linear;
+  -ms-transition: 0.2s opacity linear;
+  -o-transition: 0.2s opacity linear;
+  transition: 0.2s opacity linear;
+  -webkit-font-smoothing: antialiased;
+}
+
+article.node-news .submitted:hover {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
+}
+
 /**
  * Front page styles are in their own file
  */
@@ -1451,7 +1486,7 @@ footer h2 {
   width: 0;
   height: 0;
   padding: 1.45em 4.2em 2.7em 18.6em;
-  background: url('/sites/all/themes/pfo/img/sprite.png?1337176634') no-repeat 0 -100px;
+  background: url('/sites/all/themes/pfo/img/sprite.png') no-repeat 0 -100px;
   font-family: Arvo, Georgia, serif;
   font-size: .8em;
   font-style: italic;
@@ -1481,7 +1516,7 @@ footer h2 {
 
 #front-info .support .button {
   display: inline-block;
-  background: white url('/sites/all/themes/pfo/img/sprite.png?1337176634') no-repeat -130px 10px;
+  background: white url('/sites/all/themes/pfo/img/sprite.png') no-repeat -130px 10px;
   padding: .7em 1em .7em 2.3em;
   font-size: 1.1em;
   font-family: Arvo, Georgia, serif;

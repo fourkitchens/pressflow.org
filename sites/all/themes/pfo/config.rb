@@ -18,6 +18,8 @@ javascripts_dir = "js"
 # To disable debugging comments that display the original location of your selectors. Uncomment:
 line_comments = false
 
+# Disable cache busting on image assets
+asset_cache_buster :none
 
 # If you prefer the indented syntax, you might want to regenerate this
 # project again passing --syntax sass, or you can uncomment this:
