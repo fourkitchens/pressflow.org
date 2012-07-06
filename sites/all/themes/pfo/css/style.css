@@ -1421,8 +1421,7 @@ footer h2 {
 /* === Front page === */
 .front header {
   width: 100%;
-  background: no-repeat 50% top;
-  background-size: cover;
+  background: url('/sites/all/themes/pfo/img/bg-noise.png') 50% top;
 }
 
 .front nav li.first {
