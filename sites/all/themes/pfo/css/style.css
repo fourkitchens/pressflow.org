@@ -1445,9 +1445,6 @@ article.node-news .submitted:hover {
   opacity: 1;
 }
 
-/**
- * Front page styles are in their own file
- */
 /* === Front page === */
 .front header {
   width: 100%;
@@ -1495,6 +1492,37 @@ article.node-news .submitted:hover {
   white-space: nowrap;
 }
 
+/* -- Informational blocks -- */
+#front-info {
+  font-size: 18px;
+}
+#front-info section {
+  margin-bottom: 1em;
+}
+
+#front-info ul {
+  opacity: .9;
+  list-style-type: none;
+  margin-left: 1em;
+  padding: 0;
+}
+#front-info li {
+  margin-bottom: .5em;
+  text-indent: -0.5em;
+}
+
+#front-info .support .button {
+  display: inline-block;
+  background: white url('/sites/all/themes/pfo/img/sprite.png') no-repeat -130px 10px;
+  padding: .7em 1em .7em 2.3em;
+  font-size: 1.1em;
+  font-family: Arvo, Georgia, serif;
+  color: #c54b2c;
+  text-decoration: none;
+  border-radius: 7px;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
 /* -- Download section -- */
 .download h2 {
   margin-bottom: .6em;
@@ -1530,35 +1558,4 @@ article.node-news .submitted:hover {
   font-size: .9em;
   line-height: 1.4em;
   padding-left: 12px;
-}
-
-/* -- Informational blocks -- */
-#front-info {
-  font-size: 18px;
-}
-#front-info section {
-  margin-bottom: 1em;
-}
-
-#front-info ul {
-  opacity: .9;
-  list-style-type: none;
-  margin-left: 1em;
-  padding: 0;
-}
-#front-info li {
-  margin-bottom: .5em;
-  text-indent: -0.5em;
-}
-
-#front-info .support .button {
-  display: inline-block;
-  background: white url('/sites/all/themes/pfo/img/sprite.png') no-repeat -130px 10px;
-  padding: .7em 1em .7em 2.3em;
-  font-size: 1.1em;
-  font-family: Arvo, Georgia, serif;
-  color: #c54b2c;
-  text-decoration: none;
-  border-radius: 7px;
-  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
 }
