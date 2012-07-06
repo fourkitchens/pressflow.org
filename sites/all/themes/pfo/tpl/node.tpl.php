@@ -88,10 +88,6 @@
     <?php print render($title_suffix); ?>
   <?php endif;  ?>
 
-  <?php if ($display_submitted): ?>
-      <?php print '<div class="submitted">'. $name .' posted this on '. $date .'</div>'; ?>
-  <?php endif; ?>
-
   <div class="content"<?php print $content_attributes; ?>>
     <?php
       // We hide the comments and links now so that we can render them later.
@@ -100,6 +96,10 @@
       print render($content);
     ?>
   </div>
+
+  <?php if ($display_submitted): ?>
+      <?php print '<div class="submitted">'. $name .' posted this on '. $date .'</div>'; ?>
+  <?php endif; ?>
 
   <?php print render($content['links']); ?>
 

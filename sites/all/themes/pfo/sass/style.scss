@@ -324,8 +324,7 @@ h1#page-title {
   font-family: $league;
   font-weight: normal;
   font-size: 4em;
-  margin-top: -.25em;
-  margin-bottom: -.25em;
+  margin: 0 auto;
 }
 
 
@@ -467,13 +466,31 @@ footer h2 {
   100% { background: transparent; }
 }
 
-/* === News Page theming === */
+/* === News === */
+
+// Views
 
 .view-id-news .content {
   font-size: 1.3em;
 }
 
+// News articles
 
+article.node-news h1 {
+  line-height: 1em;
+  margin-bottom: 0;
+}
+
+article.node-news .submitted {
+  margin-bottom: .4em;
+  @include opacity(.7);
+  @include transition(.2s opacity linear);
+  -webkit-font-smoothing: antialiased;
+}
+
+article.node-news .submitted:hover {
+  @include opacity(1);
+}
 
 
 /**
