@@ -65,7 +65,7 @@
           <section class="front-info-col-2">
             <h3><i class="icon-cog"></i> Get involved</h3>
             <p>Pressflow is open source software, supported by producers of high-performance sites within the Drupal community. If you have ideas to improve Pressflow it's possible to get them included in the next release.</p>
-            <p>Get started today by going to <a href="http://github.com/pressflow">Github</a></p>
+            <p>Learn <a href="/faq#faq-title-id-18">how to contribute</a> to Pressflow.</p>
           </section>
 
           <section class="front-info-col-3">
