@@ -55,7 +55,6 @@
             <p>Pressflow is a fully API-compatible distribution of Drupal that offers many benefits over a standard Drupal installation:</p>
             <ul>
               <li class="icon-ok"> Built-in support for tools that enable you to create high-performance, enterprise-level Drupal websites.</li>
-              <!-- li class="icon-ok"> Fully compatible with the Drupal API.</li -->
               <li class="icon-ok"> Proven reliability, powering many of the largest Drupal websites in the world.</li>
             </ul>
           </section>
@@ -70,7 +69,7 @@
             <h3><i class="icon-comments"></i> Need Support?</h3>
             <ul>
               <li class="icon-book"> Read the documentation on the <a href="http://pressflow.atlassian.org">Pressflow wiki</a>.</li>
-              <li class="icon-github-sign"> File bugs, issues, and feature requests on <a href="https://github.com/pressflow">Github</a></li>
+              <li class="icon-github-sign"> File bugs, issues, and feature requests are handled on Github. <a href="/support">Learn more</a>.</li>
               <li class="icon-question-sign"> Post questions and answers at <a href="http://drupal.stackexchange.com/questions/tagged/pressflow">drupal.stackexchange.com</a></li>
             </ul>
 
