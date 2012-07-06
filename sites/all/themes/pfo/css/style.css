@@ -1431,12 +1431,12 @@ footer h2 {
 
 #logo-front {
   text-align: center;
-  margin-bottom: -1.5em;
+  margin-bottom: -1.1em;
   position: relative;
   z-index: 10;
 }
 #logo-front img {
-  width: 80%;
+  width: 90%;
   max-width: 800px;
 }
 .no-backgroundsize #logo-front {
