@@ -24,7 +24,10 @@
           <div class="download">
             <h2>Download and install</h2>
             <?php print $download; ?>
-            <p class="pf7"><a href="/faq#faq-title-id-8">Looking for Pressflow 7?</a><br> Check the progress on <a href="https://github.com/pressflow/7">Github</a></p>
+            <p class="pf7">
+              <a href="https://github.com/pressflow/6">View Pressflow 6 on Github</a><br>
+              <a href="/faq#faq-title-id-8">Looking for Pressflow 7?</a>
+            </p>
           </div><!-- .download -->
         </div><!-- .container -->
         </div><!-- .stripe -->
