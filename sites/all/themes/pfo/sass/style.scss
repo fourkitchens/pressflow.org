@@ -403,6 +403,8 @@ footer h2 {
 
 // These styles cause the title to be highlighted
 // when you deep-link to a particular FAQ
+// Example: http://stage.pressflow.org/faq#faq-title-id-8
+
 .view-id-faq_view :target {
   -webkit-animation: highlight 3s ease-in-out;
      -moz-animation: highlight 3s ease-in-out;
