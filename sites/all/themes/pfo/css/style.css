@@ -1507,6 +1507,9 @@ article.node-news .submitted:hover {
   text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.6);
   border-bottom: 1px solid rgba(0, 0, 0, 0.3);
 }
+.not-front .download h2 {
+  margin-top: 0;
+}
 
 .download #download {
   display: block;
