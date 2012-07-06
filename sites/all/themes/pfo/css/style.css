@@ -1390,9 +1390,31 @@ footer h2 {
   }
 }
 
-/* === News Page theming === */
+/* === News === */
 .view-id-news .content {
   font-size: 1.3em;
+}
+
+article.node-news h1 {
+  line-height: 1em;
+  margin-bottom: 0;
+}
+
+article.node-news .submitted {
+  margin-bottom: .4em;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70);
+  opacity: 0.7;
+  -webkit-transition: 0.2s opacity linear;
+  -moz-transition: 0.2s opacity linear;
+  -ms-transition: 0.2s opacity linear;
+  -o-transition: 0.2s opacity linear;
+  transition: 0.2s opacity linear;
+  -webkit-font-smoothing: antialiased;
+}
+
+article.node-news .submitted:hover {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
 }
 
 /**
