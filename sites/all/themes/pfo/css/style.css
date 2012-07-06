@@ -1260,6 +1260,15 @@ footer h2 {
   color: #fff;
 }
 
+.footer-foot a {
+  color: inherit;
+  border-bottom: 1px dotted #fff;
+  text-decoration: none;
+}
+.footer-foot a:hover {
+  color: #bbb;
+}
+
 /* -- Social media icons -- */
 .social a {
   color: white;
