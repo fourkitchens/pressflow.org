@@ -1445,9 +1445,6 @@ article.node-news .submitted:hover {
   opacity: 1;
 }
 
-/**
- * Front page styles are in their own file
- */
 /* === Front page === */
 .front header {
   width: 100%;
@@ -1495,40 +1492,6 @@ article.node-news .submitted:hover {
   white-space: nowrap;
 }
 
-/* -- Download section -- */
-.download h2 {
-  margin-bottom: .6em;
-  padding-bottom: .2em;
-  overflow: visible;
-  font-size: 1em;
-  font-family: Arvo, Georgia, serif;
-  font-weight: 400;
-  color: #666;
-  text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.6);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
-}
-
-.download #download {
-  display: block;
-  clear: both;
-  width: 0;
-  height: 0;
-  padding: 1.35em 4.2em 2.7em 17.3em;
-  background: url('/sites/all/themes/pfo/img/sprite.png') no-repeat 0 -100px;
-  font-family: Arvo, Georgia, serif;
-  font-size: .8em;
-  font-style: italic;
-  text-decoration: none;
-  color: #777;
-  white-space: nowrap;
-}
-
-.download .pf7 {
-  font-size: .9em;
-  line-height: 1.4em;
-  padding-left: 12px;
-}
-
 /* -- Informational blocks -- */
 #front-info {
   font-size: 18px;
@@ -1558,4 +1521,41 @@ article.node-news .submitted:hover {
   text-decoration: none;
   border-radius: 7px;
   box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* -- Download section -- */
+.download h2 {
+  margin-bottom: .6em;
+  padding-bottom: .2em;
+  overflow: visible;
+  font-size: 1em;
+  font-family: Arvo, Georgia, serif;
+  font-weight: 400;
+  color: #666;
+  text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.6);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+}
+.not-front .download h2 {
+  margin-top: 0;
+}
+
+.download #download {
+  display: block;
+  clear: both;
+  width: 0;
+  height: 0;
+  padding: 1.35em 4.2em 2.7em 17.3em;
+  background: url('/sites/all/themes/pfo/img/sprite.png') no-repeat 0 -100px;
+  font-family: Arvo, Georgia, serif;
+  font-size: .8em;
+  font-style: italic;
+  text-decoration: none;
+  color: #777;
+  white-space: nowrap;
+}
+
+.download .pf7 {
+  font-size: .9em;
+  line-height: 1.4em;
+  padding-left: 12px;
 }

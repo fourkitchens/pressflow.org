@@ -506,8 +506,8 @@ article.node-news .submitted:hover {
 }
 
 
-/**
- * Front page styles are in their own file
- */
-
+// Styles for Front page
 @import 'front';
+
+// Styles for Download link
+@import 'download';
