@@ -82,13 +82,11 @@
 
   <?php print $user_picture; ?>
 
-  <?php print render($title_prefix); ?>
-    <h1<?php print $title_attributes; ?>><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h1>
-  <?php print render($title_suffix); ?>
-
-  <?php if ($display_submitted): ?>
-      <?php print '<div class="submitted">' . $submitted . '</div>'; ?>
-  <?php endif; ?>
+  <?php if ($teaser): ?>
+    <?php print render($title_prefix); ?>
+      <h1<?php print $title_attributes; ?>><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h1>
+    <?php print render($title_suffix); ?>
+  <?php endif;  ?>
 
   <div class="content"<?php print $content_attributes; ?>>
     <?php
@@ -98,6 +96,10 @@
       print render($content);
     ?>
   </div>
+
+  <?php if ($display_submitted): ?>
+      <?php print '<div class="submitted">'. $name .' posted this on '. $date .'</div>'; ?>
+  <?php endif; ?>
 
   <?php print render($content['links']); ?>
 
