@@ -24,7 +24,10 @@
           <div class="download">
             <h2>Download and install</h2>
             <?php print $download; ?>
-            <p class="pf7"><a href="/faq#faq-title-id-8">Looking for Pressflow 7?</a><br> Check the progress on <a href="https://github.com/pressflow/7">Github</a></p>
+            <p class="pf7">
+              <a href="https://github.com/pressflow/6">View Pressflow 6 on Github</a><br>
+              <a href="/faq#faq-title-id-8">Looking for Pressflow 7?</a>
+            </p>
           </div><!-- .download -->
         </div><!-- .container -->
         </div><!-- .stripe -->
@@ -55,7 +58,6 @@
             <p>Pressflow is a fully API-compatible distribution of Drupal that offers many benefits over a standard Drupal installation:</p>
             <ul>
               <li class="icon-ok"> Built-in support for tools that enable you to create high-performance, enterprise-level Drupal websites.</li>
-              <!-- li class="icon-ok"> Fully compatible with the Drupal API.</li -->
               <li class="icon-ok"> Proven reliability, powering many of the largest Drupal websites in the world.</li>
             </ul>
           </section>
@@ -63,15 +65,15 @@
           <section class="front-info-col-2">
             <h3><i class="icon-cog"></i> Get involved</h3>
             <p>Pressflow is open source software, supported by producers of high-performance sites within the Drupal community. If you have ideas to improve Pressflow it's possible to get them included in the next release.</p>
-            <p>Get started today by going to <a href="http://github.com/pressflow">Github</a></p>
+            <p>Learn <a href="/faq#faq-title-id-18">how to contribute</a> to Pressflow.</p>
           </section>
 
           <section class="front-info-col-3">
             <h3><i class="icon-comments"></i> Need Support?</h3>
             <ul>
-              <li class="icon-book"> Read the documentation on the <a href="http://pressflow.atlassian.org">Pressflow wiki</a>.</li>
-              <li class="icon-github-sign"> File bugs, issues, and feature requests on <a href="https://github.com/pressflow">Github</a></li>
-              <li class="icon-question-sign"> Post questions and answers at <a href="http://drupal.stackexchange.com/questions/tagged/pressflow">drupal.stackexchange.com</a></li>
+              <li class="icon-book"> Read the documentation on the <a href="https://pressflow.atlassian.net/wiki/display/PF/Pressflow+documentation">Pressflow wiki</a>.</li>
+              <li class="icon-github-sign"> File bugs, issues, and feature requests are handled on Github. <a href="/support">Learn more</a>.</li>
+              <li class="icon-question-sign"> Post questions and answers at <a href="http://drupal.stackexchange.com/questions/tagged/pressflow">Drupal Answers</a></li>
             </ul>
 
           </section>
