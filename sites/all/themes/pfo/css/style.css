@@ -1309,8 +1309,11 @@ footer h2 {
   margin: .8em 0;
 }
 
-@media screen and (min-width: 960px) {
+@media screen and (min-width: 61em) {
   .view-id-faq_view .views-row {
+    margin: .8em 2%;
+    width: 46%;
+    float: left;
     font-size: 1em;
   }
 }
@@ -1529,16 +1532,6 @@ footer h2 {
 
   .footer-social-btn {
     width: auto;
-    float: left;
-  }
-}
-/**
- * Bigger devices with MQs.
- */
-@media only screen and (min-width: 61em) {
-  .view-id-faq_view .views-row {
-    margin: .8em 2%;
-    width: 46%;
     float: left;
   }
 }
