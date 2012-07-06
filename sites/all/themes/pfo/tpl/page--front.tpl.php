@@ -70,7 +70,7 @@
             <h3><i class="icon-comments"></i> Need Support?</h3>
             <ul>
               <li class="icon-book"> Read the documentation on the <a href="http://pressflow.atlassian.org">Pressflow wiki</a>.</li>
-              <li class="icon-github-sign"> File bugs and issues on <a href="https://github.com/pressflow">Github</a></li>
+              <li class="icon-github-sign"> File bugs, issues, and feature requests on <a href="https://github.com/pressflow">Github</a></li>
               <li class="icon-question-sign"> Post questions and answers at <a href="http://drupal.stackexchange.com/questions/tagged/pressflow">drupal.stackexchange.com</a></li>
             </ul>
 
