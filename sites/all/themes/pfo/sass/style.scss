@@ -294,10 +294,21 @@ header h2 {
   letter-spacing: 1px;
 }
 
-// hide on interior pages viewed on small screens
+// Interior page subtitle
+
+// Hide on small screens
 .not-front header h2 {
   display: none;
 }
+
+// Show on medium screens
+@media only screen and (min-width: 43em) {
+  .not-front header h2 {
+    display: block;
+  }
+}
+
+
 
 // #name-and-slogan has been removed from page--front.tpl - see front.scss for its stripe
 hgroup#name-and-slogan {
@@ -353,6 +364,16 @@ footer h2 {
   margin: 0 .5em .5em;
 }
 
+// Medium screens
+
+@media only screen and (min-width: 43em) {
+  .footer-social-btn {
+    width: auto;
+    float: left;
+  }
+}
+
+
 
 // Copyright
 .footer-foot {
@@ -381,7 +402,19 @@ footer h2 {
 }
 
 .view-id-faq_view .views-row {
+  font-size: 1.2em;
   margin: .8em 0;
+}
+
+// Big screens
+
+@media screen and (min-width: 61em) {
+  .view-id-faq_view .views-row {
+    margin: .8em 2%;
+    width: 46%;
+    float: left;
+    font-size: 1em;
+  }
 }
 
 // FAQs search
@@ -402,6 +435,8 @@ footer h2 {
 
 // These styles cause the title to be highlighted
 // when you deep-link to a particular FAQ
+// Example: http://stage.pressflow.org/faq#faq-title-id-8
+
 .view-id-faq_view :target {
   -webkit-animation: highlight 3s ease-in-out;
      -moz-animation: highlight 3s ease-in-out;
@@ -463,9 +498,3 @@ article.node-news .submitted:hover {
  */
 
 @import 'front';
-
-/**
- * Responsive styles are in their own file
- */
-
-@import 'responsive';

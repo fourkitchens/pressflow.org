@@ -15,7 +15,7 @@ stylesheets[all][] = css/layout.css
 stylesheets[all][] = css/style.css
 
 ; Load CSS with Modernizr
-modernizr[Modernizr.mq('screen and (min-width: 800px)')][yep][] = css/big.css
+modernizr[Modernizr.mq('screen and (min-width: 42em)')][yep][] = css/big.css
 
 ; JS
 scripts[] = js/jquery.formalize.min.js

@@ -37,8 +37,7 @@ header nav {
 footer .footer-col,   // all pages
 #page-title,          // interior pages
 .download {           // all pages
-  @include span-columns(10);
-  @include pad(1,1);
+  @include span-columns(12);
 }
 
 .download {
