@@ -347,6 +347,19 @@ footer h2 {
   color: #fff;
 }
 
+// Copyright
+.footer-foot a {
+  color: inherit;
+  border-bottom: 1px dotted #fff;
+  text-decoration: none;
+
+  &:hover {
+    color: #bbb;
+  }
+}
+
+
+
 /* -- Social media icons -- */
 
 .social a {
