@@ -89,7 +89,7 @@
   <?php endif;  ?>
 
   <?php if ($display_submitted): ?>
-      <?php print '<div class="submitted">' . $submitted . '</div>'; ?>
+      <?php print '<div class="submitted">'. $name .' posted this on '. $date .'</div>'; ?>
   <?php endif; ?>
 
   <div class="content"<?php print $content_attributes; ?>>

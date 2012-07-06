@@ -44,6 +44,16 @@ function pfo_preprocess_node(&$vars) {
     // Unset the page title
     $vars['title'] = '';
   }
+
+  // Help re-format the 'submitted by' output. See node.tpl.php
+  // - Generate date in shorter format
+  // - Drop the dash separating date and time
+  // - Replace it with the word 'at'
+  $prep_date = format_date($vars['created'], 'medium');
+  $prep_date = explode('-', $prep_date);
+  $prep_date = implode(' at ', $prep_date);
+  $vars['date'] = $prep_date;
+
 }
 
 
