@@ -1235,8 +1235,7 @@ h1#page-title {
   font-family: "League Gothic", sans-serif;
   font-weight: normal;
   font-size: 4em;
-  margin-top: -0.25em;
-  margin-bottom: -0.25em;
+  margin: 0 auto;
 }
 
 /* -- Footer -- */
