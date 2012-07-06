@@ -28,8 +28,8 @@ function pfo_preprocess_page(&$vars) {
     $version = 'latest';
   }
 
-  // Build the download link. Points to Pressflow 6 github page.
-  $vars['download'] = '<a href="https://github.com/pressflow/6" id="download">ver '. $version .'</a>';
+  // Build the download link. Points to Pressflow 6 direct download.
+  $vars['download'] = '<a href="https://github.com/pressflow/6/tarball/master" id="download">ver '. $version .'</a>';
 }
 
 
