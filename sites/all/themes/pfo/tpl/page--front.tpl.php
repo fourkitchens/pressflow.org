@@ -73,7 +73,7 @@
             <ul>
               <li class="icon-book"> Read the documentation on the <a href="http://pressflow.atlassian.org">Pressflow wiki</a>.</li>
               <li class="icon-github-sign"> File bugs, issues, and feature requests are handled on Github. <a href="/support">Learn more</a>.</li>
-              <li class="icon-question-sign"> Post questions and answers at <a href="http://drupal.stackexchange.com/questions/tagged/pressflow">drupal.stackexchange.com</a></li>
+              <li class="icon-question-sign"> Post questions and answers at <a href="http://drupal.stackexchange.com/questions/tagged/pressflow">Drupal Answers</a></li>
             </ul>
 
           </section>
