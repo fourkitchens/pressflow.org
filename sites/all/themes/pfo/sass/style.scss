@@ -294,10 +294,21 @@ header h2 {
   letter-spacing: 1px;
 }
 
-// hide on interior pages viewed on small screens
+// Interior page subtitle
+
+// Hide on small screens
 .not-front header h2 {
   display: none;
 }
+
+// Show on medium screens
+@media only screen and (min-width: 43em) {
+  .not-front header h2 {
+    display: block;
+  }
+}
+
+
 
 // #name-and-slogan has been removed from page--front.tpl - see front.scss for its stripe
 hgroup#name-and-slogan {
@@ -353,6 +364,16 @@ footer h2 {
   padding: 0 .5em 0 .5em;
   margin: 0 .5em .5em;
 }
+
+// Medium screens
+
+@media only screen and (min-width: 43em) {
+  .footer-social-btn {
+    width: auto;
+    float: left;
+  }
+}
+
 
 
 // Copyright

@@ -1222,6 +1222,11 @@ header h2 {
   display: none;
 }
 
+@media only screen and (min-width: 43em) {
+  .not-front header h2 {
+    display: block;
+  }
+}
 hgroup#name-and-slogan {
   width: 100%;
   padding: 1em 0;
@@ -1275,6 +1280,12 @@ footer h2 {
   margin: 0 .5em .5em;
 }
 
+@media only screen and (min-width: 43em) {
+  .footer-social-btn {
+    width: auto;
+    float: left;
+  }
+}
 .footer-foot {
   padding: 1em;
   text-align: center;
@@ -1525,13 +1536,3 @@ footer h2 {
 /**
  * Not-phones
  */
-@media only screen and (min-width: 43em) {
-  .not-front header h2 {
-    display: block;
-  }
-
-  .footer-social-btn {
-    width: auto;
-    float: left;
-  }
-}
