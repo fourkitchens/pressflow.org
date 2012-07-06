@@ -382,8 +382,15 @@ footer h2 {
 }
 
 .view-id-faq_view .views-row {
+  font-size: 1.2em;
   margin: .8em 0;
 }
+@media screen and (min-width: 960px) {
+  .view-id-faq_view .views-row {
+    font-size: 1em;
+  }
+}
+
 
 // FAQs search
 
