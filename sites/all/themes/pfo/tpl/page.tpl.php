@@ -22,6 +22,7 @@
           <?php print render($title_suffix); ?>
 
           <div class="download">
+            <h2>Download and install</h2>
             <?php print $download; ?>
           </div><!-- .download -->
         </div><!-- .container -->
