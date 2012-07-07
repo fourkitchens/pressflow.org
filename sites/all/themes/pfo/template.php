@@ -72,6 +72,9 @@ function pfo_preprocess_html(&$vars) {
 
 /**
  * Implements hook_js_alter()
+ *
+ * Moves most scripts to the bottom of the page, save for a whitelist
+ * @TODO: figure out how to whitelist inline JS, e.g. M.load() calls
  */
 function pfo_js_alter(&$js) {
   // Collect the scripts we want in to remain in the header scope.
@@ -82,7 +85,6 @@ function pfo_js_alter(&$js) {
   // Change the default scope of external scripts to footer.
   // Code assumes if the script is scoped to header it was done so by default.
   foreach ($js as $key => &$script) {
-    dsm($script);
     if ($script['scope'] == 'header' && !in_array($script['data'], $whitelist)) {
       $script['scope'] = 'footer';
     }
