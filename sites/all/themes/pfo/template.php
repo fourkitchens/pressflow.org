@@ -69,3 +69,24 @@ function pfo_preprocess_html(&$vars) {
     $vars['head_title'] = 'Pressflow | Enhanced performance and scalability for Drupal';
   }
 }
+
+/**
+ * Implements hook_js_alter()
+ *
+ * Moves most scripts to the bottom of the page, save for a whitelist
+ * @TODO: figure out how to whitelist inline JS, e.g. M.load() calls
+ */
+function pfo_js_alter(&$js) {
+  // Collect the scripts we want in to remain in the header scope.
+  $whitelist = array(
+    'sites/all/libraries/modernizr/modernizr.min.js',
+  );
+
+  // Change the default scope of external scripts to footer.
+  // Code assumes if the script is scoped to header it was done so by default.
+  foreach ($js as $key => &$script) {
+    if ($script['scope'] == 'header' && !in_array($script['data'], $whitelist)) {
+      $script['scope'] = 'footer';
+    }
+  }
+}
