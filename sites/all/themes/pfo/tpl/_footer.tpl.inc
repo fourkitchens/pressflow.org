@@ -24,7 +24,10 @@
             </div>
             <!--End mc_embed_signup-->
           </div>
-          <div class="footer-foot">&copy; Pressflow is a trademark of <a href="http://fourkitchens.com">Four Kitchens</a>, home of the <a href="http://fourkitchens.com/about/team">web chefs</a>.</div>
+          <div class="footer-foot">
+            &copy; Pressflow is a trademark of <a href="http://fourkitchens.com">Four Kitchens</a>, home of the <a href="http://fourkitchens.com/about/team">web chefs</a>.<br>
+            A product of <a href="http://twitter.com/davidstrauss">David Strauss</a>, Four Kitchens, and friends.
+          </div>
         </div><!-- .region-footer -->
 
       </div>
