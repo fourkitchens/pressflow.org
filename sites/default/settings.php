@@ -82,6 +82,11 @@ $conf['reverse_proxy_addresses'] = array('127.0.0.1');
 $conf['allow_authorize_operations'] = FALSE;
 
 /**
+ * Google Analytics Code
+ */
+$conf['googleanalytics_account'] = 'UA-24112716-1';
+
+/**
  * Environment specific settings.
  */
 // Note - other subdomains (i.e. img.pressflow.org, etc) will need to be added
