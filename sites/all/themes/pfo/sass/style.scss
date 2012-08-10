@@ -422,11 +422,17 @@ footer h2 {
 // Big screens
 
 @media screen and (min-width: 61em) {
-  .view-id-faq_view .views-row {
-    margin: .8em 2%;
-    width: 46%;
-    float: left;
-    font-size: 1em;
+  .view-id-faq_view {
+
+    .views-row {
+      margin: .8em 2%;
+      width: 46%;
+      float: left;
+      font-size: 1em;
+    }
+    .views-row-odd {
+      clear: left;
+    }
   }
 }
 

@@ -1335,6 +1335,9 @@ footer h2 {
     float: left;
     font-size: 1em;
   }
+  .view-id-faq_view .views-row-odd {
+    clear: left;
+  }
 }
 #magic-search {
   display: block;
