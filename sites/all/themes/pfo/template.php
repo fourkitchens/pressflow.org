@@ -13,11 +13,22 @@ function pfo_preprocess(&$vars) {
  */
 function pfo_preprocess_page(&$vars) {
 
+  global $base_url;
+
   // Special treatment for front page
   if ($vars['is_front'] == TRUE) {
 
     // Unset the page title
     $vars['title'] = '';
+
+    // Set the prerender tag for FAQs. Our analytics show an overwhelming number (~50%) of users
+    // landing on the homepage that proceed to /faq, making this a very reasonable optimization.
+    //
+    // Further reading: https://developers.google.com/chrome/whitepapers/prerender
+    drupal_add_html_head_link(array(
+      'rel'  => 'prerender',
+      'href' => $base_url . '/faq',
+    ));
   }
 
   // Generate the version number
