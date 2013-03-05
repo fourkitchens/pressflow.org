@@ -33,21 +33,10 @@ so it is available to themes/modules that support HTML5/CSS3 features.
 
 For more information, visit: http://www.modernizr.com/docs/
 
-
 Usage
 =====
 
 Find admin settings at /admin/config/development/modernizr
-
-
-Drupal components
-=================
-
-The code incudes an optional submodule (modernizr_forceredirect) that
-was for the 1.x version of modernizr.js and is no longer needed for v2.
-We strongly recommend using the latest version of Modernizr, and can
-only support the latest version of the JS library. The _forceredirect
-module will likely be removed for 3.x release.
 
 
 Credits
@@ -57,7 +46,7 @@ Project page: http://drupal.org/project/modernizr
 Library page: http://modernizr.com
 
 Module originally written by:
-Tam‡s Demeter-Haludka - http://drupal.org/user/372872
+Tamás Demeter-Haludka - http://drupal.org/user/372872
 
 Maintainers:
 Chris Ruppel - http://drupal.org/user/411999
