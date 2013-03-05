@@ -13,7 +13,7 @@ function locale_features_api() {
     'language' => array(
       'name' => t('Languages'),
       'default_hook' => 'locale_default_languages',
-      'features_source' => TRUE,
+      'feature_source' => TRUE,
       'default_file' => FEATURES_DEFAULTS_INCLUDED,
     ),
   );
@@ -67,7 +67,7 @@ function language_features_export_render($module, $data, $export = NULL) {
 
       $lang_export = features_var_export($var, '  ');
       $lang_identifier = features_var_export($name);
-      $code[] = "  // Exported language: $name";
+      $code[] = "  // Exported language: $name.";
       $code[] = "  \$languages[{$lang_identifier}] = {$lang_export};";
     }
   }
