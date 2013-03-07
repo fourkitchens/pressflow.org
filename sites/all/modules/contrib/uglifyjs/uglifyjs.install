@@ -1,0 +1,44 @@
+<?php
+
+/**
+ * @file
+ * Install, uninstall, enable, and disable functions.
+ */
+
+/**
+ * Implements hook_enable().
+ */
+function uglifyjs_enable() {
+  // Remove any already minified files and clear the cache.
+  $jspath = drupal_realpath('public://js');
+  _ujs_rrmdir($jspath);
+  drupal_flush_all_caches();
+}
+
+/**
+ * Implements hook_disable().
+ */
+function uglifyjs_disable() {
+  // Remove any already minified files and clear the cache.
+  $jspath = drupal_realpath('public://js');
+  _ujs_rrmdir($jspath);
+  drupal_flush_all_caches();
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function uglifyjs_uninstall() {
+  variable_del('uglifyjs_skip_uglify');
+  variable_del('uglify_service_endpoint');
+}
+
+/**
+ * Helper recursive delete function.
+ */
+function _ujs_rrmdir($path) {
+  return is_file($path) ?
+    @unlink($path) :
+    array_map('_ujs_rrmdir', glob($path . '/*')) == @rmdir($path);
+}
+

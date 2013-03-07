@@ -1,0 +1,145 @@
+<?php
+
+/**
+ * @file
+ * Adds on-the-fly JavaScript minification via uglify.me
+ */
+
+/**
+ * Implements hook_js_alter().
+ */
+function uglifyjs_js_alter(&$scripts) {
+  if (variable_get('uglifyjs_skip_uglify', FALSE)) {
+    return;
+  }
+
+  $uglify_map = array();
+  if ($cache = cache_get('uglifyjs_map')) {
+    $uglify_map = $cache->data;
+  }
+  else {
+    $uglify = module_invoke_all('uglifyjs_info');
+
+    foreach ($uglify as $script) {
+      $uglify_map[$script] = array('data' => $script);
+    }
+    uglifyjs_uglify($uglify_map);
+    cache_set('uglifyjs_map', $uglify_map, 'cache', CACHE_TEMPORARY);
+  }
+
+  foreach ($uglify_map as $script) {
+    // If there was a problem minifying the script we won't make any changes.
+    if (isset($script['uglified_data']) && isset($scripts[$script['data']])) {
+      $scripts[$script['data']]['data'] = $script['uglified_data'];
+    }
+  }
+}
+
+/**
+ * Implements hook_js_cache_alter().
+ */
+function uglifyjs_js_cache_alter(&$contents) {
+  if (variable_get('uglifyjs_skip_uglify', FALSE)) {
+    return;
+  }
+
+  $uglify_service = variable_get('uglify_service_endpoint', 'http://uglify.me') . '/uglify';
+  $uglify_dir = variable_get('file_public_path', conf_path() . '/files') . '/uglifyjs';
+  if (!is_dir($uglify_dir)) {
+    drupal_mkdir($uglify_dir);
+  }
+
+  $data = drupal_http_request(
+    $uglify_service,
+    array(
+      'method' => 'POST',
+      'data' => $contents,
+    )
+  );
+
+  if ($data->code != 200) {
+    watchdog(
+      'uglifyjs',
+      'Error fetching uglified JS cache from @server: @error (@code)',
+      array(
+        '@server' => $uglify_service,
+        '@error' => $data->error,
+        '@code' => $data->code,
+      ),
+      WATCHDOG_ERROR
+    );
+    return;
+  }
+
+  $contents = $data->data;
+}
+
+/**
+ * Helper function to fetch uglified code from uglify.me.
+ *
+ * @param $scripts
+ *   An array of scripts to uglify.
+ */
+function uglifyjs_uglify(&$scripts) {
+  if (lock_acquire('uglifyjs_uglify')) {
+    $uglify_service = variable_get('uglify_service_endpoint', 'http://uglify.me') . '/uglify';
+    $uglify_dir = variable_get('file_public_path', conf_path() . '/files') . '/uglifyjs';
+    if (!is_dir($uglify_dir)) {
+      drupal_mkdir($uglify_dir);
+    }
+
+    foreach ($scripts as &$script) {
+      $md5 = md5_file($script['data']);
+      $uglified_name = preg_replace('/.js$/', '-' . $md5 . '.min.js', basename($script['data']));
+      if ($uglified_name == $script['data']) {
+        $uglified_name = basename($script['data']) . '-' . $md5 . '.min.js';
+      }
+
+      if (!file_exists($uglify_dir . '/' . $uglified_name)) {
+        $data = drupal_http_request(
+          $uglify_service,
+          array(
+            'method' => 'POST',
+            'data' => file_get_contents($script['data']),
+          )
+        );
+
+        if ($data->code != 200) {
+          watchdog(
+            'uglifyjs',
+            'Error fetching @file from @server: @error (@code)',
+            array(
+              '@file' => basename($script['data']),
+              '@server' => $uglify_service,
+              '@error' => $data->error,
+              '@code' => $data->code,
+            ),
+            WATCHDOG_ERROR
+          );
+          continue;
+        }
+
+        if (file_put_contents($uglify_dir . '/' . $uglified_name, $data->data) !== FALSE) {
+          $script['uglified_data'] = $uglify_dir . '/' . $uglified_name;
+        }
+        else {
+          watchdog(
+            'uglifyjs',
+            'Error saving minified @file to @uglified',
+            array(
+              '@file' => basename($script['data']),
+              '@uglified' => $uglify_dir . '/' . $uglified_name,
+            ),
+            WATCHDOG_ERROR
+          );
+        }
+      }
+      else {
+        $script['uglified_data'] = $uglify_dir . '/' . $uglified_name;
+      }
+    }
+
+    lock_release('uglifyjs_uglify');
+  }
+}
+
