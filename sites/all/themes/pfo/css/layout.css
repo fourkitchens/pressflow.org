@@ -16,10 +16,10 @@ footer .footer-content {
   *zoom: 1;
   max-width: 59em;
   _width: 59em;
-  margin-left: auto;
-  margin-right: auto;
   padding-left: 1em;
   padding-right: 1em;
+  margin-left: auto;
+  margin-right: auto;
   -webkit-background-origin: content;
   -moz-background-origin: content;
   -ms-background-origin: content-box;
@@ -44,6 +44,7 @@ header hgroup,
 
 header nav {
   clear: both;
+  float: right;
 }
 
 #content,
@@ -54,7 +55,7 @@ footer .footer-col,
 .download {
   width: 100%;
   float: left;
-  margin-right: 1.695%;
+  margin-right: 1.69492%;
   display: inline;
 }
 
@@ -81,16 +82,16 @@ footer .footer-col {
   #main #content {
     width: 100%;
     float: left;
-    margin-right: 1.695%;
+    margin-right: 1.69492%;
     display: inline;
     padding-left: 0%;
     padding-right: 0%;
   }
 
   #page-title {
-    width: 57.627%;
+    width: 57.62712%;
     float: left;
-    margin-right: 1.695%;
+    margin-right: 1.69492%;
     display: inline;
     padding-left: 0%;
     padding-right: 0%;
@@ -104,14 +105,14 @@ footer .footer-col {
   .download,
   #front-info section,
   body.front .view-pressflownians .views-row {
-    width: 49.153%;
+    width: 49.15254%;
     float: left;
-    margin-right: 1.695%;
+    margin-right: 1.69492%;
     display: inline;
   }
 
   #front-info section:nth-child(even) {
-    width: 49.153%;
+    width: 49.15254%;
     float: right;
     margin-right: 0;
     #margin-left: -1em;
@@ -125,7 +126,7 @@ footer .footer-col {
   }
 
   .front .download {
-    width: 49.153%;
+    width: 49.15254%;
     float: right;
     margin-right: 0;
     #margin-left: -1em;
@@ -133,7 +134,7 @@ footer .footer-col {
   }
 
   .not-front .download {
-    width: 40.678%;
+    width: 40.67797%;
     float: right;
     margin-right: 0;
     #margin-left: -1em;
@@ -141,25 +142,25 @@ footer .footer-col {
   }
 
   .page-faq #main #content {
-    width: 83.051%;
+    width: 83.05085%;
     float: left;
-    margin-right: 1.695%;
+    margin-right: 1.69492%;
     display: inline;
-    padding-left: 8.475%;
-    padding-right: 8.475%;
+    padding-left: 8.47458%;
+    padding-right: 8.47458%;
   }
 
   footer .footer-col {
-    width: 40.678%;
+    width: 40.67797%;
     float: left;
-    margin-right: 1.695%;
+    margin-right: 1.69492%;
     display: inline;
     padding-left: 0%;
     padding-right: 0%;
   }
 
   footer #footer-left-col {
-    padding-left: 8.475%;
+    padding-left: 8.47458%;
     padding-right: 0%;
   }
 }
@@ -169,35 +170,35 @@ footer .footer-col {
 @media only screen and (min-width: 61em) {
   /* -- Intro and Download -- */
   .front .intro {
-    width: 32.203%;
+    width: 32.20339%;
     float: left;
-    margin-right: 1.695%;
+    margin-right: 1.69492%;
     display: inline;
-    padding-left: 8.475%;
-    padding-right: 8.475%;
+    padding-left: 8.47458%;
+    padding-right: 8.47458%;
   }
 
   .front .download {
-    width: 32.203%;
+    width: 32.20339%;
     float: right;
     margin-right: 0;
     #margin-left: -1em;
     display: inline;
-    padding-left: 8.475%;
-    padding-right: 8.475%;
+    padding-left: 8.47458%;
+    padding-right: 8.47458%;
   }
 
   /* -- What's the deal... */
   #front-info section,
   #front-info section:nth-child(even) {
-    width: 32.203%;
+    width: 32.20339%;
     float: left;
-    margin-right: 1.695%;
+    margin-right: 1.69492%;
     display: inline;
   }
 
   #front-info section.front-info-col-3 {
-    width: 32.203%;
+    width: 32.20339%;
     float: right;
     margin-right: 0;
     #margin-left: -1em;
@@ -206,14 +207,14 @@ footer .footer-col {
 
   /* -- Who uses Pressflow? -- */
   body.front .view-pressflownians .views-row {
-    width: 23.729%;
+    width: 23.72881%;
     float: left;
-    margin-right: 1.695%;
+    margin-right: 1.69492%;
     display: inline;
   }
 
   body.front .view-pressflownians .views-row:nth-child(4n) {
-    width: 23.729%;
+    width: 23.72881%;
     float: right;
     margin-right: 0;
     #margin-left: -1em;
@@ -223,7 +224,7 @@ footer .footer-col {
   .page-faq #main #content {
     width: 100%;
     float: left;
-    margin-right: 1.695%;
+    margin-right: 1.69492%;
     display: inline;
     padding-left: 0%;
     padding-right: 0%;
