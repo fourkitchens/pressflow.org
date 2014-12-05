@@ -128,7 +128,7 @@ function field_schema() {
         'not null' => TRUE,
         'default' => ''
       ),
-      'entity_type'       => array(
+      'entity_type' => array(
         'type' => 'varchar',
         'length' => 32,
         'not null' => TRUE,
@@ -162,6 +162,7 @@ function field_schema() {
     ),
   );
   $schema['cache_field'] = drupal_get_schema_unprocessed('system', 'cache');
+  $schema['cache_field']['description'] = 'Cache table for the Field module to store already built field information.';
 
   return $schema;
 }
@@ -457,6 +458,13 @@ function field_update_7002() {
     }
     variable_del('field_bundle_settings');
   }
+}
+
+/**
+ * Add the FieldInfo class to the class registry.
+ */
+function field_update_7003() {
+  // Empty update to force a rebuild of the registry.
 }
 
 /**
