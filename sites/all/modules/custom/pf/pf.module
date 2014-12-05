@@ -19,7 +19,8 @@ function pf_cron() {
  */
 function pf_get_pressflow_version($ver = 6) {
   $file_url = "https://raw.github.com/pressflow/" . $ver . "/master/CHANGELOG.txt";
-  $file = file_get_contents($file_url, NULL, NULL, 7, 15);
+  $file_contents = file_get_contents($file_url);
+  $file = substr($file_contents, 7, 15);
   $array = explode(',', $file);
   return $array[0];
 }
