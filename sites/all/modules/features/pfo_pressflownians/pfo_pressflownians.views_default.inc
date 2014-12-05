@@ -10,7 +10,7 @@
 function pfo_pressflownians_views_default_views() {
   $export = array();
 
-  $view = new view;
+  $view = new view();
   $view->name = 'pressflownians';
   $view->description = 'A list of people who use Pressflow.';
   $view->tag = 'default';
@@ -23,8 +23,13 @@ function pfo_pressflownians_views_default_views() {
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
   $handler->display->display_options['title'] = 'Pressflownians';
+  $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
-  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['cache']['type'] = 'time';
+  $handler->display->display_options['cache']['results_lifespan'] = '3600';
+  $handler->display->display_options['cache']['results_lifespan_custom'] = '0';
+  $handler->display->display_options['cache']['output_lifespan'] = '3600';
+  $handler->display->display_options['cache']['output_lifespan_custom'] = '0';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['query']['options']['query_comment'] = FALSE;
   $handler->display->display_options['exposed_form']['type'] = 'basic';
@@ -37,17 +42,8 @@ function pfo_pressflownians_views_default_views() {
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = '';
-  $handler->display->display_options['fields']['title']['alter']['alter_text'] = 0;
-  $handler->display->display_options['fields']['title']['alter']['make_link'] = 0;
-  $handler->display->display_options['fields']['title']['alter']['absolute'] = 0;
-  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = 0;
-  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = 0;
-  $handler->display->display_options['fields']['title']['alter']['strip_tags'] = 0;
-  $handler->display->display_options['fields']['title']['alter']['trim'] = 0;
-  $handler->display->display_options['fields']['title']['alter']['html'] = 0;
-  $handler->display->display_options['fields']['title']['hide_empty'] = 0;
-  $handler->display->display_options['fields']['title']['empty_zero'] = 0;
-  $handler->display->display_options['fields']['title']['link_to_node'] = 1;
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -72,40 +68,20 @@ function pfo_pressflownians_views_default_views() {
   $handler->display->display_options['empty']['area']['id'] = 'area';
   $handler->display->display_options['empty']['area']['table'] = 'views';
   $handler->display->display_options['empty']['area']['field'] = 'area';
-  $handler->display->display_options['empty']['area']['empty'] = FALSE;
   $handler->display->display_options['empty']['area']['content'] = 'No one is listed yet! <a href="mailto:shout@fourkitchens.com">Contact us</a> for a chance to have your logo in the rotation.';
   $handler->display->display_options['empty']['area']['format'] = 'filtered_html';
-  $handler->display->display_options['empty']['area']['tokenize'] = 0;
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Logo */
   $handler->display->display_options['fields']['field_pressflownian_logo']['id'] = 'field_pressflownian_logo';
   $handler->display->display_options['fields']['field_pressflownian_logo']['table'] = 'field_data_field_pressflownian_logo';
   $handler->display->display_options['fields']['field_pressflownian_logo']['field'] = 'field_pressflownian_logo';
   $handler->display->display_options['fields']['field_pressflownian_logo']['label'] = '';
-  $handler->display->display_options['fields']['field_pressflownian_logo']['alter']['alter_text'] = 0;
-  $handler->display->display_options['fields']['field_pressflownian_logo']['alter']['make_link'] = 0;
-  $handler->display->display_options['fields']['field_pressflownian_logo']['alter']['absolute'] = 0;
-  $handler->display->display_options['fields']['field_pressflownian_logo']['alter']['external'] = 0;
-  $handler->display->display_options['fields']['field_pressflownian_logo']['alter']['replace_spaces'] = 0;
-  $handler->display->display_options['fields']['field_pressflownian_logo']['alter']['trim_whitespace'] = 0;
-  $handler->display->display_options['fields']['field_pressflownian_logo']['alter']['nl2br'] = 0;
-  $handler->display->display_options['fields']['field_pressflownian_logo']['alter']['word_boundary'] = 1;
-  $handler->display->display_options['fields']['field_pressflownian_logo']['alter']['ellipsis'] = 1;
-  $handler->display->display_options['fields']['field_pressflownian_logo']['alter']['more_link'] = 0;
-  $handler->display->display_options['fields']['field_pressflownian_logo']['alter']['strip_tags'] = 0;
-  $handler->display->display_options['fields']['field_pressflownian_logo']['alter']['trim'] = 0;
-  $handler->display->display_options['fields']['field_pressflownian_logo']['alter']['html'] = 0;
   $handler->display->display_options['fields']['field_pressflownian_logo']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_pressflownian_logo']['element_default_classes'] = 1;
-  $handler->display->display_options['fields']['field_pressflownian_logo']['hide_empty'] = 0;
-  $handler->display->display_options['fields']['field_pressflownian_logo']['empty_zero'] = 0;
-  $handler->display->display_options['fields']['field_pressflownian_logo']['hide_alter_empty'] = 1;
   $handler->display->display_options['fields']['field_pressflownian_logo']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_pressflownian_logo']['settings'] = array(
     'image_style' => '',
     'image_link' => '',
   );
-  $handler->display->display_options['fields']['field_pressflownian_logo']['field_api_classes'] = 0;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sort criterion: Global: Random */
   $handler->display->display_options['sorts']['random']['id'] = 'random';

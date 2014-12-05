@@ -13,7 +13,7 @@
  */
 $conf['cache'] = 1;
 $conf['block_cache'] = 1;
-$conf['cache_lifetime'] = 300;
+$conf['cache_lifetime'] = 0;
 $conf['page_cache_maximum_age'] = 86400;
 $conf['preprocess_css'] = 1;
 $conf['preprocess_js'] = 1;
