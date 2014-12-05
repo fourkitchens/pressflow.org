@@ -100,42 +100,18 @@ jQuery.fn.sortElements = (function(){
         }).trigger('change');
       });
 
-      // Export form machine-readable JS
-      $('.feature-name:not(.processed)', context).each(function() {
-        $('.feature-name')
-          .addClass('processed')
-          .after(' <small class="feature-module-name-suffix">&nbsp;</small>');
-        if ($('.feature-module-name').val() === $('.feature-name').val().toLowerCase().replace(/[^a-z0-9]+/g, '_').replace(/_+/g, '_') || $('.feature-module-name').val() === '') {
-          $('.feature-module-name').parents('.form-item').hide();
-          $('.feature-name').bind('keyup change', function() {
-            var machine = $(this).val().toLowerCase().replace(/[^a-z0-9]+/g, '_').replace(/_+/g, '_');
-            if (machine !== '_' && machine !== '') {
-              $('.feature-module-name').val(machine);
-              $('.feature-module-name-suffix').empty().append(' Machine name: ' + machine + ' [').append($('<a href="#">'+ Drupal.t('Edit') +'</a>').click(function() {
-                $('.feature-module-name').parents('.form-item').show();
-                $('.feature-module-name-suffix').hide();
-                $('.feature-name').unbind('keyup');
-                return false;
-              })).append(']');
-            }
-            else {
-              $('.feature-module-name').val(machine);
-              $('.feature-module-name-suffix').text('');
-            }
-          });
-          $('.feature-name').keyup();
-        }
-      });
-
       //View info dialog
-      $('#features-info-file').dialog({
-        autoOpen: false,
-        modal: true,
-        draggable: false,
-        resizable: false,
-        width: 600,
-        height: 480
-      });
+      var infoDialog = $('#features-info-file');
+      if (infoDialog.length != 0) {
+        infoDialog.dialog({
+          autoOpen: false,
+          modal: true,
+          draggable: false,
+          resizable: false,
+          width: 600,
+          height: 480
+        });
+      }
 
       if ((Drupal.settings.features != undefined) && (Drupal.settings.features.info != undefined)) {
         $('#features-info-file textarea').val(Drupal.settings.features.info);
@@ -145,19 +121,21 @@ jQuery.fn.sortElements = (function(){
       }
 
       // mark any conflicts with a class
-      for (var moduleName in Drupal.settings.features.conflicts) {
-        moduleConflicts = Drupal.settings.features.conflicts[moduleName];
-        $('#features-export-wrapper input[type=checkbox]', context).each(function() {
-          if (!$(this).hasClass('features-checkall')) {
-            var key = $(this).attr('name');
-            var matches = key.match(/^([^\[]+)(\[.+\])?\[(.+)\]\[(.+)\]$/);
-            var component = matches[1];
-            var item = matches[4];
-            if ((component in moduleConflicts) && (moduleConflicts[component].indexOf(item) != -1)) {
-              $(this).parent().addClass('features-conflict');
+      if ((Drupal.settings.features != undefined) && (Drupal.settings.features.conflicts != undefined)) {
+        for (var moduleName in Drupal.settings.features.conflicts) {
+          moduleConflicts = Drupal.settings.features.conflicts[moduleName];
+          $('#features-export-wrapper input[type=checkbox]', context).each(function() {
+            if (!$(this).hasClass('features-checkall')) {
+              var key = $(this).attr('name');
+              var matches = key.match(/^([^\[]+)(\[.+\])?\[(.+)\]\[(.+)\]$/);
+              var component = matches[1];
+              var item = matches[4];
+              if ((component in moduleConflicts) && (moduleConflicts[component].indexOf(item) != -1)) {
+                $(this).parent().addClass('features-conflict');
+              }
             }
-          }
-        });
+          });
+        }
       }
 
       function _checkAll(value) {
@@ -178,7 +156,26 @@ jQuery.fn.sortElements = (function(){
         }
       }
 
+      function updateComponentCountInfo(item, section) {
+        switch (section) {
+          case 'select':
+            var parent = $(item).closest('.features-export-list').siblings('.features-export-component');
+            $('.component-count', parent).text(function (index, text) {
+                return +text + 1;
+              }
+            );
+            break;
+          case 'added':
+          case 'detected':
+            var parent = $(item).closest('.features-export-component');
+            $('.component-count', parent).text(function (index, text) {
+              return text - 1;
+            });
+        }
+      }
+
       function moveCheckbox(item, section, value) {
+        updateComponentCountInfo(item, section);
         var curParent = item;
         if ($(item).hasClass('form-type-checkbox')) {
           item = $(item).children('input[type=checkbox]');
@@ -348,30 +345,30 @@ jQuery.fn.sortElements = (function(){
         // collapse fieldsets
         var newState = {};
         var currentState = {};
-        $('#features-export-wrapper .component-select label', context).each(function() {
+        $('#features-export-wrapper fieldset.features-export-component', context).each(function() {
           // expand parent fieldset
-          var section = '';
-          $(this).parents('fieldset.features-export-component').each(function() {
-            section = $(this).attr('id');
-            currentState[section] = !($(this).hasClass('collapsed'));
-            if (!(section in newState)) {
-              newState[section] = false;
+          var section = $(this).attr('id');
+          currentState[section] = !($(this).hasClass('collapsed'));
+          if (!(section in newState)) {
+            newState[section] = false;
+          }
+
+          $(this).find('div.component-select label').each(function() {
+            if (filter == '') {
+              if (currentState[section]) {
+                Drupal.toggleFieldset($('#'+section));
+                currentState[section] = false;
+              }
+              $(this).parent().show();
+            }
+            else if ($(this).text().match(regex)) {
+              $(this).parent().show();
+              newState[section] = true;
+            }
+            else {
+              $(this).parent().hide();
             }
           });
-          if (filter == '') {
-            if (currentState[section]) {
-              Drupal.toggleFieldset($('#'+section));
-              currentState[section] = false;
-            }
-            $(this).parent().show();
-          }
-          else if ($(this).text().match(regex)) {
-            $(this).parent().show();
-            newState[section] = true;
-          }
-          else {
-            $(this).parent().hide();
-          }
         });
         for (section in newState) {
           if (currentState[section] != newState[section]) {

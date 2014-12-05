@@ -61,7 +61,7 @@ function hook_features_api() {
 }
 
 /**
- * Component hook. The hook should be implemented using the name ot the
+ * Component hook. The hook should be implemented using the name of the
  * component, not the module, eg. [component]_features_export() rather than
  * [module]_features_export().
  *
@@ -118,7 +118,7 @@ function hook_features_export($data, &$export, $module_name) {
 }
 
 /**
- * Component hook. The hook should be implemented using the name ot the
+ * Component hook. The hook should be implemented using the name of the
  * component, not the module, eg. [component]_features_export() rather than
  * [module]_features_export().
  *
@@ -137,7 +137,7 @@ function hook_features_export_options() {
 }
 
 /**
- * Component hook. The hook should be implemented using the name ot the
+ * Component hook. The hook should be implemented using the name of the
  * component, not the module, eg. [component]_features_export() rather than
  * [module]_features_export().
  *
@@ -171,7 +171,7 @@ function hook_features_export_render($module_name, $data, $export = NULL) {
 }
 
 /**
- * Component hook. The hook should be implemented using the name ot the
+ * Component hook. The hook should be implemented using the name of the
  * component, not the module, eg. [component]_features_export() rather than
  * [module]_features_export().
  *
@@ -194,7 +194,7 @@ function hook_features_revert($module_name) {
 }
 
 /**
- * Component hook. The hook should be implemented using the name ot the
+ * Component hook. The hook should be implemented using the name of the
  * component, not the module, eg. [component]_features_export() rather than
  * [module]_features_export().
  *
@@ -216,6 +216,42 @@ function hook_features_rebuild($module_name) {
     foreach ($mycomponents as $mycomponent) {
       mycomponent_save($mycomponent);
     }
+  }
+}
+
+/**
+ * Invoked before a restore operation is run.
+ *
+ * This hook is called before any of the restore operations on the components is
+ * run.
+ *
+ * @param string $op
+ *   The operation that is triggered: revert, rebuild, disable, enable
+ * @param array $items
+ *   The items handled by the operation.
+ */
+function hook_features_pre_restore($op, $items) {
+  if ($op == 'rebuild') {
+    // Use features rebuild to rebuild the features independent exports too.
+    entity_defaults_rebuild();
+  }
+}
+
+/**
+ * Invoked after a restore operation is run.
+ *
+ * This hook is called after any of the restore operations on the components is
+ * run.
+ *
+ * @param string $op
+ *   The operation that is triggered: revert, rebuild, disable, enable
+ * @param array $items
+ *   The items handled by the operation.
+ */
+function hook_features_post_restore($op, $items) {
+  if ($op == 'rebuild') {
+    // Use features rebuild to rebuild the features independent exports too.
+    entity_defaults_rebuild();
   }
 }
 
@@ -293,12 +329,32 @@ function hook_features_pipe_alter(&$pipe, $data, $export) {
  */
 
 /**
+ * Deprecated as of 7.x-2.0.
+ *
  * Alter the default fields right before they are cached into the database.
  *
  * @param &$fields
  *   By reference. The fields that have been declared by another feature.
  */
 function hook_field_default_fields_alter(&$fields) {
+}
+
+/**
+ * Alter the base fields right before they are cached into the database.
+ *
+ * @param &$fields
+ *   By reference. The fields that have been declared by another feature.
+ */
+function hook_field_default_field_bases_alter(&$fields) {
+}
+
+/**
+ * Alter the field instances right before they are cached into the database.
+ *
+ * @param &$fields
+ *   By reference. The fields that have been declared by another feature.
+ */
+function hook_field_default_field_instances_alter(&$fields) {
 }
 
 /**
