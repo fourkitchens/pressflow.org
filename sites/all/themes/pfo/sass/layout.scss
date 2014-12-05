@@ -1,0 +1,169 @@
+/**
+ * Layout for pressflow.org
+ *
+ * For help with...
+ *
+ *    Sass: http://sass-lang.com/tutorial.html
+ * Compass: http://compass-style.org/reference/compass/
+ *    Susy: https://github.com/ericam/susy/blob/master/REFERENCE.mkdn
+ **/
+
+@import 'base';
+
+
+/**
+ * Basic layout. Will display on browsers without MQs, or small devices with MQs.
+ */
+
+#main, // all pages
+header .container, // all pages
+footer .footer-content { // all pages
+  @include container();
+  @include susy-grid-background();
+}
+
+header hgroup,
+.front .stripe {
+  clear: both;
+}
+
+header nav {
+  clear: both;
+  float: right;
+}
+
+#content,             // all pages
+.intro,               // home page
+.download,            // home page
+footer .footer-col,   // all pages
+#page-title,          // interior pages
+.download {           // all pages
+  @include span-columns(12);
+}
+
+.download {
+  display: none;
+}
+
+// Footer
+footer .region-footer {
+  clear: both;
+}
+
+footer .footer-foot {
+  clear: both;
+}
+
+footer .footer-col {
+  margin-bottom: 1em;
+}
+
+
+/**
+ * Medium-sized devices with MQs. Size not final!!!
+ */
+
+@media only screen and (min-width: 42em) {
+
+  #main #content {
+    @include span-columns(12);
+    @include pad(0,0);
+  }
+
+  #page-title {
+    @include span-columns(7);
+    @include pad(0,0);
+  }
+
+  .download {
+    display: block;
+  }
+
+  .intro,         // Intro
+  .download,      // download link
+  #front-info section,   // What's the deal...
+  body.front .view-pressflownians .views-row { // Who uses Pressflow?
+    @include span-columns(6);
+  }
+
+  #front-info section:nth-child(even) {
+    @include span-columns(6 omega);
+  }
+
+  .front .intro,
+  .download {
+    @include pad(0,0);
+  }
+
+  .front .download {
+    @include span-columns(6 omega);
+  }
+
+  .not-front .download {
+    @include span-columns(5 omega);
+  }
+
+  // FAQs
+  .page-faq #main #content {
+    @include span-columns(10);
+    @include pad(1,1);
+  }
+
+  // Footer
+  footer .footer-col {
+    @include span-columns(5);
+    @include pad(0,0);
+  }
+
+  footer #footer-left-col {
+    @include pad(1,0);
+  }
+
+  footer #footer-right-col {
+  }
+
+}
+
+
+/**
+ * Bigger devices with MQs. Size not final!!!
+ */
+
+@media only screen and (min-width: 61em) {
+
+  /* -- Intro and Download -- */
+  .front .intro {
+    @include span-columns(4);
+    @include pad(1,1);
+    
+  }
+  .front .download {
+    @include span-columns(4 omega);
+    @include pad(1,1);
+  }
+
+  /* -- What's the deal... */
+  #front-info section,
+  #front-info section:nth-child(even) {
+    @include span-columns(4);
+  }
+  
+  #front-info section.front-info-col-3 {
+    @include span-columns(4 omega);
+  }
+
+  /* -- Who uses Pressflow? -- */
+  body.front .view-pressflownians .views-row {
+    @include span-columns(3);
+  }
+  body.front .view-pressflownians .views-row:nth-child(4n) {
+    @include span-columns(3 omega);
+  }
+
+  // FAQs
+  .page-faq #main #content {
+    @include span-columns(12);
+    @include pad(0,0);
+  }
+
+}

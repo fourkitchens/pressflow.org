@@ -1,0 +1,35 @@
+<?php
+
+/**
+ * Implments hook_cron().
+ */
+function pf_cron() {
+  $p_ver_7 = pf_get_pressflow_version(7);
+  $p_ver_6 = pf_get_pressflow_version(6);
+
+  variable_set('pf_pressflow_6_version', $p_ver_6);
+  variable_set('pf_pressflow_7_version', $p_ver_7);
+}
+
+/**
+ * Pulls the latest version number from the Pressflow github.
+ *
+ * @param $var
+ *   An integer of the pressflow version.
+ */
+function pf_get_pressflow_version($ver = 6) {
+  $file_url = "https://raw.github.com/pressflow/" . $ver . "/master/CHANGELOG.txt";
+  $file = file_get_contents($file_url, NULL, NULL, 7, 15);
+  $array = explode(',', $file);
+  return $array[0];
+}
+
+/**
+ * Gets the local variable with the pressflow version.
+ *
+ * @param $var
+ *   An integer of the pressflow version.
+ */
+function pf_pull_pressflow_version($ver = 6) {
+  return variable_get('pf_pressflow_' . $ver . '_version', NULL);
+}

@@ -1,0 +1,232 @@
+/**
+ * Layout for pressflow.org
+ *
+ * For help with...
+ *
+ *    Sass: http://sass-lang.com/tutorial.html
+ * Compass: http://compass-style.org/reference/compass/
+ *    Susy: https://github.com/ericam/susy/blob/master/REFERENCE.mkdn
+ **/
+/**
+ * Basic layout. Will display on browsers without MQs, or small devices with MQs.
+ */
+#main,
+header .container,
+footer .footer-content {
+  *zoom: 1;
+  max-width: 59em;
+  _width: 59em;
+  padding-left: 1em;
+  padding-right: 1em;
+  margin-left: auto;
+  margin-right: auto;
+  -webkit-background-origin: content;
+  -moz-background-origin: content;
+  -ms-background-origin: content-box;
+  -o-background-origin: content-box;
+  background-origin: content-box;
+  -webkit-background-clip: content-box;
+  -moz-background-clip: content-box;
+  background-clip: content-box;
+}
+#main:after,
+header .container:after,
+footer .footer-content:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+header hgroup,
+.front .stripe {
+  clear: both;
+}
+
+header nav {
+  clear: both;
+  float: right;
+}
+
+#content,
+.intro,
+.download,
+footer .footer-col,
+#page-title,
+.download {
+  width: 100%;
+  float: left;
+  margin-right: 1.69492%;
+  display: inline;
+}
+
+.download {
+  display: none;
+}
+
+footer .region-footer {
+  clear: both;
+}
+
+footer .footer-foot {
+  clear: both;
+}
+
+footer .footer-col {
+  margin-bottom: 1em;
+}
+
+/**
+ * Medium-sized devices with MQs. Size not final!!!
+ */
+@media only screen and (min-width: 42em) {
+  #main #content {
+    width: 100%;
+    float: left;
+    margin-right: 1.69492%;
+    display: inline;
+    padding-left: 0%;
+    padding-right: 0%;
+  }
+
+  #page-title {
+    width: 57.62712%;
+    float: left;
+    margin-right: 1.69492%;
+    display: inline;
+    padding-left: 0%;
+    padding-right: 0%;
+  }
+
+  .download {
+    display: block;
+  }
+
+  .intro,
+  .download,
+  #front-info section,
+  body.front .view-pressflownians .views-row {
+    width: 49.15254%;
+    float: left;
+    margin-right: 1.69492%;
+    display: inline;
+  }
+
+  #front-info section:nth-child(even) {
+    width: 49.15254%;
+    float: right;
+    margin-right: 0;
+    #margin-left: -1em;
+    display: inline;
+  }
+
+  .front .intro,
+  .download {
+    padding-left: 0%;
+    padding-right: 0%;
+  }
+
+  .front .download {
+    width: 49.15254%;
+    float: right;
+    margin-right: 0;
+    #margin-left: -1em;
+    display: inline;
+  }
+
+  .not-front .download {
+    width: 40.67797%;
+    float: right;
+    margin-right: 0;
+    #margin-left: -1em;
+    display: inline;
+  }
+
+  .page-faq #main #content {
+    width: 83.05085%;
+    float: left;
+    margin-right: 1.69492%;
+    display: inline;
+    padding-left: 8.47458%;
+    padding-right: 8.47458%;
+  }
+
+  footer .footer-col {
+    width: 40.67797%;
+    float: left;
+    margin-right: 1.69492%;
+    display: inline;
+    padding-left: 0%;
+    padding-right: 0%;
+  }
+
+  footer #footer-left-col {
+    padding-left: 8.47458%;
+    padding-right: 0%;
+  }
+}
+/**
+ * Bigger devices with MQs. Size not final!!!
+ */
+@media only screen and (min-width: 61em) {
+  /* -- Intro and Download -- */
+  .front .intro {
+    width: 32.20339%;
+    float: left;
+    margin-right: 1.69492%;
+    display: inline;
+    padding-left: 8.47458%;
+    padding-right: 8.47458%;
+  }
+
+  .front .download {
+    width: 32.20339%;
+    float: right;
+    margin-right: 0;
+    #margin-left: -1em;
+    display: inline;
+    padding-left: 8.47458%;
+    padding-right: 8.47458%;
+  }
+
+  /* -- What's the deal... */
+  #front-info section,
+  #front-info section:nth-child(even) {
+    width: 32.20339%;
+    float: left;
+    margin-right: 1.69492%;
+    display: inline;
+  }
+
+  #front-info section.front-info-col-3 {
+    width: 32.20339%;
+    float: right;
+    margin-right: 0;
+    #margin-left: -1em;
+    display: inline;
+  }
+
+  /* -- Who uses Pressflow? -- */
+  body.front .view-pressflownians .views-row {
+    width: 23.72881%;
+    float: left;
+    margin-right: 1.69492%;
+    display: inline;
+  }
+
+  body.front .view-pressflownians .views-row:nth-child(4n) {
+    width: 23.72881%;
+    float: right;
+    margin-right: 0;
+    #margin-left: -1em;
+    display: inline;
+  }
+
+  .page-faq #main #content {
+    width: 100%;
+    float: left;
+    margin-right: 1.69492%;
+    display: inline;
+    padding-left: 0%;
+    padding-right: 0%;
+  }
+}

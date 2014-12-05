@@ -1,0 +1,85 @@
+/* === Front page === */
+
+.front header {
+  width: 100%;
+  background: image-url('bg-noise.png') 50% top;
+}
+
+.front nav li.first {
+  display: none;
+}
+
+#logo-front {
+  text-align: center;
+  margin-bottom: -1.1em;
+  img {
+    width: 90%;
+    max-width: 800px;
+  }
+
+  // Sit on top of stripe
+  position: relative;
+  z-index: 10;
+
+  // Modernizr enhancements
+  .no-backgroundsize & {
+    min-height: 198px;
+    padding-top: 0;
+  }
+}
+
+.front .stripe {
+  @include stripe();
+}
+
+
+/* -- Intro -- */
+
+.intro {
+  font-size: 18px;
+  h2 {
+    float: none;
+    margin: .8em 0;
+    text-transform: none;
+    color: $brown;
+    font-family: $league;
+    font-size: 3em;
+    line-height: 0;
+    white-space: nowrap;
+  }
+}
+
+
+/* -- Informational blocks -- */
+
+#front-info {
+  font-size: 18px;
+  section {
+    margin-bottom: 1em;
+  }
+}
+
+#front-info {
+  ul {
+    opacity: .9;
+    list-style-type: none;
+    margin-left: 1em;
+    padding: 0;
+  }
+  li {
+    margin-bottom: .5em;
+    text-indent: -.5em;
+  }
+}
+
+#front-info .support .button {
+  display: inline-block;
+  background: #fff image-url('sprite.png') no-repeat -130px 10px;
+  padding: .7em 1em .7em 2.3em;
+  font-size: 1.1em;
+  font-family: $arvo;
+  color: $burnt-red;
+  text-decoration: none;
+  border-radius: 7px;
+  box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
+}

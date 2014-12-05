@@ -1,0 +1,519 @@
+/**
+ * @file style.scss
+ *
+ * Contains global styles for pressflow.org
+ */
+
+@import 'defaults';
+
+
+/**
+ * Resets and helper classes not supplied by normalize.css
+ */
+
+a { 
+  color: $blue;
+}
+
+a:visited {
+  color: $blue;
+}
+
+a:hover { 
+  color: $blue;
+  text-decoration: none;
+}
+
+a:focus {
+  outline: thin dotted;
+}
+
+a:hover,
+a:active {
+  outline: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {}
+
+h1 {
+  font-size: 2em;
+  font-family: $arvo;
+}
+
+h1 a {
+  text-decoration: none;
+}
+
+h2 {
+  clear: both;
+  color: $burnt-red;
+  text-transform: uppercase;
+  font-family: $league;
+  font-size: 2.4em;
+  font-weight: 400;
+}
+
+h3 {
+  color: $brown;
+  font-family: $arvo;
+}
+
+h4 {}
+
+h5 {}
+
+h6 {}
+
+p {
+  opacity: .9;
+}
+
+ul,
+ol {}
+
+ul {
+  display: block;
+}
+
+ul.links {
+  display: inline;
+}
+
+nav ul {
+  margin: 0;
+  display: inline;
+}
+
+table {
+  width: 100%;
+  font-size: 1em;
+}
+
+thead {}
+
+thead th {
+  border-bottom: 1px solid #fff;
+}
+
+td {}
+
+tr, tr.even, tr.odd {
+  border-bottom: 1px solid #fff;
+  padding: 0;
+}
+
+tr.odd {
+  background-color: $zebra-odd;
+}
+
+tr.even {
+  background-color: $zebra-even;
+}
+
+
+
+/* === Non-semantic helper classes. === */
+
+/* For image replacement */
+.ir { 
+  display: block; 
+  border: 0; 
+  text-indent: -999em; 
+  overflow: hidden; 
+  background-color: transparent; 
+  background-repeat: no-repeat;
+  text-align: left;
+  direction: ltr;
+}
+
+.ir br { 
+  display: none;
+}
+ 
+/* Hide for both screenreaders and browsers: h5bp.com/m */
+.hidden { 
+  display: none !important;
+  visibility: hidden;
+}
+ 
+/*  Hide only visually, but have it available for screenreaders: h5bp.com/v */
+.visuallyhidden { 
+  border: 0; 
+  clip: rect(0 0 0 0); 
+  height: 1px; 
+  margin: -1px; 
+  overflow: hidden; 
+  padding: 0; 
+  position: absolute; 
+  width: 1px;
+}
+
+/* Extends the .visuallyhidden class to allow the element to be focusable when navigated to via the keyboard: h5bp.com/p */
+.visuallyhidden.focusable:active, 
+.visuallyhidden.focusable:focus { 
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+}
+ 
+/* Hide visually and from screenreaders, but maintain layout */
+.invisible { 
+  visibility: hidden;
+}
+ 
+/* Contain floats: h5bp.com/q */
+.clearfix:before,
+.clearfix:after { 
+  content: "";
+  display: table;
+}
+
+.clearfix:after { 
+  clear: both;
+}
+
+.clearfix { 
+  zoom: 1;
+}
+
+
+
+/**
+ * Custom styles for Pressflow.org
+ */
+
+/* === General styles === */
+
+body {
+  background: $d8 image-url('bg-grid.png') left top;
+  color: #424242;
+  font-size: 16px;
+  line-height: 1.231;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 300;
+}
+
+button,
+input[type="reset"],
+input[type="submit"],
+input[type="button"] {
+  border-color: #333 #666 #999 transparent;
+  color: #fff;
+  cursor: pointer;
+  @include background-image(linear-gradient(#4d4d4d, #363636));
+  @include text-shadow(1px 1px 1px #000);
+
+  // hover styles
+  &:hover {
+    color: #444;
+    @include text-shadow(1px 1px 1px #fff);
+  }
+}
+
+
+/* -- Navigation -- */
+
+nav li {
+  float: right;
+}
+
+nav li.first {
+  display: none;
+}
+
+nav li a {
+  display: inline-block;
+  text-align: center;
+  margin: .5em;
+  padding: .4em 1em;
+  color: #666;
+  text-decoration: none;
+  @include background-image(linear-gradient(#fff, #eee));
+  @include border-radius(7px);
+  box-shadow: inset 1px 1px 2px rgba(0,0,0,0.4);
+}
+
+// Home link has an icon & dark gradient
+.multiplebgs nav li.first a {
+  width: 13px;
+
+  @include background-image(
+    image-url('sprite.png'),
+    linear-gradient(#666, #333)
+  );
+  background-repeat: no-repeat;
+  background-position: -101px 6px, left top;
+
+  /* image replacement */
+  text-indent: 300%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+
+
+
+
+
+/* -- Header -- */
+
+header {
+  background: $d8 image-url('bg-noise.png') left top;
+  border-bottom: 1px solid $c1;
+}
+
+#logo {
+  float: left;
+  clear: left;
+  margin: 1em 0 1em 1em;
+  width: 224px;
+  img {
+    width: 224px;
+  }
+}
+
+// Subtitle: Go ahead. Scale.
+header h2 {
+  float: left;
+  clear: none;
+  width: auto;
+  margin: .75em 0 0 .2em;
+  padding: 0;
+
+  font-size: 2.1em;
+  text-transform: none;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
+// Interior page subtitle
+
+// Hide on small screens
+.not-front header h2 {
+  display: none;
+}
+
+// Show on medium screens
+@media only screen and (min-width: 43em) {
+  .not-front header h2 {
+    display: block;
+  }
+}
+
+
+
+// #name-and-slogan has been removed from page--front.tpl - see front.scss for its stripe
+hgroup#name-and-slogan {
+  @include stripe();
+}
+
+/* -- Main content -- */
+
+// Page title
+
+h1#page-title {
+  color: $burnt-red;
+  font-family: $league;
+  font-weight: normal;
+  font-size: 4em;
+  margin: 0 auto;
+}
+
+
+/* -- Footer -- */
+
+footer {
+  background: image-url('bg-footer.jpg');
+  color: #fff;
+}
+
+// Stay connected
+footer h2 {
+  padding: 1em 0 .5em;
+  border-bottom: 1px solid #fff;
+  text-align: center;
+  text-transform: none;
+  font-family: $arvo;
+  font-size: 1.2em;
+  font-weight: 700;
+  color: #fff;
+}
+
+// Copyright
+.footer-foot a {
+  color: inherit;
+  border-bottom: 1px dotted #fff;
+  text-decoration: none;
+
+  &:hover {
+    color: #bbb;
+  }
+}
+
+
+
+/* -- Social media icons -- */
+
+.social a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  // text-indent: -9999px;
+}
+
+.footer-social-btn {
+  width: 90%;
+  background-color: $blue;
+  @include border-radius(3px);
+  padding: 0 .5em 0 .5em;
+  margin: 0 .5em .5em;
+}
+
+// Medium screens
+
+@media only screen and (min-width: 43em) {
+  .footer-social-btn {
+    width: auto;
+    float: left;
+  }
+}
+
+
+
+// Copyright
+.footer-foot {
+  padding: 1em;
+  text-align: center;
+  font-size: .8em;
+}
+
+
+/* === MailChimp singup forms === */
+
+#mc_embed_signup input.email {
+  @include border-radius(6px 0 0 6px);
+}
+
+#mc_embed_signup input.button {
+  margin: 0 0 0 -6px;
+  @include border-radius(0 6px 6px 0);
+}
+
+
+/* === FAQ Page theming === */
+
+.page-faq .view-faq-view {
+  padding-top: 2em;
+}
+
+.view-id-faq_view .views-row {
+  font-size: 1.2em;
+  margin: .8em 0;
+}
+
+// Big screens
+
+@media screen and (min-width: 61em) {
+  .view-id-faq_view {
+
+    .views-row {
+      margin: .8em 2%;
+      width: 46%;
+      float: left;
+      font-size: 1em;
+    }
+    .views-row-odd {
+      clear: left;
+    }
+  }
+}
+
+// FAQs search
+
+#magic-search {
+  display: block;
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+  font-size: 2em;
+  text-align: center;
+  @include transition(200ms all ease-in-out);
+}
+
+#magic-search:focus {
+  box-shadow: 0 0 6px 1px $burnt-red;
+}
+
+// These styles cause the title to be highlighted
+// when you deep-link to a particular FAQ
+// Example: http://stage.pressflow.org/faq#faq-title-id-8
+
+.view-id-faq_view :target {
+  -webkit-animation: highlight 3s ease-in-out;
+     -moz-animation: highlight 3s ease-in-out;
+      -ms-animation: highlight 3s ease-in-out;
+       -o-animation: highlight 3s ease-in-out;
+          animation: highlight 3s ease-in-out;
+}
+
+@-webkit-keyframes highlight {
+  0% { background: #ffb; }
+  50% { background: #ffb; }
+  100% { background: transparent; }
+}
+@-moz-keyframes highlight {
+  0% { background: #ffb; }
+  50% { background: #ffb; }
+  100% { background: transparent; }
+}
+@-ms-keyframes highlight {
+  0% { background: #ffb; }
+  50% { background: #ffb; }
+  100% { background: transparent; }
+}
+@-o-keyframes highlight {
+  0% { background: #ffb; }
+  50% { background: #ffb; }
+  100% { background: transparent; }
+}
+
+/* === News === */
+
+// Views
+
+.view-id-news .content {
+  font-size: 1.3em;
+}
+
+// News articles
+
+article.node-news h1 {
+  line-height: 1em;
+  margin-bottom: 0;
+}
+
+article.node-news .submitted {
+  margin-bottom: .4em;
+  @include opacity(.7);
+  @include transition(.2s opacity linear);
+  -webkit-font-smoothing: antialiased;
+}
+
+article.node-news .submitted:hover {
+  @include opacity(1);
+}
+
+
+// Styles for Front page
+@import 'front';
+
+// Styles for Download link
+@import 'download';
