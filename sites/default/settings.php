@@ -7,5 +7,8 @@
 include_once 'core.settings.php';
 include_once 'globals.settings.php';
 
-// Will include local settings if it exists, if not, will supress errors.
-@include_once 'local.settings.php';
+if (!defined('PANTHEON_ENVIRONMENT')) {
+  // Will include local settings if it exists, if not, will supress errors. To
+  // avoid any deley on production, we only check for this on not Pantheon.
+  @include_once 'local.settings.php';
+}

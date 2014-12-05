@@ -18,6 +18,13 @@ $conf['page_cache_maximum_age'] = 86400;
 $conf['preprocess_css'] = 1;
 $conf['preprocess_js'] = 1;
 
+/**
+ * Google Analytics Code.
+ *   Set to nothing unless on the production environment (below).
+ */
+$conf['googleanalytics_account'] = '';
+
+
 
 // All Pantheon Environments.
 if (defined('PANTHEON_ENVIRONMENT')) {
