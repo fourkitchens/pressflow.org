@@ -1,8 +1,8 @@
 name = Pressflow News
-description = Holds the news content type and the news view. 
+description = Holds the news content type and the news view.
 core = 7.x
 package = Features
-version = 7.x-1.0
+version = 7.x-1.1
 project = pfo_news
 dependencies[] = pfo_pressfacts
 dependencies[] = text
