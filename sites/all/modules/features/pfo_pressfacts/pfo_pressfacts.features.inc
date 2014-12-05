@@ -7,8 +7,7 @@
 /**
  * Implements hook_ctools_plugin_api().
  */
-function pfo_pressfacts_ctools_plugin_api() {
-  list($module, $api) = func_get_args();
+function pfo_pressfacts_ctools_plugin_api($module = NULL, $api = NULL) {
   if ($module == "strongarm" && $api == "strongarm") {
     return array("version" => "1");
   }
@@ -17,8 +16,8 @@ function pfo_pressfacts_ctools_plugin_api() {
 /**
  * Implements hook_views_api().
  */
-function pfo_pressfacts_views_api() {
-  return array("version" => "3.0");
+function pfo_pressfacts_views_api($module = NULL, $api = NULL) {
+  return array("api" => "3.0");
 }
 
 /**
@@ -35,5 +34,6 @@ function pfo_pressfacts_node_info() {
       'help' => '',
     ),
   );
+  drupal_alter('node_info', $items);
   return $items;
 }
