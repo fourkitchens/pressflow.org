@@ -42,3 +42,13 @@ function _ujs_rrmdir($path) {
     array_map('_ujs_rrmdir', glob($path . '/*')) == @rmdir($path);
 }
 
+/**
+ * Updates the service endpoint to avoid 301s.
+ */
+function uglifyjs_update_7101() {
+  $endpoint = variable_get('uglify_service_endpoint');
+  if ($endpoint == 'http://uglify.me') {
+    variable_set('uglify_service_endpoint', 'http://www.uglify.me');
+  }
+}
+

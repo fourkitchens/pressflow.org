@@ -2,9 +2,9 @@ name = UglifyJS
 description = Exposes uglify to Drupal modules.
 core = 7.x
 
-; Information added by drupal.org packaging script on 2013-02-21
-version = "7.x-1.1"
+; Information added by Drupal.org packaging script on 2014-12-06
+version = "7.x-1.2"
 core = "7.x"
 project = "uglifyjs"
-datestamp = "1361476924"
+datestamp = "1417833483"
 

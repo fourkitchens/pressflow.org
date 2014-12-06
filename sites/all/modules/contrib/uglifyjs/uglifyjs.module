@@ -43,7 +43,7 @@ function uglifyjs_js_cache_alter(&$contents) {
     return;
   }
 
-  $uglify_service = variable_get('uglify_service_endpoint', 'http://uglify.me') . '/uglify';
+  $uglify_service = variable_get('uglify_service_endpoint', 'http://www.uglify.me') . '/uglify';
   $uglify_dir = variable_get('file_public_path', conf_path() . '/files') . '/uglifyjs';
   if (!is_dir($uglify_dir)) {
     drupal_mkdir($uglify_dir);
@@ -82,7 +82,7 @@ function uglifyjs_js_cache_alter(&$contents) {
  */
 function uglifyjs_uglify(&$scripts) {
   if (lock_acquire('uglifyjs_uglify')) {
-    $uglify_service = variable_get('uglify_service_endpoint', 'http://uglify.me') . '/uglify';
+    $uglify_service = variable_get('uglify_service_endpoint', 'http://www.uglify.me') . '/uglify';
     $uglify_dir = variable_get('file_public_path', conf_path() . '/files') . '/uglifyjs';
     if (!is_dir($uglify_dir)) {
       drupal_mkdir($uglify_dir);
