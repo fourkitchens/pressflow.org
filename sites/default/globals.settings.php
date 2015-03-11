@@ -52,13 +52,6 @@ if (defined('PANTHEON_ENVIRONMENT')) {
 
 
   if (PANTHEON_ENVIRONMENT == 'live') {
-    // Remove WWW.
-    if ($_SERVER['HTTP_HOST'] == 'www.pressflow.org' ||
-        $_SERVER['HTTP_HOST'] == 'live-pressflow-org.pantheon.io') {
-      header('HTTP/1.0 301 Moved Permanently');
-      header('Location: http://pressflow.org'. $_SERVER['REQUEST_URI']);
-      exit();
-    }
     /**
      * Google Analytics Code
      */
