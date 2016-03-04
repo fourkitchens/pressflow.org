@@ -25,7 +25,8 @@
             <!--End mc_embed_signup-->
           </div>
           <div class="footer-foot">
-            &copy; Pressflow is a trademark of <a href="http://fourkitchens.com">Four Kitchens</a>, home of the <a href="http://fourkitchens.com/about/team">web chefs</a>.<br>
+            Pressflow is a registered trademark of <a href="http://fourkitchens.com">Four Kitchens</a>, home of <a href="http://fourkitchens.com/team/">The Web Chefs</a>.<br>
+            All content, except where noted otherwise, is copyright 2016 Four Kitchens and is licensed under the <a href="http://creativecommons.org/licenses/by-sa/3.0/" target="_blank">Creative Commons Attribution-ShareAlike 3.0 license</a>.<br>
             A product of <a href="http://twitter.com/davidstrauss">David Strauss</a>, Four Kitchens, and friends.
           </div>
         </div><!-- .region-footer -->
