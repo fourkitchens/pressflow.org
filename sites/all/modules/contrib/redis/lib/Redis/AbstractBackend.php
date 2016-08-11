@@ -29,10 +29,18 @@ abstract class Redis_AbstractBackend
         // conf_path(), as settings.php might be modifying what database to
         // connect to. To mirror what core does with database caching we use
         // the DB credentials to inform our cache key.
-      if (null === self::$globalPrefix) {
-            $dbInfo = Database::getConnectionInfo();
-            $active = $dbInfo['default'];
-            self::$globalPrefix = md5($active['host'] . $active['database'] . $active['prefix']['default']);
+        if (null === self::$globalPrefix) {
+            if (isset($GLOBALS['db_url'])) {
+                // Drupal 6 specifics when using the cache_backport module, we
+                // therefore cannot use \Database class to determine database
+                // settings.
+                self::$globalPrefix = md5($GLOBALS['db_url']);
+            } else {
+                require_once DRUPAL_ROOT . '/includes/database/database.inc';
+                $dbInfo = Database::getConnectionInfo();
+                $active = $dbInfo['default'];
+                self::$globalPrefix = md5($active['host'] . $active['database'] . $active['prefix']['default']);
+            }
         }
 
         return self::$globalPrefix;
@@ -41,16 +49,16 @@ abstract class Redis_AbstractBackend
     /**
      * Get global default prefix
      *
-     * @param string $suffix
+     * @param string $namespace
      *
      * @return string
      */
-    static public function getDefaultPrefix($suffix = null)
+    static public function getDefaultPrefix($namespace = null)
     {
         $ret = null;
 
-        if (isset($GLOBALS['drupal_test_info']) && !empty($test_info['test_run_id'])) {
-            $ret = $test_info['test_run_id'];
+        if (isset($GLOBALS['drupal_test_info']) && !empty($GLOBALS['drupal_test_info']['test_run_id'])) {
+            $ret = $GLOBALS['drupal_test_info']['test_run_id'];
         } else {
             $prefixes = variable_get('cache_prefix', null);
 
@@ -58,11 +66,11 @@ abstract class Redis_AbstractBackend
                 // Variable can be a string which then considered as a default
                 // behavior.
                 $ret = $prefixes;
-            } else if (null !== $suffix && isset($prefixes[$suffix])) {
-                if (false !== $prefixes[$suffix]) {
+            } else if (null !== $namespace && isset($prefixes[$namespace])) {
+                if (false !== $prefixes[$namespace]) {
                     // If entry is set and not false an explicit prefix is set
                     // for the bin.
-                    $ret = $prefixes[$suffix];
+                    $ret = $prefixes[$namespace];
                 } else {
                     // If we have an explicit false it means no prefix whatever
                     // is the default configuration.
@@ -95,13 +103,9 @@ abstract class Redis_AbstractBackend
     /**
      * Default constructor
      */
-    public function __construct($prefix = null)
+    public function __construct($namespace = null)
     {
-        if (null === $prefix) {
-            $this->prefix = $prefix = self::getDefaultPrefix();
-        } else {
-            $this->prefix = $prefix;
-        }
+        $this->prefix = self::getDefaultPrefix($namespace);
     }
 
     /**
