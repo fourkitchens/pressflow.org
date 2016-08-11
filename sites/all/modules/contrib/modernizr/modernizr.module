@@ -6,9 +6,7 @@
  */
 
 // Regular expression to determine which version of Modernizr is installed.
-// The 7.x-3.x module will forever support Modernizr v2, so we are hardcoding
-// this regex to look for 2.x.x
-define('MODERNIZR_VERSION_REGEX', '/(2\.\d\.\d)/');
+define('MODERNIZR_VERSION_REGEX', '/([23]\.\d\.\d)/');
 
 // Regular expression to detect valid Modernizr filenames.
 define('MODERNIZR_FILENAME_REGEX', '/^modernizr[A-Za-z0-9\.-]*\.js$/');
@@ -19,11 +17,19 @@ define('MODERNIZR_SCRIPT_GROUP', JS_LIBRARY - 10);
 define('MODERNIZR_SCRIPT_WEIGHT', -100);
 
 // As of 7.x-3.3 we support footer scope, inlining, and defer.
-define('MODERNIZR_TYPE_DEFAULT', 'defer');
+define('MODERNIZR_TYPE_DEFAULT', 'sync');
 define('MODERNIZR_SCOPE_DEFAULT', 'header');
 
-// Controls the display of administrative errors.
-define('MODERNIZR_QUIET_DEFAULT', FALSE);
+// Determines the severity of administrative errors.
+// As of 7.x-3.7 we switched the default to TRUE since yepnope is now included
+// automatically, so a custom build is no longer absolutely necessary in order
+// to begin using hook_modernizr_load() functionality.
+define('MODERNIZR_QUIET_DEFAULT', TRUE);
+
+// As of 7.x-3.5 we support Modernizr v3, which cannot include yepnope.js in a
+// custom build. For backward compat purposes, we will enable this flag in an
+// update hook automatically, but the default it to not include it.
+define('MODERNIZR_YEPNOPE_DEFAULT', FALSE);
 
 /**
  * Default drupal_add_js settings. Used in multiple places.
@@ -49,6 +55,7 @@ function _modernizr_js_settings() {
  * on AJAX requests, private file requests, etc.
  */
 function modernizr_page_build(&$page) {
+  global $base_url;
   $modernizr_js_settings = _modernizr_js_settings();
 
   // Load Modernizr on the page by invoking our implementation of
@@ -64,7 +71,7 @@ function modernizr_page_build(&$page) {
   }
   else {
     // First, figure out if we're inlining.
-    if (in_array(variable_get('modernizr_type', MODERNIZR_TYPE_DEFAULT), array('sync', MODERNIZR_TYPE_DEFAULT))) {
+    if (in_array(variable_get('modernizr_type', MODERNIZR_TYPE_DEFAULT), array('sync', 'defer'))) {
       // We are loading external script. Load file path.
       $modernizr_file = modernizr_get_path();
     }
@@ -80,20 +87,41 @@ function modernizr_page_build(&$page) {
     );
   }
 
-  // We want Modernizr.load() commands to be issued immediately after the call
+  // We want yepnope() commands to be issued immediately after the call
   // to Modernizr so that they download while the page renders. The overrides
   // to $inline_js_settings will format the output as inline JS.
   if ($output = _modernizr_load_generate()) {
 
-    $inline_js_settings = $modernizr_js_settings;
-    $inline_js_settings['type'] = 'inline';
-    $inline_js_settings['weight'] = MODERNIZR_SCRIPT_WEIGHT + 1;
+    // Modernizr v3 removed the ability to include yepnope.js directly in the
+    // custom builds. To ensure that previous users of this module can continue
+    // without breaking changes, we need to load a copy of yepnope manually,
+    // which Modernizr detects and aliases to yepnope().
+    if ($output && variable_get('modernizr_cb_load', MODERNIZR_YEPNOPE_DEFAULT)) {
+      $yepnope_settings = $modernizr_js_settings;
+      $yepnope_settings['type'] = 'inline';
+      $yepnope_settings['weight'] = MODERNIZR_SCRIPT_WEIGHT - 1;
 
-    // Load JS
-    drupal_add_js(
-      $output,
-      $inline_js_settings
-    );
+      // yepnope.js
+      drupal_add_js(
+        file_get_contents(drupal_get_path('module', 'modernizr') . '/js/yepnope.js'),
+        $yepnope_settings
+      );
+
+      $inline_js_settings = $modernizr_js_settings;
+      $inline_js_settings['type'] = 'inline';
+      $inline_js_settings['weight'] = MODERNIZR_SCRIPT_WEIGHT + 1;
+
+      // yepnope() statements
+      drupal_add_js(
+        $output,
+        $inline_js_settings
+      );
+    }
+    // If there are yepnope commands being requested, but the module does not
+    // have yepnope enabled, warn the user in the console.
+    else if ($output && !variable_get('modernizr_cb_load', MODERNIZR_YEPNOPE_DEFAULT)) {
+      drupal_add_js('console.warn("The Modernizr module is receiving requests to use yepnope.js but that option is currently disabled. Please enable yepnope.js by loading ' . $base_url . '/admin/config/development/modernizr/settings' . '");', array('type' => 'inline'));
+    }
   }
 }
 
@@ -227,8 +255,7 @@ function _modernizr_scan_for_library($paths) {
 }
 
 /**
- * Helper function to generate the current filename of
- * the active Modernizr library
+ * Helper function to fetch the active Modernizr library.
  */
 function modernizr_get_filename() {
   // Get the full path to the library,
@@ -295,7 +322,7 @@ function modernizr_preprocess_html(&$vars, $hook) {
  * A function to generate the load data from the current themes.
  *
  * Reads async-loaded CSS/JS from theme .info files. Stores info in variable.
- * Prints Modernizr.load() calls into drupal_add_js() as inline settings.
+ * Prints yepnope() calls into drupal_add_js() as inline settings.
  *
  * @return array
  */
@@ -356,12 +383,12 @@ function modernizr_load_data() {
 }
 
 /**
- * Helper function to render the Modernizr.load() calls.
+ * Helper function to render the yepnope() calls.
  */
 function _modernizr_load_generate() {
   $output = FALSE;
 
-  // Get Modernizr.load() calls from the active theme.
+  // Get yepnope() calls from the active theme.
   $theme = modernizr_load_data();
 
   // Collect data from modules that implement hook_modernizr_load().
@@ -374,7 +401,7 @@ function _modernizr_load_generate() {
   // at their disposal.
   $test_objects = array_merge($theme, $modules);
 
-  // Build the Modernizr.load() commands.
+  // Build the yepnope() commands.
   if (count($test_objects)) {
     $num_tests = 0;
     $items = array();
@@ -454,12 +481,12 @@ function _modernizr_load_generate() {
       $items[] = $item;
     }
 
-    $output .= 'Modernizr.load(';
+    $output .= 'yepnope(';
     // Issue commands as array if there is more than resource to load.
     $output .= ($num_tests > 1) ? '[' : '';
     // Add commands.
     $output .= implode(",\n", $items);
-    // Finally, close the Modernizr.load() function parenthesis.
+    // Finally, close the yepnope() function parenthesis.
     $output .= ($num_tests > 1) ? ']' : '';
     $output .= ');';
   }
@@ -475,7 +502,7 @@ function modernizr_preprocess_maintenance_page(&$vars, $hook) {
 }
 
 /**
- * Helper function to sanitize Modernizr.load() callbacks
+ * Helper function to sanitize yepnope() callbacks
  */
 function _modernizr_sanitize_callback($callback) {
   global $base_url;
@@ -490,7 +517,7 @@ function _modernizr_sanitize_callback($callback) {
 }
 
 /**
- * Helper function to sanitize Modernizr.load() assets
+ * Helper function to sanitize yepnope() assets
  */
 function _modernizr_sanitize_resource($resource, $theme_path) {
   global $base_path, $base_url;
@@ -525,7 +552,7 @@ function _modernizr_get_desc($arg) {
   $data = _modernizr_get_arg_info($arg, 'desc');
 
   // If we can't find a description, just admit it.
-  return $data ? $data : t('No description available.');
+  return $data ? $data : '<em>' . t('No description available.') . '</em>';
 }
 
 
@@ -571,7 +598,7 @@ function _modernizr_current_build() {
     // $matches holds two items:
     // - [0] the full URL
     // - [1] a string containing the args captured in the parens  vvvv
-    $build_url = preg_match('/http:\/\/modernizr.com\/download\/#-(.*)/', $file, $matches);
+    $build_url = preg_match('/https?:\/\/modernizr.com\/download\/[#?]-(.*) /', $file, $matches);
 
     // Turn URL args into test entries for Drupal module
     if (isset($matches[1])) {
@@ -710,21 +737,11 @@ function _modernizr_api_list_clean($raw_tests) {
  * builds downloaded from either the settings screen or drush commands contain
  * the essential components needed to support the module's functionality.
  *
- * cssclasses
- * - Automatically adds cssclasses to download links since most users want this.
- *
  * html5shiv w/ printshiv
- * - Includes some utility JS that allows IE to recognize HTML5 elements
- *
- * load
- * - Includes yepnope.js as Modernizr.load() - allows conditional asynchronous
- *   CSS/JS loading.
+ * - Includes some utility JS that allows IE to recognize HTML5 elements.
  */
 function modernizr_modernizr_info() {
   $items = array();
-
-  $items[] = 'cssclasses';
-  $items[] = 'load';
 
   // If a site admin has chosen to require printshiv, add it to dependencies.
   if (variable_get('modernizr_cb_printshiv', FALSE)) {
@@ -735,7 +752,7 @@ function modernizr_modernizr_info() {
 }
 
 /**
- * Asks other Drupal modules for Modernizr.load() commands.
+ * Asks other Drupal modules for yepnope() commands.
  *
  * @return array
  */
@@ -754,7 +771,7 @@ function modernizr_load_list($reset = FALSE) {
  */
 function _modernizr_info_missing_tests() {
   $requested_tests = modernizr_api_list();
-  $current_build = _modernizr_info_current_build();
+  $current_build = _modernizr_current_build();
   $missing_tests = array();
 
   if (is_null($current_build)) {
@@ -763,45 +780,10 @@ function _modernizr_info_missing_tests() {
   }
 
   foreach($requested_tests as $test => $test_info) {
-    if (!isset($current_build[$test])) {
+    if (!in_array($test, $current_build)) {
       $missing_tests[$test] = $test_info;
     }
   }
 
   return $missing_tests;
-}
-
-/**
- * Private function that pulls all tests from the current build.
- */
-function _modernizr_info_current_build() {
-  $tests = &drupal_static(__FUNCTION__);
-
-  if (!isset($tests)) {
-
-    $path = modernizr_get_path();
-    $path_parts = explode('/', $path);
-    $file = ($path) ? file_get_contents($path) : NULL;
-    $filename = $path_parts[count($path_parts)-1];
-    $tests = array();
-
-    // $matches holds two items: (1) the full URL (2) the args captured in the parens
-    $build_url = preg_match('/http:\/\/modernizr.com\/download\/#-(.*)/', $file, $matches);
-
-    // Turn URL args into test entries for Drupal module
-    if (isset($matches[1])) {
-      $args_and_prefix = explode(':', $matches[1]);
-      $build_args = explode('-', $args_and_prefix[0]);
-
-      foreach ($build_args as $arg) {
-        $tests[$arg] = $arg;
-      }
-    }
-    else {
-      // Modernzir must not be downloaded, return null.
-      return null;
-    }
-  }
-
-  return $tests;
 }

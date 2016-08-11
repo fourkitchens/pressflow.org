@@ -107,7 +107,7 @@ function modernizr_requirements($phase) {
           // by default.
           if (is_null($current_tests)) {
             $tests_value = t('You haven\'t created a custom build yet.');
-            $tests_description = t('Modernizr works best with a custom build. Visit the !modernizr-settings to create one.', array('!modernizr-settings' => l(t('Modernizr settings page'), 'admin/config/development/modernizr')));
+            $tests_description = t('Modernizr only works with a custom build. Visit the !modernizr-settings to create one.', array('!modernizr-settings' => l(t('Modernizr settings page'), 'admin/config/development/modernizr')));
             $tests_severity = variable_get('modernizr_quiet', MODERNIZR_QUIET_DEFAULT) ? REQUIREMENT_WARNING : REQUIREMENT_ERROR;
           }
           else {
@@ -145,6 +145,23 @@ function modernizr_requirements($phase) {
 }
 
 /**
+ * Set module weight.
+ */
+function modernizr_set_module_weight() {
+  db_update('system')
+    ->fields(array('weight' => 10))
+    ->condition('name', 'modernizr', '=')
+    ->execute();
+}
+
+/**
+ * Implements hook_install().
+ */
+function modernizr_install() {
+  modernizr_set_module_weight();
+}
+
+/**
  * Implements hook_uninstall().
  */
 function modernizr_uninstall() {
@@ -158,6 +175,7 @@ function modernizr_uninstall() {
 
   // Delete custom build options.
   variable_del('modernizr_cb_printshiv');
+  variable_del('modernizr_cb_load');
 }
 
 /**
@@ -167,4 +185,38 @@ function modernizr_update_7300() {
   variable_del('modernizr_serverside');
 
   return t("Deleted 'modernizr_serverside' variable");
+}
+
+/**
+ * Revert the introduction of 'defer' as the default method of including script.
+ */
+function modernizr_update_7301() {
+  // Setting `defer` as default was a bad idea, because:
+  //   1. The deferred script almost always gets executed after any inlined
+  //      Modernizr.load() commands.
+  //
+  // @see https://www.drupal.org/node/2252899#comment-9228009
+  //
+  //   2. Setting `defer` by default is bad for backwards-compatibility.
+  //
+  // @see https://www.drupal.org/node/2252899#comment-9383221
+  if (variable_get('modernizr_type', MODERNIZR_TYPE_DEFAULT) == 'defer') {
+    variable_set('modernizr_type', MODERNIZR_TYPE_DEFAULT);
+  }
+}
+
+/**
+ * Increase module weight to override other modules library definitions.
+ */
+function modernizr_update_7302() {
+  modernizr_set_module_weight();
+  return t('Increased Modernizr module weight.');
+}
+
+/**
+ * Automatically enable yepnope.js for backwards compatibility.
+ */
+function modernizr_update_7303() {
+  variable_set('modernizr_cb_load', 1);
+  return t('Enabled yepnope.js for backwards compatibility.');
 }

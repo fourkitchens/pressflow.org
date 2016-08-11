@@ -61,6 +61,14 @@ function modernizr_admin() {
     '#default_value' => variable_get('modernizr_cb_printshiv', FALSE),
   );
 
+  // Modernizr v3 deprecated direct inclusion of Modernizr.load(). In order to
+  // continue using Modernizr.load(), we have to include yepnope.js ourselves.
+  $form['build_options']['modernizr_cb_load'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Include <code>Modernizr.load()</code> functionality. Modernizr v3 no longer includes this script itself. <a href="@url">Read more on GitHub</a>.', array('@url' => 'https://github.com/Modernizr/Modernizr/issues/1182')),
+    '#default_value' => variable_get('modernizr_cb_load', MODERNIZR_YEPNOPE_DEFAULT),
+  );
+
   // Fieldset for reporting options.
   $form['reporting'] = array(
     '#type' => 'fieldset',
@@ -92,7 +100,7 @@ function modernizr_generate_url() {
   $tests = modernizr_api_list();
 
   // Begin assembling link to re-download Modernizr
-  $link = 'http://www.modernizr.com/download/#-';
+  $link = 'https://modernizr.com/download/#-';
 
   // Pull tests that are currently set.
   $current_tests = _modernizr_current_build();
@@ -103,7 +111,9 @@ function modernizr_generate_url() {
     $modernizr_severity = (variable_get('modernizr_quiet', MODERNIZR_QUIET_DEFAULT)) ? 'warning' : 'error';
 
     // Set error/warning message.
-    drupal_set_message(t("You don't seem to have a custom build of Modernizr installed yet. This page will help generate one for you."), $modernizr_severity);
+    drupal_set_message(t("You don't seem to have a custom build of Modernizr installed yet, or we are detecting the wrong version. Remove any existing modernizr-latest.js or modernizr custom builds from !path and replace it with a new copy. This page will help generate one for you.", array(
+      '!path' => module_exists('libraries') ? libraries_get_path('modernizr') : 'sites/all/libraries/modernizr'
+    )), $modernizr_severity);
   }
   else {
     // Generate the list of tests that are being requested by the Test API, but

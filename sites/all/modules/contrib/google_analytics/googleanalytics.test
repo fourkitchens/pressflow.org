@@ -6,6 +6,13 @@
  */
 class GoogleAnalyticsBasicTest extends DrupalWebTestCase {
 
+  /**
+   * User without permissions to edit snippets.
+   *
+   * @var \StdClass
+   */
+  protected $noSnippetUser;
+
   public static function getInfo() {
     return array(
       'name' => 'Google Analytics basic tests',
@@ -25,15 +32,17 @@ class GoogleAnalyticsBasicTest extends DrupalWebTestCase {
     );
 
     // User to set up google_analytics.
+    $this->noSnippetUser = $this->drupalCreateUser($permissions);
+    $permissions[] = 'add JS snippets for google analytics';
     $this->admin_user = $this->drupalCreateUser($permissions);
     $this->drupalLogin($this->admin_user);
   }
 
   function testGoogleAnalyticsConfiguration() {
-    // Check if Configure link is available on 'Extend' page.
+    // Check if Configure link is available on 'Modules' page.
     // Requires 'administer modules' permission.
     $this->drupalGet('admin/modules');
-    $this->assertRaw('admin/config/system/googleanalytics', '[testGoogleAnalyticsConfiguration]: Configure link from Extend page to Google Analytics Settings page exists.');
+    $this->assertRaw('admin/config/system/googleanalytics', '[testGoogleAnalyticsConfiguration]: Configure link from Modules page to Google Analytics Settings page exists.');
 
     // Check if Configure link is available on 'Status Reports' page. NOTE: Link is only shown without UA code configured.
     // Requires 'administer site configuration' permission.
@@ -48,6 +57,26 @@ class GoogleAnalyticsBasicTest extends DrupalWebTestCase {
     $edit['googleanalytics_account'] = $this->randomName(2);
     $this->drupalPost('admin/config/system/googleanalytics', $edit, t('Save configuration'));
     $this->assertRaw(t('A valid Google Analytics Web Property ID is case sensitive and formatted like UA-xxxxxxx-yy.'), '[testGoogleAnalyticsConfiguration]: Invalid Web Property ID number validated.');
+
+    // User should have access to code snippets.
+    $this->assertFieldByName('googleanalytics_codesnippet_create');
+    $this->assertFieldByName('googleanalytics_codesnippet_before');
+    $this->assertFieldByName('googleanalytics_codesnippet_after');
+    $this->assertNoFieldByXPath("//textarea[@name='googleanalytics_codesnippet_create' and @disabled='disabled']", NULL, '"Create only fields" is enabled.');
+    $this->assertNoFieldByXPath("//textarea[@name='googleanalytics_codesnippet_before' and @disabled='disabled']", NULL, '"Code snippet (before)" is enabled.');
+    $this->assertNoFieldByXPath("//textarea[@name='googleanalytics_codesnippet_after' and @disabled='disabled']", NULL, '"Code snippet (after)" is enabled.');
+
+    // Login as user without JS permissions.
+    $this->drupalLogin($this->noSnippetUser);
+    $this->drupalGet('admin/config/system/googleanalytics');
+
+    // User should *not* have access to snippets, but create fields.
+    $this->assertFieldByName('googleanalytics_codesnippet_create');
+    $this->assertFieldByName('googleanalytics_codesnippet_before');
+    $this->assertFieldByName('googleanalytics_codesnippet_after');
+    $this->assertNoFieldByXPath("//textarea[@name='googleanalytics_codesnippet_create' and @disabled='disabled']", NULL, '"Create only fields" is enabled.');
+    $this->assertFieldByXPath("//textarea[@name='googleanalytics_codesnippet_before' and @disabled='disabled']", NULL, '"Code snippet (before)" is disabled.');
+    $this->assertFieldByXPath("//textarea[@name='googleanalytics_codesnippet_after' and @disabled='disabled']", NULL, '"Code snippet (after)" is disabled.');
   }
 
   function testGoogleAnalyticsPageVisibility() {
@@ -61,7 +90,7 @@ class GoogleAnalyticsBasicTest extends DrupalWebTestCase {
 
     // Show tracking on "every page except the listed pages".
     variable_set('googleanalytics_visibility_pages', 0);
-    // Disable tracking one "admin*" pages only.
+    // Disable tracking on "admin*" pages only.
     variable_set('googleanalytics_pages', "admin\nadmin/*");
     // Enable tracking only for authenticated users only.
     variable_set('googleanalytics_roles', array(DRUPAL_AUTHENTICATED_RID => DRUPAL_AUTHENTICATED_RID));
@@ -174,12 +203,12 @@ class GoogleAnalyticsBasicTest extends DrupalWebTestCase {
     // Test if tracking of User ID is enabled.
     variable_set('googleanalytics_trackuserid', 1);
     $this->drupalGet('');
-    $this->assertRaw(', {"userId":"', '[testGoogleAnalyticsTrackingCode]: Tracking code for User ID is enabled.');
+    $this->assertRaw(', {"cookieDomain":"auto","userId":"', '[testGoogleAnalyticsTrackingCode]: Tracking code for User ID is enabled.');
 
     // Test if tracking of User ID is disabled.
     variable_set('googleanalytics_trackuserid', 0);
     $this->drupalGet('');
-    $this->assertNoRaw(', {"userId":"', '[testGoogleAnalyticsTrackingCode]: Tracking code for User ID is disabled.');
+    $this->assertNoRaw(', {"cookieDomain":"auto","userId":"', '[testGoogleAnalyticsTrackingCode]: Tracking code for User ID is disabled.');
 
     // Test if tracking of url fragments is enabled.
     variable_set('googleanalytics_trackurlfragments', 1);
@@ -203,7 +232,7 @@ class GoogleAnalyticsBasicTest extends DrupalWebTestCase {
 
     // Test whether single domain tracking is active.
     $this->drupalGet('');
-    $this->assertNoRaw('{"cookieDomain":"', '[testGoogleAnalyticsTrackingCode]: Single domain tracking is active.');
+    $this->assertRaw('{"cookieDomain":"auto"}', '[testGoogleAnalyticsTrackingCode]: Single domain tracking is active.');
 
     // Enable "One domain with multiple subdomains".
     variable_set('googleanalytics_domain_mode', 1);
@@ -224,7 +253,7 @@ class GoogleAnalyticsBasicTest extends DrupalWebTestCase {
     variable_set('googleanalytics_domain_mode', 2);
     variable_set('googleanalytics_cross_domains', "www.example.com\nwww.example.net");
     $this->drupalGet('');
-    $this->assertRaw('ga("create", "' . $ua_code . '", {"allowLinker":true', '[testGoogleAnalyticsTrackingCode]: "allowLinker" has been found. Cross domain tracking is active.');
+    $this->assertRaw('ga("create", "' . $ua_code . '", {"cookieDomain":"auto","allowLinker":true', '[testGoogleAnalyticsTrackingCode]: "allowLinker" has been found. Cross domain tracking is active.');
     $this->assertRaw('ga("require", "linker");', '[testGoogleAnalyticsTrackingCode]: Require linker has been found. Cross domain tracking is active.');
     $this->assertRaw('ga("linker:autoLink", ["www.example.com","www.example.net"]);', '[testGoogleAnalyticsTrackingCode]: "linker:autoLink" has been found. Cross domain tracking is active.');
     $this->assertRaw('"trackCrossDomains":["www.example.com","www.example.net"]', '[testGoogleAnalyticsTrackingCode]: Cross domain tracking with www.example.com and www.example.net is active.');
@@ -255,11 +284,11 @@ class GoogleAnalyticsBasicTest extends DrupalWebTestCase {
     );
     variable_set('googleanalytics_codesnippet_create', $codesnippet_create);
     variable_set('googleanalytics_codesnippet_before', 'ga("set", "forceSSL", true);');
-    variable_set('googleanalytics_codesnippet_after', 'ga("create", "UA-123456-3", {name: "newTracker"});ga("newTracker.send", "pageview");');
+    variable_set('googleanalytics_codesnippet_after', 'ga("create", "UA-123456-3", {"name": "newTracker"});ga("newTracker.send", "pageview");');
     $this->drupalGet('');
     $this->assertRaw('ga("create", "' . $ua_code . '", {"cookieDomain":"foo.example.com","cookieName":"myNewName","cookieExpires":20000,"allowAnchor":true,"sampleRate":4.3});', '[testGoogleAnalyticsTrackingCode]: Create only fields have been found.');
     $this->assertRaw('ga("set", "forceSSL", true);', '[testGoogleAnalyticsTrackingCode]: Before codesnippet will force http pages to also send all beacons using https.');
-    $this->assertRaw('ga("create", "UA-123456-3", {name: "newTracker"});', '[testGoogleAnalyticsTrackingCode]: After codesnippet with "newTracker" tracker has been found.');
+    $this->assertRaw('ga("create", "UA-123456-3", {"name": "newTracker"});', '[testGoogleAnalyticsTrackingCode]: After codesnippet with "newTracker" tracker has been found.');
   }
 }
 
@@ -284,6 +313,7 @@ class GoogleAnalyticsCustomDimensionsAndMetricsTest extends DrupalWebTestCase {
 
     // User to set up google_analytics.
     $this->admin_user = $this->drupalCreateUser($permissions);
+    $this->drupalLogin($this->admin_user);
   }
 
   function testGoogleAnalyticsCustomDimensions() {
@@ -292,33 +322,31 @@ class GoogleAnalyticsCustomDimensionsAndMetricsTest extends DrupalWebTestCase {
 
     // Basic test if the feature works.
     $googleanalytics_custom_dimension = array(
-      'indexes' => array(
-        1 => array(
-          'index' => 1,
-          'value' => 'Bar 1',
-        ),
-        2 => array(
-          'index' => 2,
-          'value' => 'Bar 2',
-        ),
-        3 => array(
-          'index' => 3,
-          'value' => 'Bar 3',
-        ),
-        4 => array(
-          'index' => 4,
-          'value' => 'Bar 4',
-        ),
-        5 => array(
-          'index' => 5,
-          'value' => 'Bar 5',
-        ),
-      )
+      1 => array(
+        'index' => 1,
+        'value' => 'Bar 1',
+      ),
+      2 => array(
+        'index' => 2,
+        'value' => 'Bar 2',
+      ),
+      3 => array(
+        'index' => 3,
+        'value' => 'Bar 3',
+      ),
+      4 => array(
+        'index' => 4,
+        'value' => 'Bar 4',
+      ),
+      5 => array(
+        'index' => 5,
+        'value' => 'Bar 5',
+      ),
     );
     variable_set('googleanalytics_custom_dimension', $googleanalytics_custom_dimension);
     $this->drupalGet('');
 
-    foreach ($googleanalytics_custom_dimension['indexes'] as $dimension) {
+    foreach ($googleanalytics_custom_dimension as $dimension) {
       $this->assertRaw('ga("set", ' . drupal_json_encode('dimension' . $dimension['index']) . ', ' . drupal_json_encode($dimension['value']) . ');', '[testGoogleAnalyticsCustomDimensionsAndMetrics]: Dimension #' . $dimension['index'] . ' is shown.');
     }
 
@@ -327,28 +355,32 @@ class GoogleAnalyticsCustomDimensionsAndMetricsTest extends DrupalWebTestCase {
     variable_set('site_slogan', $site_slogan);
 
     $googleanalytics_custom_dimension = array(
-      'indexes' => array(
-        1 => array(
-          'index' => 1,
-          'value' => 'Value: [site:slogan]',
-        ),
-        2 => array(
-          'index' => 2,
-          'value' => $this->randomName(16),
-        ),
-        3 => array(
-          'index' => 3,
-          'value' => '',
-        ),
-      )
+      1 => array(
+        'index' => 1,
+        'value' => 'Value: [site:slogan]',
+      ),
+      2 => array(
+        'index' => 2,
+        'value' => $this->randomName(16),
+      ),
+      3 => array(
+        'index' => 3,
+        'value' => '',
+      ),
+      // #2300701: Custom dimensions and custom metrics not outputed on zero value.
+      4 => array(
+        'index' => 4,
+        'value' => '0',
+      ),
     );
     variable_set('googleanalytics_custom_dimension', $googleanalytics_custom_dimension);
     $this->verbose('<pre>' . print_r($googleanalytics_custom_dimension, TRUE) . '</pre>');
 
     $this->drupalGet('');
     $this->assertRaw('ga("set", ' . drupal_json_encode('dimension1') . ', ' . drupal_json_encode("Value: $site_slogan") . ');', '[testGoogleAnalyticsCustomDimensionsAndMetrics]: Tokens have been replaced in dimension value.');
-    $this->assertRaw('ga("set", ' . drupal_json_encode('dimension2') . ', ' . drupal_json_encode($googleanalytics_custom_dimension['indexes']['2']['value']) . ');', '[testGoogleAnalyticsCustomDimensionsAndMetrics]: Random value is shown.');
+    $this->assertRaw('ga("set", ' . drupal_json_encode('dimension2') . ', ' . drupal_json_encode($googleanalytics_custom_dimension['2']['value']) . ');', '[testGoogleAnalyticsCustomDimensionsAndMetrics]: Random value is shown.');
     $this->assertNoRaw('ga("set", ' . drupal_json_encode('dimension3') . ', ' . drupal_json_encode('') . ');', '[testGoogleAnalyticsCustomDimensionsAndMetrics]: Empty value is not shown.');
+    $this->assertRaw('ga("set", ' . drupal_json_encode('dimension4') . ', ' . drupal_json_encode('0') . ');', '[testGoogleAnalyticsCustomDimensionsAndMetrics]: Value 0 is shown.');
   }
 
   function testGoogleAnalyticsCustomMetrics() {
@@ -357,65 +389,87 @@ class GoogleAnalyticsCustomDimensionsAndMetricsTest extends DrupalWebTestCase {
 
     // Basic test if the feature works.
     $googleanalytics_custom_metric = array(
-      'indexes' => array(
-        1 => array(
-          'index' => 1,
-          'value' => '6',
-          'value_expected' => 6,
-        ),
-        2 => array(
-          'index' => 2,
-          'value' => '8000',
-          'value_expected' => 8000,
-        ),
-        3 => array(
-          'index' => 3,
-          'value' => '7.8654',
-          'value_expected' => 7.8654,
-        ),
-        4 => array(
-          'index' => 4,
-          'value' => '1123.4',
-          'value_expected' => 1123.4,
-        ),
-        5 => array(
-          'index' => 5,
-          'value' => '5,67',
-          'value_expected' => 5,
-        ),
-      )
+      1 => array(
+        'index' => 1,
+        'value' => '6',
+      ),
+      2 => array(
+        'index' => 2,
+        'value' => '8000',
+      ),
+      3 => array(
+        'index' => 3,
+        'value' => '7.8654',
+      ),
+      4 => array(
+        'index' => 4,
+        'value' => '1123.4',
+      ),
+      5 => array(
+        'index' => 5,
+        'value' => '5,67',
+      ),
     );
+
     variable_set('googleanalytics_custom_metric', $googleanalytics_custom_metric);
     $this->drupalGet('');
 
-    foreach ($googleanalytics_custom_metric['indexes'] as $metric) {
-      $this->assertRaw('ga("set", ' . drupal_json_encode('metric' . $metric['index']) . ', ' . drupal_json_encode($metric['value_expected']) . ');', '[testGoogleAnalyticsCustomDimensionsAndMetrics]: Metric #' . $metric['index'] . ' is shown.');
+    foreach ($googleanalytics_custom_metric as $metric) {
+      $this->assertRaw('ga("set", ' . drupal_json_encode('metric' . $metric['index']) . ', ' . drupal_json_encode((float) $metric['value']) . ');', '[testGoogleAnalyticsCustomDimensionsAndMetrics]: Metric #' . $metric['index'] . ' is shown.');
     }
 
     // Test whether tokens are replaced in custom metric values.
     $googleanalytics_custom_metric = array(
-      'indexes' => array(
-        1 => array(
-          'index' => 1,
-          'value' => '[current-user:roles:count]',
-        ),
-        2 => array(
-          'index' => 2,
-          'value' => mt_rand(),
-        ),
-        3 => array(
-          'index' => 3,
-          'value' => '',
-        ),
-      )
+      1 => array(
+        'index' => 1,
+        'value' => '[current-user:roles:count]',
+      ),
+      2 => array(
+        'index' => 2,
+        'value' => mt_rand(),
+      ),
+      3 => array(
+        'index' => 3,
+        'value' => '',
+      ),
+      // #2300701: Custom dimensions and custom metrics not outputed on zero value.
+      4 => array(
+        'index' => 4,
+        'value' => '0',
+      ),
     );
     variable_set('googleanalytics_custom_metric', $googleanalytics_custom_metric);
     $this->verbose('<pre>' . print_r($googleanalytics_custom_metric, TRUE) . '</pre>');
 
     $this->drupalGet('');
     $this->assertRaw('ga("set", ' . drupal_json_encode('metric1') . ', ', '[testGoogleAnalyticsCustomDimensionsAndMetrics]: Tokens have been replaced in metric value.');
-    $this->assertRaw('ga("set", ' . drupal_json_encode('metric2') . ', ' . drupal_json_encode($googleanalytics_custom_metric['indexes']['2']['value']) . ');', '[testGoogleAnalyticsCustomDimensionsAndMetrics]: Random value is shown.');
+    $this->assertRaw('ga("set", ' . drupal_json_encode('metric2') . ', ' . drupal_json_encode($googleanalytics_custom_metric['2']['value']) . ');', '[testGoogleAnalyticsCustomDimensionsAndMetrics]: Random value is shown.');
     $this->assertNoRaw('ga("set", ' . drupal_json_encode('metric3') . ', ' . drupal_json_encode('') . ');', '[testGoogleAnalyticsCustomDimensionsAndMetrics]: Empty value is not shown.');
+    $this->assertRaw('ga("set", ' . drupal_json_encode('metric4') . ', ' . drupal_json_encode(0) . ');', '[testGoogleAnalyticsCustomDimensionsAndMetrics]: Value 0 is shown.');
+  }
+
+  /**
+   * Tests if Custom Dimensions token form validation works.
+   */
+  public function testGoogleAnalyticsCustomDimensionsTokenFormValidation() {
+    $ua_code = 'UA-123456-1';
+
+    // Check form validation.
+    $edit['googleanalytics_account'] = $ua_code;
+    $edit['googleanalytics_custom_dimension[indexes][1][value]'] = '[current-user:name]';
+    $edit['googleanalytics_custom_dimension[indexes][2][value]'] = '[current-user:edit-url]';
+    $edit['googleanalytics_custom_dimension[indexes][3][value]'] = '[user:name]';
+    $edit['googleanalytics_custom_dimension[indexes][4][value]'] = '[term:name]';
+    $edit['googleanalytics_custom_dimension[indexes][5][value]'] = '[term:tid]';
+
+    $this->drupalPost('admin/config/system/googleanalytics', $edit, t('Save configuration'));
+
+    $this->assertRaw(t('The %element-title is using the following forbidden tokens with personal identifying information: @invalid-tokens.', array('%element-title' => t('Custom dimension value #@index', array('@index' => 1)), '@invalid-tokens' => implode(', ', array('[current-user:name]')))));
+    $this->assertRaw(t('The %element-title is using the following forbidden tokens with personal identifying information: @invalid-tokens.', array('%element-title' => t('Custom dimension value #@index', array('@index' => 2)), '@invalid-tokens' => implode(', ', array('[current-user:edit-url]')))));
+    $this->assertRaw(t('The %element-title is using the following forbidden tokens with personal identifying information: @invalid-tokens.', array('%element-title' => t('Custom dimension value #@index', array('@index' => 3)), '@invalid-tokens' => implode(', ', array('[user:name]')))));
+    // BUG #2037595
+    //$this->assertNoRaw(t('The %element-title is using the following forbidden tokens with personal identifying information: @invalid-tokens.', array('%element-title' => t('Custom dimension value #@index', array('@index' => 4)), '@invalid-tokens' => implode(', ', array('[term:name]')))));
+    //$this->assertNoRaw(t('The %element-title is using the following forbidden tokens with personal identifying information: @invalid-tokens.', array('%element-title' => t('Custom dimension value #@index', array('@index' => 5)), '@invalid-tokens' => implode(', ', array('[term:tid]')))));
   }
 }
 
@@ -572,6 +626,8 @@ class GoogleAnalyticsSearchTest extends DrupalWebTestCase {
       'access administration pages',
       'administer google analytics',
       'search content',
+      'create page content',
+      'edit own page content',
     );
 
     // User to set up google_analytics.
@@ -590,16 +646,44 @@ class GoogleAnalyticsSearchTest extends DrupalWebTestCase {
     $this->drupalGet('search/node');
     $this->assertNoRaw('ga("set", "page",', '[testGoogleAnalyticsSearch]: Custom url not set.');
 
-    // Search for random string.
-    $edit = array();
-    $edit['keys'] = $this->randomName(32);
-
+    // Enable site search support.
     variable_set('googleanalytics_site_search', 1);
-    $this->drupalPost('search/node', $edit, t('Search'));
-    $this->assertRaw('ga("set", "page", (window.googleanalytics_search_results) ?', '[testGoogleAnalyticsSearch]: Search results tracker is displayed.');
 
-    // Test search results counter.
-    $this->assertRaw('window.googleanalytics_search_results = ', '[testGoogleAnalyticsSearch]: Search results counter is displayed.');
+    // Search for random string.
+    $search = array();
+    $search['keys'] = $this->randomName(8);
+
+    // Create a node to search for.
+    $langcode = LANGUAGE_NONE;
+    $edit = array();
+    $edit['title'] = 'This is a test title';
+    $edit["body[$langcode][0][value]"] = 'This test content contains ' . $search['keys'] . ' string.';
+
+    // Fire a search, it's expected to get 0 results.
+    $this->drupalPost('search/node', $search, t('Search'));
+    $this->assertRaw('ga("set", "page", (window.googleanalytics_search_results) ?', '[testGoogleAnalyticsSearch]: Search results tracker is displayed.');
+    $this->assertRaw('window.googleanalytics_search_results = 0;', '[testGoogleAnalyticsSearch]: Search yielded no results.');
+
+    // Save the node.
+    $this->drupalPost('node/add/page', $edit, t('Save'));
+    $this->assertText(t('@type @title has been created.', array('@type' => 'Basic page', '@title' => $edit['title'])), 'Node was created.');
+
+    // Index the node or it cannot found.
+    $this->cronRun();
+
+    $this->drupalPost('search/node', $search, t('Search'));
+    $this->assertRaw('ga("set", "page", (window.googleanalytics_search_results) ?', '[testGoogleAnalyticsSearch]: Search results tracker is displayed.');
+    $this->assertRaw('window.googleanalytics_search_results = 1;', '[testGoogleAnalyticsSearch]: One search result found.');
+
+    $this->drupalPost('node/add/page', $edit, t('Save'));
+    $this->assertText(t('@type @title has been created.', array('@type' => 'Basic page', '@title' => $edit['title'])), 'Node was created.');
+
+    // Index the node or it cannot found.
+    $this->cronRun();
+
+    $this->drupalPost('search/node', $search, t('Search'));
+    $this->assertRaw('ga("set", "page", (window.googleanalytics_search_results) ?', '[testGoogleAnalyticsSearch]: Search results tracker is displayed.');
+    $this->assertRaw('window.googleanalytics_search_results = 2;', '[testGoogleAnalyticsSearch]: Two search results found.');
   }
 
 }
