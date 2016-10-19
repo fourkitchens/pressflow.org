@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?><rss version="2.0" xml:base="http://www.pressflow.org/news" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:og="http://ogp.me/ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:sioc="http://rdfs.org/sioc/ns#" xmlns:sioct="http://rdfs.org/sioc/types#" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+  <channel>
+    <title>News</title>
+    <link>http://www.pressflow.org/news</link>
+    <description></description>
+    <language>en</language>
+     <atom:link href="http://www.pressflow.org/news/feed" rel="self" type="application/rss+xml" />
+      <item>
+    <title>The new Pressflow.org is here</title>
+    <link>http://www.pressflow.org/news/new-pressfloworg-here</link>
+    <description>&lt;div class=&quot;field field-name-body field-type-text-with-summary field-label-hidden&quot;&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot; property=&quot;content:encoded&quot;&gt;&lt;p&gt;We&#039;ve done some house cleaning on Pressflow.org! Today we relaunched the site with more emphasis on our favorite part of Drupal: the community.&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description>
+     <pubDate>Tue, 10 Jul 2012 22:18:18 +0000</pubDate>
+ <dc:creator>Chris Ruppel</dc:creator>
+ <guid isPermaLink="false">20 at http://www.pressflow.org</guid>
+  </item>
+  <item>
+    <title>Pressflow 6.26 released</title>
+    <link>http://www.pressflow.org/pressflow-626-released</link>
+    <description>&lt;div class=&quot;field field-name-body field-type-text-with-summary field-label-hidden&quot;&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot; property=&quot;content:encoded&quot;&gt;&lt;p&gt;Pressflow 6.26 has been released. &lt;a href=&quot;https://github.com/pressflow/6&quot;&gt;Download it via Github&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Includes changes from Drupal 6.26 (&lt;a href=&quot;http://drupal.org/node/1558054&quot;&gt;Read the full release notes&lt;/a&gt;)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description>
+     <pubDate>Wed, 16 May 2012 23:05:55 +0000</pubDate>
+ <dc:creator>Aaron Stanush</dc:creator>
+ <guid isPermaLink="false">16 at http://www.pressflow.org</guid>
+  </item>
+  </channel>
+</rss>
