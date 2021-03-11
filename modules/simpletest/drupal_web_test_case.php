@@ -1677,15 +1677,12 @@ class DrupalWebTestCase extends DrupalTestCase {
     file_unmanaged_delete_recursive($this->originalFileDirectory . '/simpletest/' . substr($this->databasePrefix, 10));
 
     // Remove all prefixed tables.
-    $tables = db_find_tables($this->databasePrefix . '%');
-    $connection_info = Database::getConnectionInfo('default');
-    $tables = db_find_tables($connection_info['default']['prefix']['default'] . '%');
+    $tables = db_find_tables_d8('%');
     if (empty($tables)) {
       $this->fail('Failed to find test tables to drop.');
     }
-    $prefix_length = strlen($connection_info['default']['prefix']['default']);
     foreach ($tables as $table) {
-      if (db_drop_table(substr($table, $prefix_length))) {
+      if (db_drop_table($table)) {
         unset($tables[$table]);
       }
     }
@@ -3012,7 +3009,7 @@ class DrupalWebTestCase extends DrupalTestCase {
     if (!$message) {
       $message = t('Raw "@raw" found', array('@raw' => $raw));
     }
-    return $this->assert(strpos($this->drupalGetContent(), $raw) !== FALSE, $message, $group);
+    return $this->assert(strpos($this->drupalGetContent(), (string) $raw) !== FALSE, $message, $group);
   }
 
   /**
@@ -3032,7 +3029,7 @@ class DrupalWebTestCase extends DrupalTestCase {
     if (!$message) {
       $message = t('Raw "@raw" not found', array('@raw' => $raw));
     }
-    return $this->assert(strpos($this->drupalGetContent(), $raw) === FALSE, $message, $group);
+    return $this->assert(strpos($this->drupalGetContent(), (string) $raw) === FALSE, $message, $group);
   }
 
   /**
