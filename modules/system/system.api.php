@@ -1908,8 +1908,8 @@ function hook_boot() {
  *
  * This hook is not run on cached pages.
  *
- * To add CSS or JS that should be present on all pages, modules should not
- * implement this hook, but declare these files in their .info file.
+ * To add CSS or JS files that should be present on all pages, modules should
+ * not implement this hook, but declare these files in their .info file.
  *
  * @see hook_boot()
  */
@@ -2068,6 +2068,22 @@ function hook_module_implements_alter(&$implementations, $hook) {
 function hook_system_theme_info() {
   $themes['mymodule_test_theme'] = drupal_get_path('module', 'mymodule') . '/mymodule_test_theme/mymodule_test_theme.info';
   return $themes;
+}
+
+/**
+ * Return additional theme engines provided by modules.
+ *
+ * This hook is invoked from _system_rebuild_theme_data() and allows modules to
+ * register additional theme engines outside of the regular 'themes/engines'
+ * directories of a Drupal installation.
+ *
+ * @return
+ *   An associative array. Each key is the system name of a theme engine and
+ *   each value is the corresponding path to the theme engine's .engine file.
+ */
+function hook_system_theme_engine_info() {
+  $theme_engines['izumi'] = drupal_get_path('module', 'mymodule') . '/izumi/izumi.engine';
+  return $theme_engines;
 }
 
 /**
