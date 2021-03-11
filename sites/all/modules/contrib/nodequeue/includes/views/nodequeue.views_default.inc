@@ -1,10 +1,15 @@
 <?php
-
 /**
  * @file
- * Default views for nodequeue. This modifies an exported view; it might
- * actually work better to create the view dynamically. It would be less
- * code and more modifiable later.
+ *
+ * Default views for nodequeue.
+ *
+ * @todo  This modifies an exported view; it might actually work better to
+ * create the view dynamically. It would be less code and more modifiable later.
+ */
+
+/**
+ * Implements hook_views_default_views().
  */
 function nodequeue_views_default_views() {
   $views = array();
