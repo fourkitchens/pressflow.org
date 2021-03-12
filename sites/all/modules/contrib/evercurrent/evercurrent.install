@@ -1,0 +1,24 @@
+<?php
+/**
+ * @file Install file for the Evercurrent
+ */
+
+/**
+ * Implements hook_install().
+ *
+ * Detect any instance of the Ricochet Maintenance Module, transfer the key and disable it..
+ */
+function evercurrent_install() {
+  variable_set(RMH_STATUS, RMH_STATUS_WARNING);
+  variable_set('evercurrent_listen', FALSE);
+  variable_set('evercurrent_send', TRUE);
+  if (module_exists('ricochet_maintenance_helper')) {
+    drupal_set_message('Ricochet Maintenance helper was detected and has been disabled.');
+    $key = variable_get('ricochet_maintenance_helper_key', FALSE);
+    if ($key) {
+      drupal_set_message('The API key for the module has been moved to the Evercurrent module settings.');
+      variable_set('evercurrent_key', $key);
+    }
+    module_disable(array('ricochet_maintenance_helper'));
+  }
+}

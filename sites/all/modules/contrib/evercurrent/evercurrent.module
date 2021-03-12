@@ -1,0 +1,173 @@
+<?php
+
+/**
+ * @file evercurrent.module
+ */
+
+// @todo RMP-199 Use single quotes instead of double quotes when possible.
+define('RMH_ENV_URL', 'https://app.evercurrent.io');
+define('RMH_API_VERSION', 1);
+define('RMH_MD5_MATCH', '/^[a-f0-9]{32}$/i');
+define('RMH_URL', '/evercurrent/post-update');
+
+// Statuses. Used for reflecting last run of updates transaction.
+define('RMH_STATUS', 'evercurrent_status');
+define('RMH_STATUS_OK', 0);
+define('RMH_STATUS_WARNING', 1);
+define('RMH_STATUS_ERROR', 2);
+define('RMH_STATUS_MESSAGE', 'evercurrent_status_message');
+
+/**
+ * Date stamp set every time updates are tried sent.
+ */
+define('RMH_LAST_TRY', 'evercurrent_last_try');
+
+/**
+ * Implements hook_menu().
+ */
+function evercurrent_menu() {
+  $items = array();
+
+  $items['admin/config/system/evercurrent'] = array(
+    'title' => 'Evercurrent',
+    'description' => 'Manage Evercurrent API key and settings',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('evercurrent_settings_form'),
+    'file' => 'evercurrent.admin.inc',
+    'access arguments' => array('administer site configuration'),
+    'type' => MENU_NORMAL_ITEM,
+  );
+  $items['api/rmc/key'] = array(
+    'title' => 'Callback for receiving configuration',
+    'type' => MENU_CALLBACK,
+    'page callback' => 'evercurrent_key',
+    'access callback' => 'evercurrent_is_listening',
+  );
+  return $items;
+}
+
+/**
+ * Access callback for retrieving a new key.
+ */
+function evercurrent_is_listening() {
+  return variable_get('evercurrent_listen', FALSE);
+}
+
+/**
+ * Page callback for retrieving a new key.
+ * To be run only if evercurrent actually want a new key.
+ */
+function evercurrent_key() {
+  $received = json_decode($_POST['data'], TRUE);
+  if (isset($received['key']) && _evercurrent_key_pattern_is_valid($received['key'])) {
+    $key = $received['key'];
+    variable_set('evercurrent_key', $key);
+    // Even if the key is valid or not, close the listen mode.
+    // We get an error immediately about the wrong key.
+    variable_set('evercurrent_listen', FALSE);
+    $message = 'Received';
+    $type = 'status';
+    module_load_include('inc', 'evercurrent', 'evercurrent.send');
+    evercurrent_run_update_check(check_plain($key));
+  }
+  else {
+    watchdog('evercurrent', 'Ditched key request with missing / buggy key.', 'error');
+    variable_set('evercurrent_listen_status', 'error');
+    $message = 'Invalid request.';
+    $type = 'error';
+  }
+  $return_json = array(
+    'message' => $message,
+    'type' => $type
+  );
+  drupal_json_output($return_json);
+  drupal_exit();
+}
+
+/**
+ * Helper function.
+ * Checks a key for a valid pattern.
+ *
+ * @param $key
+ * A key to check
+ *
+ * @return bool
+ * True if key is valid.
+ */
+function _evercurrent_key_pattern_is_valid($key) {
+  return is_string($key) && preg_match(RMH_MD5_MATCH, $key);
+}
+
+/**
+ * Implements hook_cron().
+ */
+function evercurrent_cron() {
+  if (variable_get('evercurrent_send', FALSE)) {
+    // Check if we are to send updates now.
+    $last_run = variable_get(RMH_LAST_TRY, 0);
+    $interval = variable_get('evercurrent_interval', 3600);
+
+    // Check if last run plus interval is earlier than now
+    if (($last_run + $interval) < time()) {
+      module_load_include('inc', 'evercurrent', 'evercurrent.send');
+      evercurrent_run_update_check();
+    }
+  }
+}
+
+/**
+ * Implements hook_requirements().
+ *
+ * Allow us to display current status in the site's status page.
+ */
+function evercurrent_requirements($phase) {
+  $requirements = array();
+  // We only do stuff at runtime.
+  if ($phase !== 'runtime') {
+    return $requirements;
+  }
+  // @todo RMH-199 Just use line breaks for readability, no need for concatenation.
+  // Listening enabled?
+  $listen = variable_get('evercurrent_listen', FALSE);
+  $listen_on_text = t(
+    'The Evercurrent module is listening for a key to use.
+You should finish configuration on the server side,
+or turn the listening feature off in the settings.'
+  );
+  $requirements['evercurrent_listen'] = array(
+    'title' => t('Evercurrent: Listening Mode'),
+    'value' => $listen ? t('Listening enabled') : t('Disabled'),
+    'severity' => $listen ? REQUIREMENT_WARNING : REQUIREMENT_OK,
+    'description' => $listen ? $listen_on_text : ''
+  );
+  // Last run
+  $requirements['evercurrent_lastrun'] = array(
+    'title' => t('Evercurrent: Last successful run'),
+    'value' => _evercurrent_last_run(),
+    'severity' => REQUIREMENT_OK,
+  );
+  // Drop last status to the panel
+  $message = variable_get(RMH_STATUS_MESSAGE, FALSE);
+  $severity = variable_get(RMH_STATUS, RMH_STATUS_WARNING);
+  $requirements['evercurrent_status'] = array(
+    'title' => t('Evercurrent: Runtime status'),
+    'value' => $message ? $message : t('No communication with server yet.'),
+    'severity' => $severity
+  );
+  return $requirements;
+}
+
+/**
+ * Helper function.
+ * Get interval since last try.
+ */
+function _evercurrent_last_run() {
+  if ($last_run = variable_get(RMH_LAST_TRY, FALSE)) {
+    $last_time = format_interval(time() - $last_run);
+  }
+  else {
+    $last_time = t('Never.');
+  }
+  return t('%last_time',
+    array('%last_time' => $last_time));
+}

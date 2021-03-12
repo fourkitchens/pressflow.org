@@ -7,3 +7,10 @@ function pf_uninstall() {
   variable_del('pf_pressflow_6_version');
   variable_del('pf_pressflow_7_version');
 }
+
+/**
+ * Enable evercurrent module.
+ */
+function pf_update_7101() {
+  module_enable(array('evercurrent'));
+}
