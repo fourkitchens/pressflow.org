@@ -1,12 +1,10 @@
 <?php
 
-
 /**
  * Any global configuation variables.
  *
  * i.e. $conf['var_name'] = 'value';
  */
-
 
 /**
  * Variable overrides.
@@ -24,8 +22,7 @@ $conf['preprocess_js'] = 1;
  */
 $conf['googleanalytics_account'] = '';
 
-
-
+$conf['evercurrent_send'] = FALSE;
 // All Pantheon Environments.
 if (defined('PANTHEON_ENVIRONMENT')) {
   // Use Redis for caching.
@@ -44,17 +41,17 @@ if (defined('PANTHEON_ENVIRONMENT')) {
   // Explicitly set page_cache_maximum_age as database won't be available.
   $conf['page_cache_maximum_age'] = 900;
 
-
-  /**
-   * Disable update manager downloads.
-   */
+  // Disable update manager downloads.
   $conf['allow_authorize_operations'] = FALSE;
 
-
   if (PANTHEON_ENVIRONMENT == 'live') {
-    /**
-     * Google Analytics Code
-     */
+    // Google Analytics Code.
     $conf['googleanalytics_account'] = 'UA-24112716-1';
+
+    // Evercurrent settings.
+    $conf['evercurrent_send'] = TRUE;
+    $conf['evercurrent_environment_url'] = "https://www.pressflow.org";
+    $conf['evercurrent_target_address'] = 'https://live-evercurrent-clone.pantheonsite.io';
+    $conf['evercurrent_environment_token'] = '6200caf083d6c230281b1e8b8fa4d30f';
   }
 }
