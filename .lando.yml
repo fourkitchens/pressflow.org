@@ -1,0 +1,6 @@
+name: pressflow-org
+recipe: pantheon
+config:
+  framework: drupal
+  site: pressflow-org
+  id: f7aa7188-1312-4687-b6ac-c898cfc0ee64
