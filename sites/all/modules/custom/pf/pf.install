@@ -14,3 +14,10 @@ function pf_uninstall() {
 function pf_update_7101() {
   module_enable(array('evercurrent'));
 }
+
+/**
+ * Disable uglifyjs module.
+ */
+function pf_update_7102() {
+  module_disable(array('uglifyjs'));
+}
