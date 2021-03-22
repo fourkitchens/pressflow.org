@@ -216,20 +216,8 @@ function modernizr_get_path() {
   $path = &drupal_static(__FUNCTION__);
 
   if ($path === NULL) {
-    $paths = array();
-
-    // Check for directory specified in hook_libraries_info()
-    if (module_exists('libraries')) {
-      $library_path = libraries_get_path('modernizr');
-      if (file_exists($library_path)) {
-        $paths[] = $library_path;
-      }
-    }
-
-    // The best location for downloaded libraries is sites/all/libraries.
-    if (is_dir('sites/all/libraries/modernizr')) {
-      $paths[] = 'sites/all/libraries/modernizr';
-    }
+    // Get possible paths for the file.
+    $paths = _modernizr_get_paths();
 
     // Scan directories for files
     $path = _modernizr_scan_for_library($paths);
@@ -241,13 +229,74 @@ function modernizr_get_path() {
 /**
  * Helper function to scan for acceptably named libraries
  */
+function _modernizr_get_paths() {
+  $paths = &drupal_static(__FUNCTION__);
+
+  if ($paths === NULL) {
+    $paths = array();
+    foreach (_modernizr_library_search_paths() as $search_path) {
+      $library_path = $search_path . '/modernizr';
+      if (file_exists($library_path)) {
+        $paths[] = $library_path;
+      }
+    }
+  }
+
+  return $paths;
+}
+
+/**
+ * Get library search paths.
+ *
+ * Original logic was taken from Libraries 7.x-2.3 since it doesn't provide a
+ * way to look up its search paths.
+ *
+ * @see libraries_get_libraries()
+ */
+function _modernizr_library_search_paths() {
+  $searchdir = array();
+  $profile = drupal_get_path('profile', drupal_get_profile());
+  $config = conf_path();
+
+  // Similar to 'modules' and 'themes' directories in the root directory,
+  // certain distributions may want to place libraries into a 'libraries'
+  // directory in Drupal's root directory.
+  $searchdir[] = 'libraries';
+
+  // Always search sites/all/libraries.
+  $searchdir[] = 'sites/all/libraries';
+
+  // $profile should never be empty in a proper Drupal setup. Check to make sure
+  // it exists before adding path.
+  if ($profile) {
+    // Similar to 'modules' and 'themes' directories inside an installation
+    // profile, installation profiles may want to place libraries into a
+    // 'libraries' directory.
+    $searchdir[] = $profile . '/libraries';
+  }
+
+  // $config should never be empty in a proper Drupal setup. Check to make sure
+  // it exists before adding path.
+  if ($config) {
+    // Also search sites/<domain>/*.
+    $searchdir[] = $config . '/libraries';
+  }
+
+  return $searchdir;
+}
+
+/**
+ * Helper function to scan for acceptably named libraries
+ */
 function _modernizr_scan_for_library($paths) {
   $path = '';
 
-  foreach ($paths as $p) {
-    if ($files = file_scan_directory($p, MODERNIZR_FILENAME_REGEX)) {
-      $path = reset($files)->uri;
-      break;
+  if (is_array($paths) && !empty($paths)) {
+    foreach ($paths as $p) {
+      if ($files = file_scan_directory($p, MODERNIZR_FILENAME_REGEX)) {
+        $path = reset($files)->uri;
+        break;
+      }
     }
   }
 
